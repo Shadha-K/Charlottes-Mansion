@@ -178,6 +178,10 @@ sources/20 = SubResource("TileSetAtlasSource_7ggoj")
 [node name="living_room" type="Node2D"]
 position = Vector2(5, 0)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.691357, 0.691357, 0.691357, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(20, -11)
 tile_set = SubResource("TileSet_ufuy4")
