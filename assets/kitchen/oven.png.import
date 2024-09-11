@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmpe2oyk4g7o"
-path="res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"
+uid="uid://bdiqtgeff2cja"
+path="res://.godot/imported/oven.png-8333cc54bc7c8be1e0339dad2b2bc925.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"]
+source_file="res://assets/kitchen/oven.png"
+dest_files=["res://.godot/imported/oven.png-8333cc54bc7c8be1e0339dad2b2bc925.ctex"]
 
 [params]
 

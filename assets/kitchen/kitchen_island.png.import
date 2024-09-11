@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmpe2oyk4g7o"
-path="res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"
+uid="uid://dcdgef7iiqxh8"
+path="res://.godot/imported/kitchen_island.png-2eb7d4e635bb0844f732e53ef40b0d44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"]
+source_file="res://assets/kitchen/kitchen_island.png"
+dest_files=["res://.godot/imported/kitchen_island.png-2eb7d4e635bb0844f732e53ef40b0d44.ctex"]
 
 [params]
 
