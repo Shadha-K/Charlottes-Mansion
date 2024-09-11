@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmpe2oyk4g7o"
-path="res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"
+uid="uid://cxao27jmr8ut"
+path="res://.godot/imported/icebox.png-6f805cd93eae690874922090b32c19aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"]
+source_file="res://assets/kitchen/icebox.png"
+dest_files=["res://.godot/imported/icebox.png-6f805cd93eae690874922090b32c19aa.ctex"]
 
 [params]
 
