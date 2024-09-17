@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n206d2htvk2n"
-path="res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"
+uid="uid://b0axtywtl3wk0"
+path="res://.godot/imported/dining_room_rug.png-7edf9cd60a43d15597ff40e114cf0bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"]
+source_file="res://assets/kitchen/dining_room_rug.png"
+dest_files=["res://.godot/imported/dining_room_rug.png-7edf9cd60a43d15597ff40e114cf0bba.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n206d2htvk2n"
-path="res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"
+uid="uid://dq6m8vbhqd5h1"
+path="res://.godot/imported/dining_chair_back.png-6a2ca0334c28fb0de951a397110ef73e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-10fbb463c0b7dce755344fe8c5ff2d12.ctex"]
+source_file="res://assets/kitchen/dining_chair_back.png"
+dest_files=["res://.godot/imported/dining_chair_back.png-6a2ca0334c28fb0de951a397110ef73e.ctex"]
 
 [params]
 
