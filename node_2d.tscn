@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=48 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -180,6 +180,24 @@ sources/20 = SubResource("TileSetAtlasSource_7ggoj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k12gf"]
 size = Vector2(1187, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtj5y"]
+size = Vector2(81, 773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1odbd"]
+size = Vector2(83, 771)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwycc"]
+size = Vector2(1106, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ahd"]
+size = Vector2(229, 83)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_es0ly"]
+radius = 31.1448
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f87ku"]
+radius = 35.1141
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4xgq"]
 size = Vector2(61.25, 96.625)
 
@@ -200,6 +218,18 @@ position = Vector2(515.5, 553.5)
 shape = SubResource("RectangleShape2D_k12gf")
 one_way_collision = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+position = Vector2(-40.5, 123.5)
+shape = SubResource("RectangleShape2D_xtj5y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+position = Vector2(1064.5, 131.5)
+shape = SubResource("RectangleShape2D_1odbd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+position = Vector2(543, -129)
+shape = SubResource("RectangleShape2D_dwycc")
+
 [node name="rugs n stuff" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAEAAQADwAAAAAAAAABAAgAEQAAAAAAADAOAAgAEQAAAAAAADAHAAgAEwAAAAAAADD//wEAEwAAAAAAAGAQAAEAEwAAAAAAAFAHAAAAFAAAAAAAAAABAP7/EAAAAAAAAAANAP7/EAAAAAAAAAA=")
@@ -209,6 +239,20 @@ tile_set = SubResource("TileSet_ufuy4")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAEAP//CQAAAAAAAAAHAP//AgAAAAAAAAAKAP//CQAAAAAAAAAHAP3/CgAAAAAAAAAEAAIABwAAAAAAAAAHAAMACwAAAAAAABABAAMACwAAAAAAAAAEAAQADQAAAAAAAAAPAP//AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_ufuy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap/furniture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(287.5, 273.5)
+shape = SubResource("RectangleShape2D_t2ahd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(464, 234)
+shape = SubResource("CircleShape2D_es0ly")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(105, 235)
+shape = SubResource("CircleShape2D_f87ku")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="TileMap"]
 position = Vector2(61, 268)

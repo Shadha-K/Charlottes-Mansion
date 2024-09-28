@@ -1,3 +1,5 @@
+CollisionShape2D
+StaticBody2D
 TileMap
 CharacterBody2D
 CanvasModulate
