@@ -227,7 +227,7 @@ position = Vector2(1064.5, 131.5)
 shape = SubResource("RectangleShape2D_1odbd")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
-position = Vector2(506, -126)
+position = Vector2(541, -134)
 shape = SubResource("RectangleShape2D_dwycc")
 
 [node name="rugs n stuff" type="TileMapLayer" parent="TileMap"]
@@ -269,8 +269,14 @@ position = Vector2(742.375, -52.6875)
 shape = SubResource("RectangleShape2D_j4xgq")
 debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/CharacterBody2D"]
-position = Vector2(737, -60)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TileMap/CharacterBody2D"]
+position = Vector2(739, -68)
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="TileMap"]
+position = Vector2(799, 197)
 zoom = Vector2(2, 2)
+limit_left = -1100
+limit_right = 1100
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
