@@ -1,26 +1,26 @@
 [gd_scene load_steps=38 format=3 uid="uid://dmutbj8w7is3v"]
 
-[ext_resource type="Texture2D" uid="uid://q6wmgpx8qeq5" path="res://assets/tiles/tilemap.png" id="1_wdwvk"]
-[ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_4gg5v"]
-[ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_cpbx5"]
-[ext_resource type="Texture2D" uid="uid://b1r0b4ro8jy4v" path="res://assets/living_room/coffee_table2.png" id="4_xu41n"]
-[ext_resource type="Texture2D" uid="uid://cv7hchkit0ov1" path="res://assets/living_room/zebra_rug.png" id="5_iero7"]
-[ext_resource type="Texture2D" uid="uid://bx47i6ucdot4h" path="res://assets/living_room/larger_zebra_rug.png" id="6_tjp8b"]
-[ext_resource type="Texture2D" uid="uid://i4latwdvbjsj" path="res://assets/living_room/window.png" id="7_640b1"]
-[ext_resource type="Texture2D" uid="uid://chkyr1l4wsogc" path="res://assets/living_room/window_squashed.png" id="8_2ik4h"]
-[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="9_5of42"]
-[ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_tvuuu"]
-[ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="11_sjcny"]
-[ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_1b62g"]
-[ext_resource type="Texture2D" uid="uid://dkwr0de10ld6e" path="res://assets/living_room/grandfather_clock.png" id="13_5v0ca"]
-[ext_resource type="Texture2D" uid="uid://bixejd6bjojx7" path="res://assets/living_room/card_rug.png" id="14_d3awu"]
-[ext_resource type="Texture2D" uid="uid://bg4b3jkknk8bf" path="res://assets/living_room/coffee_table.png" id="15_btp5k"]
-[ext_resource type="Texture2D" uid="uid://cfl32vjmwcsal" path="res://assets/living_room/armchair.png" id="16_tb5ws"]
-[ext_resource type="Texture2D" uid="uid://ds7sma7vr3fjx" path="res://assets/living_room/couch.png" id="17_pw631"]
-[ext_resource type="Texture2D" uid="uid://c0v0qet4sd2n" path="res://assets/living_room/bookshelf.png" id="18_angtl"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_oo3dq"]
+[ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_snges"]
+[ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_ppji6"]
+[ext_resource type="Texture2D" uid="uid://b1r0b4ro8jy4v" path="res://assets/living_room/coffee_table2.png" id="4_7dx2c"]
+[ext_resource type="Texture2D" uid="uid://cv7hchkit0ov1" path="res://assets/living_room/zebra_rug.png" id="5_k6thb"]
+[ext_resource type="Texture2D" uid="uid://bx47i6ucdot4h" path="res://assets/living_room/larger_zebra_rug.png" id="6_drycw"]
+[ext_resource type="Texture2D" uid="uid://i4latwdvbjsj" path="res://assets/living_room/window.png" id="7_34fe4"]
+[ext_resource type="Texture2D" uid="uid://chkyr1l4wsogc" path="res://assets/living_room/window_squashed.png" id="8_i3cq6"]
+[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="9_s0xud"]
+[ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_flm4q"]
+[ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="11_3e74k"]
+[ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_ucorl"]
+[ext_resource type="Texture2D" uid="uid://dkwr0de10ld6e" path="res://assets/living_room/grandfather_clock.png" id="13_k5m6h"]
+[ext_resource type="Texture2D" uid="uid://bixejd6bjojx7" path="res://assets/living_room/card_rug.png" id="14_mnyaa"]
+[ext_resource type="Texture2D" uid="uid://bg4b3jkknk8bf" path="res://assets/living_room/coffee_table.png" id="15_3dwx0"]
+[ext_resource type="Texture2D" uid="uid://cfl32vjmwcsal" path="res://assets/living_room/armchair.png" id="16_5m61f"]
+[ext_resource type="Texture2D" uid="uid://ds7sma7vr3fjx" path="res://assets/living_room/couch.png" id="17_tl18k"]
+[ext_resource type="Texture2D" uid="uid://c0v0qet4sd2n" path="res://assets/living_room/bookshelf.png" id="18_w6lhj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g045i"]
-texture = ExtResource("1_wdwvk")
+texture = ExtResource("1_oo3dq")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:1/0 = 0
@@ -54,102 +54,102 @@ texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87644"]
-texture = ExtResource("2_4gg5v")
+texture = ExtResource("2_snges")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vbj4"]
-texture = ExtResource("3_cpbx5")
+texture = ExtResource("3_ppji6")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_177cl"]
-texture = ExtResource("4_xu41n")
+texture = ExtResource("4_7dx2c")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(4, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25n2n"]
-texture = ExtResource("5_iero7")
+texture = ExtResource("5_k6thb")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nag0o"]
-texture = ExtResource("6_tjp8b")
+texture = ExtResource("6_drycw")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(6, 3)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1uwm"]
-texture = ExtResource("7_640b1")
+texture = ExtResource("7_34fe4")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2mcd"]
-texture = ExtResource("8_2ik4h")
+texture = ExtResource("8_i3cq6")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 1)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nungs"]
-texture = ExtResource("9_5of42")
+texture = ExtResource("9_s0xud")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5dyk"]
-texture = ExtResource("10_tvuuu")
+texture = ExtResource("10_flm4q")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s0gy"]
-texture = ExtResource("11_sjcny")
+texture = ExtResource("11_3e74k")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ggoj"]
-texture = ExtResource("12_1b62g")
+texture = ExtResource("12_ucorl")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 1)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4str8"]
-texture = ExtResource("13_5v0ca")
+texture = ExtResource("13_k5m6h")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 3)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wikpu"]
-texture = ExtResource("14_d3awu")
+texture = ExtResource("14_mnyaa")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udi7y"]
-texture = ExtResource("15_btp5k")
+texture = ExtResource("15_3dwx0")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkmt4"]
-texture = ExtResource("16_tb5ws")
+texture = ExtResource("16_5m61f")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rra84"]
-texture = ExtResource("17_pw631")
+texture = ExtResource("17_tl18k")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(4, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl27d"]
-texture = ExtResource("18_angtl")
+texture = ExtResource("18_w6lhj")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0

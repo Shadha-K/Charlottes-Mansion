@@ -1,2 +1,13 @@
-res://basement.tscn
+res://living_room.tscn
+res://bedroom.tscn
 res://kitchen.tscn
+res://basement.tscn
+res://alex.tscn
+res://node_2d.tscn
+res://scenes/alex.tscn
+res://scenes/living_room.tscn
+res://scenes/bedroom.tscn
+res://scenes/kitchen.tscn
+res://scenes/basement.tscn
+res://scenes/node_2d.tscn
+res://scripts/alex.gd
