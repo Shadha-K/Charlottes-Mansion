@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dmqq1kqa4y8eg"]
 
-[ext_resource type="Texture2D" uid="uid://q6wmgpx8qeq5" path="res://assets/tiles/tilemap.png" id="1_1csho"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cs4a8dqnblhwb" path="res://assets/bedroom/door_squashed.png" id="2_4yvo7"]
 [ext_resource type="Texture2D" uid="uid://dlqqnq7rbo40c" path="res://assets/bedroom/bed.png" id="3_jwg7i"]
 [ext_resource type="Texture2D" uid="uid://diykt43ahytqm" path="res://assets/bedroom/nightstand_lamp.png" id="3_lnqhe"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://dmutbj8w7is3v"]
 
-[ext_resource type="Texture2D" uid="uid://q6wmgpx8qeq5" path="res://assets/tiles/tilemap.png" id="1_wdwvk"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_wdwvk"]
 [ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_4gg5v"]
 [ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_cpbx5"]
 [ext_resource type="Texture2D" uid="uid://b1r0b4ro8jy4v" path="res://assets/living_room/coffee_table2.png" id="4_xu41n"]
