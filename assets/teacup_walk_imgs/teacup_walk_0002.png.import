@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8lik6pf16mxa"
-path="res://.godot/imported/teacup_walk_0002.png-e5ca6052639bf47cab5ae4726a1b26c2.ctex"
+path="res://.godot/imported/teacup_walk_0002.png-88a543d17022d42ebc8b8da4c391c872.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://teacup_walk_imgs/teacup_walk_0002.png"
-dest_files=["res://.godot/imported/teacup_walk_0002.png-e5ca6052639bf47cab5ae4726a1b26c2.ctex"]
+source_file="res://assets/teacup_walk_imgs/teacup_walk_0002.png"
+dest_files=["res://.godot/imported/teacup_walk_0002.png-88a543d17022d42ebc8b8da4c391c872.ctex"]
 
 [params]
 
