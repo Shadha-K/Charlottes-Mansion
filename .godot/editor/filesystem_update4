@@ -1,5 +1,13 @@
+res://node_2d.tscn
 res://living_room.tscn
 res://bedroom.tscn
 res://kitchen.tscn
 res://basement.tscn
-res://node_2d.tscn
+res://teacup.tscn
+res://scenes/living_room.tscn
+res://scenes/bedroom.tscn
+res://scenes/kitchen.tscn
+res://scenes/basement.tscn
+res://scenes/teacup.tscn
+res://scenes/teacup_fight.tscn
+res://scripts/teacup.gd
