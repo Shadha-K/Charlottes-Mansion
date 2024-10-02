@@ -1,6 +1,3 @@
-Button
-VBoxContainer
-MarginContainer
 CollisionShape2D
 RemoteTransform2D
 Camera2D

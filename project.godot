@@ -11,16 +11,13 @@ config_version=5
 [application]
 
 config/name="Alice_in_Underland"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://node_2d.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
 window/size/mode=2
-window/size/initial_position_type=0
 
 [rendering]
 
