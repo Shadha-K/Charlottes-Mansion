@@ -1,15 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727734749
-basement.tscn::PackedScene::1883230173573398794::1727727414::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png
-bedroom.tscn::PackedScene::8035576671316546338::1727727413::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://cs4a8dqnblhwb::::res://assets/bedroom/door_squashed.png<>uid://dlqqnq7rbo40c::::res://assets/bedroom/bed.png<>uid://diykt43ahytqm::::res://assets/bedroom/nightstand_lamp.png<>uid://dlxhu1emcwb3q::::res://assets/bedroom/bedroom_rug.png<>uid://canyjh6x6mu4q::::res://assets/bedroom/bed_curtains.png<>uid://bhyi7dpqvg03m::::res://assets/bedroom/window_bedroom.png<>uid://ib1ksjgdu4e1::::res://assets/bedroom/vanity_mirror.png<>uid://dgsujhq28bycd::::res://assets/bedroom/nightstand.png<>uid://dp6rpk8byfyeb::::res://assets/bedroom/wardrobe.png<>uid://dywwq6mg6nroo::::res://assets/bedroom/dresser_side_view.png
+::res://::1727806307
 character_body_2d.gd::GDScript::-1::1727732090::0::1::::<>CharacterBody2D<>::
 icon.svg::CompressedTexture2D::1838250799759998341::1727726867::1727727404::1::::<><>::
-kitchen.tscn::PackedScene::414896806335309884::1727727413::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://cu3bfpit7msni::::res://assets/kitchen/dining_table.png<>uid://cp2du5jdgbc5k::::res://assets/kitchen/window_dining_room.png<>uid://bdiqtgeff2cja::::res://assets/kitchen/oven.png<>uid://wwc6ymy64x5u::::res://assets/kitchen/kitchen_counters.png<>uid://dq6m8vbhqd5h1::::res://assets/kitchen/dining_chair_back.png<>uid://b0axtywtl3wk0::::res://assets/kitchen/dining_room_rug.png<>uid://cxao27jmr8ut::::res://assets/kitchen/icebox.png<>uid://g1ughr3gbc50::::res://assets/kitchen/kitchen sink.png<>uid://dcdgef7iiqxh8::::res://assets/kitchen/kitchen_island.png<>uid://bwj5cxn4vwnpa::::res://assets/kitchen/kitchen_window.png<>uid://dfvjh8dj8fo6s::::res://assets/kitchen/kitchen_rug.png<>uid://c1iqsc8ak8fpd::::res://assets/kitchen/dining_chair_front.png
-living_room.tscn::PackedScene::8043971663204730325::1727734749::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://k0clio7qm0gn::::res://assets/living_room/painting_cat.png<>uid://cnwtuemdygpl2::::res://assets/living_room/armchair2.png<>uid://b1r0b4ro8jy4v::::res://assets/living_room/coffee_table2.png<>uid://cv7hchkit0ov1::::res://assets/living_room/zebra_rug.png<>uid://bx47i6ucdot4h::::res://assets/living_room/larger_zebra_rug.png<>uid://i4latwdvbjsj::::res://assets/living_room/window.png<>uid://chkyr1l4wsogc::::res://assets/living_room/window_squashed.png<>uid://dwbixav1nuasm::::res://assets/living_room/door.png<>uid://cpthia8pqei0s::::res://assets/living_room/door_squashed.png<>uid://b8o4b6vl837qm::::res://assets/living_room/fireplace.png<>uid://chs0mrg3ekckj::::res://assets/living_room/fireplace_tile.png<>uid://dkwr0de10ld6e::::res://assets/living_room/grandfather_clock.png<>uid://bixejd6bjojx7::::res://assets/living_room/card_rug.png<>uid://bg4b3jkknk8bf::::res://assets/living_room/coffee_table.png<>uid://cfl32vjmwcsal::::res://assets/living_room/armchair.png<>uid://ds7sma7vr3fjx::::res://assets/living_room/couch.png<>uid://c0v0qet4sd2n::::res://assets/living_room/bookshelf.png
-node_2d.tscn::PackedScene::6744929109970151055::1727734749::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://b8o4b6vl837qm::::res://assets/living_room/fireplace.png<>uid://k0clio7qm0gn::::res://assets/living_room/painting_cat.png<>uid://dkwr0de10ld6e::::res://assets/living_room/grandfather_clock.png<>uid://cnwtuemdygpl2::::res://assets/living_room/armchair2.png<>uid://b1r0b4ro8jy4v::::res://assets/living_room/coffee_table2.png<>uid://bixejd6bjojx7::::res://assets/living_room/card_rug.png<>uid://bg4b3jkknk8bf::::res://assets/living_room/coffee_table.png<>uid://cv7hchkit0ov1::::res://assets/living_room/zebra_rug.png<>uid://bx47i6ucdot4h::::res://assets/living_room/larger_zebra_rug.png<>uid://cfl32vjmwcsal::::res://assets/living_room/armchair.png<>uid://ds7sma7vr3fjx::::res://assets/living_room/couch.png<>uid://i4latwdvbjsj::::res://assets/living_room/window.png<>uid://chkyr1l4wsogc::::res://assets/living_room/window_squashed.png<>uid://c0v0qet4sd2n::::res://assets/living_room/bookshelf.png<>uid://dwbixav1nuasm::::res://assets/living_room/door.png<>uid://cpthia8pqei0s::::res://assets/living_room/door_squashed.png<>uid://chs0mrg3ekckj::::res://assets/living_room/fireplace_tile.png<>uid://bh6gkj6vji6nl::::res://assets/AlexSprite/SpriteFront.png<>res://character_body_2d.gd
-menu.gd::GDScript::-1::1727733583::0::1::::<>Control<>::
-menu.tscn::PackedScene::4228832272176957847::1727734749::0::1::::<><>::res://menu.gd
-::res://assets/::1727736770
+node_2d.tscn::PackedScene::6744929109970151055::1727737059::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://b8o4b6vl837qm::::res://assets/living_room/fireplace.png<>uid://k0clio7qm0gn::::res://assets/living_room/painting_cat.png<>uid://dkwr0de10ld6e::::res://assets/living_room/grandfather_clock.png<>uid://cnwtuemdygpl2::::res://assets/living_room/armchair2.png<>uid://b1r0b4ro8jy4v::::res://assets/living_room/coffee_table2.png<>uid://bixejd6bjojx7::::res://assets/living_room/card_rug.png<>uid://bg4b3jkknk8bf::::res://assets/living_room/coffee_table.png<>uid://cv7hchkit0ov1::::res://assets/living_room/zebra_rug.png<>uid://bx47i6ucdot4h::::res://assets/living_room/larger_zebra_rug.png<>uid://cfl32vjmwcsal::::res://assets/living_room/armchair.png<>uid://ds7sma7vr3fjx::::res://assets/living_room/couch.png<>uid://i4latwdvbjsj::::res://assets/living_room/window.png<>uid://chkyr1l4wsogc::::res://assets/living_room/window_squashed.png<>uid://c0v0qet4sd2n::::res://assets/living_room/bookshelf.png<>uid://dwbixav1nuasm::::res://assets/living_room/door.png<>uid://cpthia8pqei0s::::res://assets/living_room/door_squashed.png<>uid://chs0mrg3ekckj::::res://assets/living_room/fireplace_tile.png<>uid://bh6gkj6vji6nl::::res://assets/AlexSprite/SpriteFront.png<>res://character_body_2d.gd
+menu.gd::GDScript::-1::1727806058::0::1::::<>Control<>::
+menu.tscn::PackedScene::4228832272176957847::1727737059::0::1::::<><>::res://menu.gd<>uid://bdajxpmfwlhpe::::res://assets/main menu/background.webp
+::res://assets/::1727806058
 ::res://assets/AlexSprite/::1727727405
 SpriteBack.png::CompressedTexture2D::6611894631778549811::1727726866::1727727404::1::::<><>::
 SpriteFront.png::CompressedTexture2D::2942120980996438385::1727726866::1727727404::1::::<><>::
@@ -67,19 +63,36 @@ painting_cat.png::CompressedTexture2D::753639401240183709::1727726867::172772740
 window.png::CompressedTexture2D::622046622986193225::1727726867::1727727404::1::::<><>::
 window_squashed.png::CompressedTexture2D::5286296000663507798::1727726867::1727727404::1::::<><>::
 zebra_rug.png::CompressedTexture2D::6313296145953338516::1727726867::1727727404::1::::<><>::
-::res://assets/main menu/::1727736779
-background.webp::CompressedTexture2D::2597575547446831606::1727736780::1727736781::1::::<><>::
-::res://assets/teacup_attack_imgs/::1727727404
-teacup_attack_0000.png::CompressedTexture2D::6248036889296184128::1727726884::1727727404::1::::<><>::
-teacup_attack_0002.png::CompressedTexture2D::5990526408488203338::1727726884::1727727404::1::::<><>::
-teacup_attack_0003.png::CompressedTexture2D::7432316630401181587::1727726884::1727727404::1::::<><>::
-teacup_attack_0004.png::CompressedTexture2D::2612042872488807359::1727726884::1727727404::1::::<><>::
-teacup_attack_0005.png::CompressedTexture2D::4496485999473870544::1727726884::1727727404::1::::<><>::
-::res://assets/teacup_walk_imgs/::1727727404
-teacup_walk_0000.png::CompressedTexture2D::365077638599691679::1727726884::1727727404::1::::<><>::
-teacup_walk_0001.png::CompressedTexture2D::5644409016418335628::1727726884::1727727404::1::::<><>::
-teacup_walk_0002.png::CompressedTexture2D::4725865924583083574::1727726884::1727727404::1::::<><>::
-teacup_walk_0003.png::CompressedTexture2D::8147013213775245632::1727726884::1727727404::1::::<><>::
+::res://assets/main menu/::1727806058
+background.webp::CompressedTexture2D::2597575547446831606::1727806058::1727806599::1::::<><>::
+::res://assets/teacup_attack_imgs/::1727806307
+::res://assets/teacup_attack_imgs/teacup_attackFist/::1727806307
+teacup_attackFist_0000.png::CompressedTexture2D::7053977504834029936::1727806307::1727806599::1::::<><>::
+teacup_attackFist_0001.png::CompressedTexture2D::1116388480369146893::1727806307::1727806599::1::::<><>::
+teacup_attackFist_0003.png::CompressedTexture2D::2669153735471558527::1727806307::1727806599::1::::<><>::
+teacup_attackFist_0005.png::CompressedTexture2D::8301408229207303792::1727806307::1727806599::1::::<><>::
+teacup_attackFist_0007.png::CompressedTexture2D::6025230715059136114::1727806307::1727806599::1::::<><>::
+::res://assets/teacup_attack_imgs/withoutFist/::1727806307
+teacup_attack_0000.png::CompressedTexture2D::5408161630151133282::1727806307::1727806599::1::::<><>::
+teacup_attack_0002.png::CompressedTexture2D::4290786516690315187::1727806307::1727806599::1::::<><>::
+teacup_attack_0003.png::CompressedTexture2D::5992375701342892431::1727806307::1727806599::1::::<><>::
+teacup_attack_0004.png::CompressedTexture2D::723050169854365543::1727806307::1727806599::1::::<><>::
+teacup_attack_0005.png::CompressedTexture2D::7833801511646575855::1727806307::1727806599::1::::<><>::
+::res://assets/teacup_walk_imgs/::1727806307
+teacup_walk_0000.png::CompressedTexture2D::365077638599691679::1727806307::1727806599::1::::<><>::
+teacup_walk_0001.png::CompressedTexture2D::5644409016418335628::1727806307::1727806599::1::::<><>::
+teacup_walk_0002.png::CompressedTexture2D::4725865924583083574::1727806307::1727806599::1::::<><>::
+teacup_walk_0003.png::CompressedTexture2D::8147013213775245632::1727806307::1727806599::1::::<><>::
 ::res://assets/tiles/::1727727405
 tilemap.png::CompressedTexture2D::969766650708294211::1727726867::1727727405::1::::<><>::
 updated_tile_map.png::CompressedTexture2D::759466267007128259::1727726867::1727727405::1::::<><>::
+::res://scenes/::1727806307
+basement.tscn::PackedScene::1883230173573398794::1727806307::0::1::::<><>::uid://n206d2htvk2n::::res://assets/tiles/tilemap.png
+bedroom.tscn::PackedScene::8035576671316546338::1727806307::0::1::::<><>::
+kitchen.tscn::PackedScene::414896806335309884::1727806307::0::1::::<><>::uid://cu3bfpit7msni::::res://assets/kitchen/dining_table.png<>uid://cp2du5jdgbc5k::::res://assets/kitchen/window_dining_room.png<>uid://dq6m8vbhqd5h1::::res://assets/kitchen/dining_chair_back.png<>uid://b0axtywtl3wk0::::res://assets/kitchen/dining_room_rug.png<>uid://n206d2htvk2n::::res://assets/tiles/tilemap.png<>uid://bdiqtgeff2cja::::res://assets/kitchen/oven.png<>uid://wwc6ymy64x5u::::res://assets/kitchen/kitchen_counters.png<>uid://cxao27jmr8ut::::res://assets/kitchen/icebox.png<>uid://g1ughr3gbc50::::res://assets/kitchen/kitchen sink.png<>uid://dcdgef7iiqxh8::::res://assets/kitchen/kitchen_island.png<>uid://c1iqsc8ak8fpd::::res://assets/kitchen/dining_chair_front.png<>uid://bwj5cxn4vwnpa::::res://assets/kitchen/kitchen_window.png<>uid://dfvjh8dj8fo6s::::res://assets/kitchen/kitchen_rug.png
+living_room.tscn::PackedScene::8043971663204730325::1727806307::0::1::::<><>::
+teacup.tscn::PackedScene::2954650011379535562::1727806307::0::1::::<><>::res://scripts/teacup.gd<>uid://fg31mld2s7ux::::res://assets/teacup_walk_imgs/teacup_walk_0000.png<>uid://cmoguef0xei1i::::res://assets/teacup_walk_imgs/teacup_walk_0001.png<>uid://b8lik6pf16mxa::::res://assets/teacup_walk_imgs/teacup_walk_0002.png<>uid://docqd8v3ekl3m::::res://assets/teacup_walk_imgs/teacup_walk_0003.png
+teacup_fight.tscn::PackedScene::6792753168856699629::1727806307::0::1::::<><>::uid://cvauiwpnvgecm::::res://assets/teacup_attack_imgs/teacup_attack_0000.png<>uid://crl4dhq6aa187::::res://assets/teacup_attack_imgs/teacup_attack_0002.png<>uid://dd5jf0np0ksvb::::res://assets/teacup_attack_imgs/teacup_attack_0003.png<>uid://bdhj717e5q1dr::::res://assets/teacup_attack_imgs/teacup_attack_0004.png<>uid://b5cep5nklauj5::::res://assets/teacup_attack_imgs/teacup_attack_0005.png
+::res://scripts/::1727806307
+character_body_2d.gd::GDScript::-1::1727806307::0::1::::<>CharacterBody2D<>::
+teacup.gd::GDScript::-1::1727806307::0::1::::<>Node2D<>::

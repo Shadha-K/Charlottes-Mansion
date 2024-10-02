@@ -1,45 +1,45 @@
 [gd_scene load_steps=28 format=3 uid="uid://f58j38vw1cbc"]
 
-[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
-[ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_yfhj1"]
-[ext_resource type="Texture2D" uid="uid://cp2du5jdgbc5k" path="res://assets/kitchen/window_dining_room.png" id="2_1cfyt"]
-[ext_resource type="Texture2D" uid="uid://bdiqtgeff2cja" path="res://assets/kitchen/oven.png" id="2_m4736"]
-[ext_resource type="Texture2D" uid="uid://wwc6ymy64x5u" path="res://assets/kitchen/kitchen_counters.png" id="3_65tfn"]
-[ext_resource type="Texture2D" uid="uid://dq6m8vbhqd5h1" path="res://assets/kitchen/dining_chair_back.png" id="3_lyacm"]
-[ext_resource type="Texture2D" uid="uid://b0axtywtl3wk0" path="res://assets/kitchen/dining_room_rug.png" id="4_nqg5k"]
-[ext_resource type="Texture2D" uid="uid://cxao27jmr8ut" path="res://assets/kitchen/icebox.png" id="4_vyu6o"]
-[ext_resource type="Texture2D" uid="uid://g1ughr3gbc50" path="res://assets/kitchen/kitchen sink.png" id="5_lp66t"]
-[ext_resource type="Texture2D" uid="uid://dcdgef7iiqxh8" path="res://assets/kitchen/kitchen_island.png" id="6_w00fm"]
-[ext_resource type="Texture2D" uid="uid://bwj5cxn4vwnpa" path="res://assets/kitchen/kitchen_window.png" id="7_6eock"]
-[ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="8_tlx02"]
-[ext_resource type="Texture2D" uid="uid://c1iqsc8ak8fpd" path="res://assets/kitchen/dining_chair_front.png" id="11_8r82r"]
+[ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_6u3kv"]
+[ext_resource type="Texture2D" uid="uid://cp2du5jdgbc5k" path="res://assets/kitchen/window_dining_room.png" id="2_8ya4d"]
+[ext_resource type="Texture2D" uid="uid://dq6m8vbhqd5h1" path="res://assets/kitchen/dining_chair_back.png" id="3_120p2"]
+[ext_resource type="Texture2D" uid="uid://b0axtywtl3wk0" path="res://assets/kitchen/dining_room_rug.png" id="4_syyj0"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="5_xd0ef"]
+[ext_resource type="Texture2D" uid="uid://bdiqtgeff2cja" path="res://assets/kitchen/oven.png" id="6_wjld8"]
+[ext_resource type="Texture2D" uid="uid://wwc6ymy64x5u" path="res://assets/kitchen/kitchen_counters.png" id="7_6r1vh"]
+[ext_resource type="Texture2D" uid="uid://cxao27jmr8ut" path="res://assets/kitchen/icebox.png" id="8_ebxar"]
+[ext_resource type="Texture2D" uid="uid://g1ughr3gbc50" path="res://assets/kitchen/kitchen sink.png" id="9_m6q7f"]
+[ext_resource type="Texture2D" uid="uid://dcdgef7iiqxh8" path="res://assets/kitchen/kitchen_island.png" id="10_acvdk"]
+[ext_resource type="Texture2D" uid="uid://c1iqsc8ak8fpd" path="res://assets/kitchen/dining_chair_front.png" id="11_jsbsn"]
+[ext_resource type="Texture2D" uid="uid://bwj5cxn4vwnpa" path="res://assets/kitchen/kitchen_window.png" id="12_a84ef"]
+[ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="13_3k3fq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do0wr"]
-texture = ExtResource("1_yfhj1")
+texture = ExtResource("1_6u3kv")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl4io"]
-texture = ExtResource("2_1cfyt")
+texture = ExtResource("2_8ya4d")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bm6qu"]
-texture = ExtResource("3_lyacm")
+texture = ExtResource("3_120p2")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wha80"]
-texture = ExtResource("4_nqg5k")
+texture = ExtResource("4_syyj0")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(4, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj8ok"]
-texture = ExtResource("1_cdw3g")
+texture = ExtResource("5_xd0ef")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -62,49 +62,49 @@ texture_region_size = Vector2i(64, 64)
 1:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aabje"]
-texture = ExtResource("2_m4736")
+texture = ExtResource("6_wjld8")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ligmi"]
-texture = ExtResource("3_65tfn")
+texture = ExtResource("7_6r1vh")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63kjf"]
-texture = ExtResource("4_vyu6o")
+texture = ExtResource("8_ebxar")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ky86"]
-texture = ExtResource("5_lp66t")
+texture = ExtResource("9_m6q7f")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfd8p"]
-texture = ExtResource("6_w00fm")
+texture = ExtResource("10_acvdk")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ax32t"]
-texture = ExtResource("11_8r82r")
+texture = ExtResource("11_jsbsn")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17bue"]
-texture = ExtResource("7_6eock")
+texture = ExtResource("12_a84ef")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31lsr"]
-texture = ExtResource("8_tlx02")
+texture = ExtResource("13_3k3fq")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(2, 1)
 0:0/0 = 0

@@ -6,6 +6,12 @@ RemoteTransform2D
 Camera2D
 StaticBody2D
 TileMap
+CollisionShape2D
+AnimatedSprite2D
 CharacterBody2D
+RemoteTransform2D
+Camera2D
+StaticBody2D
+TileMap
 CanvasModulate
 TileMapLayer
