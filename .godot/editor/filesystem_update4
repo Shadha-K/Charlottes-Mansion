@@ -6,10 +6,3 @@ res://node_2d.tscn
 res://character_body_2d.gd
 res://menu.gd
 res://menu.tscn
-res://scenes/living_room.tscn
-res://scenes/bedroom.tscn
-res://scenes/kitchen.tscn
-res://scenes/basement.tscn
-res://node_2d.tscn
-res://scenes/teacup.tscn
-res://scenes/teacup_fight.tscn
