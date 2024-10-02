@@ -1,0 +1,57 @@
+[gd_scene load_steps=12 format=3 uid="uid://c31pwgalcb0pd"]
+
+[ext_resource type="Texture2D" uid="uid://bw5kr0g1v172" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0000.png" id="1_6gd2s"]
+[ext_resource type="Texture2D" uid="uid://b5giy0maevqgv" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0002.png" id="2_5yy80"]
+[ext_resource type="Texture2D" uid="uid://2q5fp63e1hcq" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0003.png" id="3_pgdxg"]
+[ext_resource type="Texture2D" uid="uid://biaqix43kenwb" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0004.png" id="4_2qhoo"]
+[ext_resource type="Texture2D" uid="uid://vcddvd2g8p27" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0005.png" id="5_qtcef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cqwh"]
+atlas = ExtResource("1_6gd2s")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg4uc"]
+atlas = ExtResource("2_5yy80")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8lbj"]
+atlas = ExtResource("3_pgdxg")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nca4h"]
+atlas = ExtResource("4_2qhoo")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbb76"]
+atlas = ExtResource("5_qtcef")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1mve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cqwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg4uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8lbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nca4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbb76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="teacup_fight" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n1mve")
+autoplay = "default"
+frame_progress = 0.62343
