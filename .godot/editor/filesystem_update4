@@ -1,11 +1,4 @@
-res://living_room.tscn
-res://bedroom.tscn
-res://kitchen.tscn
-res://basement.tscn
-res://node_2d.tscn
-<<<<<<< Updated upstream
-=======
-res://scenes/bedroom.tscn
 res://main menu/main_menu.tscn
-res://main menu/main_menu.gd
->>>>>>> Stashed changes
+res://node_2d.tscn
+res://intro.gd
+res://logo.tscn

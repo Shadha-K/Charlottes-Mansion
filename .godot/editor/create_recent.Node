@@ -1,3 +1,8 @@
+AnimationPlayer
+ColorRect
+Sprite2D
+Node2D
+CharacterBody2D
 Button
 Control
 VBoxContainer
@@ -7,12 +12,3 @@ MarginContainer
 TextureRect
 CollisionShape2D
 RemoteTransform2D
-Camera2D
-StaticBody2D
-TileMap
-<<<<<<< Updated upstream
-CharacterBody2D
-CanvasModulate
-TileMapLayer
-=======
->>>>>>> Stashed changes
