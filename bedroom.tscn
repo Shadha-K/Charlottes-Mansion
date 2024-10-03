@@ -1,4 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dmqq1kqa4y8eg"]
+<<<<<<< Updated upstream
+[gd_scene load_steps=24 format=3 uid="uid://ckkf8i2yeo6b5"]
+=======
+[gd_scene load_steps=24 format=3 uid="uid://mppu4lotmxks"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cs4a8dqnblhwb" path="res://assets/bedroom/door_squashed.png" id="2_4yvo7"]
