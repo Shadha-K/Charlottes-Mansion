@@ -1,0 +1,118 @@
+[gd_scene load_steps=21 format=3 uid="uid://ca0rv041w830c"]
+
+[ext_resource type="Texture2D" uid="uid://c6j41v5soouto" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
+[ext_resource type="Texture2D" uid="uid://uimivccdhten" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
+[ext_resource type="Texture2D" uid="uid://cw5tbdvbgmppi" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
+[ext_resource type="Texture2D" uid="uid://dgy4bgyasjs0n" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
+[ext_resource type="Texture2D" uid="uid://dm8jrhc5dtoas" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0000.png" id="5_2if8s"]
+[ext_resource type="Texture2D" uid="uid://cdyv444gba8uk" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0001.png" id="6_ipvo1"]
+[ext_resource type="Texture2D" uid="uid://b8863aafh2go1" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0003.png" id="7_qwmvi"]
+[ext_resource type="Texture2D" uid="uid://bt5dg7s221gkf" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0005.png" id="8_ljx6d"]
+[ext_resource type="Texture2D" uid="uid://bglypsrf05je0" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0007.png" id="9_m0tlk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
+atlas = ExtResource("5_2if8s")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6bia"]
+atlas = ExtResource("6_ipvo1")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11vxi"]
+atlas = ExtResource("7_qwmvi")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5ry5"]
+atlas = ExtResource("8_ljx6d")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46034"]
+atlas = ExtResource("9_m0tlk")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_878he"]
+atlas = ExtResource("1_2wj5p")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u61rh"]
+atlas = ExtResource("2_rygus")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ssuy"]
+atlas = ExtResource("3_okqeo")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4al6q"]
+atlas = ExtResource("4_xodwf")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2wvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6bia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11vxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5ry5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46034")
+}],
+"loop": false,
+"name": &"punch",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_878he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u61rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4al6q")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j0gj"]
+size = Vector2(67, 84)
+
+[node name="Teacup" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, -12)
+sprite_frames = SubResource("SpriteFrames_b0y1p")
+animation = &"punch"
+autoplay = "walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-208, 22)
+shape = SubResource("RectangleShape2D_4j0gj")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-6, 7)
+target_position = Vector2(58, -1)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-7, 8)
+target_position = Vector2(-61, 0)
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+position = Vector2(-5, 9)
+target_position = Vector2(-1, -46)
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(-8, 8)
+target_position = Vector2(0, 63)
