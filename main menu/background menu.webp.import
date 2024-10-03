@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://docqd8v3ekl3m"
-path="res://.godot/imported/teacup_walk_0003.png-c9b8655ce04a85b56d2c8535b136240a.ctex"
+uid="uid://b775u61dvv5no"
+path="res://.godot/imported/background menu.webp-37873ab61c36e354319bff47470bc7f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/teacup_walk_imgs/teacup_walk_0003.png"
-dest_files=["res://.godot/imported/teacup_walk_0003.png-c9b8655ce04a85b56d2c8535b136240a.ctex"]
+source_file="res://main menu/background menu.webp"
+dest_files=["res://.godot/imported/background menu.webp-37873ab61c36e354319bff47470bc7f7.ctex"]
 
 [params]
 

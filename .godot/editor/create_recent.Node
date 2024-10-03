@@ -1,9 +1,18 @@
+Button
+Control
+VBoxContainer
+Label
+HBoxContainer
+MarginContainer
+TextureRect
 CollisionShape2D
-AnimatedSprite2D
-CharacterBody2D
 RemoteTransform2D
 Camera2D
 StaticBody2D
 TileMap
+<<<<<<< Updated upstream
+CharacterBody2D
 CanvasModulate
 TileMapLayer
+=======
+>>>>>>> Stashed changes

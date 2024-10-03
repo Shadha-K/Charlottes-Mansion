@@ -1,7 +1,11 @@
-res://scenes/living_room.tscn
-res://scenes/bedroom.tscn
-res://scenes/kitchen.tscn
-res://scenes/basement.tscn
+res://living_room.tscn
+res://bedroom.tscn
+res://kitchen.tscn
+res://basement.tscn
 res://node_2d.tscn
-res://scenes/teacup.tscn
-res://scenes/teacup_fight.tscn
+<<<<<<< Updated upstream
+=======
+res://scenes/bedroom.tscn
+res://main menu/main_menu.tscn
+res://main menu/main_menu.gd
+>>>>>>> Stashed changes
