@@ -1,4 +1,10 @@
 res://main menu/main_menu.tscn
 res://node_2d.tscn
-res://intro.gd
 res://logo.tscn
+res://bedroom.tscn
+res://kitchen.tscn
+res://main menu/main_menu.gd
+res://main_theme.gd
+res://main_theme.tscn
+res://doorenter.gd
+res://scripts/teacup.gd
