@@ -4,18 +4,16 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 980.0
 
-@onready var sprite = $Sprite2D
+# Declare 'direction' globally
+var direction: Vector2 = Vector2.ZERO
 
-var right_texture: Texture2D
-var left_texture: Texture2D
-var top_texture: Texture2D
-var down_texture= Texture2D
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready():
-	right_texture = preload("res://assets/AlexSprite/SpriteRight.png")
-	left_texture = preload("res://assets/AlexSprite/SpriteLeft.png")
-	top_texture = preload("res://assets/AlexSprite/SpriteFront.png")
-	down_texture= preload("res://assets/AlexSprite/SpriteBack.png")
+	animation_tree.active = true
+	
+func _process(delta):
+	update_animation_parameters()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,22 +24,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	# Update the global 'direction' variable
+	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()
 	
 	# Handle sprite texture swap based on movement direction
-	if direction.x > 0:
-		# Moving right
-		sprite.texture = right_texture
-	elif direction.x < 0:
-		# Moving left
-		sprite.texture = left_texture
-	elif direction.y >0:
-		sprite.texture =top_texture
-	elif direction.y<0:
-		sprite.texture=down_texture
-	# Move the character
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
@@ -50,3 +38,23 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	move_and_slide()
+
+func update_animation_parameters():
+	# Check if the velocity is close to zero (idle state)
+	if velocity.length() < 0.1:  # Using a small threshold for idle detection
+		animation_tree["parameters/conditions/idle"] = true
+		animation_tree["parameters/conditions/is_moving"] = false
+	else:
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/is_moving"] = true
+		
+	if Input.is_action_just_pressed("swing"):
+		animation_tree["parameters/conditions/swing"] = true
+	else:
+		animation_tree["parameters/conditions/swing"] = false
+
+	if(direction != Vector2.ZERO):
+		# Use the global 'direction' variable for blend_position
+		animation_tree["parameters/idle/blend_position"] = direction
+		animation_tree["parameters/skipping/blend_position"] = direction
+		animation_tree["parameters/swing_sword/blend_position"] = direction
