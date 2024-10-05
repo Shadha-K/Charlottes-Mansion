@@ -1,9 +1,10 @@
+AnimationTree
+AnimationPlayer
 CollisionShape2D
 Label
 StaticBody2D
 Node2D
 Area2D
-AnimationPlayer
 ColorRect
 Sprite2D
 CharacterBody2D
@@ -11,4 +12,3 @@ Button
 Control
 VBoxContainer
 HBoxContainer
-MarginContainer
