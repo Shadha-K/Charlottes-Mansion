@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=93 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -18,198 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="9_wuxwf"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_d3l06"]
 [ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_3l4fy"]
-[ext_resource type="Script" path="res://doorenter.gd" id="19_6nlp7"]
+[ext_resource type="Script" path="res://door_right.gd" id="19_6nlp7"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="19_vo30p"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="21_rsck4"]
+[ext_resource type="Script" path="res://door_left.gd" id="22_d5wkv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g045i"]
-texture = ExtResource("1_isee1")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-0:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-0:7/0 = 0
-9:0/0 = 0
-8:0/0 = 0
-7:0/0 = 0
-6:0/0 = 0
-5:1/0 = 0
-4:1/0 = 0
-3:1/0 = 0
-2:1/0 = 0
-1:2/0 = 0
-1:3/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-1:1/0 = 0
-2:0/0 = 0
-4:0/0 = 0
-3:0/0 = 0
-5:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87644"]
-texture = ExtResource("2_x0oae")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vbj4"]
-texture = ExtResource("3_vjgi7")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_177cl"]
-texture = ExtResource("4_4ln4q")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(4, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25n2n"]
-texture = ExtResource("5_ppwrk")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nag0o"]
-texture = ExtResource("6_py32d")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(6, 3)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1uwm"]
-texture = ExtResource("7_ufcr2")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 3)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2mcd"]
-texture = ExtResource("8_7hv3l")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 1)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nungs"]
-texture = ExtResource("9_wuxwf")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(1, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5dyk"]
-texture = ExtResource("10_d3l06")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s0gy"]
-texture = ExtResource("2_lley6")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ggoj"]
-texture = ExtResource("12_3l4fy")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 1)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4str8"]
-texture = ExtResource("3_tesxw")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(2, 3)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wikpu"]
-texture = ExtResource("4_57yr0")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(4, 3)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udi7y"]
-texture = ExtResource("5_87k2y")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkmt4"]
-texture = ExtResource("6_ykbow")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rra84"]
-texture = ExtResource("7_3wq4w")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(4, 2)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl27d"]
-texture = ExtResource("8_ydu32")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 3)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ufuy4"]
-tile_size = Vector2i(64, 64)
-sources/1 = SubResource("TileSetAtlasSource_g045i")
-sources/2 = SubResource("TileSetAtlasSource_5s0gy")
-sources/3 = SubResource("TileSetAtlasSource_4str8")
-sources/4 = SubResource("TileSetAtlasSource_wikpu")
-sources/5 = SubResource("TileSetAtlasSource_udi7y")
-sources/6 = SubResource("TileSetAtlasSource_dkmt4")
-sources/7 = SubResource("TileSetAtlasSource_rra84")
-sources/9 = SubResource("TileSetAtlasSource_cl27d")
-sources/10 = SubResource("TileSetAtlasSource_87644")
-sources/11 = SubResource("TileSetAtlasSource_4vbj4")
-sources/13 = SubResource("TileSetAtlasSource_177cl")
-sources/14 = SubResource("TileSetAtlasSource_25n2n")
-sources/15 = SubResource("TileSetAtlasSource_nag0o")
-sources/16 = SubResource("TileSetAtlasSource_u1uwm")
-sources/17 = SubResource("TileSetAtlasSource_d2mcd")
-sources/18 = SubResource("TileSetAtlasSource_nungs")
-sources/19 = SubResource("TileSetAtlasSource_s5dyk")
-sources/20 = SubResource("TileSetAtlasSource_7ggoj")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12gf"]
-size = Vector2(1187, 37)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtj5y"]
-size = Vector2(34, 773)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1odbd"]
-size = Vector2(38, 756)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwycc"]
-size = Vector2(533, 97)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0l10"]
-size = Vector2(228, 65)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkmwg"]
-size = Vector2(269, 101)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yjtux"]
-radius = 27.313
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ahd"]
-size = Vector2(167, 37)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_es0ly"]
-radius = 20.025
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f87ku"]
-radius = 21.587
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
+size = Vector2(97.75, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4xgq"]
-size = Vector2(59, 109)
+size = Vector2(33, 59)
 
 [sub_resource type="Animation" id="Animation_loq8x"]
 length = 0.001
@@ -443,76 +261,76 @@ _data = {
 "swing_right": SubResource("Animation_rlfej")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wvgv4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rrgrg"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h2aeh"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hqh1r"]
 animation = &"idle_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5s1h6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcdgs"]
 animation = &"idle_back"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8nedo"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5cbl5"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_i0h41"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_wvgv4")
+blend_point_0/node = SubResource("AnimationNodeAnimation_rrgrg")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_h2aeh")
+blend_point_1/node = SubResource("AnimationNodeAnimation_hqh1r")
 blend_point_1/pos = Vector2(0, 1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_5s1h6")
+blend_point_2/node = SubResource("AnimationNodeAnimation_tcdgs")
 blend_point_2/pos = Vector2(0, -1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_8nedo")
+blend_point_3/node = SubResource("AnimationNodeAnimation_5cbl5")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c36sn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k7oji"]
 animation = &"skip_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wbtj"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7oduw"]
 animation = &"skip_back"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q385i"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4a2u1"]
 animation = &"skip_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7hors"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fq1xa"]
 animation = &"skip_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_jsd63"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_c36sn")
+blend_point_0/node = SubResource("AnimationNodeAnimation_k7oji")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_2wbtj")
+blend_point_1/node = SubResource("AnimationNodeAnimation_7oduw")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_q385i")
+blend_point_2/node = SubResource("AnimationNodeAnimation_4a2u1")
 blend_point_2/pos = Vector2(0, 1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_7hors")
+blend_point_3/node = SubResource("AnimationNodeAnimation_fq1xa")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1pgyq"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tjkgl"]
 animation = &"swing_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n6krw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d6dn7"]
 animation = &"swing_back"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h4t3y"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wk6ch"]
 animation = &"swing_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_baorq"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_asofl"]
 animation = &"swing_front"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vxn87"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_1pgyq")
+blend_point_0/node = SubResource("AnimationNodeAnimation_tjkgl")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_n6krw")
+blend_point_1/node = SubResource("AnimationNodeAnimation_d6dn7")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_h4t3y")
+blend_point_2/node = SubResource("AnimationNodeAnimation_wk6ch")
 blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_baorq")
+blend_point_3/node = SubResource("AnimationNodeAnimation_asofl")
 blend_point_3/pos = Vector2(0, 1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
@@ -558,8 +376,272 @@ states/swing_sword/node = SubResource("AnimationNodeBlendSpace2D_vxn87")
 states/swing_sword/position = Vector2(429, 29)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_0oub1"), "idle", "skipping", SubResource("AnimationNodeStateMachineTransition_bsdg6"), "skipping", "idle", SubResource("AnimationNodeStateMachineTransition_4ue3a"), "idle", "swing_sword", SubResource("AnimationNodeStateMachineTransition_000sf"), "swing_sword", "idle", SubResource("AnimationNodeStateMachineTransition_ul3p3"), "skipping", "swing_sword", SubResource("AnimationNodeStateMachineTransition_foyls"), "swing_sword", "skipping", SubResource("AnimationNodeStateMachineTransition_uhknf")]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g045i"]
+texture = ExtResource("1_isee1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+9:0/0 = 0
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+1:1/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87644"]
+texture = ExtResource("2_x0oae")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vbj4"]
+texture = ExtResource("3_vjgi7")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_177cl"]
+texture = ExtResource("4_4ln4q")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25n2n"]
+texture = ExtResource("5_ppwrk")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nag0o"]
+texture = ExtResource("6_py32d")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(6, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1uwm"]
+texture = ExtResource("7_ufcr2")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2mcd"]
+texture = ExtResource("8_7hv3l")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nungs"]
+texture = ExtResource("9_wuxwf")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5dyk"]
+texture = ExtResource("10_d3l06")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s0gy"]
+texture = ExtResource("2_lley6")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ggoj"]
+texture = ExtResource("12_3l4fy")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4str8"]
+texture = ExtResource("3_tesxw")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wikpu"]
+texture = ExtResource("4_57yr0")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udi7y"]
+texture = ExtResource("5_87k2y")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkmt4"]
+texture = ExtResource("6_ykbow")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rra84"]
+texture = ExtResource("7_3wq4w")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl27d"]
+texture = ExtResource("8_ydu32")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ufuy4"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_g045i")
+sources/2 = SubResource("TileSetAtlasSource_5s0gy")
+sources/3 = SubResource("TileSetAtlasSource_4str8")
+sources/4 = SubResource("TileSetAtlasSource_wikpu")
+sources/5 = SubResource("TileSetAtlasSource_udi7y")
+sources/6 = SubResource("TileSetAtlasSource_dkmt4")
+sources/7 = SubResource("TileSetAtlasSource_rra84")
+sources/9 = SubResource("TileSetAtlasSource_cl27d")
+sources/10 = SubResource("TileSetAtlasSource_87644")
+sources/11 = SubResource("TileSetAtlasSource_4vbj4")
+sources/13 = SubResource("TileSetAtlasSource_177cl")
+sources/14 = SubResource("TileSetAtlasSource_25n2n")
+sources/15 = SubResource("TileSetAtlasSource_nag0o")
+sources/16 = SubResource("TileSetAtlasSource_u1uwm")
+sources/17 = SubResource("TileSetAtlasSource_d2mcd")
+sources/18 = SubResource("TileSetAtlasSource_nungs")
+sources/19 = SubResource("TileSetAtlasSource_s5dyk")
+sources/20 = SubResource("TileSetAtlasSource_7ggoj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12gf"]
+size = Vector2(1187, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtj5y"]
+size = Vector2(34, 773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1odbd"]
+size = Vector2(38, 756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwycc"]
+size = Vector2(533, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0l10"]
+size = Vector2(228, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkmwg"]
+size = Vector2(269, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ahd"]
+size = Vector2(213.5, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2re73"]
+size = Vector2(202.5, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70f2j"]
+size = Vector2(62.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx7my"]
+size = Vector2(53.5, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrxmr"]
+size = Vector2(20.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umhrj"]
+size = Vector2(20, 36)
+
 [node name="living_room" type="Node2D"]
 position = Vector2(61, 268)
+
+[node name="door_right" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(897, -172)
+script = ExtResource("19_6nlp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_right"]
+position = Vector2(56.875, 0.5)
+shape = SubResource("RectangleShape2D_pu5bb")
+
+[node name="Label" type="Label" parent="door_right"]
+z_index = 2
+offset_left = -91.0
+offset_top = 47.0
+offset_right = 64.0
+offset_bottom = 107.0
+text = "Press E to 
+go to kitchen"
+horizontal_alignment = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
+disable_mode = 1
+script = ExtResource("19_vo30p")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(745, -54)
+scale = Vector2(0.81725, 0.786228)
+texture = ExtResource("21_rsck4")
+hframes = 14
+vframes = 4
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(745.5, -25.5)
+shape = SubResource("RectangleShape2D_j4xgq")
+debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+position = Vector2(739, -68)
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(739, -68)
+zoom = Vector2(3, 3)
+limit_left = -80
+limit_top = -254
+limit_right = 1104
+limit_bottom = 590
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_e2ofs")
+}
+autoplay = "idle_front"
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+active = false
+deterministic = false
+reset_on_save = false
+root_node = NodePath("../Sprite2D")
+tree_root = SubResource("AnimationNodeStateMachine_d86rj")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/is_moving = false
+parameters/conditions/swing = false
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/skipping/blend_position = Vector2(0, 0)
+parameters/swing_sword/blend_position = Vector2(0, 0)
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -576,7 +658,7 @@ shape = SubResource("RectangleShape2D_k12gf")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
-position = Vector2(-45, 120)
+position = Vector2(-20, 121)
 shape = SubResource("RectangleShape2D_xtj5y")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
@@ -588,32 +670,17 @@ position = Vector2(479.5, -49.5)
 shape = SubResource("RectangleShape2D_dwycc")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
-position = Vector2(100, -116)
+position = Vector2(100, -55)
 shape = SubResource("RectangleShape2D_g0l10")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
-position = Vector2(885.5, -123.5)
+position = Vector2(883, -66)
 shape = SubResource("RectangleShape2D_fkmwg")
 
 [node name="rugs n stuff" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAEAAQADwAAAAAAAAABAAgAEQAAAAAAADAOAAgAEQAAAAAAADAHAAgAEwAAAAAAADD//wEAEwAAAAAAAGAQAAEAEwAAAAAAAFAHAAAAFAAAAAAAAAABAP7/EAAAAAAAAAANAP7/EAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ufuy4")
-
-[node name="Area2D" type="Area2D" parent="TileMap/rugs n stuff"]
-script = ExtResource("19_6nlp7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/rugs n stuff/Area2D"]
-position = Vector2(1048, 96)
-shape = SubResource("CircleShape2D_yjtux")
-
-[node name="Label" type="Label" parent="TileMap/rugs n stuff/Area2D"]
-visible = false
-offset_left = 890.0
-offset_top = 58.0
-offset_right = 1052.0
-offset_bottom = 81.0
-text = "Press E to enter door"
 
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
@@ -623,73 +690,48 @@ tile_set = SubResource("TileSet_ufuy4")
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap/furniture"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
-position = Vector2(286.5, 268.5)
+position = Vector2(287.25, 245.75)
 shape = SubResource("RectangleShape2D_t2ahd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
-position = Vector2(464, 234)
-shape = SubResource("CircleShape2D_es0ly")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
-position = Vector2(105, 235)
-shape = SubResource("CircleShape2D_f87ku")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
-position = Vector2(289, 161)
-shape = SubResource("RectangleShape2D_t2ahd")
+position = Vector2(287.75, 160)
+shape = SubResource("RectangleShape2D_2re73")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="TileMap"]
-position = Vector2(61, 268)
-disable_mode = 1
-script = ExtResource("19_vo30p")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(112.75, 233.5)
+shape = SubResource("RectangleShape2D_70f2j")
 
-[node name="Sprite2D" type="Sprite2D" parent="TileMap/CharacterBody2D"]
-position = Vector2(745, -54)
-scale = Vector2(0.81725, 0.786228)
-texture = ExtResource("21_rsck4")
-hframes = 14
-vframes = 4
-frame = 14
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(462.25, 236.25)
+shape = SubResource("RectangleShape2D_rx7my")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/CharacterBody2D"]
-position = Vector2(746.5, -47.5)
-shape = SubResource("RectangleShape2D_j4xgq")
-debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(77.25, 199)
+shape = SubResource("RectangleShape2D_jrxmr")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TileMap/CharacterBody2D"]
-position = Vector2(739, -68)
-remote_path = NodePath("../Camera2D")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(503, 198)
+shape = SubResource("RectangleShape2D_umhrj")
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/CharacterBody2D"]
-position = Vector2(739, -68)
-zoom = Vector2(3, 3)
-limit_left = -80
-limit_top = -254
-limit_right = 1104
-limit_bottom = 590
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+[node name="door_left" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(-2, -171)
+script = ExtResource("22_d5wkv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/CharacterBody2D"]
-root_node = NodePath("../Sprite2D")
-libraries = {
-"": SubResource("AnimationLibrary_e2ofs")
-}
-autoplay = "idle_front"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_left"]
+position = Vector2(-50, 2)
+shape = SubResource("RectangleShape2D_pu5bb")
 
-[node name="AnimationTree" type="AnimationTree" parent="TileMap/CharacterBody2D"]
-active = false
-deterministic = false
-reset_on_save = false
-root_node = NodePath("../Sprite2D")
-tree_root = SubResource("AnimationNodeStateMachine_d86rj")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/is_moving = false
-parameters/conditions/swing = false
-parameters/idle/blend_position = Vector2(0, 0)
-parameters/skipping/blend_position = Vector2(0, 0)
-parameters/swing_sword/blend_position = Vector2(0, 0)
+[node name="Label" type="Label" parent="door_left"]
+offset_left = -42.0
+offset_top = 39.0
+offset_right = 72.0
+offset_bottom = 95.0
+text = "Press E to 
+go to bedroom"
+horizontal_alignment = 1
 
-[connection signal="body_entered" from="TileMap/rugs n stuff/Area2D" to="TileMap/rugs n stuff/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/rugs n stuff/Area2D" to="TileMap/rugs n stuff/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
+[connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
+[connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
+[connection signal="body_exited" from="door_left" to="door_left" method="_on_body_exited"]
