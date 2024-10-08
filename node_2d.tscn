@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="19_vo30p"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="21_rsck4"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
-[ext_resource type="Script" path="res://scripts/heart_health.gd" id="23_mnn0j"]
+[ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
 
@@ -737,7 +737,7 @@ horizontal_alignment = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
-script = ExtResource("23_mnn0j")
+script = ExtResource("23_u61xo")
 
 [node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
 custom_minimum_size = Vector2(0.5, 1)
@@ -749,9 +749,8 @@ expand_mode = 2
 [node name="Heart2" type="TextureRect" parent="CanvasLayer/HeartManager"]
 custom_minimum_size = Vector2(0.5, 1)
 offset_left = 114.0
-offset_top = 1.0
 offset_right = 282.0
-offset_bottom = 159.0
+offset_bottom = 158.0
 texture = ExtResource("24_kcte6")
 expand_mode = 2
 

@@ -26,7 +26,7 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="24_bnrdn"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="25_n7eyg"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
-[ext_resource type="Script" path="res://scripts/heart_health.gd" id="27_i88qo"]
+[ext_resource type="Script" path="res://scripts/heart_manager.gd" id="27_0vpd2"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="28_jtx4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
@@ -745,7 +745,7 @@ horizontal_alignment = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
-script = ExtResource("27_i88qo")
+script = ExtResource("27_0vpd2")
 
 [node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
 custom_minimum_size = Vector2(0.5, 1)

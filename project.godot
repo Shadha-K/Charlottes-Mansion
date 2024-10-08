@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Main_Theme_Music="*res://main_theme.tscn"
 HeartHealth="*res://scripts/heart_health.gd"
+GameState="*res://scripts/gamestate.gd"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=83 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
+[ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_yfhj1"]
 [ext_resource type="Texture2D" uid="uid://bdiqtgeff2cja" path="res://assets/kitchen/oven.png" id="2_m4736"]
 [ext_resource type="Texture2D" uid="uid://wwc6ymy64x5u" path="res://assets/kitchen/kitchen_counters.png" id="3_65tfn"]
@@ -20,13 +21,6 @@
 [ext_resource type="Script" path="res://scripts/teacup.gd" id="18_57b8g"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="19_bwhw2"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="19_doriw"]
-
-[sub_resource type="GDScript" id="GDScript_ha12p"]
-script/source = "extends Node2D  # or whichever node type your root node is
-
-func _ready():
-	print(get_node(\"CanvasLayer\").get_children())
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -518,7 +512,7 @@ size = Vector2(50, 48)
 
 [node name="kitchen" type="Node2D"]
 position = Vector2(5, 0)
-script = SubResource("GDScript_ha12p")
+script = ExtResource("1_h8lgu")
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(14, -3)
