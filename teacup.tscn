@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=3 uid="uid://ca0rv041w830c"]
 
-[ext_resource type="Texture2D" uid="uid://c6j41v5soouto" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
-[ext_resource type="Texture2D" uid="uid://uimivccdhten" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
-[ext_resource type="Texture2D" uid="uid://cw5tbdvbgmppi" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
-[ext_resource type="Texture2D" uid="uid://dgy4bgyasjs0n" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
-[ext_resource type="Texture2D" uid="uid://dm8jrhc5dtoas" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0000.png" id="5_2if8s"]
-[ext_resource type="Texture2D" uid="uid://cdyv444gba8uk" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0001.png" id="6_ipvo1"]
-[ext_resource type="Texture2D" uid="uid://b8863aafh2go1" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0003.png" id="7_qwmvi"]
-[ext_resource type="Texture2D" uid="uid://bt5dg7s221gkf" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0005.png" id="8_ljx6d"]
-[ext_resource type="Texture2D" uid="uid://bglypsrf05je0" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0007.png" id="9_m0tlk"]
+[ext_resource type="Texture2D" uid="uid://c02i2ksl7f8j2" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
+[ext_resource type="Texture2D" uid="uid://cvfhdua7qva8x" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
+[ext_resource type="Texture2D" uid="uid://1fui1cb6eh2i" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
+[ext_resource type="Texture2D" uid="uid://defgv2wvqbu58" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
+[ext_resource type="Texture2D" uid="uid://k5xsvlpv8t66" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0000.png" id="5_2if8s"]
+[ext_resource type="Texture2D" uid="uid://b0mr8yqsjmopf" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0001.png" id="6_ipvo1"]
+[ext_resource type="Texture2D" uid="uid://brddkwm4e2818" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0003.png" id="7_qwmvi"]
+[ext_resource type="Texture2D" uid="uid://dm5n7hncsey0f" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0005.png" id="8_ljx6d"]
+[ext_resource type="Texture2D" uid="uid://bgtfeooin6452" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0007.png" id="9_m0tlk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
 atlas = ExtResource("5_2if8s")

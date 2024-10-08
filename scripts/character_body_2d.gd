@@ -3,33 +3,34 @@ extends CharacterBody2D
 const SPEED = 300.0
 const GRAVITY = 980.0
 
-# Declare 'direction' globally
 var direction: Vector2 = Vector2.ZERO
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var heart_manager = get_node("../CanvasLayer/HeartManager")
 
 func _ready():
 	animation_tree.active = true
+	
+	var teacups = get_tree().get_nodes_in_group("Teacups")  
+	for teacup in teacups:
+		teacup.connect("teacup_hit", Callable(self, "_on_teacup_hit"))  
 	
 func _process(_delta):
 	update_animation_parameters()
 
 func _physics_process(_delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * _delta
 
-	# Update the global 'direction' variable
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 	
-	# Handle sprite texture swap based on movement direction
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)  # Decelerate to stop
+		velocity.x = move_toward(velocity.x, 0, SPEED)  
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	move_and_slide()
@@ -53,3 +54,8 @@ func update_animation_parameters():
 		animation_tree["parameters/idle/blend_position"] = direction
 		animation_tree["parameters/skipping/blend_position"] = direction
 		animation_tree["parameters/swing_sword/blend_position"] = direction
+
+func _on_attack_body_entered(body):
+	if body.name == "Teacup":  
+		print("Teacup hit by attack!")
+		body.queue_free()

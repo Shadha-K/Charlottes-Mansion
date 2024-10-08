@@ -18,10 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Main_Theme_Music="*res://main_theme.tscn"
+HeartHealth="*res://scripts/heart_health.gd"
 
 [display]
 
 window/size/mode=2
+
+[global_group]
+
+teacups=""
 
 [input]
 

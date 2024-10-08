@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=96 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -18,10 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="9_wuxwf"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_d3l06"]
 [ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_3l4fy"]
-[ext_resource type="Script" path="res://door_right.gd" id="19_6nlp7"]
+[ext_resource type="Script" path="res://scripts/door_right.gd" id="19_6nlp7"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="19_vo30p"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="21_rsck4"]
-[ext_resource type="Script" path="res://door_left.gd" id="22_d5wkv"]
+[ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
+[ext_resource type="Script" path="res://scripts/heart_health.gd" id="23_mnn0j"]
+[ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
+[ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(97.75, 61)
@@ -731,7 +734,112 @@ text = "Press E to
 go to bedroom"
 horizontal_alignment = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartManager" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("23_mnn0j")
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_right = 168.0
+offset_bottom = 158.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 114.0
+offset_top = 1.0
+offset_right = 282.0
+offset_bottom = 159.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 229.0
+offset_top = 2.0
+offset_right = 397.0
+offset_bottom = 160.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 346.0
+offset_top = 2.0
+offset_right = 514.0
+offset_bottom = 160.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 465.0
+offset_top = 3.0
+offset_right = 633.0
+offset_bottom = 161.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart6" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 583.0
+offset_top = 4.0
+offset_right = 751.0
+offset_bottom = 162.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart7" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 696.0
+offset_top = 5.0
+offset_right = 864.0
+offset_bottom = 163.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart8" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 812.0
+offset_top = 4.0
+offset_right = 980.0
+offset_bottom = 162.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="Heart9" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 925.0
+offset_top = 4.0
+offset_right = 1093.0
+offset_bottom = 162.0
+texture = ExtResource("24_kcte6")
+expand_mode = 2
+
+[node name="basement_door" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(421, 202)
+script = ExtResource("25_d6jfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basement_door"]
+position = Vector2(-2, 34)
+shape = SubResource("RectangleShape2D_pu5bb")
+
+[node name="Label" type="Label" parent="basement_door"]
+z_index = 2
+offset_left = -151.0
+offset_top = -27.0
+offset_right = -21.0
+offset_bottom = 30.0
+text = "Basement is 
+locked"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
 [connection signal="body_exited" from="door_left" to="door_left" method="_on_body_exited"]
+[connection signal="body_entered" from="basement_door" to="basement_door" method="_on_body_entered"]
+[connection signal="body_exited" from="basement_door" to="basement_door" method="_on_body_exited"]

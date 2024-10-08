@@ -1,12 +1,6 @@
-res://main menu/main_menu.tscn
 res://node_2d.tscn
-res://kitchen.tscn
 res://main_theme.tscn
-res://door_right.gd
-res://scripts/character_body_2d.gd
-res://kitchen_door.gd
 res://bedroom.tscn
-res://door_left.gd
-res://bedroom_door.gd
-res://main menu/main_menu.gd
-res://main_theme.gd
+res://teacup.tscn
+res://kitchen.tscn
+res://scripts/teacup.gd

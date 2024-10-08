@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=83 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_yfhj1"]
@@ -15,7 +15,18 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="14_5psum"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="14_pj22l"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="15_ht0wg"]
-[ext_resource type="Script" path="res://bedroom_door.gd" id="16_gjwwx"]
+[ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="16_gjwwx"]
+[ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
+[ext_resource type="Script" path="res://scripts/teacup.gd" id="18_57b8g"]
+[ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="19_bwhw2"]
+[ext_resource type="Script" path="res://scripts/heart_manager.gd" id="19_doriw"]
+
+[sub_resource type="GDScript" id="GDScript_ha12p"]
+script/source = "extends Node2D  # or whichever node type your root node is
+
+func _ready():
+	print(get_node(\"CanvasLayer\").get_children())
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -502,8 +513,12 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0uxy"]
 size = Vector2(87.5, 57)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dir7d"]
+size = Vector2(50, 48)
+
 [node name="kitchen" type="Node2D"]
 position = Vector2(5, 0)
+script = SubResource("GDScript_ha12p")
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(14, -3)
@@ -616,17 +631,17 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/skipping/blend_position = Vector2(0, 0)
 parameters/swing_sword/blend_position = Vector2(0, 0)
 
-[node name="bedroom_door" type="Area2D" parent="."]
+[node name="living_room_door" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(67, 157)
 script = ExtResource("16_gjwwx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom_door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="living_room_door"]
 z_index = 2
 position = Vector2(-54.75, -3.5)
 shape = SubResource("RectangleShape2D_a0uxy")
 
-[node name="Label" type="Label" parent="bedroom_door"]
+[node name="Label" type="Label" parent="living_room_door"]
 offset_left = -45.0
 offset_top = 38.0
 offset_right = 84.0
@@ -635,5 +650,149 @@ text = "Press E to go
 to living room"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="bedroom_door" to="bedroom_door" method="_on_body_entered"]
-[connection signal="body_exited" from="bedroom_door" to="bedroom_door" method="_on_body_exited"]
+[node name="Teacup" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1053, 50)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("18_57b8g")
+
+[node name="Area2D" type="Area2D" parent="Teacup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup/Area2D"]
+position = Vector2(-10, 9)
+shape = SubResource("RectangleShape2D_dir7d")
+
+[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1213, 46)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("18_57b8g")
+
+[node name="Area2D" type="Area2D" parent="Teacup2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup2/Area2D"]
+position = Vector2(-7, 4)
+shape = SubResource("RectangleShape2D_dir7d")
+
+[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1030, 301)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("18_57b8g")
+
+[node name="Area2D" type="Area2D" parent="Teacup3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup3/Area2D"]
+position = Vector2(-10, 9)
+shape = SubResource("RectangleShape2D_dir7d")
+
+[node name="Teacup4" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1253, 219)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("18_57b8g")
+
+[node name="Area2D" type="Area2D" parent="Teacup4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup4/Area2D"]
+position = Vector2(-10, 9)
+shape = SubResource("RectangleShape2D_dir7d")
+
+[node name="Teacup5" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1005, 196)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("18_57b8g")
+
+[node name="Area2D" type="Area2D" parent="Teacup5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup5/Area2D"]
+position = Vector2(-10, 9)
+shape = SubResource("RectangleShape2D_dir7d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartManager" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("19_doriw")
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_right = 168.0
+offset_bottom = 158.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 114.0
+offset_top = 1.0
+offset_right = 282.0
+offset_bottom = 159.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 229.0
+offset_top = 2.0
+offset_right = 397.0
+offset_bottom = 160.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 346.0
+offset_top = 2.0
+offset_right = 514.0
+offset_bottom = 160.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 465.0
+offset_top = 3.0
+offset_right = 633.0
+offset_bottom = 161.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart6" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 583.0
+offset_top = 4.0
+offset_right = 751.0
+offset_bottom = 162.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart7" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 696.0
+offset_top = 5.0
+offset_right = 864.0
+offset_bottom = 163.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart8" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 812.0
+offset_top = 4.0
+offset_right = 980.0
+offset_bottom = 162.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[node name="Heart9" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 925.0
+offset_top = 4.0
+offset_right = 1093.0
+offset_bottom = 162.0
+texture = ExtResource("19_bwhw2")
+expand_mode = 2
+
+[connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
+[connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
+[connection signal="body_entered" from="Teacup/Area2D" to="Teacup" method="_on_teacup_body_entered"]
+[connection signal="body_entered" from="Teacup2/Area2D" to="Teacup" method="_on_teacup_body_entered"]
+[connection signal="body_entered" from="Teacup3/Area2D" to="Teacup" method="_on_teacup_body_entered"]
+[connection signal="body_entered" from="Teacup4/Area2D" to="Teacup" method="_on_teacup_body_entered"]
+[connection signal="body_entered" from="Teacup5/Area2D" to="Teacup" method="_on_teacup_body_entered"]

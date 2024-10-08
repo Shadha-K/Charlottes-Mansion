@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=105 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_k4xct"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="13_bbdyq"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="24_bnrdn"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="25_n7eyg"]
-[ext_resource type="Script" path="res://bedroom_door.gd" id="26_7b3gb"]
+[ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
+[ext_resource type="Script" path="res://scripts/heart_health.gd" id="27_i88qo"]
+[ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="28_jtx4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
 texture = ExtResource("1_k4xct")
@@ -722,16 +724,16 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/skipping/blend_position = Vector2(0, 0)
 parameters/swing_sword/blend_position = Vector2(0, 0)
 
-[node name="bedroom_door" type="Area2D" parent="."]
+[node name="living_room_door" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(892, 482)
 script = ExtResource("26_7b3gb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom_door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="living_room_door"]
 position = Vector2(54.25, -0.5)
 shape = SubResource("RectangleShape2D_hapge")
 
-[node name="Label" type="Label" parent="bedroom_door"]
+[node name="Label" type="Label" parent="living_room_door"]
 offset_left = -82.0
 offset_top = 32.0
 offset_right = 43.0
@@ -740,5 +742,89 @@ text = "Press E to go
 to living room"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="bedroom_door" to="bedroom_door" method="_on_body_entered"]
-[connection signal="body_exited" from="bedroom_door" to="bedroom_door" method="_on_body_exited"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartManager" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("27_i88qo")
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_right = 168.0
+offset_bottom = 158.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 114.0
+offset_top = 1.0
+offset_right = 282.0
+offset_bottom = 159.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 229.0
+offset_top = 2.0
+offset_right = 397.0
+offset_bottom = 160.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 346.0
+offset_top = 2.0
+offset_right = 514.0
+offset_bottom = 160.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 465.0
+offset_top = 3.0
+offset_right = 633.0
+offset_bottom = 161.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart6" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 583.0
+offset_top = 4.0
+offset_right = 751.0
+offset_bottom = 162.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart7" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 696.0
+offset_top = 5.0
+offset_right = 864.0
+offset_bottom = 163.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart8" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 812.0
+offset_top = 4.0
+offset_right = 980.0
+offset_bottom = 162.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[node name="Heart9" type="TextureRect" parent="CanvasLayer/HeartManager"]
+custom_minimum_size = Vector2(0.5, 1)
+offset_left = 925.0
+offset_top = 4.0
+offset_right = 1093.0
+offset_bottom = 162.0
+texture = ExtResource("28_jtx4q")
+expand_mode = 2
+
+[connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
+[connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
