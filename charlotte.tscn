@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dajtvanrp7n7c"]
+
+[ext_resource type="Script" path="res://charlotte.gd" id="1_2ogvh"]
+[ext_resource type="Texture2D" uid="uid://bsgujbgxa1j0g" path="res://assets/CharlotteSprite/sprite_sheet.png" id="2_v8r8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4yrd"]
+atlas = ExtResource("2_v8r8p")
+region = Rect2(926, 1748, 926, 874)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abuxb"]
+atlas = ExtResource("2_v8r8p")
+region = Rect2(0, 1748, 926, 874)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xocih"]
+atlas = ExtResource("2_v8r8p")
+region = Rect2(926, 1748, 926, 874)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w8sm"]
+atlas = ExtResource("2_v8r8p")
+region = Rect2(1852, 1748, 926, 874)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwavu"]
+atlas = ExtResource("2_v8r8p")
+region = Rect2(2778, 1748, 926, 874)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1sgn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4yrd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abuxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xocih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w8sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwavu")
+}],
+"loop": true,
+"name": &"walking_right",
+"speed": 5.0
+}]
+
+[node name="Charlotte" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_2ogvh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1sgn4")
+animation = &"idle"
