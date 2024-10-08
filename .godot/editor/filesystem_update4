@@ -1,8 +1,7 @@
 res://node_2d.tscn
-res://scripts/teacup.gd
-res://main_theme.tscn
 res://bedroom.tscn
-res://teacup.tscn
 res://kitchen.tscn
-res://gamestate.gd
-res://scripts/heart_manager.gd
+res://charlotte.tscn
+res://charlotte.gd
+res://main_theme.tscn
+res://teacup.tscn

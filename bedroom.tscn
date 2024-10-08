@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=106 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_k4xct"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bwj5cxn4vwnpa" path="res://assets/kitchen/kitchen_window.png" id="12_u8ney"]
 [ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="13_bbdyq"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="24_bnrdn"]
+[ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="24_mk0nr"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="25_n7eyg"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="27_0vpd2"]
@@ -671,6 +672,10 @@ shape = SubResource("RectangleShape2D_8go7p")
 position = Vector2(27.5, 334.5)
 shape = SubResource("RectangleShape2D_ub0dt")
 
+[node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
+position = Vector2(815, 419)
+parent = NodePath("../../CharacterBody2D")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
 disable_mode = 1
@@ -683,6 +688,8 @@ texture = ExtResource("25_n7eyg")
 hframes = 14
 vframes = 4
 frame = 14
+
+[node name="FollowPoint" type="Marker2D" parent="CharacterBody2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(905, 473)
@@ -743,6 +750,7 @@ to living room"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("27_0vpd2")

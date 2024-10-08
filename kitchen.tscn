@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=84 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="14_5psum"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="14_pj22l"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="15_ht0wg"]
+[ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="15_t8te0"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="16_gjwwx"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
 [ext_resource type="Script" path="res://scripts/teacup.gd" id="18_57b8g"]
@@ -571,6 +572,10 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAABAP//BAAAAAAAAAADAP//AwAAAAAAAAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAAFAP//BQAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAA=")
 tile_set = SubResource("TileSet_ces8x")
 
+[node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("15_t8te0")]
+position = Vector2(126, 106)
+parent = NodePath("../../CharacterBody2D")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(-623, 148)
@@ -584,6 +589,8 @@ texture = ExtResource("15_ht0wg")
 hframes = 14
 vframes = 4
 frame = 14
+
+[node name="FollowPoint" type="Marker2D" parent="CharacterBody2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(678, -21)
@@ -700,6 +707,7 @@ position = Vector2(-10, 9)
 shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("19_doriw")

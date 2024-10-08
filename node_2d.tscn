@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=97 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="19_vo30p"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="21_rsck4"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
+[ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
@@ -606,6 +607,8 @@ hframes = 14
 vframes = 4
 frame = 14
 
+[node name="FollowPoint" type="Marker2D" parent="CharacterBody2D/Sprite2D"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(745.5, -25.5)
 shape = SubResource("RectangleShape2D_j4xgq")
@@ -716,6 +719,10 @@ shape = SubResource("RectangleShape2D_jrxmr")
 position = Vector2(503, 198)
 shape = SubResource("RectangleShape2D_umhrj")
 
+[node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
+position = Vector2(707, 194)
+parent = NodePath("../../CharacterBody2D")
+
 [node name="door_left" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(-2, -171)
@@ -735,6 +742,7 @@ go to bedroom"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("23_u61xo")
