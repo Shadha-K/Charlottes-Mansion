@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 res://scenes/living_room.tscn
 res://scenes/bedroom.tscn
 res://scenes/kitchen.tscn
@@ -5,3 +6,13 @@ res://scenes/basement.tscn
 res://node_2d.tscn
 res://scenes/teacup.tscn
 res://scenes/teacup_fight.tscn
+=======
+res://scripts/tea.gd
+res://scenes/tea.tscn
+res://node_2d.tscn
+res://main_theme.tscn
+res://bedroom.tscn
+res://teacup.tscn
+res://kitchen.tscn
+res://charlotte.tscn
+>>>>>>> Stashed changes

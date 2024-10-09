@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwcgqex40kiqb"]
+
+[ext_resource type="Script" path="res://scripts/tea.gd" id="1_7q80t"]
+[ext_resource type="Texture2D" uid="uid://2jcauhxb2ud2" path="res://assets/living_room/tea_cup.png" id="2_1pltr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2710o"]
+radius = 12.3693
+
+[node name="Tea" type="Area2D"]
+script = ExtResource("1_7q80t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999996, -8)
+scale = Vector2(0.246324, 0.246324)
+texture = ExtResource("2_1pltr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2710o")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -64.0
+offset_right = 73.0
+offset_bottom = -38.0
+text = "\"Press E to pick up\""
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
