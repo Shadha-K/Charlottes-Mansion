@@ -1,5 +1,6 @@
-res://assets/CharlotteSprite
 res://
+res://assets
+res://assets/CharlotteSprite
 res://main menu
 res://assets/teacup_attack_imgs/withoutFist
 res://scenes
@@ -10,6 +11,5 @@ res://assets/teacup_attack_imgs
 res://assets/basement
 res://assets/tiles
 res://assets/kitchen
-res://assets
 res://assets/bedroom
 res://assets/living_room

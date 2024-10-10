@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjeh7x6xt2c5"]
+
+[ext_resource type="Texture2D" uid="uid://covuy6wytwc7b" path="res://assets/puzzle_objects/tea_tray_w_cup.png" id="1_2luod"]
+[ext_resource type="Texture2D" uid="uid://mtvu8sg5bw3i" path="res://assets/puzzle_objects/tea_tray_empty.png" id="2_6he8b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0gsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2luod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6he8b")
+}],
+"loop": false,
+"name": &"tea_tray",
+"speed": 1.0
+}]
+
+[node name="tea_tray" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-382, -561)
+sprite_frames = SubResource("SpriteFrames_g0gsn")
+animation = &"tea_tray"

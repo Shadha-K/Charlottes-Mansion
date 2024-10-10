@@ -1,7 +1,9 @@
-res://logo.tscn
+res://puzzle_cup.gd
 res://node_2d.tscn
 res://main_theme.tscn
 res://bedroom.tscn
 res://teacup.tscn
 res://kitchen.tscn
 res://charlotte.tscn
+res://logo.tscn
+res://tea_tray.tscn
