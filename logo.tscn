@@ -61,14 +61,14 @@ _data = {
 script = ExtResource("1_2bwry")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 606)
-scale = Vector2(52.9231, 14.2743)
+position = Vector2(1056, 659)
+scale = Vector2(2.28735, 2.86307)
 texture = ExtResource("2_7utf1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -148.0
+offset_left = -190.0
 offset_top = -124.0
-offset_right = 1278.0
+offset_right = 1233.0
 offset_bottom = 730.0
 scale = Vector2(3554.31, 1.85664)
 color = Color(0, 0, 0, 1)
