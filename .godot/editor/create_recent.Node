@@ -1,14 +1,14 @@
+CollisionShape2D
+Area2D
 AnimatedSprite2D
+Sprite2D
 Node2D
 Marker2D
 CharacterBody2D
 Label
-CollisionShape2D
-Area2D
 TextureRect
 CanvasLayer
 HBoxContainer
 Control
 StaticBody2D
 TileMapLayer
-TileMap

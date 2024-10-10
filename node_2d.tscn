@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=100 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -22,8 +22,10 @@
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="19_vo30p"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="21_rsck4"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
+[ext_resource type="Texture2D" uid="uid://covuy6wytwc7b" path="res://assets/puzzle_objects/tea_tray_w_cup.png" id="22_e2q4u"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
+[ext_resource type="Script" path="res://area_2d.gd" id="24_5igof"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
 
@@ -572,6 +574,9 @@ size = Vector2(20.5, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umhrj"]
 size = Vector2(20, 36)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edicm"]
+size = Vector2(2543.01, 1173.27)
+
 [node name="living_room" type="Node2D"]
 position = Vector2(61, 268)
 
@@ -596,6 +601,7 @@ horizontal_alignment = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(2, 0)
 disable_mode = 1
 script = ExtResource("19_vo30p")
 
@@ -718,6 +724,18 @@ shape = SubResource("RectangleShape2D_jrxmr")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
 position = Vector2(503, 198)
 shape = SubResource("RectangleShape2D_umhrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/furniture"]
+position = Vector2(330, 226)
+scale = Vector2(0.0503341, 0.0545483)
+texture = ExtResource("22_e2q4u")
+
+[node name="Area2D" type="Area2D" parent="TileMap/furniture/Sprite2D"]
+script = ExtResource("24_5igof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/furniture/Sprite2D/Area2D"]
+position = Vector2(19.8673, 91.6615)
+shape = SubResource("RectangleShape2D_edicm")
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(707, 194)

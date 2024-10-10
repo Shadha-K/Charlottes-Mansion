@@ -7,3 +7,5 @@ res://kitchen.tscn
 res://charlotte.tscn
 res://logo.tscn
 res://tea_tray.tscn
+res://tea_tray.gd
+res://area_2d.gd
