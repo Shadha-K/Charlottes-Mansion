@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://blg16a622rc7d"]
+
+[ext_resource type="PackedScene" uid="uid://dln7j38xukt6" path="res://scenes/slot.tscn" id="1_jkxkg"]
+[ext_resource type="Script" path="res://scripts/hotbar.gd" id="1_uo3vy"]
+[ext_resource type="Script" path="res://scripts/slot.gd" id="3_16rph"]
+
+[node name="Hotbar" type="HBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -40.0
+offset_right = 130.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+script = ExtResource("1_uo3vy")
+
+[node name="slot" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect2" type="TextureRect" parent="slot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="slot2" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect3" type="TextureRect" parent="slot2"]
+layout_mode = 0
+offset_left = -44.0
+offset_right = -4.0
+offset_bottom = 40.0
+
+[node name="slot3" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect4" type="TextureRect" parent="slot3"]
+layout_mode = 0
+offset_left = -88.0
+offset_right = -48.0
+offset_bottom = 40.0
+
+[node name="slot4" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="slot5" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect6" type="TextureRect" parent="slot5"]
+layout_mode = 2
+offset_left = -4.0
+offset_right = -4.0
+offset_bottom = 40.0
+
+[node name="slot6" parent="." instance=ExtResource("1_jkxkg")]
+layout_mode = 2
+script = ExtResource("3_16rph")
+
+[node name="TextureRect7" type="TextureRect" parent="slot6"]
+layout_mode = 2
+offset_left = -48.0
+offset_right = -48.0
+offset_bottom = 40.0

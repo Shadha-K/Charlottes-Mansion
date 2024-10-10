@@ -1,4 +1,3 @@
-res://puzzle_cup.gd
 res://node_2d.tscn
 res://main_theme.tscn
 res://bedroom.tscn
@@ -6,6 +5,11 @@ res://teacup.tscn
 res://kitchen.tscn
 res://charlotte.tscn
 res://logo.tscn
-res://tea_tray.tscn
-res://tea_tray.gd
-res://area_2d.gd
+res://scenes/tea_tray.tscn
+res://scenes/slot.tscn
+res://scenes/hotbar.tscn
+res://scripts/hotbar.gd
+res://scripts/character_body_2d.gd
+res://scripts/tea_tray.gd
+res://scripts/teacup.gd
+res://scripts/slot.gd

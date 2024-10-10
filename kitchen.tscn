@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=85 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scripts/teacup.gd" id="18_57b8g"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="19_bwhw2"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="19_doriw"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -707,9 +708,15 @@ position = Vector2(-10, 9)
 shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
+offset_left = -535.0
+offset_top = -169.0
+offset_right = -271.0
+offset_bottom = -129.0
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("19_doriw")
 
 [node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]

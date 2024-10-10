@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=107 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_k4xct"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="25_n7eyg"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="27_0vpd2"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_d6w8n"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="28_jtx4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
@@ -750,9 +751,15 @@ to living room"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("28_d6w8n")]
+offset_left = -527.0
+offset_top = -165.0
+offset_right = -263.0
+offset_bottom = -125.0
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("27_0vpd2")
 
 [node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]

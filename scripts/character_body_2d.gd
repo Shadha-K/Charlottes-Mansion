@@ -10,11 +10,11 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready():
 	animation_tree.active = true
-	
-	var teacups = get_tree().get_nodes_in_group("Teacups")  
+
+	var teacups = get_tree().get_nodes_in_group("Teacups")
 	for teacup in teacups:
-		teacup.connect("teacup_hit", Callable(self, "_on_teacup_hit"))  
-	
+		teacup.connect("teacup_picked_up", Callable(self, "_on_teacup_picked_up"))  # Connect to the teacup pickup signal
+
 func _process(_delta):
 	update_animation_parameters()
 
@@ -30,32 +30,36 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)  
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	move_and_slide()
 
 func update_animation_parameters():
-	# Check if the velocity is close to zero (idle state)
-	if velocity.length() < 0.1:  # Using a small threshold for idle detection
+	if velocity.length() < 0.1:
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/is_moving"] = false
 	else:
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/is_moving"] = true
-		
+	
 	if Input.is_action_just_pressed("swing"):
 		animation_tree["parameters/conditions/swing"] = true
 	else:
 		animation_tree["parameters/conditions/swing"] = false
 
-	if(direction != Vector2.ZERO):
-		# Use the global 'direction' variable for blend_position
+	if direction != Vector2.ZERO:
 		animation_tree["parameters/idle/blend_position"] = direction
 		animation_tree["parameters/skipping/blend_position"] = direction
 		animation_tree["parameters/swing_sword/blend_position"] = direction
 
+# This function is triggered when the teacup is picked up
+func _on_teacup_picked_up():
+	var hotbar = get_node("/root/Hotbar")  # Reference to the hotbar
+	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
+	print("Teacup added to hotbar!")
+
 func _on_attack_body_entered(body):
-	if body.name == "Teacup":  
+	if body.name == "Teacup":
 		print("Teacup hit by attack!")
 		body.queue_free()
