@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl3mbhwjra2gy"]
+[gd_scene load_steps=8 format=3 uid="uid://cl3mbhwjra2gy"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_2bwry"]
-[ext_resource type="Texture2D" uid="uid://ifxe462mmvs" path="res://assets/opening_scene/op_scene.png" id="2_7utf1"]
+[ext_resource type="Texture2D" uid="uid://ciy8iwhchga8r" path="res://assets/opening_scene/white_rabbit_studios_logo_black.png" id="2_k5ea8"]
 
 [sub_resource type="Animation" id="Animation_nmdxh"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Black Background:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Black Background:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -40,7 +40,7 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Black Background:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,15 +57,17 @@ _data = {
 "fade_out": SubResource("Animation_ka6y7")
 }
 
+[sub_resource type="SystemFont" id="SystemFont_f121n"]
+font_names = PackedStringArray("Edwardian Script ITC")
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2bwry")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1056, 659)
-scale = Vector2(2.28735, 2.86307)
-texture = ExtResource("2_7utf1")
+[node name="White Background" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1200.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Black Background" type="ColorRect" parent="."]
 offset_left = -190.0
 offset_top = -124.0
 offset_right = 1233.0
@@ -77,3 +79,18 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_fbd7x")
 }
+
+[node name="WhiteRabbitStudiosLogoBlack" type="Sprite2D" parent="."]
+position = Vector2(970, 444)
+scale = Vector2(0.223191, 0.214795)
+texture = ExtResource("2_k5ea8")
+
+[node name="presents" type="Label" parent="WhiteRabbitStudiosLogoBlack"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -304.672
+offset_top = 1070.79
+offset_right = 388.328
+offset_bottom = 1483.79
+theme_override_fonts/font = SubResource("SystemFont_f121n")
+theme_override_font_sizes/font_size = 350
+text = "presents"
