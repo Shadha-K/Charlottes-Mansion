@@ -49,7 +49,7 @@ func set_random_direction():
 	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 
 func _on_teacup_body_entered(body):
-	if body.name == "CharacterBody2D" and not is_hit:
+	if body.name == "Alex" and not is_hit:
 		is_hit = true  
 		##emit_signal("teacup_hit", body)  
 		var heart_manager = get_node("../CanvasLayer/HeartManager")  

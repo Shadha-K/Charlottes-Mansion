@@ -9,17 +9,18 @@ signal teacup_picked_up()
 # Function called when the scene is ready
 func _ready():
 	$Label.visible = false
-	player = get_parent().get_node("CharacterBody2D")
+	var grandparent = get_parent().get_parent()
+	player = grandparent.get_node("Alex")
 	add_to_group("Teacups")
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:
-		if body.name == "CharacterBody2D": 
+		if body.name == "Alex": 
 			$Label.visible = true  
 
 # Function called when something exits the area (the player)
 func _on_body_exited(body: Node2D) -> void:
-		if body.name == "CharacterBody2D": 
+		if body.name == "Alex": 
 			$Label.visible = true  
 
 # Function to process player input (e.g., picking up the teacup)
