@@ -11,13 +11,13 @@ func _ready():
 
 #function to detect when player enters the door area
 func _on_body_entered(body):
-	if body.name == "CharacterBody2D": 
+	if body.name == "Alex": 
 		player_near_door = true
 		press_e_label.visible = true
 		
 #function to detect when player leaves door area
 func _on_body_exited(body):
-	if body.name == "CharacterBody2D":
+	if body.name == "Alex":
 		player_near_door = false
 		press_e_label.visible = false
 
