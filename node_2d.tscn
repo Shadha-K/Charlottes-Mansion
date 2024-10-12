@@ -1,7 +1,8 @@
-[gd_scene load_steps=61 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=62 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_p05t5"]
 [ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_x0oae"]
 [ext_resource type="Texture2D" uid="uid://dkwr0de10ld6e" path="res://assets/living_room/grandfather_clock.png" id="3_tesxw"]
 [ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_vjgi7"]
@@ -242,6 +243,8 @@ offset_left = -91.0
 offset_top = 47.0
 offset_right = 64.0
 offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
 text = "Press E to 
 go to kitchen"
 horizontal_alignment = 1
