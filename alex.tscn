@@ -370,16 +370,6 @@ shape = SubResource("RectangleShape2D_u25gb")
 debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-limit_left = -80
-limit_top = -254
-limit_right = 1104
-limit_bottom = 590
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")

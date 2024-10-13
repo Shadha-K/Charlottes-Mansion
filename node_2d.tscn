@@ -259,7 +259,7 @@ tile_set = SubResource("TileSet_ufuy4")
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap/room"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
-position = Vector2(515.5, 530.5)
+position = Vector2(513, 490)
 shape = SubResource("RectangleShape2D_k12gf")
 one_way_collision = true
 
@@ -334,6 +334,13 @@ parent = NodePath("../Alex")
 [node name="Alex" parent="TileMap" instance=ExtResource("23_y7awr")]
 position = Vector2(806, 195)
 
+[node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
+zoom = Vector2(3, 3)
+limit_left = -79
+limit_top = -255
+limit_right = 1103
+limit_bottom = 592
+
 [node name="door_left" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(-2, -171)
@@ -348,6 +355,8 @@ offset_left = -42.0
 offset_top = 39.0
 offset_right = 72.0
 offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
 text = "Press E to 
 go to bedroom"
 horizontal_alignment = 1
@@ -448,7 +457,7 @@ position = Vector2(421, 202)
 script = ExtResource("25_d6jfc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="basement_door"]
-position = Vector2(-2, 34)
+position = Vector2(-2, 17)
 shape = SubResource("RectangleShape2D_pu5bb")
 
 [node name="Label" type="Label" parent="basement_door"]
@@ -457,6 +466,8 @@ offset_left = -151.0
 offset_top = -27.0
 offset_right = -21.0
 offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
 text = "Basement is 
 locked"
 horizontal_alignment = 1

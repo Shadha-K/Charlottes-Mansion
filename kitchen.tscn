@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=47 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
 [ext_resource type="Script" path="res://scripts/teacup.gd" id="18_57b8g"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="18_g2o85"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="19_bwhw2"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="19_doriw"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
@@ -229,6 +230,13 @@ parent = NodePath("../Alex")
 [node name="Alex" parent="TileMap" instance=ExtResource("16_lqktc")]
 position = Vector2(69, 129)
 
+[node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
+zoom = Vector2(3, 3)
+limit_left = -61
+limit_top = -258
+limit_right = 1316
+limit_bottom = 461
+
 [node name="living_room_door" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(67, 157)
@@ -244,6 +252,8 @@ offset_left = -45.0
 offset_top = 38.0
 offset_right = 84.0
 offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 20
 text = "Press E to go
 to living room"
 horizontal_alignment = 1
