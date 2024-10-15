@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=65 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -27,8 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
+[ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
+[ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
@@ -328,9 +330,13 @@ texture = ExtResource("22_gyp1b")
 [node name="tea_tray" parent="TileMap/furniture" instance=ExtResource("22_moxuy")]
 position = Vector2(299, 238)
 
-[node name="book2" parent="TileMap/furniture" instance=ExtResource("23_dnv1t")]
+[node name="book" parent="TileMap/furniture" instance=ExtResource("23_dnv1t")]
 position = Vector2(759, 7)
 scale = Vector2(2, 2)
+
+[node name="Recipe book" parent="TileMap/furniture" instance=ExtResource("24_3t8wm")]
+position = Vector2(348, -2)
+script = ExtResource("25_ixh56")
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(707, 194)

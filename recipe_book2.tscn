@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://b33e0qqgllx3m"]
+
+[ext_resource type="Texture2D" uid="uid://gynqe75yyemu" path="res://assets/puzzle_objects/tempbook2.png" id="1_imfkj"]
+
+[sub_resource type="GDScript" id="GDScript_um56v"]
+script/source = "extends Area2D
+
+# Signal emitted when the book is picked up
+signal book_picked_up()
+
+@onready var player = null  
+@onready var hotbar = get_node(\"/root/Hotbar\")  
+
+
+# Function called when the scene is ready
+func _ready():
+	$Label.visible = false  # Set label visibility to false by default
+	var grandparent = get_parent().get_parent()
+	player = grandparent.get_node(\"Alex\")
+	add_to_group(\"Books\")  # Add to the \"Books\" group
+
+# Function called when something enters the area (the player)
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == \"Alex\": 
+		$Label.visible = true  
+
+# Function called when something exits the area (the player)
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == \"Alex\": 
+		$Label.visible = false  
+
+# Function to process player input (e.g., picking up the book)
+func _process(_delta):
+	if Input.is_action_just_pressed(\"interact\"):  
+		if $Labe.visible:  
+			pick_up_book()
+
+# Function to handle the book being picked up
+func pick_up_book():
+	emit_signal(\"book_picked_up\")  
+	hotbar.add_item_to_slot(2, \"Book\", preload(\"res://assets/puzzle_objects/tempbook2.png\"))
+	queue_free()  
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67nys"]
+size = Vector2(116.5, 76)
+
+[node name="Recipe book" type="Area2D"]
+script = SubResource("GDScript_um56v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-13, -11)
+scale = Vector2(0.054502, 0.0532694)
+texture = ExtResource("1_imfkj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(5, -9)
+shape = SubResource("RectangleShape2D_67nys")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -63.0
+offset_top = -87.0
+offset_right = 72.0
+offset_bottom = -60.0
+text = "Press E to pick up"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
