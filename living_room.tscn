@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://cj8tjhwgxrgmq"]
+[gd_scene load_steps=40 format=3 uid="uid://cj8tjhwgxrgmq"]
 
+[ext_resource type="Script" path="res://living_room.gd" id="1_ha2qb"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_wdwvk"]
 [ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_4gg5v"]
 [ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_cpbx5"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cfl32vjmwcsal" path="res://assets/living_room/armchair.png" id="16_tb5ws"]
 [ext_resource type="Texture2D" uid="uid://ds7sma7vr3fjx" path="res://assets/living_room/couch.png" id="17_pw631"]
 [ext_resource type="Texture2D" uid="uid://c0v0qet4sd2n" path="res://assets/living_room/bookshelf.png" id="18_angtl"]
+[ext_resource type="PackedScene" uid="uid://b16jvb557hfwm" path="res://recipe_book.tscn" id="21_37tex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g045i"]
 texture = ExtResource("1_wdwvk")
@@ -177,6 +179,7 @@ sources/20 = SubResource("TileSetAtlasSource_7ggoj")
 
 [node name="living_room" type="Node2D"]
 position = Vector2(5, 0)
+script = ExtResource("1_ha2qb")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(20, -11)
@@ -192,3 +195,8 @@ layer_2/tile_data = PackedInt32Array(-65532, 9, 0, -65529, 2, 0, -65526, 9, 0, -
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.720467, 0.720468, 0.720467, 1)
+
+[node name="Area2D" parent="." instance=ExtResource("21_37tex")]
+z_index = 2
+position = Vector2(264, -23)
+scale = Vector2(0.05, 0.05)

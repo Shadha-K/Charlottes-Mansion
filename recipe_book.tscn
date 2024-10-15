@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b16jvb557hfwm"]
+
+[ext_resource type="Script" path="res://recipe_book.gd" id="1_wlymf"]
+[ext_resource type="Texture2D" uid="uid://gynqe75yyemu" path="res://assets/puzzle_objects/tempbook2.png" id="2_4jck5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7brj"]
+size = Vector2(352, 392)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_wlymf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4jck5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 5)
+shape = SubResource("RectangleShape2D_j7brj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 189.0
+offset_top = -29.0
+offset_right = 397.0
+offset_bottom = 36.0
+text = "Press E to pick up"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
