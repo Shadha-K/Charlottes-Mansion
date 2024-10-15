@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=63 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://mtvu8sg5bw3i" path="res://assets/puzzle_objects/tea_tray_empty.png" id="22_gyp1b"]
 [ext_resource type="PackedScene" uid="uid://bn8gen7tixj5v" path="res://scenes/tea_tray.tscn" id="22_moxuy"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
+[ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
@@ -319,13 +320,17 @@ shape = SubResource("RectangleShape2D_jrxmr")
 position = Vector2(503, 198)
 shape = SubResource("RectangleShape2D_umhrj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="TileMap/furniture"]
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/furniture"]
 position = Vector2(299, 222)
 scale = Vector2(0.0519764, 0.0519764)
 texture = ExtResource("22_gyp1b")
 
 [node name="tea_tray" parent="TileMap/furniture" instance=ExtResource("22_moxuy")]
 position = Vector2(299, 238)
+
+[node name="book2" parent="TileMap/furniture" instance=ExtResource("23_dnv1t")]
+position = Vector2(759, 7)
+scale = Vector2(2, 2)
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(707, 194)
