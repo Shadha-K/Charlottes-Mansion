@@ -262,27 +262,33 @@ tile_set = SubResource("TileSet_ufuy4")
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap/room"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(513, 490)
 shape = SubResource("RectangleShape2D_k12gf")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(-20, 121)
 shape = SubResource("RectangleShape2D_xtj5y")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(1042, 124)
 shape = SubResource("RectangleShape2D_1odbd")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(479.5, -49.5)
 shape = SubResource("RectangleShape2D_dwycc")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(100, -55)
 shape = SubResource("RectangleShape2D_g0l10")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
 position = Vector2(883, -66)
 shape = SubResource("RectangleShape2D_fkmwg")
 

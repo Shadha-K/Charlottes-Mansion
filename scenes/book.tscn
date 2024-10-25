@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://da6bblgxsgk60"]
+[gd_scene load_steps=5 format=3 uid="uid://da6bblgxsgk60"]
 
 [ext_resource type="Script" path="res://book.gd" id="1_bm6xp"]
 [ext_resource type="Texture2D" uid="uid://c0ylu2ojfkllq" path="res://assets/puzzle_objects/tempbook.png" id="2_aj4w2"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_ojdtc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4d4x"]
 size = Vector2(37, 28)
@@ -20,11 +21,15 @@ position = Vector2(-23.5, -6)
 shape = SubResource("RectangleShape2D_f4d4x")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -63.0
-offset_top = -87.0
-offset_right = 72.0
-offset_bottom = -60.0
+offset_left = -67.0
+offset_top = -63.0
+offset_right = 68.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("3_ojdtc")
+theme_override_font_sizes/font_size = 10
 text = "Press E to pick up"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
