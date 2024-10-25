@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://c24ylvijada3u"]
+[gd_scene load_steps=43 format=3 uid="uid://c24ylvijada3u"]
 
 [ext_resource type="Script" path="res://alex.gd" id="1_a8wcy"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="2_6yriy"]
+[ext_resource type="Script" path="res://attack.gd" id="3_q5n0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u25gb"]
 size = Vector2(33, 59)
@@ -19,6 +20,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../attack:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../attack/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, 8)]
 }
 
 [sub_resource type="Animation" id="Animation_r0df3"]
@@ -172,6 +197,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [12, 13, 12]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../attack:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../attack/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_yq02m"]
 resource_name = "swing_front"
@@ -187,6 +236,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [26, 27, 26]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../attack/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 23)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../attack:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_faabw"]
@@ -204,6 +277,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [40, 41, 40]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../attack/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-45, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../attack:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_rlfej"]
 resource_name = "swing_right"
@@ -219,6 +316,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [54, 55, 54]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../attack:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../attack/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 8)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2ofs"]
@@ -352,6 +473,10 @@ states/skipping/position = Vector2(518, 136)
 states/swing_sword/node = SubResource("AnimationNodeBlendSpace2D_vxn87")
 states/swing_sword/position = Vector2(429, 29)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_0oub1"), "idle", "skipping", SubResource("AnimationNodeStateMachineTransition_bsdg6"), "skipping", "idle", SubResource("AnimationNodeStateMachineTransition_4ue3a"), "idle", "swing_sword", SubResource("AnimationNodeStateMachineTransition_000sf"), "swing_sword", "idle", SubResource("AnimationNodeStateMachineTransition_ul3p3"), "skipping", "swing_sword", SubResource("AnimationNodeStateMachineTransition_foyls"), "swing_sword", "skipping", SubResource("AnimationNodeStateMachineTransition_uhknf")]
+graph_offset = Vector2(-441.121, -8.80489)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp15t"]
+size = Vector2(53, 107)
 
 [node name="Alex" type="CharacterBody2D"]
 script = ExtResource("1_a8wcy")
@@ -391,3 +516,13 @@ parameters/conditions/swing = false
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/skipping/blend_position = Vector2(0, 0)
 parameters/swing_sword/blend_position = Vector2(0, 0)
+
+[node name="attack" type="Area2D" parent="."]
+monitoring = false
+script = ExtResource("3_q5n0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(54, 8)
+shape = SubResource("RectangleShape2D_pp15t")
+
+[connection signal="body_entered" from="attack" to="attack" method="_on_body_entered"]

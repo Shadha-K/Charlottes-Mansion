@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c31pwgalcb0pd"]
 
-[ext_resource type="Texture2D" uid="uid://bw5kr0g1v172" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0000.png" id="1_6gd2s"]
-[ext_resource type="Texture2D" uid="uid://b5giy0maevqgv" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0002.png" id="2_5yy80"]
-[ext_resource type="Texture2D" uid="uid://2q5fp63e1hcq" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0003.png" id="3_pgdxg"]
-[ext_resource type="Texture2D" uid="uid://biaqix43kenwb" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0004.png" id="4_2qhoo"]
-[ext_resource type="Texture2D" uid="uid://vcddvd2g8p27" path="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0005.png" id="5_qtcef"]
+[ext_resource type="Texture2D" uid="uid://bjfidur1lkh40" path="res://assets/teacup_attack_imgs/teacup_attack_0000.png" id="1_6gd2s"]
+[ext_resource type="Texture2D" uid="uid://cix0i67jpyoog" path="res://assets/teacup_attack_imgs/teacup_attack_0002.png" id="2_5yy80"]
+[ext_resource type="Texture2D" uid="uid://w64n6ho1q05i" path="res://assets/teacup_attack_imgs/teacup_attack_0003.png" id="3_pgdxg"]
+[ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="4_2qhoo"]
+[ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="5_qtcef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cqwh"]
 atlas = ExtResource("1_6gd2s")

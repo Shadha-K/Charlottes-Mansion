@@ -44,9 +44,11 @@ func update_animation_parameters():
 	
 	if Input.is_action_just_pressed("swing"):
 		animation_tree["parameters/conditions/swing"] = true
+		#get_node("attack").armed()
 	else:
 		animation_tree["parameters/conditions/swing"] = false
-
+		#get_node("attack").disarm()
+		
 	if direction != Vector2.ZERO:
 		animation_tree["parameters/idle/blend_position"] = direction
 		animation_tree["parameters/skipping/blend_position"] = direction
@@ -57,8 +59,3 @@ func _on_teacup_picked_up():
 	var hotbar = get_node("/root/Hotbar")  # Reference to the hotbar
 	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 	print("Teacup added to hotbar!")
-
-func _on_attack_body_entered(body):
-	if body.name == "Teacup":
-		print("Teacup hit by attack!")
-		body.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=46 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -159,9 +159,6 @@ size = Vector2(762, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0uxy"]
 size = Vector2(87.5, 57)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dir7d"]
-size = Vector2(50, 48)
-
 [node name="kitchen" type="Node2D"]
 position = Vector2(5, 0)
 script = ExtResource("1_h8lgu")
@@ -223,14 +220,14 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAABAP//BAAAAAAAAAADAP//AwAAAAAAAAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAAFAP//BQAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAA=")
 tile_set = SubResource("TileSet_ces8x")
 
-[node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("15_t8te0")]
-position = Vector2(126, 106)
+[node name="Charlotte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("15_t8te0")]
+position = Vector2(140, 103)
 parent = NodePath("../Alex")
 
-[node name="Alex" parent="TileMap" instance=ExtResource("16_lqktc")]
-position = Vector2(69, 129)
+[node name="Alex" parent="." instance=ExtResource("16_lqktc")]
+position = Vector2(83, 126)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
+[node name="Camera2D" type="Camera2D" parent="Alex"]
 zoom = Vector2(3, 3)
 limit_left = -61
 limit_top = -258
@@ -259,59 +256,29 @@ to living room"
 horizontal_alignment = 1
 
 [node name="Teacup" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1053, 50)
+position = Vector2(1054, 49)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("18_57b8g")
-
-[node name="Area2D" type="Area2D" parent="Teacup"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup/Area2D"]
-position = Vector2(-10, 9)
-shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1213, 46)
+position = Vector2(1173, 53)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("18_57b8g")
-
-[node name="Area2D" type="Area2D" parent="Teacup2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup2/Area2D"]
-position = Vector2(-7, 4)
-shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1030, 301)
+position = Vector2(931, 137)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("18_57b8g")
-
-[node name="Area2D" type="Area2D" parent="Teacup3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup3/Area2D"]
-position = Vector2(-10, 9)
-shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="Teacup4" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1253, 219)
+position = Vector2(1031, 160)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("18_57b8g")
-
-[node name="Area2D" type="Area2D" parent="Teacup4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup4/Area2D"]
-position = Vector2(-10, 9)
-shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="Teacup5" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1005, 196)
+position = Vector2(1024, 313)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("18_57b8g")
-
-[node name="Area2D" type="Area2D" parent="Teacup5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacup5/Area2D"]
-position = Vector2(-10, 9)
-shape = SubResource("RectangleShape2D_dir7d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -322,7 +289,6 @@ offset_right = -271.0
 offset_bottom = -129.0
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
-visible = false
 script = ExtResource("19_doriw")
 
 [node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
@@ -406,8 +372,3 @@ expand_mode = 2
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
-[connection signal="body_entered" from="Teacup/Area2D" to="Teacup" method="_on_teacup_body_entered"]
-[connection signal="body_entered" from="Teacup2/Area2D" to="Teacup" method="_on_teacup_body_entered"]
-[connection signal="body_entered" from="Teacup3/Area2D" to="Teacup" method="_on_teacup_body_entered"]
-[connection signal="body_entered" from="Teacup4/Area2D" to="Teacup" method="_on_teacup_body_entered"]
-[connection signal="body_entered" from="Teacup5/Area2D" to="Teacup" method="_on_teacup_body_entered"]

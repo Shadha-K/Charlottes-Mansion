@@ -1,14 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=22 format=3 uid="uid://ca0rv041w830c"]
 
 [ext_resource type="Texture2D" uid="uid://c02i2ksl7f8j2" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
 [ext_resource type="Texture2D" uid="uid://cvfhdua7qva8x" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
 [ext_resource type="Texture2D" uid="uid://1fui1cb6eh2i" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
 [ext_resource type="Texture2D" uid="uid://defgv2wvqbu58" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
-[ext_resource type="Texture2D" uid="uid://k5xsvlpv8t66" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0000.png" id="5_2if8s"]
-[ext_resource type="Texture2D" uid="uid://b0mr8yqsjmopf" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0001.png" id="6_ipvo1"]
-[ext_resource type="Texture2D" uid="uid://brddkwm4e2818" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0003.png" id="7_qwmvi"]
-[ext_resource type="Texture2D" uid="uid://dm5n7hncsey0f" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0005.png" id="8_ljx6d"]
-[ext_resource type="Texture2D" uid="uid://bgtfeooin6452" path="res://assets/teacup_attack_imgs/teacup_attackFist/teacup_attackFist_0007.png" id="9_m0tlk"]
+[ext_resource type="Texture2D" uid="uid://bjfidur1lkh40" path="res://assets/teacup_attack_imgs/teacup_attack_0000.png" id="5_2if8s"]
+[ext_resource type="Texture2D" uid="uid://cix0i67jpyoog" path="res://assets/teacup_attack_imgs/teacup_attack_0002.png" id="6_ipvo1"]
+[ext_resource type="Texture2D" uid="uid://w64n6ho1q05i" path="res://assets/teacup_attack_imgs/teacup_attack_0003.png" id="7_qwmvi"]
+[ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="8_ljx6d"]
+[ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="9_m0tlk"]
+[ext_resource type="Script" path="res://damagable.gd" id="10_bfldy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
 atlas = ExtResource("5_2if8s")
@@ -87,32 +88,39 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4j0gj"]
-size = Vector2(67, 84)
+size = Vector2(118.5, 105)
 
-[node name="Teacup" type="Node2D"]
+[node name="Teacup" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -12)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
-animation = &"punch"
+animation = &"walking"
 autoplay = "walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-208, 22)
+position = Vector2(-6.25, 18.5)
 shape = SubResource("RectangleShape2D_4j0gj")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-6, 7)
 target_position = Vector2(58, -1)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-7, 8)
 target_position = Vector2(-61, 0)
 
 [node name="RayCastUp" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-5, 9)
 target_position = Vector2(-1, -46)
 
 [node name="RayCastDown" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-8, 8)
 target_position = Vector2(0, 63)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("10_bfldy")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vcddvd2g8p27"
-path="res://.godot/imported/teacup_attack_0005.png-369ab60774afcc4b59d599b3bfc0b856.ctex"
+uid="uid://cix0i67jpyoog"
+path="res://.godot/imported/teacup_attack_0002.png-d1fddd7b58de73b520f5a54e240a3bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/teacup_attack_imgs/withoutFist/teacup_attack_0005.png"
-dest_files=["res://.godot/imported/teacup_attack_0005.png-369ab60774afcc4b59d599b3bfc0b856.ctex"]
+source_file="res://assets/teacup_attack_imgs/teacup_attack_0002.png"
+dest_files=["res://.godot/imported/teacup_attack_0002.png-d1fddd7b58de73b520f5a54e240a3bba.ctex"]
 
 [params]
 
