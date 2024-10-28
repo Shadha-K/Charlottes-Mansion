@@ -5,6 +5,7 @@ signal book_picked_up()
 
 @onready var player = null  
 @onready var hotbar = get_node("/root/Hotbar")  
+@onready var gamestate = get_node("/root/GameState")
 
 # Function called when the scene is ready
 func _ready():
@@ -12,6 +13,8 @@ func _ready():
 	var grandparent = get_parent().get_parent()
 	player = grandparent.get_node("Alex")
 	add_to_group("Books")  # Add to the "Books" group
+	if gamestate.books_picked_up.has(name) and gamestate.books_picked_up[name] == true:
+		queue_free()
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:
@@ -33,4 +36,5 @@ func _process(_delta):
 func pick_up_book():
 	emit_signal("book_picked_up")  
 	hotbar.add_item_to_slot(1, "Book", preload("res://assets/puzzle_objects/tempbook.png"))
+	gamestate.books_picked_up[name] = true	
 	queue_free()  
