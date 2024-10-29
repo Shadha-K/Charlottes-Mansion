@@ -336,6 +336,17 @@ texture = ExtResource("22_gyp1b")
 [node name="tea_tray" parent="TileMap/furniture" instance=ExtResource("22_moxuy")]
 position = Vector2(299, 238)
 
+[node name="Label" type="Label" parent="TileMap/furniture/tea_tray"]
+offset_left = -50.0
+offset_top = -102.0
+offset_right = 31.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+pick up"
+horizontal_alignment = 1
+
 [node name="book" parent="TileMap/furniture" instance=ExtResource("23_dnv1t")]
 position = Vector2(759, 7)
 scale = Vector2(2, 2)

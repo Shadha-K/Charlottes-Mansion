@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn8gen7tixj5v"]
 
-[ext_resource type="Script" path="res://scripts/tea_tray.gd" id="1_sjb3v"]
+[ext_resource type="Script" path="res://scripts/diamond card/tea_tray.gd" id="1_sjb3v"]
 [ext_resource type="Texture2D" uid="uid://ne0ukw8qu7y2" path="res://assets/puzzle_objects/puzzle_cup.png" id="2_uufer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juhph"]
@@ -15,16 +15,8 @@ scale = Vector2(0.0517442, 0.0517442)
 texture = ExtResource("2_uufer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(5, -9)
+position = Vector2(-25, 21)
 shape = SubResource("RectangleShape2D_juhph")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -63.0
-offset_top = -87.0
-offset_right = 72.0
-offset_bottom = -60.0
-text = "Press E to pick up"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

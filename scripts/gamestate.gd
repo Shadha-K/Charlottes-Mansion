@@ -3,11 +3,54 @@ extends Node
 var player_health = 9
 var current_health = 9
 var books_picked_up: Dictionary = {}
- 
 
+# Puzzle variables
+var has_teacup: bool = false
+var has_water: bool = false
+var got_code: bool = false
+var jewelry_box_open: bool = false
+var code: String = "4710"  
+
+# Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
 	player_health = max(player_health, 0)
 
+#steps for ace of diamonds puzzle
+func _on_teacup_picked_up():
+	grab_teacup()
+
+func grab_teacup():
+	if not has_teacup:
+		has_teacup = true
+		print("You grabbed the teacup.")
+		
+func _on_filled_cup_picked_up():
+	fill_teacup()
+
+func fill_teacup():
+	if has_teacup and not has_water:
+		has_water = true
+		print("You filled the teacup with water.")
+
+func throw_water_on_mirror():
+	if has_water and not got_code:
+		got_code = true
+		print("You threw water on the vanity mirror. It got foggy.")
+		# Show code somehow, e.g., via UI
+		show_code_to_player(code)
+
+func put_code_in_jewelry_box(input_code: String):
+	if got_code and input_code == code and not jewelry_box_open:
+		jewelry_box_open = true
+		print("You opened the jewelry box and found the Ace of Diamonds!")
+		# You can emit a signal here if needed
+	else:
+		print("Wrong code! Try again.")
+
+func show_code_to_player(code: String):
+	print("The code is: " + code)
+
+#steps for ace of clubs puzzle
 func reset_books():
 	books_picked_up.clear()

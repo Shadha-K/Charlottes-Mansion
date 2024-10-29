@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://biymalgmemat6"]
+
+[ext_resource type="Script" path="res://scripts/diamond card/jewelry_box.gd" id="1_ab2qq"]
+[ext_resource type="Texture2D" uid="uid://dxtnwsriywguc" path="res://assets/puzzle_objects/jewelry_box_temp.png" id="2_0wh86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juhph"]
+size = Vector2(116.5, 76)
+
+[node name="jewelry_box" type="Area2D"]
+script = ExtResource("1_ab2qq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 16)
+shape = SubResource("RectangleShape2D_juhph")
+
+[node name="JewelryBoxTemp" type="Sprite2D" parent="."]
+position = Vector2(-22, -8)
+scale = Vector2(0.086, 0.0855)
+texture = ExtResource("2_0wh86")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

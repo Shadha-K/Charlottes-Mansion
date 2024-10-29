@@ -31,45 +31,43 @@ offset_bottom = 40.0
 layout_mode = 2
 script = ExtResource("3_16rph")
 
-[node name="TextureRect3" type="TextureRect" parent="slot2"]
+[node name="TextureRect2" type="TextureRect" parent="slot2"]
 layout_mode = 0
-offset_left = -44.0
-offset_right = -4.0
+offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="slot3" parent="." instance=ExtResource("1_jkxkg")]
 layout_mode = 2
 script = ExtResource("3_16rph")
 
-[node name="TextureRect4" type="TextureRect" parent="slot3"]
+[node name="TextureRect2" type="TextureRect" parent="slot3"]
 layout_mode = 0
-offset_left = -88.0
-offset_right = -48.0
+offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="slot4" parent="." instance=ExtResource("1_jkxkg")]
 layout_mode = 2
 script = ExtResource("3_16rph")
 
-[node name="TextureRect5" type="TextureRect" parent="."]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="slot4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="slot5" parent="." instance=ExtResource("1_jkxkg")]
 layout_mode = 2
 script = ExtResource("3_16rph")
 
-[node name="TextureRect6" type="TextureRect" parent="slot5"]
-layout_mode = 2
-offset_left = -4.0
-offset_right = -4.0
+[node name="TextureRect2" type="TextureRect" parent="slot5"]
+layout_mode = 0
+offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="slot6" parent="." instance=ExtResource("1_jkxkg")]
 layout_mode = 2
 script = ExtResource("3_16rph")
 
-[node name="TextureRect7" type="TextureRect" parent="slot6"]
-layout_mode = 2
-offset_left = -48.0
-offset_right = -48.0
+[node name="TextureRect2" type="TextureRect" parent="slot6"]
+layout_mode = 0
+offset_right = 40.0
 offset_bottom = 40.0

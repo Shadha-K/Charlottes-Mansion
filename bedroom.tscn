@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=71 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_k4xct"]
@@ -24,8 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://bwj5cxn4vwnpa" path="res://assets/kitchen/kitchen_window.png" id="12_u8ney"]
 [ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="13_bbdyq"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="24_mk0nr"]
+[ext_resource type="PackedScene" uid="uid://dcvqy4b8nvt8n" path="res://scenes/vanity_mirror.tscn" id="24_n05gp"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="25_bcjmn"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
+[ext_resource type="PackedScene" uid="uid://biymalgmemat6" path="res://scenes/jewelry_box.tscn" id="26_rdkgb"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="27_0vpd2"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="27_73mh5"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_d6w8n"]
@@ -294,7 +296,7 @@ tile_map_data = PackedByteArray("AAAeABMABAAAAAAAAAAKAAEABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_u4pn1")
 
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAAfAAYABwAAAAAAAAAfAAkACQAAAAAAAAAVAAcABAAAAAAAAAApAAcABAAAAAAAAAAVAAMAAAAAAAAAAAApAAMAAAAAAAAAAAAzAAEAAQAAAAAAAAAzAAUAAwAAAAAAAAABABUABQAAAAAAABAEAAQAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAfAAYABwAAAAAAAAAfAAkACQAAAAAAAAAVAAcABAAAAAAAAAApAAcABAAAAAAAAAAVAAMAAAAAAAAAAAApAAMAAAAAAAAAAAAzAAEAAQAAAAAAAAABABUABQAAAAAAABAEAAQAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_mkvot")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap/furniture"]
@@ -312,6 +314,7 @@ position = Vector2(666, 117)
 shape = SubResource("RectangleShape2D_p6yi0")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+z_index = 1
 position = Vector2(828.5, 115)
 shape = SubResource("RectangleShape2D_y3lfk")
 
@@ -322,6 +325,43 @@ shape = SubResource("RectangleShape2D_8go7p")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
 position = Vector2(27.5, 334.5)
 shape = SubResource("RectangleShape2D_ub0dt")
+
+[node name="vanity_mirror" parent="TileMap/furniture" instance=ExtResource("24_n05gp")]
+position = Vector2(873, 162)
+
+[node name="Label" type="Label" parent="TileMap/furniture/vanity_mirror"]
+offset_left = -101.0
+offset_top = -125.0
+offset_right = 11.0
+offset_bottom = -78.0
+theme_override_fonts/font = ExtResource("27_73mh5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+look at mirror"
+horizontal_alignment = 1
+
+[node name="jewelry_box" parent="TileMap/furniture" instance=ExtResource("26_rdkgb")]
+position = Vector2(52, 291)
+
+[node name="Label" type="Label" parent="TileMap/furniture/jewelry_box"]
+offset_left = -39.0
+offset_top = -99.0
+offset_right = 42.0
+offset_bottom = -52.0
+theme_override_fonts/font = ExtResource("27_73mh5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to 
+interact"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="TileMap/furniture/jewelry_box"]
+offset_left = -31.0
+offset_top = -53.0
+offset_right = 36.0625
+offset_bottom = -22.0
+theme_override_fonts/font = ExtResource("27_73mh5")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Code"
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
 position = Vector2(815, 419)
@@ -448,5 +488,7 @@ offset_bottom = 162.0
 texture = ExtResource("28_jtx4q")
 expand_mode = 2
 
+[connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
+[connection signal="text_submitted" from="TileMap/furniture/jewelry_box/LineEdit" to="TileMap/furniture/jewelry_box" method="_on_line_edit_text_submitted"]
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]

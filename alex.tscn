@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://attack.gd" id="3_q5n0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u25gb"]
-size = Vector2(33, 59)
+size = Vector2(32, 55)
 
 [sub_resource type="Animation" id="Animation_loq8x"]
 length = 0.001
@@ -491,6 +491,7 @@ frame = 14
 [node name="FollowPoint" type="Marker2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 26.5)
 shape = SubResource("RectangleShape2D_u25gb")
 debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
 
