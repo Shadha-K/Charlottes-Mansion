@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba7hhjwj2byug"]
+
+[ext_resource type="Texture2D" uid="uid://78s4g328vexm" path="res://assets/puzzle_objects/IMG_5648.WEBP" id="1_82jqs"]
+[ext_resource type="Script" path="res://basement_card_slots.gd" id="1_janti"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_phc2i"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_janti")
+
+[node name="temp_basement_door" type="Sprite2D" parent="."]
+position = Vector2(1499, 858)
+scale = Vector2(1.67773, 1.67383)
+texture = ExtResource("1_82jqs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 27.0
+offset_top = -3.0
+offset_right = 3615.0
+offset_bottom = 1921.0
+color = Color(0.329412, 0.211765, 0.129412, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 995.0
+offset_top = 56.0
+offset_right = 2032.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_phc2i")
+theme_override_font_sizes/font_size = 100
+text = "Door is locked"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2097.0
+offset_top = 777.0
+offset_right = 2499.0
+offset_bottom = 1061.0
+theme_override_fonts/font = ExtResource("2_phc2i")
+theme_override_font_sizes/font_size = 100
+text = "Press E to
+go back"
+horizontal_alignment = 1

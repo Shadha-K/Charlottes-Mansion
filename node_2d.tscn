@@ -29,9 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
 [ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
-[ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="25_d6jfc"]
 [ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
+[ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(97.75, 61)
@@ -263,7 +263,7 @@ tile_set = SubResource("TileSet_ufuy4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
 visible = false
-position = Vector2(513, 490)
+position = Vector2(518, 516)
 shape = SubResource("RectangleShape2D_k12gf")
 one_way_collision = true
 
@@ -482,7 +482,7 @@ expand_mode = 2
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(421, 202)
-script = ExtResource("25_d6jfc")
+script = ExtResource("32_e3568")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="basement_door"]
 position = Vector2(-2, 17)
@@ -496,8 +496,8 @@ offset_right = -21.0
 offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("2_p05t5")
 theme_override_font_sizes/font_size = 20
-text = "Basement is 
-locked"
+text = "Press E to go 
+to basement"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
