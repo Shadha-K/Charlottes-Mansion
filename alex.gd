@@ -9,7 +9,7 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready():
 	animation_tree.active = true
-
+	add_to_group("Player")
 	var teacups = get_tree().get_nodes_in_group("Teacups")
 	for teacup in teacups:
 		teacup.connect("teacup_picked_up", Callable(self, "_on_teacup_picked_up"))  # Connect to the teacup pickup signal

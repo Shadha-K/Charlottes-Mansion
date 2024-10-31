@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=30 format=3 uid="uid://ca0rv041w830c"]
 
 [ext_resource type="Texture2D" uid="uid://c02i2ksl7f8j2" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
+[ext_resource type="Script" path="res://teacupEnemy.gd" id="1_k8nqx"]
 [ext_resource type="Texture2D" uid="uid://cvfhdua7qva8x" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
 [ext_resource type="Texture2D" uid="uid://1fui1cb6eh2i" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
 [ext_resource type="Texture2D" uid="uid://defgv2wvqbu58" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
@@ -10,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="8_ljx6d"]
 [ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="9_m0tlk"]
 [ext_resource type="Script" path="res://damagable.gd" id="10_bfldy"]
+[ext_resource type="Script" path="res://scripts/State_Machine.gd" id="12_rghlp"]
+[ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="13_qg15g"]
+[ext_resource type="Script" path="res://EnemyFollow.gd" id="14_02kfc"]
+[ext_resource type="Script" path="res://EnemyAttack.gd" id="15_j31fv"]
+[ext_resource type="Script" path="res://teacupAttack.gd" id="17_2hty5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
 atlas = ExtResource("5_2if8s")
@@ -67,7 +73,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"punch",
-"speed": 7.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -83,44 +89,69 @@ animations = [{
 "texture": SubResource("AtlasTexture_4al6q")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"walk",
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j0gj"]
-size = Vector2(118.5, 105)
+[sub_resource type="GDScript" id="GDScript_huiwe"]
+script/source = "extends AnimatedSprite2D
 
-[node name="Teacup" type="CharacterBody2D"]
+func _on_animation_finished(anim_nam) :
+	print(\"ATTACKED\")
+	# ATTACK LOGIC
+	
+	#GO BACK TO IDLE
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j0gj"]
+size = Vector2(76, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw7o2"]
+size = Vector2(46.25, 122.5)
+
+[node name="Teacup" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
+script = ExtResource("1_k8nqx")
+enemy = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -12)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
-animation = &"walking"
-autoplay = "walking"
+animation = &"punch"
+script = SubResource("GDScript_huiwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.25, 18.5)
+position = Vector2(-10, 19)
 shape = SubResource("RectangleShape2D_4j0gj")
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(-6, 7)
-target_position = Vector2(58, -1)
-
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(-7, 8)
-target_position = Vector2(-61, 0)
-
-[node name="RayCastUp" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(-5, 9)
-target_position = Vector2(-1, -46)
-
-[node name="RayCastDown" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(-8, 8)
-target_position = Vector2(0, 63)
-
-[node name="Node" type="Node" parent="."]
+[node name="health_manager" type="Node" parent="."]
 script = ExtResource("10_bfldy")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("12_rghlp")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("13_qg15g")
+enemy = NodePath("../..")
+
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("14_02kfc")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("15_j31fv")
+enemy = NodePath("../..")
+
+[node name="attack" type="Area2D" parent="."]
+monitoring = false
+script = ExtResource("17_2hty5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(275, 3)
+shape = SubResource("RectangleShape2D_dw7o2")
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_changed"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="Transitioned" from="StateMachine/Attack" to="AnimatedSprite2D" method="_on_attack_transitioned"]
+[connection signal="body_entered" from="attack" to="attack" method="_on_body_entered"]
