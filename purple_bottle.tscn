@@ -17,9 +17,9 @@ position = Vector2(-4, -20)
 shape = SubResource("RectangleShape2D_d4bpx")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -133.0
-offset_top = -103.0
-offset_right = 142.0
-offset_bottom = -57.0
+offset_left = -92.0
+offset_top = -73.0
+offset_right = 183.0
+offset_bottom = -27.0
 text = "Press E to inspect under rug
 "
