@@ -5,6 +5,7 @@ var max_health = 9
 
 func _ready():
 	# Fetch all heart nodes and store them in the hearts array
+	add_to_group("heartManager")
 	for i in range(max_health):
 		var heart = $Heart1.get_parent().get_child(i)
 		hearts.append(heart)
