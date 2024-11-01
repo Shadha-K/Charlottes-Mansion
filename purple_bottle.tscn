@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgkplr0fto4bh" path="res://assets/puzzle_objects/tempbottle.png" id="1_sk65r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4bpx"]
+size = Vector2(31, 58)
 
 [node name="Area2D" type="Area2D"]
 
@@ -12,12 +13,13 @@ scale = Vector2(0.1625, 0.183333)
 texture = ExtResource("1_sk65r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -20)
 shape = SubResource("RectangleShape2D_d4bpx")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -87.0
-offset_top = -86.0
-offset_right = 129.0
-offset_bottom = -63.0
+offset_left = -133.0
+offset_top = -103.0
+offset_right = 142.0
+offset_bottom = -57.0
 text = "Press E to inspect under rug
 "
