@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=67 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -20,9 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_d3l06"]
 [ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_3l4fy"]
 [ext_resource type="Script" path="res://scripts/door_right.gd" id="19_6nlp7"]
+[ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="21_jnc4p"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
 [ext_resource type="Texture2D" uid="uid://mtvu8sg5bw3i" path="res://assets/puzzle_objects/tea_tray_empty.png" id="22_gyp1b"]
 [ext_resource type="PackedScene" uid="uid://bn8gen7tixj5v" path="res://scenes/tea_tray.tscn" id="22_moxuy"]
+[ext_resource type="Script" path="res://purple_bottle.gd" id="22_skoq0"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
 [ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
 [ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
@@ -355,12 +357,17 @@ scale = Vector2(2, 2)
 position = Vector2(348, -2)
 script = ExtResource("25_ixh56")
 
+[node name="Area2D" parent="TileMap/furniture" instance=ExtResource("21_jnc4p")]
+position = Vector2(452, 343)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("22_skoq0")
+
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(707, 194)
 parent = NodePath("../Alex")
 
 [node name="Alex" parent="TileMap" instance=ExtResource("23_y7awr")]
-position = Vector2(806, 195)
+position = Vector2(805, 191)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
 zoom = Vector2(3, 3)
@@ -502,6 +509,8 @@ horizontal_alignment = 1
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/furniture/Area2D" to="TileMap/furniture/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/furniture/Area2D" to="TileMap/furniture/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
 [connection signal="body_exited" from="door_left" to="door_left" method="_on_body_exited"]
 [connection signal="body_entered" from="basement_door" to="basement_door" method="_on_body_entered"]
