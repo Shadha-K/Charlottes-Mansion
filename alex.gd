@@ -5,9 +5,11 @@ const GRAVITY = 980.0
 
 var direction: Vector2 = Vector2.ZERO
 
+@onready var animated_sprite_2D_animation = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready():
+	animated_sprite_2D_animation.play("idle_front")
 	animation_tree.active = true
 	add_to_group("Player")
 	var teacups = get_tree().get_nodes_in_group("Teacups")
