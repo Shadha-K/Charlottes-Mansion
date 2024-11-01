@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=66 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
+[ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
 
@@ -354,6 +355,10 @@ scale = Vector2(2, 2)
 [node name="Recipe book" parent="TileMap/furniture" instance=ExtResource("24_3t8wm")]
 position = Vector2(348, -2)
 script = ExtResource("25_ixh56")
+
+[node name="fire" parent="TileMap/furniture" instance=ExtResource("26_7fhp7")]
+position = Vector2(480, -13)
+gravity = -980.0
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(707, 194)
