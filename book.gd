@@ -4,7 +4,7 @@ extends Area2D
 signal book_picked_up()
 
 @onready var player = null  
-@onready var hotbar = get_node("/root/Hotbar")  
+@onready var hotbar = get_node("/root/living_room/UI/Hotbar")  
 @onready var gamestate = get_node("/root/GameState")
 
 # Function called when the scene is ready
