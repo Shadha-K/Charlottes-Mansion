@@ -35,6 +35,6 @@ func _process(_delta):
 # Function to handle the book being picked up
 func pick_up_book():
 	emit_signal("book_picked_up")  
-	hotbar.add_item_to_slot(1, "Book", preload("res://assets/puzzle_objects/tempbook.png"))
+	GlobalHotbar.add_item_to_slot(1, "Book", preload("res://assets/puzzle_objects/tempbook.png"))
 	gamestate.books_picked_up[name] = true	
 	queue_free()  

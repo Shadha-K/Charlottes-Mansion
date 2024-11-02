@@ -28,5 +28,5 @@ func _process(_delta):
 
 func pick_up_book():
 	emit_signal("book_picked_up")  
-	hotbar.add_item_to_slot(2, "Book", preload("res://assets/puzzle_objects/tempbook2.png"))
+	GlobalHotbar.add_item_to_slot(2, "Book", preload("res://assets/puzzle_objects/tempbook2.png"))
 	queue_free()  
