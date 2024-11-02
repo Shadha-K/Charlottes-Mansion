@@ -11,6 +11,8 @@ var got_code: bool = false
 var sink_interacted: bool = false
 var vanity_interacted: bool = false
 var jewelry_box_open: bool = false
+var has_bottle: bool = false
+var has_recipe_book: bool = false
 var code: String = "4710"  
 
 # Function to decrease health
@@ -56,3 +58,21 @@ func show_code_to_player(code: String):
 #steps for ace of clubs puzzle
 func reset_books():
 	books_picked_up.clear()
+
+#steps for ace of hearts puzzle
+func _on_recipe_book_picked_up():
+	grab_recipe_book()
+	
+func grab_recipe_book():
+	if not has_recipe_book:
+		has_recipe_book = true
+		print("You grabbed the recipe book.")
+		
+#steps for ace of spades puzzle
+func _on_bottle_picked_up():
+	grab_bottle()
+	
+func grab_bottle():
+	if not has_bottle:
+		has_bottle = true
+		print("You grabbed the bottle.")
