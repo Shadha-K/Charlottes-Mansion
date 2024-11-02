@@ -1,0 +1,139 @@
+[gd_scene load_steps=19 format=3 uid="uid://b0rjbt7p81omt"]
+
+[ext_resource type="Texture2D" uid="uid://c0ylu2ojfkllq" path="res://assets/puzzle_objects/tempbook.png" id="1_6fyi5"]
+[ext_resource type="Texture2D" uid="uid://d4egrimqfey2w" path="res://assets/living_room/smoke_puff_animation/smokePuff_0000.png" id="1_uc7p8"]
+[ext_resource type="Texture2D" uid="uid://d36761iixjai4" path="res://assets/living_room/smoke_puff_animation/smokePuff_0001.png" id="2_w8s0a"]
+[ext_resource type="Texture2D" uid="uid://dlu5ksh4mbntw" path="res://assets/living_room/smoke_puff_animation/smokePuff_0002.png" id="3_hn8ex"]
+[ext_resource type="Texture2D" uid="uid://utkb1cv7bdkc" path="res://assets/living_room/smoke_puff_animation/smokePuff_0003.png" id="4_ohfh7"]
+[ext_resource type="Texture2D" uid="uid://ugc6f5wd8gfv" path="res://assets/living_room/smoke_puff_animation/smokePuff_0004.png" id="5_c5rre"]
+[ext_resource type="Texture2D" uid="uid://cdcij3m1ipui" path="res://assets/living_room/smoke_puff_animation/smokePuff_0005.png" id="6_ketuo"]
+[ext_resource type="Texture2D" uid="uid://d3g7ev1dxy3op" path="res://assets/living_room/smoke_puff_animation/smokePuff_0006.png" id="7_jikrh"]
+[ext_resource type="Texture2D" uid="uid://dhlb6gd075fm7" path="res://assets/living_room/smoke_puff_animation/smokePuff_0007.png" id="8_cbmkc"]
+[ext_resource type="Texture2D" uid="uid://b2t3njhuuea7c" path="res://assets/living_room/smoke_puff_animation/smokePuff_0008.png" id="9_yu6fa"]
+[ext_resource type="Texture2D" uid="uid://b1plihk3qaur6" path="res://assets/living_room/smoke_puff_animation/smokePuff_0009.png" id="10_6oich"]
+[ext_resource type="Texture2D" uid="uid://b5fjknjyx1p05" path="res://assets/living_room/smoke_puff_animation/smokePuff_0010.png" id="11_okfc7"]
+[ext_resource type="Texture2D" uid="uid://6uhmivw3pxhq" path="res://assets/puzzle_objects/clover.png" id="13_t3dl8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0mc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6fyi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uc7p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w8s0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hn8ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ohfh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c5rre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ketuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jikrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cbmkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yu6fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6oich")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6oich")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_okfc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_okfc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t3dl8")
+}],
+"loop": false,
+"name": &"transform_to_clover",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jifb8"]
+size = Vector2(101, 51)
+
+[sub_resource type="Animation" id="Animation_eoync"]
+resource_name = "burning_book"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("burning_book:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"transform_to_clover"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("burning_book:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_ejjem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("burning_book:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrhha"]
+_data = {
+"RESET": SubResource("Animation_ejjem"),
+"burning_book": SubResource("Animation_eoync")
+}
+
+[node name="smoke puff" type="Area2D"]
+
+[node name="burning_book" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, -14)
+scale = Vector2(0.297386, 0.288372)
+sprite_frames = SubResource("SpriteFrames_f0mc3")
+animation = &"transform_to_clover"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, -18)
+shape = SubResource("RectangleShape2D_jifb8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rrhha")
+}
