@@ -3,7 +3,7 @@ extends Area2D
 signal filled_cup_picked_up()
 
 @onready var label: Label = $Label 
-@onready var hotbar = get_node("/root/Hotbar")
+@onready var hotbar = get_node("/root/kitchen/CanvasLayer/Hotbar")
 
 func _ready():
 	label.visible = false 
@@ -25,5 +25,5 @@ func _process(_delta: float) -> void:
 
 func pick_up_filled_cup():
 	emit_signal("filled_cup_picked_up")  # Emit the signal here
-	hotbar.add_item_to_slot(1, "Filled Cup", preload("res://assets/puzzle_objects/puzzle_cup_full.png")) 
+	GlobalHotbar.add_item_to_slot("Filled Cup", preload("res://assets/puzzle_objects/puzzle_cup_full.png")) 
 	queue_free()
