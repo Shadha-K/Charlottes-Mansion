@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cva482y4dkqv0"]
+[gd_scene load_steps=28 format=3 uid="uid://cva482y4dkqv0"]
 
 [ext_resource type="Texture2D" uid="uid://dqknd7corkt6d" path="res://assets/bedroom/CloseUpVanityFog1.png" id="1_tfvke"]
 [ext_resource type="Texture2D" uid="uid://ba70lx5megw2t" path="res://assets/bedroom/CloseUpVanityFog2.png" id="2_wv506"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://226l0cp8ip2m" path="res://assets/bedroom/CloseUp4170Fog5.png" id="10_y4a5h"]
 [ext_resource type="Script" path="res://scripts/diamond card/vanity_zoomed.gd" id="11_jlksg"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="12_jjvfo"]
+[ext_resource type="Texture2D" uid="uid://cg8v0qabwl0eo" path="res://scripts/diamond card/blur_bedroom.png" id="13_5uf1p"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="14_j7ma7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fqxub"]
 atlas = ExtResource("1_tfvke")
@@ -120,7 +122,7 @@ _data = {
 script = ExtResource("11_jlksg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1499, 783)
+position = Vector2(1499, 830)
 scale = Vector2(2.77361, 2.55972)
 sprite_frames = SubResource("SpriteFrames_kj6i4")
 animation = &"numbers"
@@ -140,11 +142,25 @@ theme_override_font_sizes/font_size = 60
 text = "Click the mirror"
 
 [node name="Label2" type="Label" parent="AnimatedSprite2D"]
-offset_left = -576.505
-offset_top = -285.187
-offset_right = -140.505
-offset_bottom = -154.187
+offset_left = -578.308
+offset_top = -303.549
+offset_right = -142.308
+offset_bottom = -172.549
 theme_override_fonts/font = ExtResource("12_jjvfo")
 theme_override_font_sizes/font_size = 45
 text = "Press E to go back"
 horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("14_j7ma7")]
+offset_left = -535.0
+offset_top = -169.0
+offset_right = -271.0
+offset_bottom = -129.0
+
+[node name="BlurBedroom" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1514.5, 858)
+scale = Vector2(1.00165, 1.007)
+texture = ExtResource("13_5uf1p")

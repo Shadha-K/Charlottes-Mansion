@@ -6,7 +6,7 @@ var next_room_scene = "res://bedroom.tscn"
 @onready var label2: Label = $AnimatedSprite2D/Label2
 
 func _ready():
-	if GameState.interacted:
+	if GameState.vanity_interacted:
 		label.visible = false
 		label2.visible = true
 	else:
@@ -14,14 +14,14 @@ func _ready():
 		label2.visible = false
 
 func _process(_delta):
-	if not GameState.interacted:
+	if not GameState.vanity_interacted:
 		animated_sprite.play("foggy mirror")
 		
 		if Input.is_action_just_pressed("click or drag"):
 			label.visible = false  
 			label2.visible = true 
-			GameState.interacted = true 
-	if GameState.interacted:
+			GameState.vanity_interacted = true 
+	if GameState.vanity_interacted:
 		animated_sprite.play("numbers")
 		
 		if Input.is_action_just_pressed("interact"):

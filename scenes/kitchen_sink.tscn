@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv5hamglfmi2k"]
 
 [ext_resource type="Script" path="res://scripts/diamond card/filled_cup.gd" id="1_sku0a"]
-[ext_resource type="Texture2D" uid="uid://5a2fp33ri4ra" path="res://assets/puzzle_objects/puzzle_cup_full.png" id="2_ie1fl"]
+[ext_resource type="Texture2D" uid="uid://g1ughr3gbc50" path="res://assets/kitchen/kitchen sink.png" id="2_p760y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juhph"]
-size = Vector2(116.5, 76)
+size = Vector2(128, 87)
 
-[node name="filled_cup" type="Area2D"]
+[node name="kitchen_sink" type="Area2D"]
 script = ExtResource("1_sku0a")
 
-[node name="PuzzleCupFull" type="Sprite2D" parent="."]
-position = Vector2(-25.125, -8.34375)
-scale = Vector2(0.0556103, 0.0547395)
-texture = ExtResource("2_ie1fl")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -9)
+z_index = 1
+position = Vector2(5, 18.5)
 shape = SubResource("RectangleShape2D_juhph")
+
+[node name="KitchenSink" type="Sprite2D" parent="."]
+position = Vector2(5, -35)
+texture = ExtResource("2_p760y")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

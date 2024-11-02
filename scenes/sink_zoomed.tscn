@@ -1,0 +1,121 @@
+[gd_scene load_steps=20 format=3 uid="uid://cql568sbxloxg"]
+
+[ext_resource type="Texture2D" uid="uid://dbmdwtpucdk6i" path="res://assets/kitchen/CloseUpSinkOff.png" id="1_oj321"]
+[ext_resource type="Texture2D" uid="uid://rdaj18a4d4km" path="res://assets/kitchen/CloseUpSinkOn1.1.png" id="2_05bsq"]
+[ext_resource type="Texture2D" uid="uid://d1hri0lld5c2y" path="res://assets/kitchen/CloseUpSinkOn1.2.png" id="3_13piv"]
+[ext_resource type="Texture2D" uid="uid://b6rr8q1fqkh1v" path="res://assets/kitchen/CloseUpSinkOn.png" id="4_6stek"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="5_ivss3"]
+[ext_resource type="Script" path="res://scripts/diamond card/sink_zoomed.gd" id="6_pwykm"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="7_tvipp"]
+[ext_resource type="Texture2D" uid="uid://bc8clm8e0t5c1" path="res://scripts/diamond card/blur_kitchen.png" id="8_2ocu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsdwm"]
+atlas = ExtResource("1_oj321")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5a3c"]
+atlas = ExtResource("1_oj321")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36ffk"]
+atlas = ExtResource("1_oj321")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5o4l"]
+atlas = ExtResource("2_05bsq")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvpup"]
+atlas = ExtResource("3_13piv")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7beaf"]
+atlas = ExtResource("3_13piv")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyhbe"]
+atlas = ExtResource("3_13piv")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86d72"]
+atlas = ExtResource("3_13piv")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh2dd"]
+atlas = ExtResource("3_13piv")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvx37"]
+atlas = ExtResource("4_6stek")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mko5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsdwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5a3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36ffk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5o4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvpup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7beaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyhbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86d72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh2dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvx37")
+}],
+"loop": true,
+"name": &"sink",
+"speed": 7.0
+}]
+
+[node name="sink_zoomed" type="Node2D"]
+script = ExtResource("6_pwykm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1454, 931)
+scale = Vector2(2.67222, 2.44722)
+sprite_frames = SubResource("SpriteFrames_mko5n")
+animation = &"sink"
+autoplay = "sink"
+frame_progress = 0.230386
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -520.166
+offset_top = -361.226
+offset_right = 205.834
+offset_bottom = -255.226
+theme_override_fonts/font = ExtResource("5_ivss3")
+theme_override_font_sizes/font_size = 50
+text = "Press E to go back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("7_tvipp")]
+offset_left = -535.0
+offset_top = -169.0
+offset_right = -271.0
+offset_bottom = -129.0
+
+[node name="BlurKitchen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1502, 857)
+texture = ExtResource("8_2ocu6")

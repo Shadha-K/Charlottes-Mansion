@@ -8,7 +8,8 @@ var books_picked_up: Dictionary = {}
 var has_teacup: bool = false
 var has_water: bool = false
 var got_code: bool = false
-var interacted: bool = false
+var sink_interacted: bool = false
+var vanity_interacted: bool = false
 var jewelry_box_open: bool = false
 var code: String = "4710"  
 
