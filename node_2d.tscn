@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
-[ext_resource type="PackedScene" path="res://fire.tscn" id="26_7fhp7"]
+[ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
 [ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
 [ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]

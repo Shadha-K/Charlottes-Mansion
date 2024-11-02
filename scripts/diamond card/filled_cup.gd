@@ -11,7 +11,6 @@ func _ready():
 	var game_state = get_tree().root.get_node("GameState")
 	self.connect("filled_cup_picked_up", Callable(game_state, "_on_filled_cup_picked_up"))
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Alex" and get_tree().root.get_node("GameState").has_teacup: 
 		label.visible = true 

@@ -1,0 +1,150 @@
+[gd_scene load_steps=26 format=3 uid="uid://cva482y4dkqv0"]
+
+[ext_resource type="Texture2D" uid="uid://dqknd7corkt6d" path="res://assets/bedroom/CloseUpVanityFog1.png" id="1_tfvke"]
+[ext_resource type="Texture2D" uid="uid://ba70lx5megw2t" path="res://assets/bedroom/CloseUpVanityFog2.png" id="2_wv506"]
+[ext_resource type="Texture2D" uid="uid://chrmrhrh5pot0" path="res://assets/bedroom/CloseUpVanityFog3.png" id="3_tmdhu"]
+[ext_resource type="Texture2D" uid="uid://1w721y3gi00r" path="res://assets/bedroom/CloseUpVanityFog4.png" id="4_q6l7j"]
+[ext_resource type="Texture2D" uid="uid://bdeejmddkqsp0" path="res://assets/bedroom/CloseUpVanityFog5.png" id="5_k4odm"]
+[ext_resource type="Texture2D" uid="uid://bq4kobpbrq6a8" path="res://assets/bedroom/CloseUp4170Fog1.png" id="6_7vnkj"]
+[ext_resource type="Texture2D" uid="uid://mr8v42ob1gwl" path="res://assets/bedroom/CloseUp4170Fog2.png" id="7_5ugmc"]
+[ext_resource type="Texture2D" uid="uid://bbcyrblutuyr8" path="res://assets/bedroom/CloseUp4170Fog3.png" id="8_aluet"]
+[ext_resource type="Texture2D" uid="uid://rhb5v63tjm4e" path="res://assets/bedroom/CloseUp4170Fog4.png" id="9_63gbq"]
+[ext_resource type="Texture2D" uid="uid://226l0cp8ip2m" path="res://assets/bedroom/CloseUp4170Fog5.png" id="10_y4a5h"]
+[ext_resource type="Script" path="res://scripts/diamond card/vanity_zoomed.gd" id="11_jlksg"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="12_jjvfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqxub"]
+atlas = ExtResource("1_tfvke")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2lpd"]
+atlas = ExtResource("2_wv506")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv5jx"]
+atlas = ExtResource("3_tmdhu")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4jjq"]
+atlas = ExtResource("4_q6l7j")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r16ou"]
+atlas = ExtResource("5_k4odm")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6b7l"]
+atlas = ExtResource("6_7vnkj")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs3xf"]
+atlas = ExtResource("7_5ugmc")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0xl7"]
+atlas = ExtResource("8_aluet")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yku1c"]
+atlas = ExtResource("9_63gbq")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52gdb"]
+atlas = ExtResource("10_y4a5h")
+region = Rect2(0, 0, 720, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kj6i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqxub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2lpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv5jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4jjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r16ou")
+}],
+"loop": true,
+"name": &"foggy mirror",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6b7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs3xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0xl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yku1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52gdb")
+}],
+"loop": true,
+"name": &"numbers",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cgycl"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qmfh"]
+_data = {
+"fade": SubResource("Animation_cgycl")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("11_jlksg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1499, 783)
+scale = Vector2(2.77361, 2.55972)
+sprite_frames = SubResource("SpriteFrames_kj6i4")
+animation = &"numbers"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_5qmfh")
+}
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -179.549
+offset_top = -78.9148
+offset_right = 283.451
+offset_bottom = 20.0852
+theme_override_fonts/font = ExtResource("12_jjvfo")
+theme_override_font_sizes/font_size = 60
+text = "Click the mirror"
+
+[node name="Label2" type="Label" parent="AnimatedSprite2D"]
+offset_left = -576.505
+offset_top = -285.187
+offset_right = -140.505
+offset_bottom = -154.187
+theme_override_fonts/font = ExtResource("12_jjvfo")
+theme_override_font_sizes/font_size = 45
+text = "Press E to go back"
+horizontal_alignment = 1
