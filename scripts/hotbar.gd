@@ -59,7 +59,7 @@ func update_hotbar():
 		var texture_rect = button.get_child(1)
 		
 		if item_data:
-			label.text = item_data["name"]
+			#label.text = item_data["name"]
 			texture_rect.texture = item_data["icon"]
 		else:
 			label.text = ""
