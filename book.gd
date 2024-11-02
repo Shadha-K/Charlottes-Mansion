@@ -18,8 +18,8 @@ func _ready():
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:
-		if body.name == "Alex": 
-			$Label.visible = true  
+	if body.name == "Alex" and get_tree().root.get_node("GameState").has_book: 
+		$Label.visible = true 
 
 # Function called when something exits the area (the player)
 func _on_body_exited(body: Node2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0rjbt7p81omt"]
+[gd_scene load_steps=19 format=3 uid="uid://c7y44eucaub0q"]
 
 [ext_resource type="Texture2D" uid="uid://c0ylu2ojfkllq" path="res://assets/puzzle_objects/tempbook.png" id="1_6fyi5"]
 [ext_resource type="Texture2D" uid="uid://d4egrimqfey2w" path="res://assets/living_room/smoke_puff_animation/smokePuff_0000.png" id="1_uc7p8"]
@@ -70,6 +70,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jifb8"]
 size = Vector2(101, 51)
 
+[sub_resource type="Animation" id="Animation_ejjem"]
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("burning_book:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"transform_to_clover"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("burning_book:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
 [sub_resource type="Animation" id="Animation_eoync"]
 resource_name = "burning_book"
 length = 2.0
@@ -99,21 +126,6 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
 
-[sub_resource type="Animation" id="Animation_ejjem"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("burning_book:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rrhha"]
 _data = {
 "RESET": SubResource("Animation_ejjem"),
@@ -127,7 +139,6 @@ position = Vector2(11, -14)
 scale = Vector2(0.297386, 0.288372)
 sprite_frames = SubResource("SpriteFrames_f0mc3")
 animation = &"transform_to_clover"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(15, -18)
