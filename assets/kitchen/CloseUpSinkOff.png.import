@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1hri0lld5c2y"
-path="res://.godot/imported/CloseUpSinkOn1.2.png-f3fb8e254970a7f2e71927eaa6a71dd8.ctex"
+uid="uid://dbmdwtpucdk6i"
+path="res://.godot/imported/CloseUpSinkOff.png-f4822d7b0b9065744110c4aa971e89cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bedroom/CloseUpSinkOn1.2.png"
-dest_files=["res://.godot/imported/CloseUpSinkOn1.2.png-f3fb8e254970a7f2e71927eaa6a71dd8.ctex"]
+source_file="res://assets/kitchen/CloseUpSinkOff.png"
+dest_files=["res://.godot/imported/CloseUpSinkOff.png-f4822d7b0b9065744110c4aa971e89cf.ctex"]
 
 [params]
 
