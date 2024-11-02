@@ -4,7 +4,7 @@ extends Area2D
 signal book_picked_up()
 
 @onready var player = null  
-@onready var hotbar = get_node("/root/Hotbar")  
+@onready var hotbar = get_node("/root/living_room/UI/Hotbar")  
 @onready var label = $Label  # Correctly reference the Label
 
 func _ready():

@@ -4,7 +4,7 @@ extends Area2D
 signal bottle_picked_up()
 
 @onready var player = null  
-@onready var hotbar = get_node("/root/Hotbar")  
+@onready var hotbar = get_node("/root/living_room/UI/Hotbar")  
 @onready var label = $Label  # Correctly reference the Label
 
 func _ready():
@@ -28,5 +28,5 @@ func _process(_delta):
 
 func pick_up_bottle():
 	emit_signal("bottle_picked_up")  
-	hotbar.add_item_to_slot(1, "Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
+	hotbar.add_item_to_slot(3, "Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
 	queue_free()  
