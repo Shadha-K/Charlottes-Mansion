@@ -49,25 +49,24 @@
 			
 extends HBoxContainer
 
-var hotbar = []
-var hotbar_size = 6
-
+# Updates the UI in the global hotbar
+func update_hotbar():
+	for i in range(GlobalHotbar.hotbar_size):
+		var item_data = GlobalHotbar.get_item_in_slot(i)
+		
+		var button = get_child(i)
+		var label = button.get_child(0)
+		var texture_rect = button.get_child(1)
+		
+		if item_data:
+			label.text = item_data["name"]
+			texture_rect.texture = item_data["icon"]
+		else:
+			label.text = ""
+			texture_rect.texture = null
+			
 func _ready():
-	for i in range(hotbar_size):
-		hotbar.append(null)
-
-# updates hotbar ui
-
-# adds item to hotbar
-func add_item_to_slot(slot_index: int, item_name: String, item_icon: Texture):
-	var item_data = {
-		"name": item_name,
-		"icon": item_icon
-	}
-	hotbar[slot_index] = item_data
+	update_hotbar()
 	
-	var button = get_child(slot_index)
-	var label = button.get_child(0)
-	label.text = item_name
-	var texture_rect = button.get_child(1)
-	texture_rect.texture = item_icon
+func _process(_delta):
+	update_hotbar()

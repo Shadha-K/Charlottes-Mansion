@@ -28,5 +28,5 @@ func _process(_delta):
 
 func pick_up_bottle():
 	emit_signal("bottle_picked_up")  
-	hotbar.add_item_to_slot(3, "Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
+	GlobalHotbar.add_item_to_slot(3, "Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
 	queue_free()  
