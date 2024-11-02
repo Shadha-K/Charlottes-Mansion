@@ -33,6 +33,6 @@ func _process(_delta):
 func pick_up_teacup():
 	if not get_tree().root.get_node("GameState").has_teacup:
 		emit_signal("teacup_picked_up")  
-		GlobalHotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))  
+		GlobalHotbar.add_item_to_slot("Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))  
 		get_tree().root.get_node("GameState").has_teacup = true 
 		queue_free() 

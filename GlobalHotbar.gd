@@ -8,17 +8,32 @@ func _ready():
 		hotbar.append(null)
 
 # Add item to a specific slot
-func add_item_to_slot(slot_index: int, item_name: String, item_icon: Texture):
-	if slot_index < 0 or slot_index >= hotbar_size:
-		print("Invalid slot index")
-		return
-	
-	var item_data = {
-		"name": item_name,
-		"icon": item_icon
-	}
-	hotbar[slot_index] = item_data
-	print("Added item to global hotbar:", item_data)
+func add_item_to_slot(item_name: String, item_icon: Texture):
+	# Special case to replace empty cup with filled cup
+	if item_name == "Filled Cup":
+		for slot_index in range(hotbar_size):
+			if hotbar[slot_index].name == "Teacup":
+				var item_data = {
+				"name": item_name,
+				"icon": item_icon
+				}
+				hotbar[slot_index] = item_data
+				print("Added item to global hotbar:", item_data)
+				return
+			else:
+				print("Empty teacup does not exist in inventory.")
+	else:
+		for slot_index in range(hotbar_size):
+			if hotbar[slot_index] == null:
+				var item_data = {
+					"name": item_name,
+					"icon": item_icon
+				}
+				hotbar[slot_index] = item_data
+				print("Added item to global hotbar:", item_data)
+				return
+			else:
+				slot_index += 1
 
 # Get item data for a slot
 func get_item_in_slot(slot_index: int):
