@@ -90,23 +90,6 @@ animations = [{
 [node name="sink_zoomed" type="Node2D"]
 script = ExtResource("6_pwykm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1454, 931)
-scale = Vector2(2.67222, 2.44722)
-sprite_frames = SubResource("SpriteFrames_mko5n")
-animation = &"sink"
-autoplay = "sink"
-frame_progress = 0.230386
-
-[node name="Label" type="Label" parent="AnimatedSprite2D"]
-offset_left = -520.166
-offset_top = -361.226
-offset_right = 205.834
-offset_bottom = -255.226
-theme_override_fonts/font = ExtResource("5_ivss3")
-theme_override_font_sizes/font_size = 50
-text = "Press E to go back"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("7_tvipp")]
@@ -117,8 +100,8 @@ offset_bottom = -129.0
 
 [node name="BlurKitchen" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(1511.5, 857)
-scale = Vector2(1.00631, 1)
+position = Vector2(642.25, 342)
+scale = Vector2(0.382636, 0.381008)
 texture = ExtResource("8_2ocu6")
 
 [node name="Camera2D" type="Camera2D" parent="BlurKitchen"]
@@ -127,3 +110,20 @@ limit_top = 0
 limit_right = 3030
 limit_bottom = 1750
 limit_smoothed = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(617, 360)
+scale = Vector2(1.03316, 0.96901)
+sprite_frames = SubResource("SpriteFrames_mko5n")
+animation = &"sink"
+autoplay = "sink"
+frame_progress = 0.230386
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -502.342
+offset_top = -329.202
+offset_right = 223.658
+offset_bottom = -223.202
+theme_override_fonts/font = ExtResource("5_ivss3")
+theme_override_font_sizes/font_size = 50
+text = "Press E to go back"

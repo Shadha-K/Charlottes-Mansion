@@ -371,7 +371,7 @@ parent = NodePath("../Alex")
 position = Vector2(885, 444)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
-zoom = Vector2(3, 3)
+zoom = Vector2(1.2, 1.2)
 limit_left = -14
 limit_top = -127
 limit_right = 1038

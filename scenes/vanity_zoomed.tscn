@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://chrmrhrh5pot0" path="res://assets/bedroom/CloseUpVanityFog3.png" id="3_tmdhu"]
 [ext_resource type="Texture2D" uid="uid://1w721y3gi00r" path="res://assets/bedroom/CloseUpVanityFog4.png" id="4_q6l7j"]
 [ext_resource type="Texture2D" uid="uid://bdeejmddkqsp0" path="res://assets/bedroom/CloseUpVanityFog5.png" id="5_k4odm"]
-[ext_resource type="Texture2D" uid="uid://bq4kobpbrq6a8" path="res://assets/bedroom/CloseUp4170Fog1.png" id="6_7vnkj"]
-[ext_resource type="Texture2D" uid="uid://mr8v42ob1gwl" path="res://assets/bedroom/CloseUp4170Fog2.png" id="7_5ugmc"]
-[ext_resource type="Texture2D" uid="uid://bbcyrblutuyr8" path="res://assets/bedroom/CloseUp4170Fog3.png" id="8_aluet"]
-[ext_resource type="Texture2D" uid="uid://rhb5v63tjm4e" path="res://assets/bedroom/CloseUp4170Fog4.png" id="9_63gbq"]
-[ext_resource type="Texture2D" uid="uid://226l0cp8ip2m" path="res://assets/bedroom/CloseUp4170Fog5.png" id="10_y4a5h"]
+[ext_resource type="Texture2D" uid="uid://3b17bjcruda2" path="res://assets/kitchen/CloseUp4170Fog1.png" id="7_s4aun"]
+[ext_resource type="Texture2D" uid="uid://cbis5kmhgu4u" path="res://assets/kitchen/CloseUp4170Fog2.png" id="8_vowk7"]
+[ext_resource type="Texture2D" uid="uid://ts3l684wd1dl" path="res://assets/kitchen/CloseUp4170Fog3.png" id="9_txsdr"]
+[ext_resource type="Texture2D" uid="uid://bierou8yvrvgn" path="res://assets/kitchen/CloseUp4170Fog4.png" id="10_221gn"]
+[ext_resource type="Texture2D" uid="uid://d1amwhlxo3kcs" path="res://assets/kitchen/CloseUp4170Fog5.png" id="11_4drpi"]
 [ext_resource type="Script" path="res://scripts/diamond card/vanity_zoomed.gd" id="11_jlksg"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="12_jjvfo"]
 [ext_resource type="Texture2D" uid="uid://cyu8ck10nivb8" path="res://scripts/diamond card/blur_bedroom.png" id="13_5uf1p"]
@@ -35,24 +35,24 @@ region = Rect2(0, 0, 720, 720)
 atlas = ExtResource("5_k4odm")
 region = Rect2(0, 0, 720, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6b7l"]
-atlas = ExtResource("6_7vnkj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqqed"]
+atlas = ExtResource("7_s4aun")
 region = Rect2(0, 0, 720, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bs3xf"]
-atlas = ExtResource("7_5ugmc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydgce"]
+atlas = ExtResource("8_vowk7")
 region = Rect2(0, 0, 720, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0xl7"]
-atlas = ExtResource("8_aluet")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o458x"]
+atlas = ExtResource("9_txsdr")
 region = Rect2(0, 0, 720, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yku1c"]
-atlas = ExtResource("9_63gbq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pds7u"]
+atlas = ExtResource("10_221gn")
 region = Rect2(0, 0, 720, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_52gdb"]
-atlas = ExtResource("10_y4a5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ibjl"]
+atlas = ExtResource("11_4drpi")
 region = Rect2(0, 0, 720, 720)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kj6i4"]
@@ -79,19 +79,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b6b7l")
+"texture": SubResource("AtlasTexture_dqqed")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bs3xf")
+"texture": SubResource("AtlasTexture_ydgce")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j0xl7")
+"texture": SubResource("AtlasTexture_o458x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yku1c")
+"texture": SubResource("AtlasTexture_pds7u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_52gdb")
+"texture": SubResource("AtlasTexture_7ibjl")
 }],
 "loop": true,
 "name": &"numbers",
@@ -122,10 +122,12 @@ _data = {
 script = ExtResource("11_jlksg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1499, 830)
-scale = Vector2(2.77361, 2.55972)
+position = Vector2(579, 305)
+scale = Vector2(0.911805, 0.86736)
 sprite_frames = SubResource("SpriteFrames_kj6i4")
 animation = &"numbers"
+frame = 3
+frame_progress = 0.638888
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
@@ -142,16 +144,17 @@ theme_override_font_sizes/font_size = 60
 text = "Click the mirror"
 
 [node name="Label2" type="Label" parent="AnimatedSprite2D"]
-offset_left = -578.308
-offset_top = -303.549
-offset_right = -142.308
-offset_bottom = -172.549
+offset_left = -669.003
+offset_top = -332.042
+offset_right = -233.003
+offset_bottom = -201.042
 theme_override_fonts/font = ExtResource("12_jjvfo")
 theme_override_font_sizes/font_size = 45
 text = "Press E to go back"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("14_j7ma7")]
 offset_left = -535.0
@@ -161,8 +164,8 @@ offset_bottom = -129.0
 
 [node name="BlurBedroom" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(1514.5, 858)
-scale = Vector2(1.00165, 1.007)
+position = Vector2(576.503, 326.5)
+scale = Vector2(0.381281, 0.38098)
 texture = ExtResource("13_5uf1p")
 
 [node name="Camera2D" type="Camera2D" parent="BlurBedroom"]
