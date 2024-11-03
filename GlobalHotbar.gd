@@ -20,16 +20,16 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
 				return
+			elif hotbar[slot_index].name == "Filled Cup":
+				var item_data = {
+				"name": item_name,
+				"icon": item_icon
+				}
+				hotbar[slot_index] = item_data
+				print("Added item to global hotbar:", item_data)
+				return
 			else:
-				for slot_index2 in range(hotbar_size):
-					if hotbar[slot_index2].name == "Filled Cup":
-						var item_data = {
-						"name": item_name,
-						"icon": item_icon
-						}
-						hotbar[slot_index] = item_data
-						print("Added item to global hotbar:", item_data)
-						return
+				slot_index += 1
 	else:
 		for slot_index in range(hotbar_size):
 			if hotbar[slot_index] == null:
