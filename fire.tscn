@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcntxkwgikkk4"]
+[gd_scene load_steps=7 format=3 uid="uid://bcntxkwgikkk4"]
 
 [ext_resource type="Texture2D" uid="uid://cu5kjp5tg5twf" path="res://assets/living_room/fire.png" id="1_vvafb"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_g21r2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1kyt"]
 radius = 40.7922
@@ -46,3 +47,10 @@ scale_amount_min = 0.0
 scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_4lvgn")
 color_ramp = SubResource("Gradient_plrfe")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -58.0
+offset_right = 169.0
+offset_bottom = -26.0
+theme_override_fonts/font = ExtResource("2_g21r2")
+text = "Press E to throw book"

@@ -18,6 +18,8 @@ var has_diamond: bool = false
 var has_bottle: bool = false
 var has_recipe_book: bool = false
 var has_book: bool = false
+var book_used_in_fireplace: bool = false
+
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
@@ -69,7 +71,12 @@ func grab_book():
 	if not has_book:
 		has_book=true
 		print("You grabbed the book")
-
+func _on_book_thrown():
+	if has_book and not book_used_in_fireplace:
+		book_used_in_fireplace = true
+		has_book = false  
+		print("The book was thrown into the fireplace.")
+		
 #steps for ace of hearts puzzle
 func _on_recipe_book_picked_up():
 	grab_recipe_book()

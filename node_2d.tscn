@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=69 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
 [ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
+[ext_resource type="Script" path="res://fire.gd" id="27_bwpxa"]
 [ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
 [ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
@@ -361,6 +362,7 @@ script = ExtResource("25_ixh56")
 [node name="fire" parent="TileMap/furniture" instance=ExtResource("26_7fhp7")]
 position = Vector2(479, -21)
 gravity = -980.0
+script = ExtResource("27_bwpxa")
 
 [node name="bottle" parent="TileMap/furniture" instance=ExtResource("27_ryt8w")]
 position = Vector2(452, 371)
@@ -516,6 +518,8 @@ horizontal_alignment = 1
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_exited"]
 [connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
