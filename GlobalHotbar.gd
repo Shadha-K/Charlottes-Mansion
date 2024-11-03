@@ -30,6 +30,27 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				return
 			else:
 				slot_index += 1
+	elif item_name == "Clover":
+		for slot_index in range(hotbar_size):
+			if hotbar[slot_index].name == "Book":
+				var item_data = {
+				"name": item_name,
+				"icon": item_icon
+				}
+				hotbar[slot_index] = item_data
+				print("Added item to global hotbar:", item_data)
+				return
+			elif hotbar[slot_index].name == "Clover":
+				var item_data = {
+				"name": item_name,
+				"icon": item_icon
+				}
+				hotbar[slot_index] = item_data
+				print("Added item to global hotbar:", item_data)
+				return
+			
+			else:
+				slot_index += 1
 	else:
 		for slot_index in range(hotbar_size):
 			if hotbar[slot_index] == null:
@@ -42,6 +63,7 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				return
 			else:
 				slot_index += 1
+			
 
 # Get item data for a slot
 func get_item_in_slot(slot_index: int):
