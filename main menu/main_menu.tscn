@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=5 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://b775u61dvv5no" path="res://main menu/background menu.webp" id="1_v5bfl"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_2lk53"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0nii"]
 bg_color = Color(1, 1, 1, 1)
@@ -50,8 +51,8 @@ z_index = 1
 z_as_relative = false
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
-theme_override_colors/font_color = Color(1, 0.934058, 0.833722, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
 text = "START GAME"
 flat = true
@@ -66,7 +67,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.968627, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 40
 text = "QUIT"
 flat = true
 

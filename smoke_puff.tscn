@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7y44eucaub0q"]
+[gd_scene load_steps=20 format=3 uid="uid://c7y44eucaub0q"]
 
-[ext_resource type="Texture2D" uid="uid://c0ylu2ojfkllq" path="res://assets/puzzle_objects/tempbook.png" id="1_6fyi5"]
+[ext_resource type="Texture2D" uid="uid://bidm3dwt34d47" path="res://assets/puzzle_objects/fire_book.png" id="1_koii6"]
 [ext_resource type="Texture2D" uid="uid://d4egrimqfey2w" path="res://assets/living_room/smoke_puff_animation/smokePuff_0000.png" id="1_uc7p8"]
 [ext_resource type="Texture2D" uid="uid://d36761iixjai4" path="res://assets/living_room/smoke_puff_animation/smokePuff_0001.png" id="2_w8s0a"]
 [ext_resource type="Texture2D" uid="uid://dlu5ksh4mbntw" path="res://assets/living_room/smoke_puff_animation/smokePuff_0002.png" id="3_hn8ex"]
@@ -14,11 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://b5fjknjyx1p05" path="res://assets/living_room/smoke_puff_animation/smokePuff_0010.png" id="11_okfc7"]
 [ext_resource type="Texture2D" uid="uid://6uhmivw3pxhq" path="res://assets/puzzle_objects/clover.png" id="13_t3dl8"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgofy"]
+atlas = ExtResource("1_koii6")
+region = Rect2(0, 0, 459, 430)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0mc3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_6fyi5")
+"texture": SubResource("AtlasTexture_vgofy")
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_uc7p8")
@@ -135,13 +139,13 @@ _data = {
 [node name="smoke puff" type="Area2D"]
 
 [node name="burning_book" type="AnimatedSprite2D" parent="."]
-position = Vector2(11, -14)
+position = Vector2(70, 56)
 scale = Vector2(0.297386, 0.288372)
 sprite_frames = SubResource("SpriteFrames_f0mc3")
 animation = &"transform_to_clover"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, -18)
+position = Vector2(71, 62)
 shape = SubResource("RectangleShape2D_jifb8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

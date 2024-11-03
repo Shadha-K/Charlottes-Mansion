@@ -19,6 +19,7 @@ scale = Vector2(4, 4)
 script = ExtResource("1_uo3vy")
 
 [node name="slot" parent="." instance=ExtResource("1_jkxkg")]
+clip_contents = true
 layout_mode = 2
 script = ExtResource("3_16rph")
 

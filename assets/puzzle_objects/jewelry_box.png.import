@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxtnwsriywguc"
-path="res://.godot/imported/jewelry_box_temp.png-ec84f76453cb69644b18b2e62e551a18.ctex"
+uid="uid://nwjonbe0obh4"
+path="res://.godot/imported/jewelry_box.png-61a63af3d0bfc1f0feab7f6be306d609.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/puzzle_objects/jewelry_box_temp.png"
-dest_files=["res://.godot/imported/jewelry_box_temp.png-ec84f76453cb69644b18b2e62e551a18.ctex"]
+source_file="res://assets/puzzle_objects/jewelry_box.png"
+dest_files=["res://.godot/imported/jewelry_box.png-61a63af3d0bfc1f0feab7f6be306d609.ctex"]
 
 [params]
 
