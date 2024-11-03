@@ -7,8 +7,10 @@ func _ready():
 	$Label.visible = false  
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and get_tree().root.get_node("GameState").has_water: 
-		$Label.visible = true  
+	if body.name == "Alex" and get_tree().root.get_node("GameState").has_water and not GameState.has_diamond: 
+		$Label.visible = true 
+	elif body.name == "Alex" and GameState.has_diamond:
+		label.visible = false 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Alex":

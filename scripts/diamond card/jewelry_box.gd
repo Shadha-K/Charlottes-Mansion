@@ -13,8 +13,11 @@ func _ready():
 #code.connect("jewelry_box_interacted", Callable(game_state, "put_code_in_jewelry_box"))
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and get_tree().root.get_node("GameState").got_code:
+	if body.name == "Alex" and get_tree().root.get_node("GameState").got_code and not GameState.has_diamond:
 		label.visible = true 
+	elif body.name == "Alex" and GameState.has_diamond:
+		label.visible = false
+		
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Alex":
@@ -35,7 +38,8 @@ func interact_with_jewelry_box():
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text.strip_edges() == "4170":
 		label.text = "Ace of Diamonds\nreceived!"
-		code.visible = false  
+		GameState.has_diamond = true
+		code.visible = false
 		code.clear() 
 	else:
 		label.text = "Wrong Code!"

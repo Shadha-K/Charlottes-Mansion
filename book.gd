@@ -12,13 +12,13 @@ func _ready():
 	$Label.visible = false
 	var grandparent = get_parent().get_parent()
 	player = grandparent.get_node("Alex")
-	add_to_group("Books")  # Add to the "Books" group
+	
 	if gamestate.books_picked_up.has(name) and gamestate.books_picked_up[name] == true:
 		queue_free()
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and get_tree().root.get_node("GameState").has_book: 
+	if body.name == "Alex" and GameState.has_diamond: 
 		$Label.visible = true 
 
 # Function called when something exits the area (the player)

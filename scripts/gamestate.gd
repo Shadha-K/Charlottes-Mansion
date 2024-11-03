@@ -4,16 +4,19 @@ var player_health = 9
 var current_health = 9
 var books_picked_up: Dictionary = {}
 
-# Puzzle variables
+#ace of diamonds variables
 var has_teacup: bool = false
 var has_water: bool = false
 var got_code: bool = false
 var sink_interacted: bool = false
 var vanity_interacted: bool = false
 var jewelry_box_open: bool = false
+var code: String = "4710" 
+var has_diamond: bool = false 
+
+
 var has_bottle: bool = false
 var has_recipe_book: bool = false
-var code: String = "4710"  
 
 # Function to decrease health
 func decrease_health(amount):
