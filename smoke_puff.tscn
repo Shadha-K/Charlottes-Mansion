@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7y44eucaub0q"]
+[gd_scene load_steps=29 format=3 uid="uid://c7y44eucaub0q"]
 
 [ext_resource type="Texture2D" uid="uid://bidm3dwt34d47" path="res://assets/puzzle_objects/fire_book.png" id="1_koii6"]
+[ext_resource type="Script" path="res://smoke_puff.gd" id="1_nnp5u"]
 [ext_resource type="Texture2D" uid="uid://d4egrimqfey2w" path="res://assets/living_room/smoke_puff_animation/smokePuff_0000.png" id="1_uc7p8"]
 [ext_resource type="Texture2D" uid="uid://d36761iixjai4" path="res://assets/living_room/smoke_puff_animation/smokePuff_0001.png" id="2_w8s0a"]
 [ext_resource type="Texture2D" uid="uid://dlu5ksh4mbntw" path="res://assets/living_room/smoke_puff_animation/smokePuff_0002.png" id="3_hn8ex"]
@@ -13,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://b1plihk3qaur6" path="res://assets/living_room/smoke_puff_animation/smokePuff_0009.png" id="10_6oich"]
 [ext_resource type="Texture2D" uid="uid://b5fjknjyx1p05" path="res://assets/living_room/smoke_puff_animation/smokePuff_0010.png" id="11_okfc7"]
 [ext_resource type="Texture2D" uid="uid://6uhmivw3pxhq" path="res://assets/puzzle_objects/clover.png" id="13_t3dl8"]
+[ext_resource type="Texture2D" uid="uid://dt48nt2n7nb52" path="res://assets/blurredlivingroom.png" id="14_rp438"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="16_hmxll"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="17_8p6n4"]
+[ext_resource type="Texture2D" uid="uid://cu5kjp5tg5twf" path="res://assets/living_room/fire.png" id="18_x64hf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgofy"]
 atlas = ExtResource("1_koii6")
@@ -70,9 +75,6 @@ animations = [{
 "name": &"transform_to_clover",
 "speed": 15.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jifb8"]
-size = Vector2(101, 51)
 
 [sub_resource type="Animation" id="Animation_ejjem"]
 length = 1.8
@@ -136,19 +138,97 @@ _data = {
 "burning_book": SubResource("Animation_eoync")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jifb8"]
+size = Vector2(101, 51)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mmvm"]
+radius = 40.7922
+
+[sub_resource type="Curve" id="Curve_74ysf"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.243017, 219.934), 0.0, 0.0, 0, 0, Vector2(0.486034, 4.27554), 0.0, 0.0, 0, 0, Vector2(0.756983, 226.603), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_0hdee"]
+_data = [Vector2(0.0139665, 0.441093), 0.0, -0.859804, 0, 0, Vector2(0.497207, 0.505938), -1.63056, -1.63056, 0, 0, Vector2(1, 0.0211401), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_5312w"]
+offsets = PackedFloat32Array(0, 0.143526, 0.304212, 0.4883, 0.642746, 0.853354, 0.856474, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.886275, 0.729412, 0.192157, 1, 0.887659, 0.624221, 0.143714, 1, 0.890196, 0.431373, 0.054902, 1, 0.793527, 0.311831, 0.0326341, 1, 0.77905, 0.293928, 0.0292992, 1, 0.651857, 0.13664, 1.92523e-07, 1, 1, 1, 1, 0)
+
 [node name="smoke puff" type="Area2D"]
+script = ExtResource("1_nnp5u")
 
 [node name="burning_book" type="AnimatedSprite2D" parent="."]
-position = Vector2(70, 56)
-scale = Vector2(0.297386, 0.288372)
+position = Vector2(583.375, 278.5)
+scale = Vector2(0.399238, 0.360465)
 sprite_frames = SubResource("SpriteFrames_f0mc3")
 animation = &"transform_to_clover"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(71, 62)
-shape = SubResource("RectangleShape2D_jifb8")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="burning_book"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_rrhha")
 }
+
+[node name="Label" type="Label" parent="burning_book"]
+offset_left = -1461.22
+offset_top = -772.613
+offset_right = -1023.22
+offset_bottom = -684.613
+theme_override_fonts/font = ExtResource("17_8p6n4")
+theme_override_font_sizes/font_size = 50
+text = "Press E to go back"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(577, 286)
+shape = SubResource("RectangleShape2D_jifb8")
+
+[node name="BlurBedroom" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(581, 326)
+scale = Vector2(0.699513, 0.583032)
+texture = ExtResource("14_rp438")
+
+[node name="Camera2D" type="Camera2D" parent="BlurBedroom"]
+limit_left = 0
+limit_top = 0
+limit_right = 3029
+limit_bottom = 1732
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("16_hmxll")]
+offset_left = -535.0
+offset_top = -169.0
+offset_right = -271.0
+offset_bottom = -129.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(560, 333)
+shape = SubResource("CircleShape2D_2mmvm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.00784314)
+position = Vector2(560, 340)
+amount = 5000
+lifetime = 0.4
+speed_scale = 0.4
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("18_x64hf")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, -980)
+angular_velocity_min = -720.0
+angular_velocity_max = -438.9
+angular_velocity_curve = SubResource("Curve_74ysf")
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_0hdee")
+color_ramp = SubResource("Gradient_5312w")
