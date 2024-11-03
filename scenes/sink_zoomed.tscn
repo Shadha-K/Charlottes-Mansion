@@ -117,5 +117,13 @@ offset_bottom = -129.0
 
 [node name="BlurKitchen" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(1502, 857)
+position = Vector2(1511.5, 857)
+scale = Vector2(1.00631, 1)
 texture = ExtResource("8_2ocu6")
+
+[node name="Camera2D" type="Camera2D" parent="BlurKitchen"]
+limit_left = 0
+limit_top = 0
+limit_right = 3030
+limit_bottom = 1750
+limit_smoothed = true

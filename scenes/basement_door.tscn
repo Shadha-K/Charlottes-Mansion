@@ -13,7 +13,13 @@ z_index = -1
 offset_top = -3.0
 offset_right = 3588.0
 offset_bottom = 1921.0
-color = Color(0.329412, 0.211765, 0.129412, 1)
+color = Color(0.752941, 0.658824, 0.541176, 1)
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect"]
+limit_left = 0
+limit_top = 0
+limit_right = 3594
+limit_bottom = 1925
 
 [node name="Label" type="Label" parent="."]
 offset_left = 995.0

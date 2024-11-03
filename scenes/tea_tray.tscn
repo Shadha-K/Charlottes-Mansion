@@ -9,13 +9,13 @@ size = Vector2(116.5, 76)
 [node name="tea_tray" type="Area2D"]
 script = ExtResource("1_sjb3v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-25, -8)
-scale = Vector2(0.0517442, 0.0517442)
+[node name="PuzzleCup" type="Sprite2D" parent="."]
+position = Vector2(-31, -7)
+scale = Vector2(0.0601852, 0.0569767)
 texture = ExtResource("2_uufer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-25, 21)
+position = Vector2(-26, 25)
 shape = SubResource("RectangleShape2D_juhph")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

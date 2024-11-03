@@ -33,7 +33,7 @@ func interact_with_jewelry_box():
 	code.grab_focus()  
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
-	if new_text.strip_edges() == "4710":
+	if new_text.strip_edges() == "4170":
 		label.text = "Ace of Diamonds\nreceived!"
 		code.visible = false  
 		code.clear() 

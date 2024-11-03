@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://226l0cp8ip2m" path="res://assets/bedroom/CloseUp4170Fog5.png" id="10_y4a5h"]
 [ext_resource type="Script" path="res://scripts/diamond card/vanity_zoomed.gd" id="11_jlksg"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="12_jjvfo"]
-[ext_resource type="Texture2D" uid="uid://cg8v0qabwl0eo" path="res://scripts/diamond card/blur_bedroom.png" id="13_5uf1p"]
+[ext_resource type="Texture2D" uid="uid://cyu8ck10nivb8" path="res://scripts/diamond card/blur_bedroom.png" id="13_5uf1p"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="14_j7ma7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fqxub"]
@@ -164,3 +164,9 @@ z_index = -1
 position = Vector2(1514.5, 858)
 scale = Vector2(1.00165, 1.007)
 texture = ExtResource("13_5uf1p")
+
+[node name="Camera2D" type="Camera2D" parent="BlurBedroom"]
+limit_left = 0
+limit_top = 0
+limit_right = 3029
+limit_bottom = 1732
