@@ -17,7 +17,7 @@ var has_diamond: bool = false
 
 var has_bottle: bool = false
 var has_recipe_book: bool = false
-
+var has_book: bool = false
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
@@ -61,6 +61,14 @@ func show_code_to_player(code: String):
 #steps for ace of clubs puzzle
 func reset_books():
 	books_picked_up.clear()
+	
+func _on_book_picked_up():
+	grab_book()
+
+func grab_book():
+	if not has_book:
+		has_book=true
+		print("You grabbed the book")
 
 #steps for ace of hearts puzzle
 func _on_recipe_book_picked_up():
