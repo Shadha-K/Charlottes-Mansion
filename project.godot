@@ -21,6 +21,7 @@ Main_Theme_Music="*res://main_theme.tscn"
 HeartHealth="*res://scripts/heart_health.gd"
 GameState="*res://scripts/gamestate.gd"
 GlobalHotbar="*res://GlobalHotbar.gd"
+GlobalHealthManager="*res://GlobalHealthManager.gd"
 
 [display]
 

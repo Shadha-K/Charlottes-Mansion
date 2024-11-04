@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://tic5ssy3cxnq"]
+
+[ext_resource type="Script" path="res://scenes/heart_container.gd" id="1_md40i"]
+[ext_resource type="PackedScene" uid="uid://rmwgykljfc8p" path="res://scenes/heart_gui.tscn" id="2_nkpd1"]
+
+[node name="HeartContainer" type="HBoxContainer"]
+offset_right = 331.0
+offset_bottom = 43.0
+theme_override_constants/separation = 36
+script = ExtResource("1_md40i")
+
+[node name="HeartGui" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui2" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui3" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui4" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui5" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui6" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui7" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui8" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
+
+[node name="HeartGui9" parent="." instance=ExtResource("2_nkpd1")]
+layout_mode = 2
