@@ -17,7 +17,7 @@ offset_right = -139.0
 offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 script = ExtResource("1_uo3vy")
 
 [node name="slot" parent="." instance=ExtResource("1_jkxkg")]
