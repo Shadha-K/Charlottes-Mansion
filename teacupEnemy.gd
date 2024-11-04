@@ -7,7 +7,7 @@ var player : CharacterBody2D
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 	var direction = player.global_position - enemy.global_position
 	

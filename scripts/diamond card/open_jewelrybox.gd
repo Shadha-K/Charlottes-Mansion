@@ -11,7 +11,9 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
 		label.visible = true
-		second_sprite.visible = true  
+		second_sprite.visible = true
+		GameState.jewelry_box_open = true
+		GlobalHotbar.add_item_to_slot("Diamond Card", preload("res://assets/puzzle_objects/AceOfDiamonds.png"))
 
 	if Input.is_action_just_pressed("interact"):
 		get_tree().root.get_node("GameState").has_diamond = true

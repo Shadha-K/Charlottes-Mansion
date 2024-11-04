@@ -201,10 +201,6 @@ limit_bottom = 1732
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("16_hmxll")]
-offset_left = -535.0
-offset_top = -169.0
-offset_right = -271.0
-offset_bottom = -129.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false

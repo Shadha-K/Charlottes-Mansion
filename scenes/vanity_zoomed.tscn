@@ -156,10 +156,6 @@ horizontal_alignment = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("14_j7ma7")]
-offset_left = -535.0
-offset_top = -169.0
-offset_right = -271.0
-offset_bottom = -129.0
 
 [node name="BlurBedroom" type="Sprite2D" parent="."]
 z_index = -1

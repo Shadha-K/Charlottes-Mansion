@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 250.0
 @onready var follow_point = parent.get_node("Sprite2D/FollowPoint")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var target = follow_point.global_position
 	var direction_to_player = (target - position).normalized()
 	
