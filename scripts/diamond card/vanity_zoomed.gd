@@ -4,6 +4,7 @@ var next_room_scene = "res://bedroom.tscn"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $AnimatedSprite2D/Label
 @onready var label2: Label = $AnimatedSprite2D/Label2
+@onready var hotbar = get_node("CanvasLayer/Hotbar")
 
 func _ready():
 	if GameState.vanity_interacted:
@@ -20,7 +21,8 @@ func _process(_delta):
 		if Input.is_action_just_pressed("click or drag"):
 			label.visible = false  
 			label2.visible = true 
-			GameState.vanity_interacted = true 
+			GameState.vanity_interacted = true
+			GlobalHotbar.item_used("Filled Cup")
 	if GameState.vanity_interacted:
 		animated_sprite.play("numbers")
 		

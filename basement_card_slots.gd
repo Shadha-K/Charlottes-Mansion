@@ -9,6 +9,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag") and GameState.has_diamond:
 		GameState.diamond_card = true
+		GlobalHotbar.item_used("Diamond Card")
 		
 	if GameState.diamond_card:
 		diamond_card.visible = true
