@@ -22,7 +22,7 @@ func _process(_delta):
 		burning_book.visible = true 
 		flame_particles.emitting = false  
 		GlobalHotbar.add_item_to_slot("Clover", preload("res://assets/puzzle_objects/clover.png")) 
-		animation_player.play("Burn_animation")
+		animation_player.play("burning_book")
 		#get_tree().change_scene_to_file(next_room_scene)
 		if not animation_player.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
 			animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
@@ -31,6 +31,6 @@ func _process(_delta):
 		
 func _on_animation_finished(anim_name: String):
 	
-	if typeof(anim_name) == TYPE_STRING and anim_name == "Burn_animation":
+	if typeof(anim_name) == TYPE_STRING and anim_name == "burning_book":
 		flame_particles.emitting = false 
 		get_tree().change_scene_to_file(next_room_scene)  
