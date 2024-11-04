@@ -79,6 +79,13 @@ func _on_book_thrown():
 		has_clover=true
 		print("The book was thrown into the fireplace.")
 		
+func grab_clover():
+	if not has_clover:
+		has_clover=true
+		print("You grabbed the book")
+		
+func _on_clover_picked_up():
+	grab_clover()
 #steps for ace of hearts puzzle
 func _on_recipe_book_picked_up():
 	grab_recipe_book()

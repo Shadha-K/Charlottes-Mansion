@@ -1,10 +1,12 @@
 extends Node2D
 
+signal clover_picked_up()
+
 @onready var animation_player: AnimationPlayer = $burning_book/AnimationPlayer
 @onready var flame_particles: CPUParticles2D = $CPUParticles2D
 @onready var burning_book: AnimatedSprite2D = $burning_book  
 @onready var label: Label = $burning_book/Label
-@onready var hotbar = get_node("/root/node_2d/UI/CanvasLayer/Hotbar")
+@onready var hotbar = get_node("CanvasLayer/Hotbar")
 
 var next_room_scene = "res://node_2d.tscn"
 
