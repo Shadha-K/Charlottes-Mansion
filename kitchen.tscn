@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="8_tlx02"]
 [ext_resource type="Texture2D" uid="uid://c1iqsc8ak8fpd" path="res://assets/kitchen/dining_chair_front.png" id="11_8r82r"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="14_pj22l"]
-[ext_resource type="PackedScene" uid="uid://dv5hamglfmi2k" path="res://scenes/kitchen_sink.tscn" id="15_26x86"]
+[ext_resource type="PackedScene" path="res://scenes/kitchen_sink.tscn" id="15_26x86"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="15_t8te0"]
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="16_gjwwx"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxhm020fs5sf7"]
+
+[ext_resource type="Texture2D" uid="uid://dt6q3r7k8x3l7" path="res://scripts/diamond card/blur_jewelrybox.png" id="1_wm8ja"]
+[ext_resource type="Script" path="res://scripts/diamond card/open_jewelrybox.gd" id="1_xt1t0"]
+[ext_resource type="Texture2D" uid="uid://8wmbiayiu3j0" path="res://assets/puzzle_objects/jewelry_box_open_card.png" id="2_lccbo"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="3_h2e1q"]
+[ext_resource type="Texture2D" uid="uid://dkj7g4iteyacy" path="res://assets/puzzle_objects/jewelry_box_open_empty.png" id="4_nptpi"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="5_yylia"]
+
+[node name="open_jewelrybox" type="Node2D"]
+script = ExtResource("1_xt1t0")
+
+[node name="BlurJewelrybox" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.25)
+scale = Vector2(0.381283, 0.38144)
+texture = ExtResource("1_wm8ja")
+
+[node name="JewelryBoxOpenCard" type="Sprite2D" parent="."]
+position = Vector2(593, 327)
+scale = Vector2(0.66371, 0.546296)
+texture = ExtResource("2_lccbo")
+
+[node name="JewelryBoxOpenEmpty" type="Sprite2D" parent="."]
+position = Vector2(593, 326.5)
+scale = Vector2(0.662903, 0.546296)
+texture = ExtResource("4_nptpi")
+
+[node name="Hotbar" parent="." instance=ExtResource("3_h2e1q")]
+offset_left = 348.0
+offset_top = 561.0
+offset_right = 506.0
+offset_bottom = 584.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 592.0
+offset_right = 319.0
+offset_bottom = 635.0
+theme_override_fonts/font = ExtResource("5_yylia")
+theme_override_font_sizes/font_size = 40
+text = "Press E to go back"

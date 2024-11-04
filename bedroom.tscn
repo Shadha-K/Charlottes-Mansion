@@ -355,15 +355,6 @@ text = "Press E to
 interact"
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="TileMap/furniture/jewelry_box"]
-offset_left = -31.0
-offset_top = -53.0
-offset_right = 36.0625
-offset_bottom = -22.0
-theme_override_fonts/font = ExtResource("27_73mh5")
-theme_override_font_sizes/font_size = 20
-placeholder_text = "Code"
-
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
 position = Vector2(815, 419)
 parent = NodePath("../Alex")
@@ -405,6 +396,5 @@ horizontal_alignment = 1
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("32_4cjsa")]
 
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
-[connection signal="text_submitted" from="TileMap/furniture/jewelry_box/LineEdit" to="TileMap/furniture/jewelry_box" method="_on_line_edit_text_submitted"]
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
