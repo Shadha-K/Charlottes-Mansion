@@ -29,7 +29,6 @@ func decrease_health(amount):
 	
 #for dialogues
 var start_game = true
-var basement_door_first = true
 	
 #steps for ace of diamonds puzzle
 func _on_teacup_picked_up():
