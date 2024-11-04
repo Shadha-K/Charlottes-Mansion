@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=7 format=3 uid="uid://13ir43wa3jcc"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_5ukgb"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_o8as2"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="4_d03cv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
 texture = ExtResource("1_xsh6j")
@@ -69,3 +70,7 @@ limit_left = -18
 limit_top = -254
 limit_right = 975
 limit_bottom = 529
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="UI" instance=ExtResource("4_d03cv")]

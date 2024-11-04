@@ -51,7 +51,3 @@ texture = ExtResource("3_8iofk")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("4_cn4y4")]
-offset_left = -535.0
-offset_top = -169.0
-offset_right = -271.0
-offset_bottom = -129.0
