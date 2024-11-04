@@ -154,7 +154,6 @@ text = "Press E to go back"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("14_j7ma7")]
 offset_left = -535.0

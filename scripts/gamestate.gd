@@ -14,12 +14,14 @@ var jewelry_box_open: bool = false
 var code: String = "4710" 
 var has_diamond: bool = false 
 
-
 var has_bottle: bool = false
 var has_recipe_book: bool = false
 var has_book: bool = false
 var book_used_in_fireplace: bool = false
 var has_clover: bool = false
+
+#basement door variables
+var diamond_card: bool = false
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
@@ -48,14 +50,6 @@ func throw_water_on_mirror():
 		print("You threw water on the vanity mirror. It got foggy.")
 		# Show code somehow, e.g., via UI
 		show_code_to_player(code)
-
-func put_code_in_jewelry_box(input_code: String):
-	if got_code and input_code == code and not jewelry_box_open:
-		jewelry_box_open = true
-		print("You opened the jewelry box and found the Ace of Diamonds!")
-		# You can emit a signal here if needed
-	else:
-		print("Wrong code! Try again.")
 
 func show_code_to_player(code: String):
 	print("The code is: " + code)

@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://25iufw1ct7vv"]
+
+[ext_resource type="Texture2D" uid="uid://dt6q3r7k8x3l7" path="res://scripts/diamond card/blur_jewelrybox.png" id="1_e7gyl"]
+[ext_resource type="Texture2D" uid="uid://cv271vk1tnas" path="res://assets/puzzle_objects/jewelry_box_closed.png" id="2_yibvy"]
+[ext_resource type="Script" path="res://scripts/diamond card/jewelry_code.gd" id="3_fsog2"]
+
+[node name="jewelrybox_zoomed" type="Node2D"]
+
+[node name="BlurJewelrybox" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.25)
+scale = Vector2(0.381283, 0.38144)
+texture = ExtResource("1_e7gyl")
+
+[node name="JewelryBoxClosed" type="Sprite2D" parent="."]
+position = Vector2(579, 324)
+scale = Vector2(0.639516, 0.515993)
+texture = ExtResource("2_yibvy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_fsog2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 495.0
+offset_right = 502.0
+offset_bottom = 586.0
+
+[node name="up_button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▲"
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="down_button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▼"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 495.0
+offset_right = 553.0
+offset_bottom = 586.0
+
+[node name="up_button" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▲"
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="down_button" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▼"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 495.0
+offset_right = 617.0
+offset_bottom = 586.0
+
+[node name="up_button" type="Button" parent="Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▲"
+
+[node name="Label" type="Label" parent="Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="down_button" type="Button" parent="Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▼"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 495.0
+offset_right = 669.0
+offset_bottom = 586.0
+
+[node name="up_button" type="Button" parent="Control/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▲"
+
+[node name="Label" type="Label" parent="Control/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="down_button" type="Button" parent="Control/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "▼"
