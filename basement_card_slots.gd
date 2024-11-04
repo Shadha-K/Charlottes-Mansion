@@ -14,5 +14,5 @@ func _process(_delta):
 	if GameState.diamond_card:
 		diamond_card.visible = true
 
-	if Input.is_action_just_pressed("interact"):  
+	if Input.is_action_just_pressed("interact"): 
 		get_tree().change_scene_to_file(next_scene)
