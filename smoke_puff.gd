@@ -26,7 +26,9 @@ func _process(_delta):
 		#get_tree().change_scene_to_file(next_room_scene)
 		if not animation_player.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
 			animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
-
+	if Input.is_action_just_pressed("interact"):
+		get_tree().change_scene_to_file(next_room_scene)
+		
 func _on_animation_finished(anim_name: String):
 	
 	if typeof(anim_name) == TYPE_STRING and anim_name == "Burn_animation":
