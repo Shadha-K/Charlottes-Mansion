@@ -49,9 +49,9 @@ func throw_water_on_mirror():
 		got_code = true
 		print("You threw water on the vanity mirror. It got foggy.")
 		# Show code somehow, e.g., via UI
-		show_code_to_player(code)
+		show_code_to_player()
 
-func show_code_to_player(code: String):
+func show_code_to_player():
 	print("The code is: " + code)
 
 #steps for ace of clubs puzzle
