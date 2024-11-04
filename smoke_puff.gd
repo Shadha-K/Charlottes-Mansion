@@ -19,7 +19,6 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
-		GameState.has_book=false
 		GameState.has_clover=true	
 		burning_book.visible = true 
 		flame_particles.emitting = false  
