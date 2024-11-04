@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://intro.gd" id="1_2bwry"]
 [ext_resource type="Texture2D" uid="uid://ciy8iwhchga8r" path="res://assets/opening_scene/white_rabbit_studios_logo_black.png" id="2_k5ea8"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_d7hqo"]
 
 [sub_resource type="Animation" id="Animation_nmdxh"]
 length = 0.001
@@ -57,19 +58,24 @@ _data = {
 "fade_out": SubResource("Animation_ka6y7")
 }
 
-[sub_resource type="SystemFont" id="SystemFont_f121n"]
-font_names = PackedStringArray("Edwardian Script ITC")
-
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_2bwry")
 
 [node name="White Background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -3.0
 offset_top = 9.0
 offset_right = 1155.0
 offset_bottom = 645.0
 
 [node name="Black Background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -190.0
 offset_top = -124.0
 offset_right = 1233.0
@@ -83,16 +89,16 @@ libraries = {
 }
 
 [node name="WhiteRabbitStudiosLogoBlack" type="Sprite2D" parent="."]
-position = Vector2(596, 296)
-scale = Vector2(0.223191, 0.214795)
+position = Vector2(578, 295)
+scale = Vector2(0.131333, 0.12)
 texture = ExtResource("2_k5ea8")
 
 [node name="presents" type="Label" parent="WhiteRabbitStudiosLogoBlack"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -304.672
-offset_top = 1070.79
-offset_right = 388.328
-offset_bottom = 1483.79
-theme_override_fonts/font = SubResource("SystemFont_f121n")
+offset_left = -510.152
+offset_top = 1083.33
+offset_right = 560.848
+offset_bottom = 1496.33
+theme_override_fonts/font = ExtResource("3_d7hqo")
 theme_override_font_sizes/font_size = 350
 text = "presents"

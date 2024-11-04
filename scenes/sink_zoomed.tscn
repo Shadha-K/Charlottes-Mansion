@@ -93,10 +93,6 @@ script = ExtResource("6_pwykm")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("7_tvipp")]
-offset_left = -535.0
-offset_top = -169.0
-offset_right = -271.0
-offset_bottom = -129.0
 
 [node name="BlurKitchen" type="Sprite2D" parent="."]
 z_index = -1

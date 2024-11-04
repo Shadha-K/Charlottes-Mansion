@@ -400,10 +400,6 @@ horizontal_alignment = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("28_d6w8n")]
-offset_left = -527.0
-offset_top = -165.0
-offset_right = -263.0
-offset_bottom = -125.0
 
 [node name="HeartManager" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("27_0vpd2")
