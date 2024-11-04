@@ -26,7 +26,7 @@ var diamond_card: bool = false
 func decrease_health(amount):
 	player_health -= amount
 	player_health = max(player_health, 0)
-
+	
 #steps for ace of diamonds puzzle
 func _on_teacup_picked_up():
 	grab_teacup()

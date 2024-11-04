@@ -59,12 +59,21 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 					"icon": item_icon
 				}
 				hotbar[slot_index] = item_data
-				print("Added item to global hotbar:", item_data)
+				print("Added item to global hotbar: ", item_data)
 				return
 			else:
 				slot_index += 1
-			
 
+# remove item in hotbar
+func item_used(item_name: String):
+	for slot_index in range(hotbar_size):
+		if hotbar[slot_index].name == item_name:
+			hotbar[slot_index] = null
+			print("Removed item from global hotbar: ", item_name)
+			return
+		else:
+			slot_index += 1
+	
 # Get item data for a slot
 func get_item_in_slot(slot_index: int):
 	if slot_index >= 0 and slot_index < hotbar_size:

@@ -29,6 +29,6 @@ func _process(_delta):
 			pick_up_book()
 
 func pick_up_book():
-	GlobalHotbar.add_item_to_slot("Book", preload("res://assets/puzzle_objects/tempbook2.png"))
+	GlobalHotbar.add_item_to_slot("Recipe Book", preload("res://assets/puzzle_objects/tempbook2.png"))
 	get_tree().root.get_node("GameState").has_recipe_book = true
 	queue_free()  
