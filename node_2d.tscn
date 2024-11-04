@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=68 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
@@ -25,10 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://bn8gen7tixj5v" path="res://scenes/tea_tray.tscn" id="22_moxuy"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
 [ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
-[ext_resource type="Script" path="res://scripts/heart_manager.gd" id="23_u61xo"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
 [ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
-[ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="24_kcte6"]
 [ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
 [ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
 [ext_resource type="Script" path="res://fire.gd" id="27_bwpxa"]
@@ -36,6 +34,7 @@
 [ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
+[ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="34_w7hth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(97.75, 61)
@@ -407,89 +406,7 @@ horizontal_alignment = 1
 
 [node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
 
-[node name="HeartManager" type="Node2D" parent="UI"]
-script = ExtResource("23_u61xo")
-
-[node name="Heart1" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = -7.0
-offset_top = -10.0
-offset_right = 75.0
-offset_bottom = 66.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart2" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 48.0
-offset_top = -11.0
-offset_right = 128.0
-offset_bottom = 67.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart3" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 102.0
-offset_top = -11.0
-offset_right = 186.0
-offset_bottom = 69.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart4" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 157.0
-offset_top = -12.0
-offset_right = 249.0
-offset_bottom = 73.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart5" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 220.0
-offset_top = -11.0
-offset_right = 311.0
-offset_bottom = 74.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart6" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 280.0
-offset_top = -12.0
-offset_right = 374.0
-offset_bottom = 75.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart7" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 344.0
-offset_top = -11.0
-offset_right = 437.0
-offset_bottom = 77.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart8" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 405.0
-offset_top = -11.0
-offset_right = 502.0
-offset_bottom = 78.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
-
-[node name="Heart9" type="TextureRect" parent="UI/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 472.0
-offset_top = -12.0
-offset_right = 566.0
-offset_bottom = 76.0
-texture = ExtResource("24_kcte6")
-expand_mode = 2
+[node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
 
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=48 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -20,9 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="18_g2o85"]
-[ext_resource type="Texture2D" uid="uid://cstb5i47xqfd7" path="res://assets/red_heart.png" id="19_bwhw2"]
-[ext_resource type="Script" path="res://scripts/heart_manager.gd" id="19_doriw"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
+[ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -318,90 +317,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
 
-[node name="HeartManager" type="Node2D" parent="CanvasLayer"]
-visible = false
-script = ExtResource("19_doriw")
-
-[node name="Heart1" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = -7.0
-offset_top = -10.0
-offset_right = 75.0
-offset_bottom = 66.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart2" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 48.0
-offset_top = -11.0
-offset_right = 128.0
-offset_bottom = 67.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart3" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 102.0
-offset_top = -11.0
-offset_right = 186.0
-offset_bottom = 69.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart4" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 157.0
-offset_top = -12.0
-offset_right = 249.0
-offset_bottom = 73.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart5" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 220.0
-offset_top = -11.0
-offset_right = 311.0
-offset_bottom = 74.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart6" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 280.0
-offset_top = -12.0
-offset_right = 374.0
-offset_bottom = 75.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart7" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 344.0
-offset_top = -11.0
-offset_right = 437.0
-offset_bottom = 77.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart8" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 405.0
-offset_top = -11.0
-offset_right = 502.0
-offset_bottom = 78.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
-
-[node name="Heart9" type="TextureRect" parent="CanvasLayer/HeartManager"]
-custom_minimum_size = Vector2(0.5, 1)
-offset_left = 472.0
-offset_top = -12.0
-offset_right = 566.0
-offset_bottom = 76.0
-texture = ExtResource("19_bwhw2")
-expand_mode = 2
+[node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("22_kve5r")]
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
