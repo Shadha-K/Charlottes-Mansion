@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://biymalgmemat6"]
 
 [ext_resource type="Script" path="res://scripts/diamond card/jewelry_box.gd" id="1_ab2qq"]
-[ext_resource type="Texture2D" uid="uid://nwjonbe0obh4" path="res://assets/puzzle_objects/jewelry_box.png" id="2_68yuo"]
+[ext_resource type="Texture2D" uid="uid://cay07463jcdg0" path="res://assets/puzzle_objects/jewelry_box.png" id="2_68yuo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juhph"]
 size = Vector2(116.5, 76)
