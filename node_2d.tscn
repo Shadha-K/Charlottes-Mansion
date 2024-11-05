@@ -368,6 +368,7 @@ gravity = -980.0
 script = ExtResource("27_bwpxa")
 
 [node name="bottle" parent="TileMap/furniture" instance=ExtResource("27_ryt8w")]
+visible = false
 position = Vector2(452, 371)
 script = ExtResource("28_54vxy")
 
