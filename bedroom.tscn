@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=73 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_1c2nh"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
@@ -30,7 +30,9 @@
 [ext_resource type="Script" path="res://scripts/bedroom_door.gd" id="26_7b3gb"]
 [ext_resource type="PackedScene" uid="uid://biymalgmemat6" path="res://scenes/jewelry_box.tscn" id="26_rdkgb"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="27_73mh5"]
+[ext_resource type="PackedScene" uid="uid://disoxabc6yfi" path="res://clover_pot.tscn" id="28_32fkr"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_d6w8n"]
+[ext_resource type="Script" path="res://clover_pot.gd" id="29_0aec5"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="32_4cjsa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
@@ -355,6 +357,19 @@ text = "Press E to
 interact"
 horizontal_alignment = 1
 
+[node name="clover pot" parent="TileMap/furniture" instance=ExtResource("28_32fkr")]
+position = Vector2(263, 111)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("29_0aec5")
+
+[node name="Label" type="Label" parent="TileMap/furniture/clover pot"]
+offset_left = -370.0
+offset_top = -175.0
+offset_right = -230.0
+offset_bottom = -150.0
+scale = Vector2(5, 5)
+text = "Press E to interact"
+
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
 position = Vector2(815, 419)
 parent = NodePath("../Alex")
@@ -396,5 +411,7 @@ horizontal_alignment = 1
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("32_4cjsa")]
 
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_exited"]
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=68 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=71 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
+[ext_resource type="Script" path="res://scripts/dialogues.gd" id="1_oces7"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_p05t5"]
 [ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_x0oae"]
@@ -35,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="34_w7hth"]
+[ext_resource type="Texture2D" uid="uid://tofnenyqsmfy" path="res://assets/puzzle_objects/charlotte_for_dialogue.PNG" id="36_aqpdf"]
+[ext_resource type="Texture2D" uid="uid://bgdw5gqg326fy" path="res://assets/puzzle_objects/dialogue_box.png" id="37_3x3t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(97.75, 61)
@@ -233,6 +236,7 @@ size = Vector2(20, 36)
 
 [node name="living_room" type="Node2D"]
 position = Vector2(61, 268)
+script = ExtResource("1_oces7")
 
 [node name="door_right" type="Area2D" parent="."]
 z_index = 2
@@ -364,6 +368,7 @@ gravity = -980.0
 script = ExtResource("27_bwpxa")
 
 [node name="bottle" parent="TileMap/furniture" instance=ExtResource("27_ryt8w")]
+visible = false
 position = Vector2(452, 371)
 script = ExtResource("28_54vxy")
 
@@ -407,6 +412,40 @@ horizontal_alignment = 1
 [node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
 
 [node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
+
+[node name="dialogue_box" type="Node2D" parent="UI"]
+script = ExtResource("1_oces7")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/dialogue_box"]
+z_index = 1
+position = Vector2(825, 501)
+scale = Vector2(0.140152, 0.164563)
+texture = ExtResource("36_aqpdf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/dialogue_box"]
+position = Vector2(935, 530)
+scale = Vector2(0.905773, 0.813953)
+texture = ExtResource("37_3x3t4")
+
+[node name="Label" type="Label" parent="UI/dialogue_box"]
+offset_left = 861.0
+offset_top = 467.0
+offset_right = 1074.0
+offset_bottom = 557.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Heya! I don’t think I’ve 
+seen you around 
+before… Are you lost?"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="UI/dialogue_box"]
+offset_left = 980.0
+offset_top = 579.0
+offset_right = 1068.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Press Enter"
 
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2

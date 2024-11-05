@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccfged2ga1mu0"]
+
+[ext_resource type="Texture2D" uid="uid://qlctjo2osdsj" path="res://assets/puzzle_objects/clover_pot.png" id="1_vd4as"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5vfq"]
+size = Vector2(158.5, 154)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(140, 118)
+shape = SubResource("RectangleShape2D_l5vfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(138.25, 100)
+scale = Vector2(0.587146, 0.562791)
+texture = ExtResource("1_vd4as")
