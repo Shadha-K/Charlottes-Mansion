@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=10 format=3 uid="uid://13ir43wa3jcc"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_5ukgb"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_o8as2"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="4_d03cv"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_7b0r2"]
+[ext_resource type="PackedScene" uid="uid://cvaye1n1cr6fm" path="res://evil_charlotte.tscn" id="6_5kg05"]
+[ext_resource type="PackedScene" uid="uid://d1o7nnrtinel1" path="res://transition.tscn" id="7_iwpym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
 texture = ExtResource("1_xsh6j")
@@ -77,3 +79,10 @@ limit_bottom = 529
 [node name="Hotbar" parent="UI" instance=ExtResource("4_d03cv")]
 
 [node name="HeartContainer" parent="UI" instance=ExtResource("5_7b0r2")]
+
+[node name="EvilCharlotte" parent="." instance=ExtResource("6_5kg05")]
+position = Vector2(109, -43)
+
+[node name="Transition" parent="EvilCharlotte" instance=ExtResource("7_iwpym")]
+
+[connection signal="ready" from="EvilCharlotte/Transition" to="Alex" method="_on_transition_ready"]

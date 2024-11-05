@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dajtvanrp7n7c"]
 
 [ext_resource type="Script" path="res://charlotte.gd" id="1_2ogvh"]
-[ext_resource type="Texture2D" uid="uid://bsgujbgxa1j0g" path="res://assets/CharlotteSprite/sprite_sheet.png" id="2_v8r8p"]
+[ext_resource type="Texture2D" uid="uid://bsgujbgxa1j0g" path="res://assets/CharlotteSprite/normalchar.png" id="2_v8r8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4yrd"]
 atlas = ExtResource("2_v8r8p")
@@ -53,6 +53,8 @@ animations = [{
 
 [node name="Charlotte" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_2ogvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
