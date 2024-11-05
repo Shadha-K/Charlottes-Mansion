@@ -14,14 +14,19 @@ var jewelry_box_open: bool = false
 var code: String = "4710" 
 var has_diamond: bool = false 
 
-var has_bottle: bool = false
-var has_recipe_book: bool = false
+#ace of clubs variables
 var has_book: bool = false
 var book_used_in_fireplace: bool = false
 var has_clover: bool = false
+var clover_planted: bool = false
+var has_clubs: bool = false
+
+var has_bottle: bool = false
+var has_recipe_book: bool = false
 
 #basement door variables
 var diamond_card: bool = false
+var club_card: bool = false
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount

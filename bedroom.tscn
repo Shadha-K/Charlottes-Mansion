@@ -362,14 +362,6 @@ position = Vector2(263, 111)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("29_0aec5")
 
-[node name="Label" type="Label" parent="TileMap/furniture/clover pot"]
-offset_left = -370.0
-offset_top = -175.0
-offset_right = -230.0
-offset_bottom = -150.0
-scale = Vector2(5, 5)
-text = "Press E to interact"
-
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
 position = Vector2(815, 419)
 parent = NodePath("../Alex")

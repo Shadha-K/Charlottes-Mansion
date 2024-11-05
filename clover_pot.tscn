@@ -1,17 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://disoxabc6yfi"]
+[gd_scene load_steps=5 format=3 uid="uid://disoxabc6yfi"]
 
 [ext_resource type="Texture2D" uid="uid://4nyne507ivtj" path="res://assets/puzzle_objects/empty_pot.png" id="1_wbb0d"]
+[ext_resource type="Texture2D" uid="uid://qlctjo2osdsj" path="res://assets/puzzle_objects/clover_pot.png" id="2_bs0u8"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_wf6f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpixl"]
-size = Vector2(171, 157)
+size = Vector2(270, 316.5)
 
 [node name="clover pot" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(99, 73)
+position = Vector2(95, 152.75)
 shape = SubResource("RectangleShape2D_wpixl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(97, 45)
 scale = Vector2(0.696078, 0.609302)
 texture = ExtResource("1_wbb0d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(96.0625, 51)
+scale = Vector2(0.627179, 0.6)
+texture = ExtResource("2_bs0u8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -370.0
+offset_top = -175.0
+offset_right = -230.0
+offset_bottom = -150.0
+scale = Vector2(5, 5)
+theme_override_fonts/font = ExtResource("3_wf6f0")
+text = "Press E to plant"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -392.0
+offset_top = -212.0
+offset_right = 53.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("3_wf6f0")
+theme_override_font_sizes/font_size = 85
+text = "Press E to 
+interact"
+horizontal_alignment = 1

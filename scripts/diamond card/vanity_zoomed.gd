@@ -8,10 +8,8 @@ var next_room_scene = "res://bedroom.tscn"
 
 func _ready():
 	if GameState.vanity_interacted:
-		label.visible = false
 		label2.visible = true
 	else:
-		label.visible = true  
 		label2.visible = false
 
 func _process(_delta):
@@ -19,7 +17,6 @@ func _process(_delta):
 		animated_sprite.play("foggy mirror")
 		
 		if Input.is_action_just_pressed("click or drag"):
-			label.visible = false  
 			label2.visible = true 
 			GameState.vanity_interacted = true
 			GlobalHotbar.item_used("Filled Cup")

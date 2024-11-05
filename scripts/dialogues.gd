@@ -9,7 +9,7 @@ var dialogues1 = [
 	"Well, wherever you’re\ngoing, I promise you\ndon’t want to be here.",
 	"And I don’t really want\nto be here either…",
 	"You know, I’ve tried\nleaving before, but the\nonly way out is that\ndoor over there",
-	"and paws aren’t very\nconducive to opening\ndoors…",
+	"and paws aren’t very\nconductive to opening\ndoors…",
 	"Think you can help me\nleave too?"
 ]
 
