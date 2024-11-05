@@ -15,6 +15,19 @@ var dialogues1 = [
 
 var current_dialogue_index = 0
 
+func _ready():
+	if GameState.start_game:
+		label.visible = true
+		label2.visible = true
+		box.visible = true
+		charlotte.visible = true
+		current_dialogue_index = 0 
+	else:
+		label.visible = false
+		label2.visible = false
+		box.visible = false
+		charlotte.visible = false
+
 func _process(_delta):
 	if GameState.start_game:
 		if Input.is_action_just_pressed("dialogue"):
@@ -22,6 +35,7 @@ func _process(_delta):
 				label.text = dialogues1[current_dialogue_index]
 				current_dialogue_index += 1
 			else:
+				GameState.start_game = false
 				label.visible = false
 				label2.visible = false
 				box.visible = false
