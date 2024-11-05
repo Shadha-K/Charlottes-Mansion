@@ -8,11 +8,6 @@ var target_scale: Vector2 = Vector2(0.23, 0.23)
 var growing: bool = true
 var trans = true
 
-var transition_layer
-
-func _ready():
-	transition_layer = get_parent().get_node("TransitionLayer")  # Adjust path if needed
-
 func _physics_process(_delta):
 	var direction_to_player = (target - position).normalized()
 	
