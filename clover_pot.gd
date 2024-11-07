@@ -27,7 +27,8 @@ func _process(_delta):
 			label2.visible = true
 			GameState.clover_planted = true
 			clover_plant.visible = true
-			GlobalHotbar.item_used("Clover")
+			get_tree().change_scene_to_file("res://glowing_clover.tscn")
+			#GlobalHotbar.item_used("Clover")
 			
 	if not GameState.has_clubs:
 		if Input.is_action_just_pressed("interact") and label2.visible:

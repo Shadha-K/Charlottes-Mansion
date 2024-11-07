@@ -1,74 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://disoxabc6yfi"]
+[gd_scene load_steps=5 format=3 uid="uid://disoxabc6yfi"]
 
 [ext_resource type="Texture2D" uid="uid://4nyne507ivtj" path="res://assets/puzzle_objects/empty_pot.png" id="1_wbb0d"]
 [ext_resource type="Texture2D" uid="uid://qlctjo2osdsj" path="res://assets/puzzle_objects/clover_pot.png" id="2_bs0u8"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_wf6f0"]
-[ext_resource type="Texture2D" uid="uid://k8s2p7nocqol" path="res://assets/puzzle_objects/CloverGlow1.png" id="4_av4ud"]
-[ext_resource type="Texture2D" uid="uid://bwu0yd552s3ui" path="res://assets/puzzle_objects/CloverGlow2.png" id="5_lgjbb"]
-[ext_resource type="Texture2D" uid="uid://djpt0s8rf6a46" path="res://assets/puzzle_objects/CloverGlow3.png" id="6_hu2g1"]
-[ext_resource type="Texture2D" uid="uid://yfq7yd1bar4s" path="res://assets/puzzle_objects/CloverGlow4.png" id="7_krian"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpixl"]
 size = Vector2(270, 316.5)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7jyog"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_av4ud")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_lgjbb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_hu2g1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_krian")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_lgjbb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_av4ud")
-}],
-"loop": true,
-"name": &"glowingclover",
-"speed": 15.0
-}]
-
-[sub_resource type="Animation" id="Animation_7r1an"]
-length = 3.0
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0c5qj"]
-_data = {
-"RESET": SubResource("Animation_7r1an")
-}
 
 [node name="clover pot" type="Area2D"]
 
@@ -105,18 +42,3 @@ theme_override_font_sizes/font_size = 85
 text = "Press E to 
 interact"
 horizontal_alignment = 1
-
-[node name="EmptyPot" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(14, 260)
-texture = ExtResource("1_wbb0d")
-
-[node name="glowingclover" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_7jyog")
-animation = &"glowingclover"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="glowingclover"]
-libraries = {
-"": SubResource("AnimationLibrary_0c5qj")
-}

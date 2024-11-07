@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://mu86lf3h1bll"]
+[gd_scene load_steps=14 format=3 uid="uid://mu86lf3h1bll"]
 
+[ext_resource type="Script" path="res://glowing_clover.gd" id="1_4oeur"]
 [ext_resource type="Texture2D" uid="uid://k8s2p7nocqol" path="res://assets/puzzle_objects/CloverGlow1.png" id="1_r7ovi"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="2_nofs2"]
 [ext_resource type="Texture2D" uid="uid://bwu0yd552s3ui" path="res://assets/puzzle_objects/CloverGlow2.png" id="2_q3vqo"]
 [ext_resource type="Texture2D" uid="uid://djpt0s8rf6a46" path="res://assets/puzzle_objects/CloverGlow3.png" id="3_6o5mp"]
+[ext_resource type="Texture2D" uid="uid://4nyne507ivtj" path="res://assets/puzzle_objects/empty_pot.png" id="3_7kgd4"]
 [ext_resource type="Texture2D" uid="uid://yfq7yd1bar4s" path="res://assets/puzzle_objects/CloverGlow4.png" id="4_6x81t"]
 [ext_resource type="Texture2D" uid="uid://c4jyo5f8cry84" path="res://assets/bedroom/blurredbedroom.PNG" id="5_s6265"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="7_loosg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pkx6f"]
 animations = [{
@@ -29,7 +33,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"glowingclover",
-"speed": 15.0
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_7r1an"]
@@ -65,10 +69,20 @@ _data = {
 "RESET": SubResource("Animation_7r1an")
 }
 
-[node name="glowing_clover" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3n5"]
+size = Vector2(167, 97)
+
+[node name="glowing_clover" type="Area2D"]
+script = ExtResource("1_4oeur")
+
+[node name="EmptyPot" type="Sprite2D" parent="."]
+position = Vector2(625, 301)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7kgd4")
 
 [node name="glowingclover" type="AnimatedSprite2D" parent="."]
-visible = false
+position = Vector2(622, 178)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_pkx6f")
 animation = &"glowingclover"
 
@@ -76,6 +90,20 @@ animation = &"glowingclover"
 libraries = {
 "": SubResource("AnimationLibrary_0c5qj")
 }
+
+[node name="Label" type="Label" parent="glowingclover"]
+offset_left = -678.0
+offset_top = -142.0
+offset_right = -240.0
+offset_bottom = -54.0
+theme_override_fonts/font = ExtResource("7_loosg")
+theme_override_font_sizes/font_size = 50
+text = "Press E to go back"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(626, 318)
+shape = SubResource("RectangleShape2D_wp3n5")
 
 [node name="BlurBedroom" type="Sprite2D" parent="."]
 z_index = -1
@@ -88,3 +116,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 3029
 limit_bottom = 1732
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("2_nofs2")]
+offset_left = -153.0
+offset_top = -68.0
+offset_right = 5.0
+offset_bottom = -45.0
