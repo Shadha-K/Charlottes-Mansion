@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://mu86lf3h1bll"]
+
+[ext_resource type="Texture2D" uid="uid://k8s2p7nocqol" path="res://assets/puzzle_objects/CloverGlow1.png" id="1_r7ovi"]
+[ext_resource type="Texture2D" uid="uid://bwu0yd552s3ui" path="res://assets/puzzle_objects/CloverGlow2.png" id="2_q3vqo"]
+[ext_resource type="Texture2D" uid="uid://djpt0s8rf6a46" path="res://assets/puzzle_objects/CloverGlow3.png" id="3_6o5mp"]
+[ext_resource type="Texture2D" uid="uid://yfq7yd1bar4s" path="res://assets/puzzle_objects/CloverGlow4.png" id="4_6x81t"]
+[ext_resource type="Texture2D" uid="uid://c4jyo5f8cry84" path="res://assets/bedroom/blurredbedroom.PNG" id="5_s6265"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkx6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r7ovi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q3vqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6o5mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6x81t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q3vqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_r7ovi")
+}],
+"loop": true,
+"name": &"glowingclover",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_7r1an"]
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0c5qj"]
+_data = {
+"RESET": SubResource("Animation_7r1an")
+}
+
+[node name="glowing_clover" type="Node2D"]
+
+[node name="glowingclover" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_pkx6f")
+animation = &"glowingclover"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="glowingclover"]
+libraries = {
+"": SubResource("AnimationLibrary_0c5qj")
+}
+
+[node name="BlurBedroom" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(758, 392)
+scale = Vector2(0.699513, 0.583032)
+texture = ExtResource("5_s6265")
+
+[node name="Camera2D" type="Camera2D" parent="BlurBedroom"]
+limit_left = 0
+limit_top = 0
+limit_right = 3029
+limit_bottom = 1732

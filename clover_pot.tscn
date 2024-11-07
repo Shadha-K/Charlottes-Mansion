@@ -73,18 +73,15 @@ _data = {
 [node name="clover pot" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(95, 152.75)
 shape = SubResource("RectangleShape2D_wpixl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(97, 45)
 scale = Vector2(0.696078, 0.609302)
 texture = ExtResource("1_wbb0d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(96.0625, 51)
 scale = Vector2(0.627179, 0.6)
 texture = ExtResource("2_bs0u8")
@@ -110,10 +107,12 @@ interact"
 horizontal_alignment = 1
 
 [node name="EmptyPot" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(14, 260)
 texture = ExtResource("1_wbb0d")
 
 [node name="glowingclover" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_7jyog")
 animation = &"glowingclover"
 
