@@ -22,7 +22,7 @@ func _ready():
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and GameState.has_diamond: 
+	if body.name == "Alex" and GameState.diamond_card: 
 		$Label.visible = true 
 
 # Function called when something exits the area (the player)
