@@ -1,7 +1,5 @@
 extends Area2D
 
-signal book_thrown()
-
 @onready var player = null  
  
 @onready var gamestate = get_node("/root/GameState")
@@ -15,8 +13,6 @@ func _ready():
 	
 	if GameState.has_book and gamestate.book_used_in_fireplace:
 		$Label.visible=false
-	else:
-		self.connect("book_thrown", Callable(gamestate, "_on_book_thrown"))
 
 # Function called when something enters the area (the player)
 func _on_body_entered(body: Node2D) -> void:

@@ -2,7 +2,6 @@ extends Node2D
 
 var next_room_scene = "res://bedroom.tscn" 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var label: Label = $AnimatedSprite2D/Label
 @onready var label2: Label = $AnimatedSprite2D/Label2
 @onready var hotbar = get_node("CanvasLayer/Hotbar")
 

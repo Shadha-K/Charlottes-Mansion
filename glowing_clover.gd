@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 @onready var animation_player: AnimationPlayer = $glowingclover/AnimationPlayer
 
 @onready var glowing_clover: AnimatedSprite2D = $glowingclover  
@@ -20,7 +18,7 @@ func _process(_delta):
 	if not GameState.has_clubs:
 		if Input.is_action_just_pressed("click or drag"):
 			
-			animation_player.play("glowingclover")
+			glowing_clover.play("glowingclover")
 			
 			GlobalHotbar.item_used("Clover")
 			GameState.has_clubs=true

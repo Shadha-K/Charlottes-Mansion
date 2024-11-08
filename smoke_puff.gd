@@ -1,7 +1,5 @@
 extends Node2D
 
-signal clover_picked_up()
-
 @onready var animation_player: AnimationPlayer = $burning_book/AnimationPlayer
 @onready var flame_particles: CPUParticles2D = $CPUParticles2D
 @onready var burning_book: AnimatedSprite2D = $burning_book  
@@ -14,8 +12,6 @@ func _ready():
 	label.visible = false
 	burning_book.visible = false  
 	flame_particles.visible=true
-	
-	self.connect("clover_picked_up", Callable(GameState, "_on_clover_picked_up"))
 
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):

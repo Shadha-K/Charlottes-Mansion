@@ -1,8 +1,5 @@
 extends Area2D
 
-# Signal emitted when the book is picked up
-signal bottle_picked_up()
-
 @onready var player = null  
 @onready var hotbar = get_node("/root/living_room/UI/Hotbar")  
 @onready var label = $Label  # Correctly reference the Label

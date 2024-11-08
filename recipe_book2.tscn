@@ -5,9 +5,6 @@
 [sub_resource type="GDScript" id="GDScript_um56v"]
 script/source = "extends Area2D
 
-# Signal emitted when the book is picked up
-signal book_picked_up()
-
 @onready var player = null  
 @onready var hotbar = get_node(\"/root/Hotbar\")  
 
