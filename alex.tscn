@@ -1,9 +1,10 @@
-[gd_scene load_steps=96 format=3 uid="uid://c24ylvijada3u"]
+[gd_scene load_steps=101 format=3 uid="uid://c24ylvijada3u"]
 
 [ext_resource type="Script" path="res://alex.gd" id="1_a8wcy"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="2_6yriy"]
 [ext_resource type="Texture2D" uid="uid://bkh3lugok486d" path="res://assets/AlexSprite/Alex Movement/AlexBackSword.png" id="3_5oq3p"]
 [ext_resource type="Script" path="res://attack.gd" id="3_q5n0e"]
+[ext_resource type="Shader" uid="uid://bfjg2ie425hfe" path="res://alex_hit.tres" id="3_rsu56"]
 [ext_resource type="Texture2D" uid="uid://x0q31afvpjky" path="res://assets/AlexSprite/Alex Movement/AlexBackATKSword1.1.png" id="4_qwksx"]
 [ext_resource type="Texture2D" uid="uid://cvsl83jgd1gu" path="res://assets/AlexSprite/Alex Movement/AlexFront.png" id="4_u8ddn"]
 [ext_resource type="Texture2D" uid="uid://od7gmqlwx4vh" path="res://assets/AlexSprite/Alex Movement/AlexFront2.png" id="5_6d7wb"]
@@ -58,6 +59,11 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u25gb"]
 size = Vector2(32, 55)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgnhy"]
+shader = ExtResource("3_rsu56")
+shader_parameter/enabled = false
+shader_parameter/hit_color = Color(0.976471, 0.247059, 0.219608, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4g7o3"]
 animations = [{
@@ -1153,6 +1159,43 @@ graph_offset = Vector2(-293.133, -8.80489)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp15t"]
 size = Vector2(53, 107)
 
+[sub_resource type="Animation" id="Animation_4x1v8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ru6v6"]
+resource_name = "hit_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1n0d4"]
+_data = {
+"RESET": SubResource("Animation_4x1v8"),
+"hit_animation": SubResource("Animation_ru6v6")
+}
+
 [node name="Alex" type="CharacterBody2D"]
 script = ExtResource("1_a8wcy")
 
@@ -1175,10 +1218,11 @@ debug_color = Color(6.257e-07, 0.379382, 0.4457, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 6
+material = SubResource("ShaderMaterial_vgnhy")
 position = Vector2(0, 1)
 scale = Vector2(0.207639, 0.197222)
 sprite_frames = SubResource("SpriteFrames_4g7o3")
-animation = &"attack_back"
+animation = &"idle_front"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1209,5 +1253,10 @@ script = ExtResource("3_q5n0e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
 position = Vector2(54, 8)
 shape = SubResource("RectangleShape2D_pp15t")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1n0d4")
+}
 
 [connection signal="body_entered" from="attack" to="attack" method="_on_body_entered"]
