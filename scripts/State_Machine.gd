@@ -17,13 +17,13 @@ func _ready():
 
 func _process(delta):
 	if current_state:
-		current_state.Update(delta)
+		current_state.Update(delta) #calls update for current state
 
 func _physics_process(delta):
 	if current_state:
-		current_state.Physics_Update(delta)
+		current_state.Physics_Update(delta) #calls physics update for current state
 
-func on_child_transition(state, new_state_name):
+func on_child_transition(state, new_state_name): # switches states
 	if state != current_state:
 		return
 	
@@ -37,3 +37,5 @@ func on_child_transition(state, new_state_name):
 	new_state.Enter()
 	
 	current_state = new_state
+
+##SCRIPT FOR STATE MACHINE###

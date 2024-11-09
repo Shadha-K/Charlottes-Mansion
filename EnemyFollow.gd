@@ -6,18 +6,20 @@ class_name EnemyFollow
 var player : CharacterBody2D
 
 func Enter():
-	player = get_tree().get_first_node_in_group("Player")
+	player = get_tree().get_first_node_in_group("Player") # get reference to player
 
 func Physics_Update(_delta: float):
-	var direction = player.global_position - enemy.global_position
+	var direction = player.global_position - enemy.global_position # calculate distance and direction
 	
 	if direction.length() > 25:
 		enemy.velocity = direction.normalized() * move_speed
 	else:
-		enemy.velocity = Vector2()
+		enemy.velocity = Vector2() 
 	
 	if direction.length() > 500:
-		Transitioned.emit(self, "Idle")
+		Transitioned.emit(self, "Idle") # player too far for enemy
 		
 	if direction.length() < 100:
-		Transitioned.emit(self,"Attack")
+		Transitioned.emit(self,"Attack") # enemy attacks
+
+##SCRIPT FOR ENEMY BEHAVIOR WHEN IT NOTICES PLAYER##

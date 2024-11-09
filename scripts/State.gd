@@ -14,3 +14,5 @@ func Update(_delta: float):
 
 func Physics_Update(_delta: float):
 	pass
+
+##ABSTRACT CLASS FOR STATES##

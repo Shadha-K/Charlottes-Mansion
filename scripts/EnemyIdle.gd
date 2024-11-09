@@ -31,3 +31,5 @@ func Physics_Update(_delta: float):
 	#print(direction.length())
 	if direction.length() < 300:
 		Transitioned.emit(self, "Follow")
+
+##SCRIPT FOR ENEMY IDLE BEHAVIOR##
