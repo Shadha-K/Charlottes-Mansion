@@ -7,7 +7,7 @@ var direction: Vector2 = Vector2.ZERO
 
 @onready var animated_sprite_2D_animation = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
-#@onready var hit_animation_player = $AnimationPlayer2
+@onready var hit_animation_player = $AnimationPlayer2
 @onready var timer: Timer = Timer.new()  # Create a new Timer instance
 
 func _ready():
@@ -19,10 +19,10 @@ func _ready():
 		teacup.connect("teacup_picked_up", Callable(self, "_on_teacup_picked_up"))  # Connect to the teacup pickup signal
 
 # Set up the timer
-	timer.wait_time = 0.5
-	timer.one_shot = true
-	timer.timeout.connect(_on_hit_timer_timeout)
-	add_child(timer)  # Add the timer to the scene tree
+#	timer.wait_time = 0.5
+#	timer.one_shot = true
+#	timer.timeout.connect(_on_hit_timer_timeout)
+#	add_child(timer)  # Add the timer to the scene tree
 	
 func _process(_delta):
 	update_animation_parameters()
@@ -72,10 +72,10 @@ func _on_teacup_picked_up():
 	
 func hit(): #function for when Alex is hit
 	print("HIT")
-	#hit_animation_player.play("hit_animation")
-	modulate.a = 0.5
-	timer.start()  # Start the timer
+	hit_animation_player.play("hit_animation")
+#	modulate.a = 0.5
+#	timer.start()  # Start the timer
 
 # This function is called when the timer's timeout signal is emitted
-func _on_hit_timer_timeout():
-	modulate.a = 1
+#func _on_hit_timer_timeout():
+#	modulate.a = 1
