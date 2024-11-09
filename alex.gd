@@ -61,3 +61,6 @@ func _on_teacup_picked_up():
 	var hotbar = get_node("/root/Hotbar")  # Reference to the hotbar
 	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 	print("Teacup added to hotbar!")
+	
+func hit():
+	print("HIT")

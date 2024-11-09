@@ -5,6 +5,7 @@ var player : CharacterBody2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().call_group("heartManager", "take_damage")
+		get_tree().call_group("Player", "hit")
 
 
 
