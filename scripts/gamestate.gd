@@ -11,7 +11,8 @@ var got_code: bool = false
 var sink_interacted: bool = false
 var vanity_interacted: bool = false
 var jewelry_box_open: bool = false
-var code: String = "4710" 
+var code: String = "4710"
+var added_diamond: bool = false
 var has_diamond: bool = false 
 
 #ace of clubs variables

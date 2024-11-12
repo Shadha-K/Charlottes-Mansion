@@ -16,7 +16,7 @@ func _ready():
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex": 
+	if body.name == "Alex" and GameState.club_card: 
 		label.visible = true  
 
 func _on_body_exited(body: Node2D) -> void:
