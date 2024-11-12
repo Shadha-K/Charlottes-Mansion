@@ -14,6 +14,9 @@ func _ready():
 	label.visible = true
 	label2.visible = true
 	label3.visible = false
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
+	GameState.first_time = false
+	return
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):

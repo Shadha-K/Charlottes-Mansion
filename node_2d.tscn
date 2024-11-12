@@ -1,7 +1,7 @@
-[gd_scene load_steps=71 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=72 format=4 uid="uid://c3dj85r47ntwp"]
 
+[ext_resource type="Script" path="res://startdialogue.gd" id="1_465vp"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
-[ext_resource type="Script" path="res://scripts/dialogues.gd" id="1_oces7"]
 [ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_p05t5"]
 [ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_x0oae"]
@@ -34,10 +34,10 @@
 [ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
 [ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
+[ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_y33mw"]
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
+[ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_ichn5"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="34_w7hth"]
-[ext_resource type="Texture2D" uid="uid://tofnenyqsmfy" path="res://assets/puzzle_objects/charlotte_for_dialogue.PNG" id="36_aqpdf"]
-[ext_resource type="Texture2D" uid="uid://bgdw5gqg326fy" path="res://assets/puzzle_objects/dialogue_box.png" id="37_3x3t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(97.75, 61)
@@ -234,9 +234,12 @@ size = Vector2(20.5, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umhrj"]
 size = Vector2(20, 36)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ressr"]
+radius = 350.0
+
 [node name="living_room" type="Node2D"]
 position = Vector2(61, 268)
-script = ExtResource("1_oces7")
+script = ExtResource("1_465vp")
 
 [node name="door_right" type="Area2D" parent="."]
 z_index = 2
@@ -373,8 +376,28 @@ position = Vector2(452, 371)
 script = ExtResource("28_54vxy")
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
-position = Vector2(707, 194)
+position = Vector2(690, 194)
 parent = NodePath("../Alex")
+
+[node name="Action" parent="TileMap/Charlotte" instance=ExtResource("31_y33mw")]
+collision_layer = 16
+dialogue_resource = ExtResource("32_ichn5")
+
+[node name="Colls" type="CollisionShape2D" parent="TileMap/Charlotte/Action"]
+position = Vector2(30, 160)
+shape = SubResource("CircleShape2D_ressr")
+
+[node name="Label" type="Label" parent="TileMap/Charlotte/Action"]
+light_mask = 32
+visibility_layer = 32
+offset_left = -190.0
+offset_top = -630.0
+offset_right = 320.0
+offset_bottom = -151.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 200
+text = "Press H
+to speak"
 
 [node name="Alex" parent="TileMap" instance=ExtResource("23_y7awr")]
 position = Vector2(805, 191)
@@ -412,40 +435,6 @@ horizontal_alignment = 1
 [node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
 
 [node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
-
-[node name="dialogue_box" type="Node2D" parent="UI"]
-script = ExtResource("1_oces7")
-
-[node name="Sprite2D" type="Sprite2D" parent="UI/dialogue_box"]
-z_index = 1
-position = Vector2(825, 501)
-scale = Vector2(0.140152, 0.164563)
-texture = ExtResource("36_aqpdf")
-
-[node name="Sprite2D2" type="Sprite2D" parent="UI/dialogue_box"]
-position = Vector2(935, 530)
-scale = Vector2(0.905773, 0.813953)
-texture = ExtResource("37_3x3t4")
-
-[node name="Label" type="Label" parent="UI/dialogue_box"]
-offset_left = 861.0
-offset_top = 467.0
-offset_right = 1074.0
-offset_bottom = 557.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Heya! I don’t think I’ve 
-seen you around 
-before… Are you lost?"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="UI/dialogue_box"]
-offset_left = 980.0
-offset_top = 579.0
-offset_right = 1068.0
-offset_bottom = 602.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Press Enter"
 
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2

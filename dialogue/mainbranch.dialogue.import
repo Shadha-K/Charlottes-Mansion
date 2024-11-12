@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://fxlwjpapywod"
+path="res://.godot/imported/mainbranch.dialogue-ad5a5f115ca1adba9cde2e8fe6cc3275.tres"
+
+[deps]
+
+source_file="res://dialogue/mainbranch.dialogue"
+dest_files=["res://.godot/imported/mainbranch.dialogue-ad5a5f115ca1adba9cde2e8fe6cc3275.tres"]
+
+[params]
+
+defaults=true

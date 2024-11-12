@@ -27,6 +27,7 @@ var has_recipe_book: bool = false
 #basement door variables
 var diamond_card: bool = false
 var club_card: bool = false
+var first_time: bool = true
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount

@@ -9,6 +9,7 @@ var direction: Vector2 = Vector2.ZERO
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hit_animation_player = $AnimationPlayer2
 @onready var timer: Timer = Timer.new()  # Create a new Timer instance
+@onready var finder: Area2D = $Dir/Finder
 
 func _ready():
 	animated_sprite_2D_animation.play("idle_front")
@@ -28,6 +29,11 @@ func _process(_delta):
 	update_animation_parameters()
 
 func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("help"):
+		var actions = finder.get_overlapping_areas()
+		if actions.size() > 0:
+			actions[0].action()
+			return
 	if not is_on_floor():
 		velocity += get_gravity() * _delta
 
@@ -79,3 +85,4 @@ func hit(): #function for when Alex is hit
 # This function is called when the timer's timeout signal is emitted
 func _on_hit_timer_timeout():
 	modulate = Color(1, 1, 1, 1)  # Restore the character's color to normal with full opacity
+	

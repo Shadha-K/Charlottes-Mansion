@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cxqdu5wr0h2ga"
+path="res://.godot/imported/basementdoor.dialogue-c6897443679a9aaf592ef9bc21bebca3.tres"
+
+[deps]
+
+source_file="res://dialogue/basementdoor.dialogue"
+dest_files=["res://.godot/imported/basementdoor.dialogue-c6897443679a9aaf592ef9bc21bebca3.tres"]
+
+[params]
+
+defaults=true

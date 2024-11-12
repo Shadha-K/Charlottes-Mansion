@@ -1,0 +1,12 @@
+~ start
+if first_time:
+	Charlotte: I know I said paws aren’t great for opening doors, but that’s not the only problem...
+	Charlotte: That door is locked up tight and the only way to unlock it is if we find whatever goes in those slots...
+	Charlotte: Maybe we’ll find them if we look around the house?
+else:
+	if has_diamond and has_clubs:
+		Charlotte: Woohoo! We’re gonna get out of here!..
+		Charlotte: Now put all those cards in there and open our way to sweet sweet freedom!
+	else:
+		Charlotte: We don't have everything yet, let's come back later.
+=> END
