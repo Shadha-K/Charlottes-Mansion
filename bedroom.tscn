@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=74 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_1c2nh"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_d6w8n"]
 [ext_resource type="Script" path="res://clover_pot.gd" id="29_0aec5"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="32_4cjsa"]
+[ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="35_viirw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
 texture = ExtResource("1_k4xct")
@@ -401,6 +402,26 @@ horizontal_alignment = 1
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("28_d6w8n")]
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("32_4cjsa")]
+
+[node name="Teacup" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
+position = Vector2(233, 357)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
+position = Vector2(327, 487)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
+position = Vector2(199, 233)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup4" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
+position = Vector2(165, 524)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup5" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
+position = Vector2(489, 323)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_entered"]

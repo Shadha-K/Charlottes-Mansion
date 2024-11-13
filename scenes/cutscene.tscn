@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr538xsb75gfe"]
+[gd_scene load_steps=4 format=3 uid="uid://dr538xsb75gfe"]
 
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_s7pi7"]
 [ext_resource type="VideoStream" path="res://assets/cutscenes/intro_cutscene.ogv" id="1_tdq7k"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_vl17n"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s7pi7")
@@ -13,5 +14,14 @@ offset_bottom = 1088.0
 scale = Vector2(0.6, 0.6)
 stream = ExtResource("1_tdq7k")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 903.0
+offset_top = 590.0
+offset_right = 1201.0
+offset_bottom = 643.0
+theme_override_fonts/font = ExtResource("3_vl17n")
+theme_override_font_sizes/font_size = 40
+text = "Press E to skip"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
