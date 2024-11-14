@@ -22,8 +22,10 @@ var has_clover: bool = false
 var clover_planted: bool = false
 var has_clubs: bool = false
 
-var has_bottle: bool = false
+#ace of hearts variables
 var has_recipe_book: bool = false
+
+var has_bottle: bool = false
 
 #basement door variables
 var diamond_card: bool = false

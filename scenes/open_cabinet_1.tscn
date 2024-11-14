@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://deda06to3lbxj"]
+
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="1_n6x0k"]
+
+[node name="open_cabinet1" type="Area2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 326.0
+offset_top = 82.0
+offset_right = 804.0
+offset_bottom = 532.0
+color = Color(0.283669, 0.209609, 0.0718926, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 372.0
+offset_top = 168.0
+offset_right = 510.0
+offset_bottom = 336.0
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 62.0
+offset_right = 106.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "FLOUE"
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 572.0
+offset_top = 256.0
+offset_right = 734.0
+offset_bottom = 438.0
+
+[node name="Label" type="Label" parent="ColorRect3"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 66.0
+offset_right = 132.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SUGAR"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("1_n6x0k")]

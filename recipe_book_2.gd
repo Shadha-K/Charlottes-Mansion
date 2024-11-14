@@ -10,7 +10,6 @@ func _ready():
 	label.visible = false  # Set label visibility to false by default
 	var grandparent = get_parent().get_parent()
 	player = grandparent.get_node("Alex")
-	add_to_group("Books")  # Add to the "Books" group
 	
 	if GameState.has_recipe_book:
 		queue_free()
@@ -30,5 +29,5 @@ func _process(_delta):
 
 func pick_up_book():
 	GlobalHotbar.add_item_to_slot("Recipe Book", preload("res://assets/puzzle_objects/tempbook2.png"))
-	get_tree().root.get_node("GameState").has_recipe_book = true
-	queue_free()  
+	GameState.has_recipe_book = true
+	queue_free()

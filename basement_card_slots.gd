@@ -20,11 +20,11 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
-		if GameState.has_diamond and not GameState.has_clubs:
+		if GameState.has_diamond and not GameState.diamond_card:
 			GlobalHotbar.item_used("Diamond Card")
 			GameState.diamond_card = true
 		
-		elif GameState.has_clubs:
+		elif GameState.has_clubs and not GameState.club_card:
 			GlobalHotbar.item_used("Club Card")
 			GameState.club_card = true
 		
@@ -33,10 +33,13 @@ func _process(_delta):
 		
 	if GameState.club_card:
 		club_card.visible = true
+		#label.visible = false
+		#label2.visible = false
+		#label3.visible = true
 
 	if Input.is_action_just_pressed("interact"):
-		if GameState.club_card:
-			get_tree().change_scene_to_file(basement_scene)
-		else:
-			get_tree().change_scene_to_file(next_scene)
+		#if GameState.club_card:
+		#	get_tree().change_scene_to_file(basement_scene)
+		#else:
+		get_tree().change_scene_to_file(next_scene)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=49 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
@@ -22,6 +22,7 @@
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="18_g2o85"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
+[ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -240,7 +241,7 @@ tile_set = SubResource("TileSet_ces8x")
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAABAP//BAAAAAAAAAADAP//AwAAAAAAAAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAADAP//AwAAAAAAAAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAA=")
 tile_set = SubResource("TileSet_ces8x")
 
 [node name="kitchen_sink" parent="TileMap/furniture" instance=ExtResource("15_26x86")]
@@ -262,6 +263,7 @@ position = Vector2(140, 103)
 parent = NodePath("../Alex")
 
 [node name="Alex" parent="." instance=ExtResource("16_lqktc")]
+z_index = 1
 position = Vector2(83, 126)
 
 [node name="Camera2D" type="Camera2D" parent="Alex"]
@@ -318,6 +320,20 @@ scale = Vector2(0.5, 0.5)
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("22_kve5r")]
+
+[node name="Cabinet1" parent="." instance=ExtResource("23_hqoa2")]
+position = Vector2(-717, -654)
+
+[node name="Label" type="Label" parent="Cabinet1"]
+offset_left = 689.0
+offset_top = 574.0
+offset_right = 781.0
+offset_bottom = 621.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 20
+text = "Press E to 
+open cabinet"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
