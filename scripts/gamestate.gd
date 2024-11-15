@@ -111,3 +111,13 @@ func grab_bottle():
 	if not has_bottle:
 		has_bottle = true
 		print("You grabbed the bottle.")
+
+func _ready():
+	var player =get_node("Alex")
+	var charlotte= get_node("Charlotte")
+	if GameState.last_spawn_point_Alex != "" and GameState.last_spawn_point_charlotte !="":
+		var spawn_point = get_node(GameState.last_spawn_point_Alex)
+		var spawn_point2= get_node(GameState.last_spawn_point_charlotte)
+		if spawn_point and player and spawn_point2 and charlotte:
+			player.position = spawn_point.global_position
+			charlotte.position=spawn_point2.global_position

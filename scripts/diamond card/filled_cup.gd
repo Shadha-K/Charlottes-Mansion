@@ -2,6 +2,8 @@ extends Area2D
 
 var next_room_scene = "res://scenes/sink_zoomed.tscn"
 @onready var label: Label = $Label
+var spawn_point_name = "SinkAlexSpawn"
+var spawn_point_name2 = "SinkCharSpawn"
 
 func _ready():
 	if GameState.sink_interacted:
@@ -22,4 +24,6 @@ func _process(_delta: float) -> void:
 		pick_up_filled_cup()
 
 func pick_up_filled_cup():
+	GameState.last_spawn_point_Alex = spawn_point_name
+	GameState.last_spawn_point_charlotte =spawn_point_name2
 	get_tree().change_scene_to_file(next_room_scene)
