@@ -458,7 +458,7 @@ to enter"
 horizontal_alignment = 1
 
 [node name="LivingRoomSpawn" type="Marker2D" parent="."]
-position = Vector2(-25, -168)
+position = Vector2(-19, -195)
 
 [node name="CharlotteSpawn" type="Marker2D" parent="."]
 position = Vector2(12, -225)
