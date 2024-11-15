@@ -9,9 +9,7 @@ func _ready():
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position = spawn_point.global_position
 			charlotte.position=spawn_point2.global_position
-			var player_sprite = player.get_node("AnimatedSprite2D")  # Adjust if named differently
-			if player_sprite:
-				player_sprite.flip_h = true  
+		
 		
 	if GameState.first_time:
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/opening.dialogue"), "start")
