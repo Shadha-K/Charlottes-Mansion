@@ -31,6 +31,8 @@ var has_bottle: bool = false
 var diamond_card: bool = false
 var club_card: bool = false
 var first_time: bool = true
+var last_spawn_point_Alex = ""
+var last_spawn_point_charlotte = ""
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount

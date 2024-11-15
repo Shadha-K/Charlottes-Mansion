@@ -457,6 +457,12 @@ text = "Press E
 to enter"
 horizontal_alignment = 1
 
+[node name="LivingRoomSpawn" type="Marker2D" parent="."]
+position = Vector2(-25, -168)
+
+[node name="CharlotteSpawn" type="Marker2D" parent="."]
+position = Vector2(12, -225)
+
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]
