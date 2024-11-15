@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
-[ext_resource type="Script" path="res://scripts/gamestate.gd" id="1_h8lgu"]
+[ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
 [ext_resource type="Texture2D" uid="uid://cu3bfpit7msni" path="res://assets/kitchen/dining_table.png" id="1_yfhj1"]
 [ext_resource type="Texture2D" uid="uid://bdiqtgeff2cja" path="res://assets/kitchen/oven.png" id="2_m4736"]
 [ext_resource type="Texture2D" uid="uid://wwc6ymy64x5u" path="res://assets/kitchen/kitchen_counters.png" id="3_65tfn"]
@@ -170,7 +170,7 @@ size = Vector2(87.5, 57)
 
 [node name="kitchen" type="Node2D"]
 position = Vector2(5, 0)
-script = ExtResource("1_h8lgu")
+script = ExtResource("1_d06ck")
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(14, -3)
@@ -340,6 +340,12 @@ position = Vector2(363, 65)
 
 [node name="SinkCharSpawn" type="Marker2D" parent="."]
 position = Vector2(419, 87)
+
+[node name="LRtoKAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(77, 148)
+
+[node name="LRtoKCharSpawn" type="Marker2D" parent="."]
+position = Vector2(78, 194)
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]

@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 		pick_up_filled_cup()
 
 func pick_up_filled_cup():
-	GameState.kitchen_spawn_point_Alex = spawn_point_name
-	GameState.kitchen_spawn_point_charlotte =spawn_point_name2
+	GameState.last_scene_exited = "sink"
+	GameState.sink_spawn_point_Alex = spawn_point_name
+	GameState.sink_spawn_point_charlotte =spawn_point_name2
 	get_tree().change_scene_to_file(next_room_scene)
