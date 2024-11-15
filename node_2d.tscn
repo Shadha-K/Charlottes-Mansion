@@ -463,6 +463,12 @@ position = Vector2(-19, -195)
 [node name="CharlotteSpawn" type="Marker2D" parent="."]
 position = Vector2(12, -225)
 
+[node name="AlexKitchenToLR" type="Marker2D" parent="."]
+position = Vector2(931, -176)
+
+[node name="CharKitchenToLR" type="Marker2D" parent="."]
+position = Vector2(928, -132)
+
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]

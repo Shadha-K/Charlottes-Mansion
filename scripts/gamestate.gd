@@ -33,6 +33,8 @@ var club_card: bool = false
 var first_time: bool = true
 var last_spawn_point_Alex = ""
 var last_spawn_point_charlotte = ""
+var kitchen_spawn_point_Alex=""
+var kitchen_spawn_point_charlotte= ""
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
@@ -115,9 +117,9 @@ func grab_bottle():
 func _ready():
 	var player =get_node("Alex")
 	var charlotte= get_node("Charlotte")
-	if GameState.last_spawn_point_Alex != "" and GameState.last_spawn_point_charlotte !="":
-		var spawn_point = get_node(GameState.last_spawn_point_Alex)
-		var spawn_point2= get_node(GameState.last_spawn_point_charlotte)
+	if GameState.kitchen_spawn_point_Alex != "" and GameState.kitchen_spawn_point_charlotte !="":
+		var spawn_point = get_node(GameState.kitchen_spawn_point_Alex)
+		var spawn_point2= get_node(GameState.kitchen_spawn_point_charlotte)
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position = spawn_point.global_position
 			charlotte.position=spawn_point2.global_position
