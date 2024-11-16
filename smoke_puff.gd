@@ -6,6 +6,8 @@ extends Node2D
 @onready var label: Label = $burning_book/Label
 @onready var hotbar = get_node("CanvasLayer/Hotbar")
 
+var spawn_point_name = "FireAlexSpawn"
+var spawn_point_name2 = "FireCharSpawn"
 var next_room_scene = "res://node_2d.tscn"
 
 func _ready():
@@ -24,10 +26,16 @@ func _process(_delta):
 		if not animation_player.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
 			animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	if Input.is_action_just_pressed("interact"):
+		GameState.last_scene_exited= "Fire"
+		GameState.FireToLR_spawn_Alex = spawn_point_name
+		GameState.FireToLR_spawn_Char =spawn_point_name2
 		get_tree().change_scene_to_file(next_room_scene)
 		
 func _on_animation_finished(anim_name: String):
 	
 	if typeof(anim_name) == TYPE_STRING and anim_name == "burning_book":
 		flame_particles.emitting = false 
+		GameState.last_scene_exited= "Fire"
+		GameState.FireToLR_spawn_Alex = spawn_point_name
+		GameState.FireToLR_spawn_Char =spawn_point_name2
 		get_tree().change_scene_to_file(next_room_scene)  

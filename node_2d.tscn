@@ -469,6 +469,12 @@ position = Vector2(931, -176)
 [node name="CharKitchenToLR" type="Marker2D" parent="."]
 position = Vector2(928, -132)
 
+[node name="FireAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(419, -183)
+
+[node name="FireCharSpawn" type="Marker2D" parent="."]
+position = Vector2(486, -161)
+
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]
