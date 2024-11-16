@@ -19,9 +19,11 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and $Label.visible:
 		$Label.visible = false
+		
 		get_tree().change_scene_to_file(next_scene)
 		
 func interact_with_mirror():
 	$Label.visible = false
+
 	get_tree().root.get_node("GameState").throw_water_on_mirror()
 	

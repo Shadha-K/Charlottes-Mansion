@@ -423,6 +423,12 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(489, 323)
 scale = Vector2(0.5, 0.5)
 
+[node name="LRToBRSpawnAlex" type="Marker2D" parent="."]
+position = Vector2(876, 459)
+
+[node name="LRToBRSpawnChar" type="Marker2D" parent="."]
+position = Vector2(909, 520)
+
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_exited"]
