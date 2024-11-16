@@ -2,7 +2,8 @@ extends Area2D
 
 var next_room_scene = "res://scenes/basement_door.tscn" 
 var player_near_door = false  
-
+var spawn_point_name = "BasementAlexSpawn"
+var spawn_point_name2 = "BasementCharSpawn"
 #reference to the label
 @onready var press_e_label = $Label 
 
@@ -24,4 +25,7 @@ func _on_body_exited(body):
 #process function to listen for key press while player is near the door
 func _process(_delta):
 	if player_near_door and Input.is_action_just_pressed("interact"): 
+		GameState.last_scene_exited="Basement"
+		GameState.BasementToLR_spawn_Alex= spawn_point_name
+		GameState.BasementToLR_spawn_Char=spawn_point_name2
 		get_tree().change_scene_to_file(next_room_scene)

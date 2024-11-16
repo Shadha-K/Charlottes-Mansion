@@ -48,6 +48,9 @@ var LRtoK_spawn_charlotte=""
 #Fire place spawn
 var FireToLR_spawn_Alex=""
 var FireToLR_spawn_Char=""
+#Basement door spawn
+var BasementToLR_spawn_Alex=""
+var BasementToLR_spawn_Char=""
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount
