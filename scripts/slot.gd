@@ -1,14 +1,46 @@
-extends Button
+class_name slot
+extends Panel
 
-var item_name: String = ""
+var index: int
+var item = {
+	"name": "",
+	"icon": null
+}
 
-# Exported variable to set the TextureRect node in the editor
-@export var texture_rect: TextureRect  # Reference to the TextureRect node
+var _texture: TextureRect
 
-# Method to set the item in the slot
-#func set_item(name: String, icon) -> void:
-	#item_name = name
-	#if texture_rect:  
-		#texture_rect.texture = icon  
-		#print("Setting item:", name)
-	#self.text = item_name  
+func _get_nodes() -> void:
+	_texture = get_node("MarginContainer/TextureRect")
+
+func reload() -> void:
+	item = GlobalHotbar.get_item_in_slot(index)
+	if item and item.has("icon"):
+		_texture.texture = item["icon"]
+	else:
+		_texture.texture = null
+
+func _ready() -> void:
+	_get_nodes()
+	reload()
+
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	if not item or not item["icon"]:
+		return null
+	
+	var texture = TextureRect.new()
+	texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	texture.size = Vector2i(32, 32)
+	texture.texture = item["icon"]
+	
+	set_drag_preview(texture)
+	
+	return index
+
+#func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	#return typeof(data) == TYPE_INT
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	if typeof(data) == TYPE_INT:
+		var source_index = int(data)
+		GlobalHotbar.swap_items(source_index, index)
+		reload()
