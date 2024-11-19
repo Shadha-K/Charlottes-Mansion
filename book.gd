@@ -33,6 +33,7 @@ func _process(_delta):
 func pick_up_book():
 	if not gamestate.has_book:
 		GlobalHotbar.add_item_to_slot("Book", preload("res://assets/puzzle_objects/fire_book.png"))
+		GameState.d_fire_book = true
 		#gamestate.books_picked_up[name] = true	
 		gamestate.has_book = true
 		queue_free() 

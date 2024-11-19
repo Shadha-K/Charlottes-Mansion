@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=52 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="18_g2o85"]
+[ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="18_rxel1"]
 [ext_resource type="Script" path="res://living_room_door.gd" id="19_4b8sk"]
+[ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="19_a310k"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
@@ -165,6 +167,9 @@ size = Vector2(38, 113)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_375es"]
 size = Vector2(45, 81)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfj0h"]
+radius = 350.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0uxy"]
 size = Vector2(87.5, 57)
 
@@ -261,6 +266,26 @@ horizontal_alignment = 1
 [node name="Charlotte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("15_t8te0")]
 position = Vector2(140, 103)
 parent = NodePath("../Alex")
+
+[node name="Action" parent="Charlotte" instance=ExtResource("18_rxel1")]
+collision_layer = 16
+dialogue_resource = ExtResource("19_a310k")
+
+[node name="Colls" type="CollisionShape2D" parent="Charlotte/Action"]
+position = Vector2(30, 160)
+shape = SubResource("CircleShape2D_tfj0h")
+
+[node name="Label" type="Label" parent="Charlotte/Action"]
+light_mask = 32
+visibility_layer = 32
+offset_left = -190.0
+offset_top = -630.0
+offset_right = 320.0
+offset_bottom = -151.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 200
+text = "Press H
+to speak"
 
 [node name="Alex" parent="." instance=ExtResource("16_lqktc")]
 z_index = 1

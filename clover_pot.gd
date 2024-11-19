@@ -28,6 +28,8 @@ func _process(_delta):
 			label.visible = false
 			label2.visible = true
 			GameState.clover_planted = true
+			GameState.d_clover_pot = true
+			GameState.d_clover = false
 			glowing_plant.visible = true
 			glowing_plant.play("glowingclover")
 			GlobalHotbar.item_used("Clover")
@@ -36,9 +38,12 @@ func _process(_delta):
 		if Input.is_action_just_pressed("interact") and label2.visible:
 			label2.visible = false;
 			GameState.has_clubs = true
+			GameState.d_clover_pot = false
 			glowing_plant.visible = false
 			clover.visible = true
 			GlobalHotbar.add_item_to_slot("Club Card", preload("res://assets/puzzle_objects/AceOfClubs.png"))
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/card_found.dialogue"), "start")
+			GameState.d_trevor_dead = true
 			
 func interact_with_pot():
 	$Label.visible = false

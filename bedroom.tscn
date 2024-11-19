@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=77 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_1c2nh"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
@@ -33,7 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://disoxabc6yfi" path="res://clover_pot.tscn" id="28_32fkr"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_d6w8n"]
 [ext_resource type="Script" path="res://clover_pot.gd" id="29_0aec5"]
+[ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_dcxcs"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="32_4cjsa"]
+[ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_5ol43"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="35_viirw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
@@ -264,6 +266,9 @@ size = Vector2(87, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ub0dt"]
 size = Vector2(33, 63)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xaq16"]
+radius = 350.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hapge"]
 size = Vector2(86.5, 51)
 
@@ -366,6 +371,26 @@ script = ExtResource("29_0aec5")
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("24_mk0nr")]
 position = Vector2(815, 419)
 parent = NodePath("../Alex")
+
+[node name="Action" parent="TileMap/Charlotte" instance=ExtResource("31_dcxcs")]
+collision_layer = 16
+dialogue_resource = ExtResource("32_5ol43")
+
+[node name="Colls" type="CollisionShape2D" parent="TileMap/Charlotte/Action"]
+position = Vector2(30, 160)
+shape = SubResource("CircleShape2D_xaq16")
+
+[node name="Label" type="Label" parent="TileMap/Charlotte/Action"]
+light_mask = 32
+visibility_layer = 32
+offset_left = -190.0
+offset_top = -630.0
+offset_right = 320.0
+offset_bottom = -151.0
+theme_override_fonts/font = ExtResource("27_73mh5")
+theme_override_font_sizes/font_size = 200
+text = "Press H
+to speak"
 
 [node name="Alex" parent="TileMap" instance=ExtResource("25_bcjmn")]
 position = Vector2(885, 444)

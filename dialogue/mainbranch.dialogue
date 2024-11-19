@@ -1,3 +1,71 @@
 ~ start
 Charlotte: What do you want?
+if d_teacup:
+	- Ask about the empty teacup
+		Charlotte: You know, I love a good cup of tea, but it looks like you’re fresh out...
+		Charlotte: I saw a sink in the kitchen. We can’t very well make a good cup without some water...
+	- End the conversation => END
+elif d_full_cup:
+	- Ask about the full teacup
+		Charlotte: Well, we have water for tea, but I just remembered, this house doesn’t even have tea. You know, this place really sucks...
+		Charlotte: Whatever, maybe that water can help with something else. I know! Water is pretty good at cleaning things..
+		Charlotte: Maybe look for something that could use a good clean? Last I checked, the bedroom was pretty dusty.
+	- End the conversation => END
+elif d_has_code:
+	- Ask about the 4 numbers
+		Charlotte: Yay! Secret numbers! You’re making some serious progress here!..
+		Charlotte: Though, the big door doesn’t accept four number codes, so it probably isn’t to that...
+		Charlotte: Maybe try looking around for something that needs a 4-number code...
+	- End the conversation => END
+
+if d_fire_book:
+	- Ask about the fire book
+		Charlotte: What a weird little book...
+		Charlotte: It looks pretty beat up and a little burnt. Like someone set it on fire before...
+		Charlotte: Well if it’s come out of the fire once, maybe it’s special. Try putting it in there again. Let’s see if anything happens. 
+	- End the conversation => END
+elif d_clover:
+	- Ask about the 3-leaf clover
+		Charlotte: Poor little thing looks like it’s on its last legs. I probably would be too if I was living in a fireplace...
+		Charlotte: Let’s try to find somewhere new and safe for it to live. Plants need some good soil and water to grow well...
+		Charlotte: And a name! Everyone needs a name. Let’s call him Trevor! It’ll be ok, Trevor. You’ll be in tip-top shape in no time.
+	- End the conversation => END
+elif d_clover_pot:
+	- Ask about clover in a pot
+		Charlotte: I mean I know I said plants just need soil and water to live, but our little guy is still looking pretty sad...
+		Charlotte: Gosh, it’s probably because it’s so dreary in here. Go open a window or something before he croaks.
+	- End the conversation => END
+elif d_trevor_dead:
+	- Ask about Trevor
+		Charlotte: Don’t ask me about that!..
+		Charlotte: I just wanted to help the little guy. I never thought he’d end up as nothing but a scrap of paper...
+		Charlotte: And I was really starting to think Trevor and I had a connection. Just give me some space to think for a little bit. 
+	- End the conversation => END
+	
+if d_recipes_book:
+	- Ask about the book of recipes
+		Charlotte: To be honest, I can’t really read. I’m a cat! What did you expect?!..
+		Charlotte: I mean it’s just a cookbook. If you’re really that hungry, go make yourself a snack. There’s probably some ingredients lying around here somewhere.
+	- End the conversation => END
+elif d_pie:
+	- Ask about the pie
+		Charlotte: Ewww! Don’t tell me you’re going to eat that raw. I know you’re hungry, but that’s too far...
+		Charlotte: There’s an oven over there, so please please bake it first...
+		Charlotte: For how long? No clue, I’ve never baked before. But there’s probably something around here that tells you how much time it should take.
+	- End the conversation => END
+
+if d_vial:
+	- Ask about the purple vial
+		Charlotte: Huh, what a weird little vial. I wonder what it’s for...
+		Charlotte: Well, my mama always told me to keep this house clean and it’s not good to keep perishables out in the open...
+		Charlotte: There’s probably somewhere in the kitchen that we can put it. Let’s check there.
+	- End the conversation => END
+elif d_note_unread:
+	- Ask about the note
+		Charlotte: I mean it’s a note. What am I supposed to do with it? Have you even read it yet?
+	- End the conversation => END
+elif d_note_read:
+	- Ask about the note
+		Charlotte: Well, duh...it’s time to take out that pesky garbage. They’ve been cluttering up my house for too long.
+	- End the conversation => END
 => END

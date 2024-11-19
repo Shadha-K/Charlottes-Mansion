@@ -4,6 +4,29 @@ var player_health = 9
 var current_health = 9
 var books_picked_up: Dictionary = {}
 
+var opening: bool = true
+
+#dialogue states (just to make sure things don't get confusing)
+var d_first_card: bool = true
+var d_middle_cards: bool = false
+var d_last_card: bool = false
+
+var d_teacup: bool = false
+var d_full_cup: bool = false
+var d_has_code: bool = false
+
+var d_fire_book: bool = false
+var d_clover: bool = false
+var d_clover_pot: bool = false
+var d_trevor_dead: bool = false
+
+var d_recipes_book: bool = false
+var d_pie: bool = false
+
+var d_vial: bool = false
+var d_note_unread: bool = false
+var d_note_read: bool = false
+
 #ace of diamonds variables
 var has_teacup: bool = false
 var has_water: bool = false
@@ -24,8 +47,11 @@ var has_clubs: bool = false
 
 #ace of hearts variables
 var has_recipe_book: bool = false
+var has_hearts: bool = false
 
+#ace of spades variables
 var has_bottle: bool = false
+var has_spades: bool = false
 
 #basement door variables
 var diamond_card: bool = false

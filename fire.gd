@@ -35,7 +35,9 @@ func throw_book():
 	if gamestate.has_book and not gamestate.book_used_in_fireplace:
 		get_tree().change_scene_to_file("res://smoke_puff.tscn")
 		#emit_signal("book_thrown")
-		gamestate.book_used_in_fireplace = true  
+		gamestate.book_used_in_fireplace = true
+		GameState.d_fire_book = false
+		GameState.d_clover = true
 		print("You threw the book into the fireplace. It starts to burn.")
 		$Label.visible = false 
 		#get_tree().change_scene_to_file("res://smoke_puff.tscn")

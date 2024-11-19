@@ -31,7 +31,7 @@ func _ready():
 			charlotte.position=spawn_point2.global_position
 		
 			
-	if GameState.first_time:
+	if GameState.opening:
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/opening.dialogue"), "start")
-		GameState.first_time = false
+		GameState.opening = false
 		return

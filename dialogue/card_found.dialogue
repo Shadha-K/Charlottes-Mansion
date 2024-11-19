@@ -1,0 +1,10 @@
+~ start
+if d_first_card:
+	Charlotte: Huh, why’s there a card here?..
+	Charlotte: Wait, I know!..
+	Charlotte: Those weird little slots were shaped just like this. We need to find the rest of the cards and then maybe the door will open!
+elif d_middle_cards:
+	Charlotte: Hey, look, another card! We’re one step closer to getting out!
+elif d_last_card:
+	Charlotte: This is the last one!!! Let’s head back to the door and get out of here!
+=> END

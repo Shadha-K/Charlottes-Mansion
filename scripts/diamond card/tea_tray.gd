@@ -31,4 +31,5 @@ func pick_up_teacup():
 	if not get_tree().root.get_node("GameState").has_teacup:
 		GlobalHotbar.add_item_to_slot("Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))  
 		get_tree().root.get_node("GameState").has_teacup = true 
+		GameState.d_teacup = true
 		queue_free() 

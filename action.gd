@@ -6,6 +6,7 @@ extends Area2D
 
 func action() -> void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	GameState.d_trevor_dead = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	var actions = get_overlapping_areas()

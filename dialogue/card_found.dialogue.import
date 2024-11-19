@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://2xc5bh0vs4w1"
+path="res://.godot/imported/card_found.dialogue-e1fc8003e0d43e3cf0133f76374a2983.tres"
+
+[deps]
+
+source_file="res://dialogue/card_found.dialogue"
+dest_files=["res://.godot/imported/card_found.dialogue-e1fc8003e0d43e3cf0133f76374a2983.tres"]
+
+[params]
+
+defaults=true
