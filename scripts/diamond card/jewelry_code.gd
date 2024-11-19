@@ -9,7 +9,8 @@ var current_number4: int = 0
 var correct_code: Array = [4, 1, 7, 0]
 
 var next_room_scene = "res://scenes/open_jewelrybox.tscn" 
-
+var spawn_point_name= "JBoxToBRAlex"
+var spawn_point_name2="JBoxToBRChar"
 func _ready():
 	# Connect button signals to functions using callable
 	$VBoxContainer/up_button.pressed.connect(_on_UpButton_pressed)
@@ -91,4 +92,7 @@ func check_code():
 
 	if entered_code == correct_code:
 		get_tree().root.get_node("GameState").jewelry_box_open = true
+		GameState.last_scene_exited="JBox"
+		GameState.JBoxToBR_spawn_Alex= spawn_point_name
+		GameState.JBoxToBR_spawn_Char=spawn_point_name2
 		get_tree().change_scene_to_file(next_room_scene)

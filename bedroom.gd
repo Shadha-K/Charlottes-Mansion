@@ -19,6 +19,12 @@ func _ready() -> void:
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position=spawn_point.global_position
 			charlotte.position=spawn_point2.global_position	
+	elif GameState.JBoxToBR_spawn_Alex!="" and GameState.JBoxToBR_spawn_Char!="" and GameState.last_scene_exited=="JBox":
+		spawn_point=get_node(GameState.JBoxToBR_spawn_Alex)
+		spawn_point2=get_node(GameState.JBoxToBR_spawn_Char)
+		if spawn_point and player and spawn_point2 and charlotte:
+			player.position=spawn_point.global_position
+			charlotte.position=spawn_point2.global_position
 	if hearts_container == null:
 		print("Error: HeartsContainer node not found in the scene.")
 	else:
