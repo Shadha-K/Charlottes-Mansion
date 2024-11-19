@@ -1,0 +1,497 @@
+[gd_scene load_steps=73 format=4 uid="uid://c3dj85r47ntwp"]
+
+[ext_resource type="Script" path="res://startdialogue.gd" id="1_465vp"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
+[ext_resource type="Texture2D" uid="uid://b8o4b6vl837qm" path="res://assets/living_room/fireplace.png" id="2_lley6"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_p05t5"]
+[ext_resource type="Texture2D" uid="uid://k0clio7qm0gn" path="res://assets/living_room/painting_cat.png" id="2_x0oae"]
+[ext_resource type="Texture2D" uid="uid://dkwr0de10ld6e" path="res://assets/living_room/grandfather_clock.png" id="3_tesxw"]
+[ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_vjgi7"]
+[ext_resource type="Texture2D" uid="uid://b1r0b4ro8jy4v" path="res://assets/living_room/coffee_table2.png" id="4_4ln4q"]
+[ext_resource type="Texture2D" uid="uid://bixejd6bjojx7" path="res://assets/living_room/card_rug.png" id="4_57yr0"]
+[ext_resource type="Texture2D" uid="uid://bg4b3jkknk8bf" path="res://assets/living_room/coffee_table.png" id="5_87k2y"]
+[ext_resource type="Texture2D" uid="uid://cv7hchkit0ov1" path="res://assets/living_room/zebra_rug.png" id="5_ppwrk"]
+[ext_resource type="Texture2D" uid="uid://bx47i6ucdot4h" path="res://assets/living_room/larger_zebra_rug.png" id="6_py32d"]
+[ext_resource type="Texture2D" uid="uid://cfl32vjmwcsal" path="res://assets/living_room/armchair.png" id="6_ykbow"]
+[ext_resource type="Texture2D" uid="uid://ds7sma7vr3fjx" path="res://assets/living_room/couch.png" id="7_3wq4w"]
+[ext_resource type="Texture2D" uid="uid://i4latwdvbjsj" path="res://assets/living_room/window.png" id="7_ufcr2"]
+[ext_resource type="Texture2D" uid="uid://chkyr1l4wsogc" path="res://assets/living_room/window_squashed.png" id="8_7hv3l"]
+[ext_resource type="Texture2D" uid="uid://c0v0qet4sd2n" path="res://assets/living_room/bookshelf.png" id="8_ydu32"]
+[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="9_wuxwf"]
+[ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_d3l06"]
+[ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_3l4fy"]
+[ext_resource type="Script" path="res://scripts/door_right.gd" id="19_6nlp7"]
+[ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
+[ext_resource type="Texture2D" uid="uid://mtvu8sg5bw3i" path="res://assets/puzzle_objects/tea_tray_empty.png" id="22_gyp1b"]
+[ext_resource type="PackedScene" uid="uid://bn8gen7tixj5v" path="res://scenes/tea_tray.tscn" id="22_moxuy"]
+[ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="22_uvcue"]
+[ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
+[ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
+[ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
+[ext_resource type="Script" path="res://recipe_book_2.gd" id="25_ixh56"]
+[ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
+[ext_resource type="Script" path="res://fire.gd" id="27_bwpxa"]
+[ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
+[ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
+[ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_y33mw"]
+[ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
+[ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_ichn5"]
+[ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="34_w7hth"]
+[ext_resource type="PackedScene" uid="uid://dln7j38xukt6" path="res://scenes/slot.tscn" id="37_iip5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
+size = Vector2(97.75, 61)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g045i"]
+texture = ExtResource("1_isee1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+9:0/0 = 0
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+1:1/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87644"]
+texture = ExtResource("2_x0oae")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vbj4"]
+texture = ExtResource("3_vjgi7")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_177cl"]
+texture = ExtResource("4_4ln4q")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25n2n"]
+texture = ExtResource("5_ppwrk")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nag0o"]
+texture = ExtResource("6_py32d")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(6, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1uwm"]
+texture = ExtResource("7_ufcr2")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2mcd"]
+texture = ExtResource("8_7hv3l")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nungs"]
+texture = ExtResource("9_wuxwf")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5dyk"]
+texture = ExtResource("10_d3l06")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s0gy"]
+texture = ExtResource("2_lley6")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ggoj"]
+texture = ExtResource("12_3l4fy")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4str8"]
+texture = ExtResource("3_tesxw")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wikpu"]
+texture = ExtResource("4_57yr0")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udi7y"]
+texture = ExtResource("5_87k2y")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkmt4"]
+texture = ExtResource("6_ykbow")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rra84"]
+texture = ExtResource("7_3wq4w")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl27d"]
+texture = ExtResource("8_ydu32")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ufuy4"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_g045i")
+sources/2 = SubResource("TileSetAtlasSource_5s0gy")
+sources/3 = SubResource("TileSetAtlasSource_4str8")
+sources/4 = SubResource("TileSetAtlasSource_wikpu")
+sources/5 = SubResource("TileSetAtlasSource_udi7y")
+sources/6 = SubResource("TileSetAtlasSource_dkmt4")
+sources/7 = SubResource("TileSetAtlasSource_rra84")
+sources/9 = SubResource("TileSetAtlasSource_cl27d")
+sources/10 = SubResource("TileSetAtlasSource_87644")
+sources/11 = SubResource("TileSetAtlasSource_4vbj4")
+sources/13 = SubResource("TileSetAtlasSource_177cl")
+sources/14 = SubResource("TileSetAtlasSource_25n2n")
+sources/15 = SubResource("TileSetAtlasSource_nag0o")
+sources/16 = SubResource("TileSetAtlasSource_u1uwm")
+sources/17 = SubResource("TileSetAtlasSource_d2mcd")
+sources/18 = SubResource("TileSetAtlasSource_nungs")
+sources/19 = SubResource("TileSetAtlasSource_s5dyk")
+sources/20 = SubResource("TileSetAtlasSource_7ggoj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12gf"]
+size = Vector2(1187, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtj5y"]
+size = Vector2(34, 773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1odbd"]
+size = Vector2(38, 756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwycc"]
+size = Vector2(533, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0l10"]
+size = Vector2(228, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkmwg"]
+size = Vector2(269, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ahd"]
+size = Vector2(213.5, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2re73"]
+size = Vector2(202.5, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70f2j"]
+size = Vector2(62.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx7my"]
+size = Vector2(53.5, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrxmr"]
+size = Vector2(20.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umhrj"]
+size = Vector2(20, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ressr"]
+radius = 350.0
+
+[node name="living_room" type="Node2D"]
+position = Vector2(61, 268)
+script = ExtResource("1_465vp")
+
+[node name="door_right" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(897, -172)
+script = ExtResource("19_6nlp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_right"]
+position = Vector2(56.875, 0.5)
+shape = SubResource("RectangleShape2D_pu5bb")
+
+[node name="Label" type="Label" parent="door_right"]
+z_index = 2
+offset_left = -91.0
+offset_top = 47.0
+offset_right = 64.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to 
+go to kitchen"
+horizontal_alignment = 1
+
+[node name="TileMap" type="Node" parent="."]
+
+[node name="room" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAUAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAMAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAACAAYAAQAAAAAAAAADAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAADAAEAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAAAAAANAAQAAQAAAAAAAAANAAMAAQAAAAAAAAANAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAADAAIAAQAAAAAAAAAAAP//AQAAAAIAAAAAAP7/AQAAAAIAAAAAAP3/AQAAAAIAAAABAP3/AQAAAAIAAAABAP//AQAAAAIAAAACAP//AQAAAAIAAAACAP7/AQAAAAIAAAACAP3/AQAAAAIAAAADAP3/AQAAAAIAAAADAP7/AQAAAAIAAAADAP//AQAAAAIAAAAEAP//AQAAAAIAAAAEAP7/AQAAAAIAAAAEAP3/AQAAAAIAAAAFAP3/AQAAAAIAAAAFAP7/AQAAAAIAAAAFAP//AQAAAAIAAAAGAP//AQAAAAIAAAAGAP7/AQAAAAIAAAAGAP3/AQAAAAIAAAAHAP3/AQAAAAIAAAAHAP7/AQAAAAIAAAAHAP//AQAAAAIAAAAIAP//AQAAAAIAAAAIAP7/AQAAAAIAAAAIAP3/AQAAAAIAAAAJAP3/AQAAAAIAAAAJAP7/AQAAAAIAAAAKAP7/AQAAAAIAAAAKAP3/AQAAAAIAAAALAP3/AQAAAAIAAAALAP7/AQAAAAIAAAAMAP//AQAAAAIAAAAMAP7/AQAAAAIAAAAMAP3/AQAAAAIAAAANAP3/AQAAAAIAAAANAP7/AQAAAAIAAAAOAP7/AQAAAAIAAAAOAP//AQAAAAIAAAAPAP3/AQAAAAIAAAAOAP3/AQAAAAIAAAAQAP3/AQAAAAIAAAAQAP7/AQAAAAIAAAAQAP//AQAAAAIAAAAQAAAAAQAAAAIAAAAQAAEAAQAAAAIAAAAQAAIAAQAAAAIAAAAQAAMAAQAAAAIAAAAQAAQAAQAAAAIAAAAQAAUAAQAAAAIAAAAQAAYAAQAAAAIAAAAQAAcAAQAAAAIAAAD//wcAAQAAAAIAAAD//wYAAQAAAAIAAAD//wUAAQAAAAIAAAD//wQAAQAAAAIAAAD//wMAAQAAAAIAAAD//wEAAQAAAAIAAAD/////AQAAAAIAAAD///7/AQAAAAIAAAD///3/AQAAAAIAAAAAAAgAAQAAAAIAAAABAAgAAQAAAAIAAAADAAgAAQAAAAIAAAAEAAgAAQAAAAIAAAAFAAgAAQAAAAIAAAAGAAgAAQAAAAIAAAAHAAgAAQAAAAIAAAAIAAgAAQAAAAIAAAAJAAgAAQAAAAIAAAAKAAgAAQAAAAIAAAALAAgAAQAAAAIAAAAMAAgAAQAAAAIAAAAOAAgAAQAAAAIAAAAPAAgAAQAAAAIAAAD//wgAAQAAAAIAAAANAP//AQAAAAIAAAAQAPz/AQAAAAEAAAAPAPz/AQAAAAEAAAAOAPz/AQAAAAEAAAANAPz/AQAAAAEAAAAMAPz/AQAAAAEAAAALAPz/AQAAAAEAAAAKAPz/AQAAAAEAAAAJAPz/AQAAAAEAAAAIAPz/AQAAAAEAAAAHAPz/AQAAAAEAAAAGAPz/AQAAAAEAAAAFAPz/AQAAAAEAAAAEAPz/AQAAAAEAAAADAPz/AQAAAAEAAAACAPz/AQAAAAEAAAABAPz/AQAAAAEAAAAAAPz/AQAAAAEAAAD///z/AQAAAAEAAAAJAP//AQAAAAIAAAAJAAAAAQAAAAAAAAAKAP//AQAAAAIAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAALAP//AQAAAAIAAAALAAAAAQAAAAAAAAALAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAD+//3/AQAAAAQAAAD+//7/AQAAAAQAAAD+////AQAAAAQAAAD+/wAAAQAAAAQAAAD+/wEAAQAAAAQAAAD+/wIAAQAAAAQAAAD+/wMAAQAAAAQAAAD+/wQAAQAAAAQAAAD+/wUAAQAAAAQAAAD+/wYAAQAAAAQAAAD+/wcAAQAAAAQAAAD+//z/AQAAAAYAAAARAPz/AQAAAAUAAAARAAYAAQAAAAMAAAARAAUAAQAAAAMAAAARAAQAAQAAAAMAAAARAAIAAQAAAAMAAAARAAEAAQAAAAMAAAARAAAAAQAAAAMAAAARAP//AQAAAAMAAAARAP7/AQAAAAMAAAARAP3/AQAAAAMAAAD+/wgAAQAAAAQAAAARAAgAAQAAAAMAAAARAAcAAQAAAAMAAAAJAAEAAQAAAAAAAAD+/wkAAQABAAIAAAARAAkAAQABAAEAAAD//wkAAQAAAAcAAAAAAAkAAQAAAAcAAAABAAkAAQAAAAcAAAACAAkAAQAAAAcAAAADAAkAAQAAAAcAAAAEAAkAAQAAAAcAAAAFAAkAAQAAAAcAAAAGAAkAAQAAAAcAAAAHAAkAAQAAAAcAAAAIAAkAAQAAAAcAAAAJAAkAAQAAAAcAAAAKAAkAAQAAAAcAAAALAAkAAQAAAAcAAAAMAAkAAQAAAAcAAAANAAkAAQAAAAcAAAAOAAkAAQAAAAcAAAAPAAkAAQAAAAcAAAAQAAkAAQAAAAcAAAAAAAAAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAD//wIAAQAAAAIAAAD//wAAAQAAAAIAAAABAP7/AQAAAAIAAAACAAgAAQAAAAIAAAANAAgAAQAAAAIAAAAPAP7/AQAAAAIAAAAPAP//AQAAAAIAAAAQAAgAAQAAAAIAAAARAAMAAQAAAAMAAAA=")
+tile_set = SubResource("TileSet_ufuy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap/room"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(518, 516)
+shape = SubResource("RectangleShape2D_k12gf")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(-20, 121)
+shape = SubResource("RectangleShape2D_xtj5y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(1042, 124)
+shape = SubResource("RectangleShape2D_1odbd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(479.5, -49.5)
+shape = SubResource("RectangleShape2D_dwycc")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(100, -55)
+shape = SubResource("RectangleShape2D_g0l10")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+visible = false
+position = Vector2(883, -66)
+shape = SubResource("RectangleShape2D_fkmwg")
+
+[node name="rugs n stuff" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAQADwAAAAAAAAABAAgAEQAAAAAAADAOAAgAEQAAAAAAADAHAAgAEwAAAAAAADD//wEAEwAAAAAAAGAQAAEAEwAAAAAAAFAHAAAAFAAAAAAAAAABAP7/EAAAAAAAAAANAP7/EAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ufuy4")
+
+[node name="furniture" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAP//CQAAAAAAAAAHAP//AgAAAAAAAAAKAP//CQAAAAAAAAAHAP3/CgAAAAAAAAAEAAIABwAAAAAAAAAHAAMACwAAAAAAABABAAMACwAAAAAAAAAEAAQADQAAAAAAAAAPAP//AwAAAAAAAAA=")
+tile_set = SubResource("TileSet_ufuy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap/furniture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(287.25, 245.75)
+shape = SubResource("RectangleShape2D_t2ahd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(287, 137)
+shape = SubResource("RectangleShape2D_2re73")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(112.75, 233.5)
+shape = SubResource("RectangleShape2D_70f2j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(462.25, 236.25)
+shape = SubResource("RectangleShape2D_rx7my")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(77.25, 199)
+shape = SubResource("RectangleShape2D_jrxmr")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/furniture/StaticBody2D"]
+position = Vector2(503, 198)
+shape = SubResource("RectangleShape2D_umhrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/furniture"]
+position = Vector2(299, 222)
+scale = Vector2(0.0519764, 0.0519764)
+texture = ExtResource("22_gyp1b")
+
+[node name="tea_tray" parent="TileMap/furniture" instance=ExtResource("22_moxuy")]
+position = Vector2(299, 238)
+
+[node name="Label" type="Label" parent="TileMap/furniture/tea_tray"]
+offset_left = -50.0
+offset_top = -102.0
+offset_right = 31.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+pick up"
+horizontal_alignment = 1
+
+[node name="book" parent="TileMap/furniture" instance=ExtResource("23_dnv1t")]
+position = Vector2(759, 7)
+scale = Vector2(2, 2)
+
+[node name="Recipe book" parent="TileMap/furniture" instance=ExtResource("24_3t8wm")]
+position = Vector2(348, -2)
+script = ExtResource("25_ixh56")
+
+[node name="fire" parent="TileMap/furniture" instance=ExtResource("26_7fhp7")]
+position = Vector2(479, -21)
+gravity = -980.0
+script = ExtResource("27_bwpxa")
+
+[node name="bottle" parent="TileMap/furniture" instance=ExtResource("27_ryt8w")]
+visible = false
+position = Vector2(452, 371)
+script = ExtResource("28_54vxy")
+
+[node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
+position = Vector2(690, 194)
+parent = NodePath("../Alex")
+
+[node name="Action" parent="TileMap/Charlotte" instance=ExtResource("31_y33mw")]
+collision_layer = 16
+dialogue_resource = ExtResource("32_ichn5")
+
+[node name="Colls" type="CollisionShape2D" parent="TileMap/Charlotte/Action"]
+position = Vector2(30, 160)
+shape = SubResource("CircleShape2D_ressr")
+
+[node name="Label" type="Label" parent="TileMap/Charlotte/Action"]
+light_mask = 32
+visibility_layer = 32
+offset_left = -190.0
+offset_top = -630.0
+offset_right = 320.0
+offset_bottom = -151.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 200
+text = "Press H
+to speak"
+
+[node name="Alex" parent="TileMap" instance=ExtResource("23_y7awr")]
+position = Vector2(805, 191)
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Alex"]
+position = Vector2(-1, 1)
+zoom = Vector2(1.2, 1.2)
+limit_left = -79
+limit_top = -255
+limit_right = 1103
+limit_bottom = 592
+
+[node name="door_left" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(-2, -171)
+script = ExtResource("22_d5wkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_left"]
+position = Vector2(-50, 2)
+shape = SubResource("RectangleShape2D_pu5bb")
+
+[node name="Label" type="Label" parent="door_left"]
+offset_left = -42.0
+offset_top = 39.0
+offset_right = 72.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
+text = "Press E to 
+go to bedroom"
+horizontal_alignment = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
+
+[node name="slot" parent="UI/Hotbar" instance=ExtResource("37_iip5c")]
+layout_mode = 2
+
+[node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
+
+[node name="basement_door" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(421, 202)
+script = ExtResource("32_e3568")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basement_door"]
+position = Vector2(-2, 17)
+shape = SubResource("RectangleShape2D_pu5bb")
+
+[node name="Label" type="Label" parent="basement_door"]
+z_index = 2
+offset_left = -151.0
+offset_top = -27.0
+offset_right = -21.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_p05t5")
+theme_override_font_sizes/font_size = 20
+text = "Press E 
+to enter"
+horizontal_alignment = 1
+
+[node name="LivingRoomSpawn" type="Marker2D" parent="."]
+position = Vector2(-19, -195)
+
+[node name="CharlotteSpawn" type="Marker2D" parent="."]
+position = Vector2(12, -225)
+
+[node name="AlexKitchenToLR" type="Marker2D" parent="."]
+position = Vector2(931, -176)
+
+[node name="CharKitchenToLR" type="Marker2D" parent="."]
+position = Vector2(928, -132)
+
+[node name="FireAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(419, -183)
+
+[node name="FireCharSpawn" type="Marker2D" parent="."]
+position = Vector2(486, -161)
+
+[node name="BasementAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(417, 179)
+
+[node name="BasementCharSpawn" type="Marker2D" parent="."]
+position = Vector2(479, 193)
+
+[connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
+[connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_exited"]
+[connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
+[connection signal="body_exited" from="door_left" to="door_left" method="_on_body_exited"]
+[connection signal="body_entered" from="basement_door" to="basement_door" method="_on_body_entered"]
+[connection signal="body_exited" from="basement_door" to="basement_door" method="_on_body_exited"]

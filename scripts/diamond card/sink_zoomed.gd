@@ -12,7 +12,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
 		label.visible = true
 		GameState.sink_interacted = true 
-		GlobalHotbar.add_item_to_slot("Filled Cup", preload("res://assets/puzzle_objects/puzzle_cup_full.png")) 
+		GlobalHotbar.add_item_to_slot("Filled Cup", preload("res://assets/puzzle_objects/puzzle_cup_full.png"))
+		hotbar._reload_slots()
 		
 	if Input.is_action_just_pressed("interact"):
 		get_tree().root.get_node("GameState").has_water = true

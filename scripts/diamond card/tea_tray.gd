@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var player = null  
-@onready var hotbar = get_node("/root/living_room/UI/Hotbar")
 @onready var label: Label = $Label
 
 func _ready():
@@ -29,7 +28,7 @@ func _process(_delta):
 
 func pick_up_teacup():
 	if not get_tree().root.get_node("GameState").has_teacup:
-		GlobalHotbar.add_item_to_slot("Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))  
+		GlobalHotbar.add_item_to_slot("Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 		get_tree().root.get_node("GameState").has_teacup = true 
 		GameState.d_teacup = true
 		queue_free() 
