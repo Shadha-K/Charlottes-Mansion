@@ -429,6 +429,12 @@ position = Vector2(876, 459)
 [node name="LRToBRSpawnChar" type="Marker2D" parent="."]
 position = Vector2(909, 520)
 
+[node name="VanityToBRAlex" type="Marker2D" parent="."]
+position = Vector2(803, 168)
+
+[node name="VanityToBRChar" type="Marker2D" parent="."]
+position = Vector2(860, 173)
+
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_exited"]

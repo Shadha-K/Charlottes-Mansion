@@ -54,7 +54,9 @@ var BasementToLR_spawn_Char=""
 #Livingroom to bedroom spawn
 var LRToBR_spawn_Alex=""
 var LRToBR_spawn_Char=""
-
+#Vanity to bedroom spawn
+var VanityToBR_spawn_Alex=""
+var VanityToBR_spawn_Char=""
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount

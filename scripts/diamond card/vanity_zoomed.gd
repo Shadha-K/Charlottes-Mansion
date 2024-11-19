@@ -4,7 +4,8 @@ var next_room_scene = "res://bedroom.tscn"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label2: Label = $AnimatedSprite2D/Label2
 @onready var hotbar = get_node("CanvasLayer/Hotbar")
-
+var spawn_point_name = "VanityToBRAlex"
+var spawn_point_name2 = "VanityToBRChar"
 func _ready():
 	if GameState.vanity_interacted:
 		label2.visible = true
@@ -24,6 +25,9 @@ func _process(_delta):
 		
 		if Input.is_action_just_pressed("interact"):
 			get_tree().root.get_node("GameState").got_code = true
+			GameState.last_scene_exited="Vanity"
+			GameState.VanityToBR_spawn_Alex=spawn_point_name
+			GameState.VanityToBR_spawn_Char=spawn_point_name2
 			get_tree().change_scene_to_file(next_room_scene)
 
 	 

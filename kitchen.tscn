@@ -336,10 +336,10 @@ open cabinet"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(363, 65)
+position = Vector2(341, 52)
 
 [node name="SinkCharSpawn" type="Marker2D" parent="."]
-position = Vector2(419, 87)
+position = Vector2(402, 54)
 
 [node name="LRtoKAlexSpawn" type="Marker2D" parent="."]
 position = Vector2(77, 148)
