@@ -2,11 +2,11 @@ extends Node
 
 var hotbar = []
 var hotbar_size = 6
+signal hotbar_updated
 
 func _ready():
 	for i in range(hotbar_size):
 		hotbar.append(null)
-
 # Add item to a specific slot
 func add_item_to_slot(item_name: String, item_icon: Texture):
 	# Special case to replace empty cup with filled cup
@@ -19,6 +19,7 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
+				hotbar_updated.emit()
 				return
 			elif hotbar[slot_index].name == "Filled Cup":
 				var item_data = {
@@ -27,6 +28,7 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
+				hotbar_updated.emit()
 				return
 			else:
 				slot_index += 1
@@ -39,6 +41,7 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
+				hotbar_updated.emit()
 				return
 			elif hotbar[slot_index].name == "Clover":
 				var item_data = {
@@ -47,6 +50,7 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
+				hotbar_updated.emit()
 				return
 			elif hotbar[slot_index].name == "Club Card":
 				var item_data = {
@@ -55,10 +59,8 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar:", item_data)
+				hotbar_updated.emit()
 				return
-			
-			else:
-				slot_index += 1
 	else:
 		for slot_index in range(hotbar_size):
 			if hotbar[slot_index] == null:
@@ -68,9 +70,8 @@ func add_item_to_slot(item_name: String, item_icon: Texture):
 				}
 				hotbar[slot_index] = item_data
 				print("Added item to global hotbar: ", item_data)
+				hotbar_updated.emit()
 				return
-			else:
-				slot_index += 1
 
 # remove item in hotbar
 func item_used(item_name: String):
@@ -78,12 +79,27 @@ func item_used(item_name: String):
 		if hotbar[slot_index].name == item_name:
 			hotbar[slot_index] = null
 			print("Removed item from global hotbar: ", item_name)
+			hotbar_updated.emit()
 			return
-		else:
-			slot_index += 1
-	
 # Get item data for a slot
 func get_item_in_slot(slot_index: int):
 	if slot_index >= 0 and slot_index < hotbar_size:
 		return hotbar[slot_index]
 	return null
+
+func move_item(from: int, to: int) -> void:
+	if not hotbar[from] and not hotbar[to]: return
+	if hotbar[to]:
+		swap_items(from, to)
+		return
+	hotbar[to] = hotbar[from]
+	hotbar[from] = null
+	hotbar_updated.emit()
+	return
+	
+func swap_items(from:int, to:int) -> void:
+	var temp = hotbar[to]
+	hotbar[to] = hotbar[from]
+	hotbar[from] = temp
+	hotbar_updated.emit()
+	return
