@@ -38,8 +38,8 @@ func _process(_delta):
 		#label3.visible = true
 
 	if Input.is_action_just_pressed("interact"):
-		#if GameState.club_card:
-		#	get_tree().change_scene_to_file(basement_scene)
+		if GameState.club_card:
+			#get_tree().change_scene_to_file(basement_scene)
 		#else:
-		get_tree().change_scene_to_file(next_scene)
+			get_tree().change_scene_to_file(next_scene)
 		
