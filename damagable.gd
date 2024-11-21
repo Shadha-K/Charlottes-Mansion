@@ -9,7 +9,7 @@ var timer : Timer # Declare the timer variable
 func _ready():
 	# Initialize the timer
 	timer = Timer.new()
-	timer.wait_time = 0.5  # Set the wait time to 0.5 seconds
+	timer.wait_time = 0.2  # Set the wait time to 0.5 seconds
 	timer.one_shot = true  # Make it a one-shot timer (it runs once)
 	timer.timeout.connect(_on_hit_timer_timeout)  # Connect the timeout signal to the function
 	add_child(timer)  # Add the timer to the scene tree
