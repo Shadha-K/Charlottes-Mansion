@@ -42,4 +42,4 @@ func _process(_delta):
 			#get_tree().change_scene_to_file(basement_scene)
 		#else:
 			get_tree().change_scene_to_file(next_scene)
-		
+		get_tree().change_scene_to_file(next_scene)
