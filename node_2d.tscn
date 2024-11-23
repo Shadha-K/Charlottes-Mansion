@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=73 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Script" path="res://startdialogue.gd" id="1_465vp"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="10_d3l06"]
 [ext_resource type="Texture2D" uid="uid://chs0mrg3ekckj" path="res://assets/living_room/fireplace_tile.png" id="12_3l4fy"]
 [ext_resource type="Script" path="res://scripts/door_right.gd" id="19_6nlp7"]
+[ext_resource type="PackedScene" uid="uid://bld1vy6tjoii7" path="res://scenes/potion.tscn" id="22_cabp7"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="22_d5wkv"]
 [ext_resource type="Texture2D" uid="uid://mtvu8sg5bw3i" path="res://assets/puzzle_objects/tea_tray_empty.png" id="22_gyp1b"]
 [ext_resource type="PackedScene" uid="uid://bn8gen7tixj5v" path="res://scenes/tea_tray.tscn" id="22_moxuy"]
@@ -374,6 +375,9 @@ script = ExtResource("27_bwpxa")
 visible = false
 position = Vector2(452, 371)
 script = ExtResource("28_54vxy")
+
+[node name="Potion" parent="TileMap/furniture" instance=ExtResource("22_cabp7")]
+position = Vector2(469, 374)
 
 [node name="Charlotte" parent="TileMap" node_paths=PackedStringArray("parent") instance=ExtResource("22_uvcue")]
 position = Vector2(690, 194)
