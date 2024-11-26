@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=54 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dfvjh8dj8fo6s" path="res://assets/kitchen/kitchen_rug.png" id="8_tlx02"]
 [ext_resource type="Texture2D" uid="uid://c1iqsc8ak8fpd" path="res://assets/kitchen/dining_chair_front.png" id="11_8r82r"]
 [ext_resource type="Texture2D" uid="uid://cpthia8pqei0s" path="res://assets/living_room/door_squashed.png" id="14_pj22l"]
-[ext_resource type="PackedScene" uid="uid://dv5hamglfmi2k" path="res://scenes/kitchen_sink.tscn" id="15_26x86"]
+[ext_resource type="PackedScene" path="res://scenes/kitchen_sink.tscn" id="15_26x86"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="15_t8te0"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]
 [ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
+[ext_resource type="PackedScene" uid="uid://6t4kc5mw7bkd" path="res://scenes/icebox.tscn" id="26_d83cf"]
 [ext_resource type="PackedScene" uid="uid://b18bc72wuwh4h" path="res://teapot.tscn" id="26_ffmkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
@@ -247,7 +248,7 @@ tile_set = SubResource("TileSet_ces8x")
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAADAP//AwAAAAAAAAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGA=")
+tile_map_data = PackedByteArray("AAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGA=")
 tile_set = SubResource("TileSet_ces8x")
 
 [node name="kitchen_sink" parent="TileMap/furniture" instance=ExtResource("15_26x86")]
@@ -330,19 +331,35 @@ scale = Vector2(0.5, 0.5)
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("22_kve5r")]
+visible = false
 
 [node name="Cabinet1" parent="." instance=ExtResource("23_hqoa2")]
-position = Vector2(-717, -654)
+position = Vector2(-604, -634)
 
 [node name="Label" type="Label" parent="Cabinet1"]
-offset_left = 689.0
-offset_top = 574.0
-offset_right = 781.0
-offset_bottom = 621.0
+offset_left = 760.0
+offset_top = 522.0
+offset_right = 852.0
+offset_bottom = 569.0
 theme_override_fonts/font = ExtResource("18_g2o85")
 theme_override_font_sizes/font_size = 20
 text = "Press E to 
 open cabinet"
+horizontal_alignment = 1
+
+[node name="Icebox" parent="." instance=ExtResource("26_d83cf")]
+position = Vector2(-344, -156)
+
+[node name="Label" type="Label" parent="Icebox"]
+visible = false
+offset_left = 316.0
+offset_top = 86.0
+offset_right = 405.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+open icebox"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]

@@ -1,48 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://deda06to3lbxj"]
+[gd_scene load_steps=8 format=3 uid="uid://deda06to3lbxj"]
 
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="1_n6x0k"]
+[ext_resource type="Script" path="res://scripts/heart card/open_cabinet_1.gd" id="1_qrg5l"]
+[ext_resource type="Texture2D" uid="uid://cl06yhfdui4os" path="res://scripts/heart card/blur_kitchen2.png" id="1_wj0o8"]
+[ext_resource type="Texture2D" uid="uid://cdq5oyh672qm1" path="res://assets/puzzle_objects/kitchen_cabinet_zoomed_in.png" id="3_kbkue"]
+[ext_resource type="Texture2D" uid="uid://cfkmuef6gq2j1" path="res://assets/puzzle_objects/flour.png" id="4_d6fvq"]
+[ext_resource type="Texture2D" uid="uid://ehp52lfqnlyb" path="res://assets/puzzle_objects/sugar.png" id="5_7fup4"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="7_50b5v"]
 
 [node name="open_cabinet1" type="Area2D"]
+script = ExtResource("1_qrg5l")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 326.0
-offset_top = 82.0
-offset_right = 804.0
-offset_bottom = 532.0
-color = Color(0.283669, 0.209609, 0.0718926, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 372.0
-offset_top = 168.0
-offset_right = 510.0
-offset_bottom = 336.0
-
-[node name="Label" type="Label" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 62.0
-offset_right = 106.0
-offset_bottom = 98.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "FLOUE"
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 572.0
-offset_top = 256.0
-offset_right = 734.0
-offset_bottom = 438.0
-
-[node name="Label" type="Label" parent="ColorRect3"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 66.0
-offset_right = 132.0
-offset_bottom = 108.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "SUGAR"
+[node name="BlurKitchen2" type="Sprite2D" parent="."]
+position = Vector2(576, 324.75)
+scale = Vector2(0.381614, 0.378797)
+texture = ExtResource("1_wj0o8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("1_n6x0k")]
+
+[node name="KitchenCabinetZoomedIn" type="Sprite2D" parent="."]
+position = Vector2(584, 313)
+scale = Vector2(0.8525, 0.776429)
+texture = ExtResource("3_kbkue")
+
+[node name="Flour" type="Sprite2D" parent="."]
+position = Vector2(493, 328)
+scale = Vector2(0.2725, 0.303333)
+texture = ExtResource("4_d6fvq")
+
+[node name="Sugar" type="Sprite2D" parent="."]
+position = Vector2(676, 200)
+scale = Vector2(0.248333, 0.296667)
+texture = ExtResource("5_7fup4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 141.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("7_50b5v")
+theme_override_font_sizes/font_size = 40
+text = "Press E to exit"
