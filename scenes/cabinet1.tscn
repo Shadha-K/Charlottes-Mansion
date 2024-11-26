@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5l4q6dx5y4i7"]
 
-[ext_resource type="Script" path="res://scripts/heart card/icebox.gd" id="1_f3pfo"]
+[ext_resource type="Script" path="res://scripts/heart card/cabinet_1.gd" id="1_f3pfo"]
 [ext_resource type="Texture2D" uid="uid://wwc6ymy64x5u" path="res://assets/kitchen/kitchen_counters.png" id="2_tu3tf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy4pn"]
 size = Vector2(103, 93)
 
-[node name="Area2D" type="Area2D"]
+[node name="cabinet1" type="Area2D"]
 script = ExtResource("1_f3pfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

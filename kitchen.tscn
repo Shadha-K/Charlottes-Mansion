@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=55 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
 [ext_resource type="PackedScene" uid="uid://6t4kc5mw7bkd" path="res://scenes/icebox.tscn" id="26_d83cf"]
 [ext_resource type="PackedScene" uid="uid://b18bc72wuwh4h" path="res://teapot.tscn" id="26_ffmkw"]
+[ext_resource type="PackedScene" uid="uid://b0phhl1ds52e8" path="res://scenes/cabinet_2.tscn" id="27_emfyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -248,7 +249,7 @@ tile_set = SubResource("TileSet_ces8x")
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAHAAMABgAAAAAAAAAJAAMABgAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGA=")
+tile_map_data = PackedByteArray("AAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGAHAAMABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ces8x")
 
 [node name="kitchen_sink" parent="TileMap/furniture" instance=ExtResource("15_26x86")]
@@ -266,6 +267,7 @@ interact"
 horizontal_alignment = 1
 
 [node name="Charlotte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("15_t8te0")]
+z_index = 1
 position = Vector2(140, 103)
 parent = NodePath("../Alex")
 
@@ -360,6 +362,20 @@ theme_override_fonts/font = ExtResource("18_g2o85")
 theme_override_font_sizes/font_size = 20
 text = "Press E to
 open icebox"
+horizontal_alignment = 1
+
+[node name="cabinet2" parent="." instance=ExtResource("27_emfyi")]
+position = Vector2(66, -159)
+
+[node name="Label" type="Label" parent="cabinet2"]
+offset_left = 479.0
+offset_top = 296.0
+offset_right = 571.0
+offset_bottom = 343.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+open cabinet"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]

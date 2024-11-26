@@ -49,7 +49,9 @@ var has_clubs: bool = false
 var has_recipe_book: bool = false
 var has_flour: bool = false
 var has_sugar: bool = false
+var has_apples: bool = false
 var has_hearts: bool = false
+
 
 #ace of spades variables
 var has_bottle: bool = false

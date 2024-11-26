@@ -15,13 +15,11 @@ func _process(_delta):
 		label.visible = true
 		flour_sprite.visible = false
 		sugar_sprite.visible = false
-		GameState.jewelry_box_open = true
 		if(not GameState.has_flour):
-			GlobalHotbar.add_item_to_slot("Flour", preload("res://assets/puzzle_objects/flour.png"))
-			GlobalHotbar.add_item_to_slot("Sugar", preload("res://assets/puzzle_objects/sugar.png"))
 			GameState.has_flour = true
 			GameState.has_sugar = true
+			GlobalHotbar.add_item_to_slot("Flour", preload("res://assets/puzzle_objects/flour.png"))
+			GlobalHotbar.add_item_to_slot("Sugar", preload("res://assets/puzzle_objects/sugar.png"))
 
 	if Input.is_action_just_pressed("interact"):
-		get_tree().root.get_node("GameState").has_flour = true
 		get_tree().change_scene_to_file(next_scene)

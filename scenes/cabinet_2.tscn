@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0phhl1ds52e8"]
+
+[ext_resource type="Script" path="res://scripts/heart card/cabinet_2.gd" id="1_86mte"]
+[ext_resource type="Texture2D" uid="uid://dcdgef7iiqxh8" path="res://assets/kitchen/kitchen_island.png" id="1_oenmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxwgw"]
+size = Vector2(75, 239.5)
+
+[node name="cabinet2" type="Area2D"]
+script = ExtResource("1_86mte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(523.5, 480.25)
+shape = SubResource("RectangleShape2D_bxwgw")
+
+[node name="KitchenIsland" type="Sprite2D" parent="."]
+position = Vector2(555.5, 381)
+scale = Vector2(0.992188, 1)
+texture = ExtResource("1_oenmf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
