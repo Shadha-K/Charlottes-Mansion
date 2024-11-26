@@ -44,7 +44,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 #func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	#return typeof(data) == TYPE_INT
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if typeof(data) == TYPE_INT:
 		var source_index = int(data)
 		GlobalHotbar.swap_items(source_index, index)
