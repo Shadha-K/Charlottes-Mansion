@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=53 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="21_0tvp3"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
+[ext_resource type="PackedScene" uid="uid://b18bc72wuwh4h" path="res://teapot.tscn" id="26_ffmkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -324,22 +325,6 @@ horizontal_alignment = 1
 position = Vector2(1054, 49)
 scale = Vector2(0.5, 0.5)
 
-[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1173, 53)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(931, 137)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup4" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1031, 160)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup5" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1024, 313)
-scale = Vector2(0.5, 0.5)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
@@ -371,6 +356,22 @@ position = Vector2(77, 148)
 
 [node name="LRtoKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(78, 194)
+
+[node name="teapot" parent="." instance=ExtResource("26_ffmkw")]
+position = Vector2(1241, 311)
+scale = Vector2(0.2, 0.2)
+
+[node name="teapot2" parent="." instance=ExtResource("26_ffmkw")]
+position = Vector2(1255, 52)
+scale = Vector2(0.2, 0.2)
+
+[node name="Teacup2" parent="." instance=ExtResource("17_3syfy")]
+position = Vector2(951, 139)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup3" parent="." instance=ExtResource("17_3syfy")]
+position = Vector2(1020, 240)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]

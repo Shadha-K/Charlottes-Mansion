@@ -72,7 +72,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_46034")
 }],
 "loop": false,
-"name": &"punch",
+"name": &"attack",
 "speed": 9.0
 }, {
 "frames": [{
@@ -116,7 +116,7 @@ enemy = NodePath(".")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -12)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
-animation = &"punch"
+animation = &"attack"
 script = SubResource("GDScript_huiwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -133,10 +133,13 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("13_qg15g")
 enemy = NodePath("../..")
+eyesight = 500
 
 [node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("14_02kfc")
 enemy = NodePath("../..")
+attackRadius = 50
+followRadius = 500
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("15_j31fv")

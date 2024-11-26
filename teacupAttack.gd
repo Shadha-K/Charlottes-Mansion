@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void: #default function for attack zone
 
 func _on_animated_sprite_2d_animation_changed(): #called whenever animation for teacup changed
 	var anim_name = $"../AnimatedSprite2D".get_animation() #gets animation name
-	if anim_name == "punch": 
+	if anim_name == "attack": 
 		await get_tree().create_timer(0.33).timeout
 		monitoring = true
 
@@ -20,7 +20,7 @@ func _on_animated_sprite_2d_animation_changed(): #called whenever animation for 
 func _on_animated_sprite_2d_animation_finished(): #called whenever animation for teacup ends
 	var anim_name = $"../AnimatedSprite2D".get_animation() #gets animation name
 	
-	if anim_name == "punch": #checks that the animation is the punch animation
+	if anim_name == "attack": #checks that the animation is the punch animation
 		monitoring = false #sets monitoring to false
 		await get_tree().create_timer(1).timeout #pauses the teacup for .5 s
 		$"../StateMachine/Attack".sig() #calls sig function of EnemyAttack.gd to send signal to change states

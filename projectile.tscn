@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://diktkmafubufg"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="2_fd04y"]
+[ext_resource type="Texture2D" uid="uid://bxfjoh2ek5djc" path="res://assets/teapot_attack/projectile.png" id="2_gp76o"]
+[ext_resource type="Script" path="res://projectileMovement.gd" id="3_uudcr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h38s3"]
+radius = 11.0
+
+[node name="projectile" type="CharacterBody2D"]
+script = ExtResource("3_uudcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gp76o")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_fd04y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h38s3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

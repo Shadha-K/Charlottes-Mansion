@@ -74,10 +74,8 @@ func update_animation_parameters():
 func _on_teacup_picked_up():
 	var hotbar = get_node("/root/Hotbar")  # Reference to the hotbar
 	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
-	print("Teacup added to hotbar!")
 	
 func hit(): #function for when Alex is hit
-	print("HIT")
 #	hit_animation_player.play("hit_animation")
 	modulate = Color(1, 0, 0, 0.5)  # Set the character's color to red with half transparency
 	timer.start()  # Start the timer

@@ -3,6 +3,7 @@ class_name EnemyIdle
 
 @export var enemy: CharacterBody2D
 @export var move_speed := 100.0
+@export var eyesight : int
 
 var player : CharacterBody2D
 
@@ -29,7 +30,7 @@ func Physics_Update(_delta: float):
 
 	var direction = player.global_position - enemy.global_position
 	#print(direction.length())
-	if direction.length() < 300:
+	if direction.length() < eyesight:
 		Transitioned.emit(self, "Follow")
 
 ##SCRIPT FOR ENEMY IDLE BEHAVIOR##

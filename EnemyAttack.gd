@@ -5,7 +5,7 @@ class_name EnemyAttack
 func Enter():
 	enemy.velocity = Vector2() # teacup stops
 
-	$"../../AnimatedSprite2D".play("punch") #plays punch animation
+	$"../../AnimatedSprite2D".play("attack") #plays punch animation
 
 func sig():
 	Transitioned.emit(self, "Idle") #Changes state to Idle

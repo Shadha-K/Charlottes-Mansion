@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name TeacupEnemy
+class_name TeapotEnemy
 
 var player : CharacterBody2D
 @export var enemy : CharacterBody2D
@@ -11,21 +11,22 @@ func _ready() -> void:
 func _physics_process(_delta):
 	move_and_slide()
 	var direction = player.global_position - enemy.global_position 
+	
 	if velocity.length() > 0: #Set of if statements to control position of attack collider and direction of the sprite
 		$AnimatedSprite2D.play("walk")	
 		if velocity.x > 0:
 			$AnimatedSprite2D.flip_h = true
-			$attack/CollisionShape2D.position = Vector2(68.875, 10)
+			$Marker2D.position = Vector2(69, 98)
 		else:
 			$AnimatedSprite2D.flip_h = false
-			$attack/CollisionShape2D.position = Vector2(-68.875, 10)
+			$Marker2D.position = Vector2(-69, 98)
 	else:
 		if direction.x > 0:
 			$AnimatedSprite2D.flip_h = true
-			$attack/CollisionShape2D.position = Vector2(68.875, 10)
+			$Marker2D.position = Vector2(69, 98)
 		else:
 			$AnimatedSprite2D.flip_h = false
-			$attack/CollisionShape2D.position = Vector2(-68.875, 10)
+			$Marker2D.position = Vector2(-69, 98)
 
 
 ## GENERAL SCRIPT FOR TEACUP ORIENTATION ##
