@@ -16,26 +16,24 @@ func _ready():
 	flame_particles.visible=true
 
 func _process(_delta):
-	if Input.is_action_just_pressed("click or drag"):
-		GameState.has_clover=true	
-		burning_book.visible = true 
-		flame_particles.emitting = false  
-		GlobalHotbar.add_item_to_slot("Clover", preload("res://assets/puzzle_objects/clover.png")) 
-		animation_player.play("burning_book")
-		#get_tree().change_scene_to_file(next_room_scene)
-		if not animation_player.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
-			animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	if Input.is_action_just_pressed("interact"):
-		GameState.last_scene_exited= "Fire"
-		GameState.FireToLR_spawn_Alex = spawn_point_name
-		GameState.FireToLR_spawn_Char =spawn_point_name2
-		get_tree().change_scene_to_file(next_room_scene)
+		transition_to_next_scene()
 		
 func _on_animation_finished(anim_name: String):
+	if anim_name == "burning_book":
+		transition_to_next_scene()
 	
-	if typeof(anim_name) == TYPE_STRING and anim_name == "burning_book":
-		flame_particles.emitting = false 
-		GameState.last_scene_exited= "Fire"
-		GameState.FireToLR_spawn_Alex = spawn_point_name
-		GameState.FireToLR_spawn_Char =spawn_point_name2
-		get_tree().change_scene_to_file(next_room_scene)  
+func start_burning_sequence():
+	GameState.has_clover = true
+	burning_book.visible = true
+	flame_particles.emitting = false
+	GlobalHotbar.add_item_to_slot("Clover", preload("res://assets/puzzle_objects/clover.png"))
+	animation_player.play("burning_book")
+	if not animation_player.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
+		animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
+func transition_to_next_scene():
+	GameState.last_scene_exited = "Fire"
+	GameState.FireToLR_spawn_Alex = spawn_point_name
+	GameState.FireToLR_spawn_Char = spawn_point_name2
+	get_tree().change_scene_to_file(next_room_scene)

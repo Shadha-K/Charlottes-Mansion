@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cva482y4dkqv0"]
+[gd_scene load_steps=29 format=3 uid="uid://cva482y4dkqv0"]
 
 [ext_resource type="Texture2D" uid="uid://dqknd7corkt6d" path="res://assets/bedroom/CloseUpVanityFog1.png" id="1_tfvke"]
 [ext_resource type="Texture2D" uid="uid://ba70lx5megw2t" path="res://assets/bedroom/CloseUpVanityFog2.png" id="2_wv506"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="12_jjvfo"]
 [ext_resource type="Texture2D" uid="uid://cyu8ck10nivb8" path="res://scripts/diamond card/blur_bedroom.png" id="13_5uf1p"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="14_j7ma7"]
+[ext_resource type="Script" path="res://scripts/DropZones/drop_zone_filled_cup.gd" id="15_mfvou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fqxub"]
 atlas = ExtResource("1_tfvke")
@@ -159,3 +160,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 3029
 limit_bottom = 1732
+
+[node name="DropZoneFilledCup" type="TextureRect" parent="."]
+offset_left = 366.0
+offset_top = 64.0
+offset_right = 781.0
+offset_bottom = 400.0
+script = ExtResource("15_mfvou")

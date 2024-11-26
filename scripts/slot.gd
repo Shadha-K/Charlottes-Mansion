@@ -27,14 +27,19 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	if not item or not item["icon"]:
 		return null
 	
+	var drag_data = {
+		"name": item["name"],
+		"icon": item["icon"]
+	}
 	var texture = TextureRect.new()
 	texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	texture.size = Vector2i(32, 32)
+	texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	texture.size = Vector2i(64, 64)
 	texture.texture = item["icon"]
 	
 	set_drag_preview(texture)
 	
-	return index
+	return drag_data
 
 #func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	#return typeof(data) == TYPE_INT

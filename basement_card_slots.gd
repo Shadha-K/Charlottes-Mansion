@@ -19,18 +19,11 @@ func _ready():
 	return
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("click or drag"):
-		if GameState.has_diamond and not GameState.diamond_card:
-			GlobalHotbar.item_used("Diamond Card")
-			GameState.diamond_card = true
-		
-		elif GameState.has_clubs and not GameState.club_card:
-			GlobalHotbar.item_used("Club Card")
-			GameState.club_card = true
-		
+	# Update visibility of diamond card
 	if GameState.diamond_card:
 		diamond_card.visible = true
-		
+
+	# Update visibility of club card
 	if GameState.club_card:
 		club_card.visible = true
 		#label.visible = false

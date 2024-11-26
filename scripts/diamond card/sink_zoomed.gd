@@ -5,14 +5,10 @@ var next_room_scene = "res://kitchen.tscn"
 @onready var label: Label = $AnimatedSprite2D/Label
 
 func _ready():
-		label.visible = false 
+	label.visible = false 
+	set_process_unhandled_input(true)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("click or drag"):
-		label.visible = true
-		GameState.sink_interacted = true 
-		GlobalHotbar.add_item_to_slot("Filled Cup", preload("res://assets/puzzle_objects/puzzle_cup_full.png"))
-		
 	if Input.is_action_just_pressed("interact"):
 		get_tree().root.get_node("GameState").has_water = true
 		GameState.d_teacup = false

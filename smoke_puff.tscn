@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7y44eucaub0q"]
+[gd_scene load_steps=30 format=3 uid="uid://c7y44eucaub0q"]
 
 [ext_resource type="Texture2D" uid="uid://bidm3dwt34d47" path="res://assets/puzzle_objects/fire_book.png" id="1_koii6"]
 [ext_resource type="Script" path="res://smoke_puff.gd" id="1_nnp5u"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="16_hmxll"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="17_8p6n4"]
 [ext_resource type="Texture2D" uid="uid://cu5kjp5tg5twf" path="res://assets/living_room/fire.png" id="18_x64hf"]
+[ext_resource type="Script" path="res://scripts/DropZones/drop_zone_fire_book.gd" id="19_i73oj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgofy"]
 atlas = ExtResource("1_koii6")
@@ -228,3 +229,10 @@ scale_amount_min = 0.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_0hdee")
 color_ramp = SubResource("Gradient_5312w")
+
+[node name="DropZoneFireBook" type="TextureRect" parent="."]
+offset_left = 429.0
+offset_top = 199.0
+offset_right = 678.0
+offset_bottom = 449.0
+script = ExtResource("19_i73oj")

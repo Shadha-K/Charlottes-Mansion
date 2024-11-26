@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cql568sbxloxg"]
+[gd_scene load_steps=21 format=3 uid="uid://cql568sbxloxg"]
 
 [ext_resource type="Texture2D" uid="uid://dbmdwtpucdk6i" path="res://assets/kitchen/CloseUpSinkOff.png" id="1_oj321"]
 [ext_resource type="Texture2D" uid="uid://rdaj18a4d4km" path="res://assets/kitchen/CloseUpSinkOn1.1.png" id="2_05bsq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/diamond card/sink_zoomed.gd" id="6_pwykm"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="7_tvipp"]
 [ext_resource type="Texture2D" uid="uid://bc8clm8e0t5c1" path="res://scripts/diamond card/blur_kitchen.png" id="8_2ocu6"]
+[ext_resource type="Script" path="res://scripts/DropZones/drop_zone_empty_teacup.gd" id="9_0ymux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsdwm"]
 atlas = ExtResource("1_oj321")
@@ -123,3 +124,10 @@ offset_bottom = -223.202
 theme_override_fonts/font = ExtResource("5_ivss3")
 theme_override_font_sizes/font_size = 50
 text = "Press E to go back"
+
+[node name="DropZoneEmptyTeacup" type="TextureRect" parent="."]
+offset_left = 443.0
+offset_top = 333.0
+offset_right = 794.0
+offset_bottom = 537.0
+script = ExtResource("9_0ymux")
