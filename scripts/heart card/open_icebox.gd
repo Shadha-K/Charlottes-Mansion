@@ -12,7 +12,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
 		label.visible = true
 		milk_sprite.visible = false
-		if(not GameState.has_flour):
+		if(not GameState.has_milk):
 			GameState.has_milk = true
 			GlobalHotbar.add_item_to_slot("Milk", preload("res://assets/puzzle_objects/milk.png"))
 

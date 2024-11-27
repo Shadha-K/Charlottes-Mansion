@@ -15,7 +15,7 @@ func _process(_delta):
 		label.visible = true
 		flour_sprite.visible = false
 		sugar_sprite.visible = false
-		if(not GameState.has_flour):
+		if(not GameState.has_flour and not GameState.has_sugar):
 			GameState.has_flour = true
 			GameState.has_sugar = true
 			GlobalHotbar.add_item_to_slot("Flour", preload("res://assets/puzzle_objects/flour.png"))
