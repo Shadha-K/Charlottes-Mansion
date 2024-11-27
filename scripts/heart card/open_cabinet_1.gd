@@ -21,5 +21,5 @@ func _process(_delta):
 			GlobalHotbar.add_item_to_slot("Flour", preload("res://assets/puzzle_objects/flour.png"))
 			GlobalHotbar.add_item_to_slot("Sugar", preload("res://assets/puzzle_objects/sugar.png"))
 
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and GameState.has_flour and GameState.has_sugar:
 		get_tree().change_scene_to_file(next_scene)

@@ -16,5 +16,5 @@ func _process(_delta):
 			GlobalHotbar.add_item_to_slot("Apples", preload("res://assets/puzzle_objects/apples.png"))
 			GameState.has_apples = true
 
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and GameState.has_apples:
 		get_tree().change_scene_to_file(next_scene)
