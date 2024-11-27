@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdd5rq3yflths"]
+
+[ext_resource type="Texture2D" uid="uid://b6y1xg5xqfcuv" path="res://assets/puzzle_objects/OpenBook.png" id="1_ayo18"]
+[ext_resource type="FontFile" uid="uid://c6jxdbhh2pqtn" path="res://assets/fonts/rouge-script.regular.ttf" id="2_aaf14"]
+
+[node name="open_recipebook" type="Area2D"]
+
+[node name="OpenBook" type="Sprite2D" parent="."]
+position = Vector2(576, 317)
+texture = ExtResource("1_ayo18")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 298.0
+offset_top = 164.0
+offset_right = 536.0
+offset_bottom = 473.0
+rotation = -0.0523599
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 60
+text = "Food is 
+the key 
+to one’s 
+heart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 607.0
+offset_top = 143.0
+offset_right = 857.0
+offset_bottom = 185.0
+rotation = 0.0523599
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 35
+text = "Charlotte's Apple Pie"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 690.0
+offset_top = 261.0
+offset_right = 741.0
+offset_bottom = 298.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 30
+text = "Flour"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 685.0
+offset_top = 302.0
+offset_right = 743.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 30
+text = "Sugar"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 681.0
+offset_top = 217.0
+offset_right = 747.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 30
+text = "Apples"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 688.0
+offset_top = 351.0
+offset_right = 739.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aaf14")
+theme_override_font_sizes/font_size = 30
+text = "Milk
+"
