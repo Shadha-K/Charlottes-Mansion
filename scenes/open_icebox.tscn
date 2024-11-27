@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bubacm76gnajw"]
+
+[ext_resource type="Texture2D" uid="uid://0lribqmy02pp" path="res://scripts/heart card/blur_kitchen4.png" id="1_2wvec"]
+[ext_resource type="Script" path="res://scripts/heart card/open_icebox.gd" id="1_554ci"]
+[ext_resource type="Texture2D" uid="uid://dr50co55k8nm0" path="res://assets/puzzle_objects/ice_box_zoomed_in.png" id="2_y1nlj"]
+[ext_resource type="Texture2D" uid="uid://c0ogb56jalj0f" path="res://assets/puzzle_objects/milk.png" id="3_ityvw"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="4_ftssc"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="5_6gvio"]
+
+[node name="open_icebox" type="Area2D"]
+script = ExtResource("1_554ci")
+
+[node name="BlurKitchen4" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.380952, 0.379391)
+texture = ExtResource("1_2wvec")
+
+[node name="IceBoxZoomedIn" type="Sprite2D" parent="."]
+position = Vector2(576, 330)
+scale = Vector2(0.715833, 0.842143)
+texture = ExtResource("2_y1nlj")
+
+[node name="Milk" type="Sprite2D" parent="."]
+position = Vector2(692, 200)
+scale = Vector2(0.2675, 0.230833)
+texture = ExtResource("3_ityvw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 141.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("4_ftssc")
+theme_override_font_sizes/font_size = 40
+text = "Press E to exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("5_6gvio")]

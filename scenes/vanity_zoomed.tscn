@@ -151,15 +151,9 @@ horizontal_alignment = 1
 
 [node name="BlurBedroom" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576.503, 326.5)
-scale = Vector2(0.381281, 0.38098)
+position = Vector2(576.003, 324)
+scale = Vector2(0.38095, 0.378063)
 texture = ExtResource("13_5uf1p")
-
-[node name="Camera2D" type="Camera2D" parent="BlurBedroom"]
-limit_left = 0
-limit_top = 0
-limit_right = 3029
-limit_bottom = 1732
 
 [node name="DropZoneFilledCup" type="TextureRect" parent="."]
 offset_left = 366.0

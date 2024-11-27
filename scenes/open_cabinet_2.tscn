@@ -11,8 +11,8 @@
 script = ExtResource("1_ttc8j")
 
 [node name="BlurKitchen3" type="Sprite2D" parent="."]
-position = Vector2(576.5, 324)
-scale = Vector2(0.381283, 0.378063)
+position = Vector2(576, 324)
+scale = Vector2(0.380952, 0.378063)
 texture = ExtResource("1_ykrx8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

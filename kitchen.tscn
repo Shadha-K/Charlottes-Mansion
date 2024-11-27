@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=56 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -170,6 +170,9 @@ size = Vector2(38, 113)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_375es"]
 size = Vector2(45, 81)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5uf"]
+size = Vector2(78, 42)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfj0h"]
 radius = 350.0
 
@@ -240,6 +243,10 @@ shape = SubResource("RectangleShape2D_fe738")
 z_index = 1
 position = Vector2(1120.5, 140.5)
 shape = SubResource("RectangleShape2D_375es")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="TileMap/room/StaticBody2D"]
+position = Vector2(69, -19)
+shape = SubResource("RectangleShape2D_ud5uf")
 
 [node name="rugs n stuff" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
@@ -350,14 +357,13 @@ open cabinet"
 horizontal_alignment = 1
 
 [node name="Icebox" parent="." instance=ExtResource("26_d83cf")]
-position = Vector2(-344, -156)
+position = Vector2(-339, -163)
 
 [node name="Label" type="Label" parent="Icebox"]
-visible = false
-offset_left = 316.0
-offset_top = 86.0
-offset_right = 405.0
-offset_bottom = 133.0
+offset_left = 381.0
+offset_top = 46.0
+offset_right = 470.0
+offset_bottom = 93.0
 theme_override_fonts/font = ExtResource("18_g2o85")
 theme_override_font_sizes/font_size = 20
 text = "Press E to

@@ -1,6 +1,6 @@
 extends Area2D
 
-var next_room = "res://scenes/open_cabinet_2.tscn" 
+var next_room = "res://scenes/open_icebox.tscn" 
 
 #reference to the label
 @onready var label: Label = $Label
