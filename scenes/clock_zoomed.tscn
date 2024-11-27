@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh47t4p5shk0f"]
 
-[ext_resource type="Texture2D" uid="uid://c5vwjr2x6xt3u" path="res://assets/puzzle_objects/GrandfatherClockCloseUp.png" id="1_1coll"]
+[ext_resource type="Texture2D" uid="uid://xjp4564v2ghx" path="res://assets/puzzle_objects/GrandfatherClockCloseUp.png" id="1_1coll"]
 [ext_resource type="Script" path="res://scripts/heart card/clock_zoomed.gd" id="1_dljh8"]
 [ext_resource type="Texture2D" uid="uid://ce5j21xsgnon7" path="res://scripts/heart card/blur_livingroom.png" id="2_g5plj"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_omdio"]

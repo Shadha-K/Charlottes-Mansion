@@ -7,7 +7,7 @@ func _ready():
 	label.visible = false
 
 func _process(_delta):
-	if GameState.pie_full:
+	if GameState.pie_full and not GameState.oven_exited:
 		label.visible = true	
 		
 		if Input.is_action_just_pressed("interact"):
