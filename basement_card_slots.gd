@@ -29,6 +29,9 @@ func _process(_delta):
 		#label.visible = false
 		#label2.visible = false
 		#label3.visible = true
+		
+	#if GameState.heart_card:
+	#	heart_card.visible = true
 
 	if Input.is_action_just_pressed("interact"):
 		if GameState.club_card:

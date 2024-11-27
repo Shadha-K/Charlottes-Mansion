@@ -61,6 +61,7 @@ var has_spades: bool = false
 #basement door variables
 var diamond_card: bool = false
 var club_card: bool = false
+var heart_card: bool = false
 var first_time: bool = true
 
 #spawn points 

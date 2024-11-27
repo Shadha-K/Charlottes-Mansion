@@ -16,16 +16,17 @@ func _ready():
 	flame_particles.visible=true
 
 func _process(_delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and GameState.has_clover:
 		transition_to_next_scene()
 		
-func _on_animation_finished(anim_name: String):
-	if anim_name == "burning_book":
-		transition_to_next_scene()
+#func _on_animation_finished(anim_name: String):
+#	if anim_name == "burning_book":
+#		transition_to_next_scene()
 	
 func start_burning_sequence():
 	GameState.has_clover = true
 	burning_book.visible = true
+	label.visible = true
 	flame_particles.emitting = false
 	GlobalHotbar.add_item_to_slot("Clover", preload("res://assets/puzzle_objects/clover.png"))
 	animation_player.play("burning_book")
