@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=57 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://6t4kc5mw7bkd" path="res://scenes/icebox.tscn" id="26_d83cf"]
 [ext_resource type="PackedScene" uid="uid://b18bc72wuwh4h" path="res://teapot.tscn" id="26_ffmkw"]
 [ext_resource type="PackedScene" uid="uid://b0phhl1ds52e8" path="res://scenes/cabinet_2.tscn" id="27_emfyi"]
+[ext_resource type="PackedScene" uid="uid://csrmvtewykj4w" path="res://scenes/oven.tscn" id="28_6kgmn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -256,7 +257,7 @@ tile_set = SubResource("TileSet_ces8x")
 [node name="furniture" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAALAP//AgAAAAAAAAANAP//AwAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGAHAAMABgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAP//AwAAAAAAAAAJAP//AwAAAAAAAAANAP//AwAAAAAAAAAFAAMABgAAAAAAAAARAAMAAAAAAAAAAAARAP7/DwAAAAIAAAARAAQACgAAAAAAAAARAAIABwAAAAAAAAAFAP//BQAAAAAAAAD//wIAAQAAAAAAAGAHAAMABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ces8x")
 
 [node name="kitchen_sink" parent="TileMap/furniture" instance=ExtResource("15_26x86")]
@@ -340,7 +341,6 @@ scale = Vector2(0.5, 0.5)
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("22_kve5r")]
-visible = false
 
 [node name="Cabinet1" parent="." instance=ExtResource("23_hqoa2")]
 position = Vector2(-604, -634)
@@ -382,6 +382,20 @@ theme_override_fonts/font = ExtResource("18_g2o85")
 theme_override_font_sizes/font_size = 20
 text = "Press E to
 open cabinet"
+horizontal_alignment = 1
+
+[node name="oven" parent="." instance=ExtResource("28_6kgmn")]
+position = Vector2(-59, -360)
+
+[node name="Label" type="Label" parent="oven"]
+offset_left = 756.0
+offset_top = 249.0
+offset_right = 854.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("18_g2o85")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+look in oven"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]

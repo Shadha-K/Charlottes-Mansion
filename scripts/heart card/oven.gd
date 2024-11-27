@@ -1,6 +1,6 @@
 extends Area2D
 
-var next_room = "res://scenes/open_cabinet_1.tscn" 
+var next_room = "res://scenes/oven_zoomed.tscn" 
 
 #reference to the label
 @onready var label: Label = $Label
@@ -9,7 +9,7 @@ func _ready():
 	label.visible = false
 
 func _on_body_entered(body):
-	if body.name == "Alex" and GameState.has_recipe_book and not GameState.has_flour and not GameState.has_sugar: 
+	if body.name == "Alex" and GameState.has_flour and GameState.has_sugar and GameState.has_milk and GameState.has_apples: 
 		label.visible = true
 		
 func _on_body_exited(body):
