@@ -11,6 +11,13 @@ func _process(_delta):
 		label.visible = true	
 		
 		if Input.is_action_just_pressed("interact"):
+			GameState.oven_exited = true
 			get_tree().change_scene_to_file(next_scene)
+			
+	elif GameState.pie_full and GameState.oven_exited:
+		label.visible = false
+		
+		
+		
 
 	

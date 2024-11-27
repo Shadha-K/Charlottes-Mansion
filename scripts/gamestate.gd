@@ -52,6 +52,8 @@ var has_sugar: bool = false
 var has_apples: bool = false
 var has_milk: bool = false
 var pie_full: bool = false
+var pie_cooked: bool = false
+var oven_exited: bool = false
 var has_hearts: bool = false
 
 #ace of spades variables

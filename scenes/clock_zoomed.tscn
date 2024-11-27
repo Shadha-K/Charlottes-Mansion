@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh47t4p5shk0f"]
+
+[ext_resource type="Texture2D" uid="uid://c5vwjr2x6xt3u" path="res://assets/puzzle_objects/GrandfatherClockCloseUp.png" id="1_1coll"]
+[ext_resource type="Script" path="res://scripts/heart card/clock_zoomed.gd" id="1_dljh8"]
+[ext_resource type="Texture2D" uid="uid://ce5j21xsgnon7" path="res://scripts/heart card/blur_livingroom.png" id="2_g5plj"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_omdio"]
+
+[node name="clock_zoomed" type="Area2D"]
+script = ExtResource("1_dljh8")
+
+[node name="BlurLivingroom" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.380952, 0.379391)
+texture = ExtResource("2_g5plj")
+
+[node name="GrandfatherClockCloseUp" type="Sprite2D" parent="."]
+position = Vector2(564, 325)
+scale = Vector2(0.918056, 0.895833)
+texture = ExtResource("1_1coll")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 184.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_omdio")
+theme_override_font_sizes/font_size = 30
+text = "Press E to exit"

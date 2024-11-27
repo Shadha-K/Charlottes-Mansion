@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkrji4rxfism"]
+
+[ext_resource type="Texture2D" uid="uid://dkwr0de10ld6e" path="res://assets/living_room/grandfather_clock.png" id="1_0p8t4"]
+[ext_resource type="Script" path="res://scripts/heart card/grandfather_clock.gd" id="1_irgp1"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_qkvir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxw7j"]
+size = Vector2(49, 85)
+
+[node name="grandfather_clock" type="Area2D"]
+script = ExtResource("1_irgp1")
+
+[node name="GrandfatherClock" type="Sprite2D" parent="."]
+position = Vector2(1030, 151)
+texture = ExtResource("1_0p8t4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1027, 220)
+shape = SubResource("RectangleShape2D_fxw7j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 31.0
+offset_right = 1071.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("3_qkvir")
+theme_override_font_sizes/font_size = 20
+text = "Press E to
+check time"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
