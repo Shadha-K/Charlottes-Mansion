@@ -1,13 +1,18 @@
 extends State
 class_name EnemyAttack
-@export var enemy:CharacterBody2D
+@export var enemy: CharacterBody2D
+@onready var hit_sfx: AudioStreamPlayer2D = $hit_sfx
 
 func Enter():
-	enemy.velocity = Vector2() # teacup stops
+	enemy.velocity = Vector2()  # Enemy stops moving
 
-	$"../../AnimatedSprite2D".play("attack") #plays punch animation
+	$"../../AnimatedSprite2D".play("attack")  # Plays punch animation
+	if hit_sfx:
+		hit_sfx.play()
+	else:
+		print("Error: hit_sfx is null.")
 
 func sig():
-	Transitioned.emit(self, "Idle") #Changes state to Idle
+	Transitioned.emit(self, "Idle")  # Changes state to Idle
 
 ##SCRIPT FOR ANIMATION AND STATE SWITCHING##

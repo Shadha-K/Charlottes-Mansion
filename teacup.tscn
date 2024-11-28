@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=31 format=3 uid="uid://ca0rv041w830c"]
 
 [ext_resource type="Texture2D" uid="uid://c02i2ksl7f8j2" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
 [ext_resource type="Script" path="res://teacupEnemy.gd" id="1_k8nqx"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="14_02kfc"]
 [ext_resource type="Script" path="res://EnemyAttack.gd" id="15_j31fv"]
 [ext_resource type="Script" path="res://teacupAttack.gd" id="17_2hty5"]
+[ext_resource type="AudioStream" uid="uid://cnnc4tdetuyde" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="17_t1ywx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
 atlas = ExtResource("5_2if8s")
@@ -144,6 +145,11 @@ followRadius = 500
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("15_j31fv")
 enemy = NodePath("../..")
+
+[node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/Attack"]
+stream = ExtResource("17_t1ywx")
+volume_db = 16.077
+attenuation = 0.450626
 
 [node name="attack" type="Area2D" parent="."]
 monitoring = false

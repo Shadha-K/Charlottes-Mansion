@@ -2,6 +2,7 @@ extends Area2D
 
 var player : CharacterBody2D
 
+
 func _on_body_entered(body: Node2D) -> void: #default function for attack zone
 	if body.is_in_group("Player"):
 		get_tree().call_group("heartManager", "take_damage") # minus health from heart bar
@@ -21,6 +22,7 @@ func _on_animated_sprite_2d_animation_finished(): #called whenever animation for
 	var anim_name = $"../AnimatedSprite2D".get_animation() #gets animation name
 	
 	if anim_name == "attack": #checks that the animation is the punch animation
+		
 		monitoring = false #sets monitoring to false
 		await get_tree().create_timer(1).timeout #pauses the teacup for .5 s
 		$"../StateMachine/Attack".sig() #calls sig function of EnemyAttack.gd to send signal to change states

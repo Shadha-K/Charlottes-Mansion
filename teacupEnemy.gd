@@ -4,6 +4,7 @@ class_name TeacupEnemy
 var player : CharacterBody2D
 @export var enemy : CharacterBody2D
 
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player") #gets player position
 	add_to_group("Enemy")

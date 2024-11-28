@@ -6,7 +6,7 @@
 script = ExtResource("1_s3eh2")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 524.0
@@ -16,7 +16,7 @@ offset_bottom = -346.0
 text = "Game Over"
 
 [node name="retry" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 543.0
@@ -26,7 +26,7 @@ offset_bottom = -294.0
 text = "Retry"
 
 [node name="quit" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 548.0
