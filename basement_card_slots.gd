@@ -4,6 +4,7 @@ var next_scene = "res://node_2d.tscn"
 var basement_scene = "res://basement.tscn"
 @onready var diamond_card: Sprite2D = $AceOfDiamonds
 @onready var club_card: Sprite2D = $AceOfClubs
+@onready var heart_card: Sprite2D = $AceofHearts
 @onready var label: Label = $Label
 @onready var label2: Label = $Label2
 @onready var label3: Label = $Label3
@@ -11,6 +12,7 @@ var basement_scene = "res://basement.tscn"
 func _ready():
 	diamond_card.visible = false
 	club_card.visible = false
+	heart_card.visible = false
 	label.visible = true
 	label2.visible = true
 	label3.visible = false
@@ -30,8 +32,8 @@ func _process(_delta):
 		#label2.visible = false
 		#label3.visible = true
 		
-	#if GameState.heart_card:
-	#	heart_card.visible = true
+	if GameState.heart_card:
+		heart_card.visible = true
 
 	if Input.is_action_just_pressed("interact"):
 		if GameState.club_card:

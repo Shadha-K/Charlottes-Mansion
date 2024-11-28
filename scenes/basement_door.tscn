@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ba7hhjwj2byug"]
+[gd_scene load_steps=12 format=3 uid="uid://ba7hhjwj2byug"]
 
 [ext_resource type="Script" path="res://basement_card_slots.gd" id="1_janti"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_phc2i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_clubs.gd" id="8_d5bjo"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_hearts.gd" id="9_sacj7"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_spades.gd" id="10_bh8ee"]
+[ext_resource type="Texture2D" uid="uid://b44oo0wg2dfas" path="res://assets/puzzle_objects/AceofHearts.png" id="11_tjwkr"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_janti")
@@ -72,6 +73,11 @@ texture = ExtResource("5_lpx0t")
 position = Vector2(657.125, 187)
 scale = Vector2(0.396875, 0.359722)
 texture = ExtResource("6_e8i1e")
+
+[node name="AceofHearts" type="Sprite2D" parent="."]
+position = Vector2(454, 458)
+scale = Vector2(0.394444, 0.361111)
+texture = ExtResource("11_tjwkr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
