@@ -4,6 +4,7 @@ const SPEED = 300.0
 const GRAVITY = 980.0
 
 var direction: Vector2 = Vector2.ZERO
+var is_swinging: bool = false  # Flag to track if the player is swinging
 
 @onready var animated_sprite_2D_animation = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -19,7 +20,7 @@ func _ready():
 	for teacup in teacups:
 		teacup.connect("teacup_picked_up", Callable(self, "_on_teacup_picked_up"))  # Connect to the teacup pickup signal
 
-# Set up the timer
+	# Set up the timer
 	timer.wait_time = 0.5
 	timer.one_shot = true
 	timer.timeout.connect(_on_hit_timer_timeout)
@@ -36,6 +37,12 @@ func _physics_process(_delta: float) -> void:
 			return
 	if not is_on_floor():
 		velocity += get_gravity() * _delta
+
+	# Prevent movement while swinging
+	if is_swinging:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction != Vector2.ZERO:
@@ -59,11 +66,12 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/is_moving"] = true
 	
 	if Input.is_action_just_pressed("swing"):
+		is_swinging = true  # Set swinging state
 		animation_tree["parameters/conditions/swing"] = true
-		#get_node("attack").armed()
+		await get_tree().create_timer(0.5).timeout  # Wait for the swing animation to complete
+		is_swinging = false  # Reset swinging state
 	else:
 		animation_tree["parameters/conditions/swing"] = false
-		#get_node("attack").disarm()
 		
 	if direction != Vector2.ZERO:
 		animation_tree["parameters/idle/blend_position"] = direction
@@ -76,11 +84,9 @@ func _on_teacup_picked_up():
 	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 	
 func hit(): #function for when Alex is hit
-#	hit_animation_player.play("hit_animation")
 	modulate = Color(1, 0, 0, 0.5)  # Set the character's color to red with half transparency
 	timer.start()  # Start the timer
 
 # This function is called when the timer's timeout signal is emitted
 func _on_hit_timer_timeout():
 	modulate = Color(1, 1, 1, 1)  # Restore the character's color to normal with full opacity
-	
