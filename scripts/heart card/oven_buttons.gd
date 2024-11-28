@@ -11,12 +11,14 @@ func _ready():
 	update_number_label()
 
 func _on_UpButton_pressed():
-	increment_time(15)
-	update_number_label()
+	if current_number != correct_code:
+		increment_time(15)
+		update_number_label()
 
 func _on_DownButton_pressed():
-	decrement_time(15)
-	update_number_label()
+	if current_number != correct_code:
+		decrement_time(15)
+		update_number_label()
 
 func increment_time(minutes_to_add: int):
 	var time_parts = current_number.split(" : ")
@@ -41,6 +43,9 @@ func increment_time(minutes_to_add: int):
 	var tens = str(int(minutes / 10))
 	var ones = str(minutes % 10)
 	current_number = str(hours) + " : " + tens + " " + ones
+	
+	if current_number == correct_code:
+		GameState.correct_time = true
 
 func decrement_time(minutes_to_subtract: int):
 	var time_parts = current_number.split(" : ")
@@ -63,6 +68,9 @@ func decrement_time(minutes_to_subtract: int):
 	var tens = str(int(minutes / 10))
 	var ones = str(minutes % 10)
 	current_number = str(hours) + " : " + tens + " " + ones
+	
+	if current_number == correct_code:
+		GameState.correct_time = true
 
 func update_number_label():
 	$Label.text = current_number
