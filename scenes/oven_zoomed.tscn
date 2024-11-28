@@ -54,6 +54,15 @@ theme_override_fonts/font = ExtResource("6_mspor")
 theme_override_font_sizes/font_size = 30
 text = "Press E to exit"
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 191.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("6_mspor")
+theme_override_font_sizes/font_size = 30
+text = "Press E to exit"
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0

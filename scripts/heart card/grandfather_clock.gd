@@ -9,7 +9,7 @@ func _ready():
 	label.visible = false
 
 func _on_body_entered(body):
-	if body.name == "Alex" and GameState.pie_full and not GameState.pie_cooked: 
+	if body.name == "Alex" and GameState.pie_full and not GameState.pie_cooked and not GameState.has_hearts: 
 		label.visible = true
 		
 func _on_body_exited(body):

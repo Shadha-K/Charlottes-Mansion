@@ -12,11 +12,11 @@ func _ready():
 
 func _on_body_entered(body):
 	if not GameState.pie_cooked:
-		if body.name == "Alex" and GameState.has_flour and GameState.has_sugar and GameState.has_milk and GameState.has_apples and not GameState.oven_exited: 
+		if body.name == "Alex" and GameState.has_flour and GameState.has_sugar and GameState.has_milk and GameState.has_apples and not GameState.oven_exited and not GameState.has_hearts: 
 			label.visible = true
-		elif body.name == "Alex" and GameState.oven_exited and GameState.clock_checked and not GameState.correct_time:
+		elif body.name == "Alex" and GameState.oven_exited and GameState.clock_checked and not GameState.correct_time and not GameState.has_hearts:
 			label.visible = true
-		elif body.name == "Alex" and GameState.correct_time and not GameState.oven_exited:
+		elif body.name == "Alex" and GameState.correct_time and not GameState.oven_exited and not GameState.has_hearts:
 			label2.visible = true
 		
 func _on_body_exited(body):
