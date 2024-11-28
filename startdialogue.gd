@@ -32,6 +32,15 @@ func _ready():
 		
 			
 	if GameState.opening:
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/opening.dialogue"), "start")
+		var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/opening.dialogue"), "start")
 		GameState.opening = false
+		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
+		dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
+		get_tree().paused=true
+		DialogueManager.dialogue_ended.connect(_unpause)
 		return
+
+
+func _unpause(resource: ):
+	get_tree().paused=false
+	return
