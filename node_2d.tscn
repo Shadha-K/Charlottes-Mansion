@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://da6bblgxsgk60" path="res://scenes/book.tscn" id="23_dnv1t"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="23_y7awr"]
 [ext_resource type="PackedScene" uid="uid://b33e0qqgllx3m" path="res://recipe_book2.tscn" id="24_3t8wm"]
-[ext_resource type="PackedScene" path="res://scenes/grandfather_clock.tscn" id="24_8c6mr"]
+[ext_resource type="PackedScene" uid="uid://dkrji4rxfism" path="res://scenes/grandfather_clock.tscn" id="24_8c6mr"]
 [ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
 [ext_resource type="Script" path="res://fire.gd" id="27_bwpxa"]
 [ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
