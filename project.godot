@@ -23,6 +23,7 @@ GameState="*res://scripts/gamestate.gd"
 GlobalHotbar="*res://GlobalHotbar.gd"
 GlobalHealthManager="*res://GlobalHealthManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Cursor="*res://scripts/cursor.gd"
 
 [dialogue_manager]
 
@@ -32,6 +33,7 @@ general/states=["GameState"]
 
 window/size/mode=2
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://assets/cursor.png"
 
 [editor_plugins]
 
