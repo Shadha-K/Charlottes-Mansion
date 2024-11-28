@@ -16,6 +16,7 @@ func _ready():
 	label.visible = true
 	label2.visible = true
 	label3.visible = false
+	Main_Theme_Music.pause_music()
 	var dialogue= DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
 	DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 	dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
@@ -48,5 +49,6 @@ func _process(_delta):
 			get_tree().change_scene_to_file(next_scene)
 
 func _unpaused(resource:):
+	Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return
