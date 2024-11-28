@@ -32,6 +32,7 @@ func _ready():
 		
 			
 	if GameState.opening:
+		Main_Theme_Music.pause_music()
 		var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/opening.dialogue"), "start")
 		GameState.opening = false
 		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS

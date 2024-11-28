@@ -242,6 +242,7 @@ size = Vector2(44, 20)
 radius = 350.0
 
 [node name="living_room" type="Node2D"]
+process_mode = 1
 position = Vector2(61, 268)
 script = ExtResource("1_465vp")
 
