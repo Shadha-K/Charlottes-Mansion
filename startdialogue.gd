@@ -1,6 +1,8 @@
 extends Node2D
 
+
 func _ready():
+
 	var player =get_node("TileMap/Alex")
 	var charlotte= get_node("TileMap/Charlotte")
 	var spawn_point=""
@@ -43,6 +45,6 @@ func _ready():
 
 
 func _unpause(resource: ):
-	Main_Theme_Music.resume_music()
+	Main_Theme_Music.play_new_song("res://scenes/temp gameplay.mp3") 
 	get_tree().paused=false
 	return
