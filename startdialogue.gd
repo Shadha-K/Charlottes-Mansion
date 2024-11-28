@@ -42,5 +42,6 @@ func _ready():
 
 
 func _unpause(resource: ):
+	Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return

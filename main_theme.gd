@@ -15,3 +15,12 @@ func stop_music():
 	if music_player.playing:
 		music_player.stop()
 		is_playing = false
+		
+
+func pause_music():
+	if music_player.playing:
+		music_player.stream_paused = true 
+
+func resume_music():
+	if music_player.stream_paused:
+		music_player.stream_paused = false  

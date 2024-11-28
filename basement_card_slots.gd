@@ -16,7 +16,11 @@ func _ready():
 	label.visible = true
 	label2.visible = true
 	label3.visible = false
-	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
+	var dialogue= DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
+	DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
+	dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
+	get_tree().paused=true
+	DialogueManager.dialogue_ended.connect(_unpaused)
 	GameState.first_time = false
 	return
 	
@@ -42,3 +46,7 @@ func _process(_delta):
 			get_tree().change_scene_to_file(next_scene)
 		else:
 			get_tree().change_scene_to_file(next_scene)
+
+func _unpaused(resource:):
+	get_tree().paused=false
+	return
