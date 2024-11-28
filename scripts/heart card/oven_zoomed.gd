@@ -41,7 +41,7 @@ func _process(_delta):
 		pie.visible = true
 		GameState.pie_cooked
 		
-		if Input.is_action_just_pressed("click or drag"):
+		if Input.is_action_just_pressed("click or drag") and not GameState.has_hearts:
 			label2.visible = true
 			GameState.has_hearts = true
 			GlobalHotbar.item_used("Recipe Book")
