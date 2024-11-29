@@ -98,6 +98,10 @@ var VanityToBR_spawn_Char=""
 #Jewelry Box to Bedroom spawn
 var JBoxToBR_spawn_Alex=""
 var JBoxToBR_spawn_Char=""
+#Icebox spawn to kitchen
+var IcetoK_spawn_Alex=""
+var IcetoK_spawn_Char=""
+
 # Function to decrease health
 func decrease_health(amount):
 	player_health -= amount

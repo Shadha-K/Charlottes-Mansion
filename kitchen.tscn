@@ -437,5 +437,11 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1020, 240)
 scale = Vector2(0.5, 0.5)
 
+[node name="IcetoKAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(72, 49)
+
+[node name="IcetoKCharSpawn" type="Marker2D" parent="."]
+position = Vector2(145, 50)
+
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]

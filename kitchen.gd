@@ -22,3 +22,12 @@ func _ready() -> void:
 				player.direction = Vector2(0,-1)
 				player.update_animation_parameters()
 				charlotte.position=spawn_point2.global_position
+	if GameState.last_scene_exited == "icebox":		
+		if GameState.IcetoK_spawn_Alex != "" and GameState.IcetoK_spawn_Char !="":
+			var spawn_point = get_node(GameState.IcetoK_spawn_Alex)
+			var spawn_point2= get_node(GameState.IcetoK_spawn_Char)
+			if spawn_point and player and spawn_point2 and charlotte:
+				player.position = spawn_point.global_position
+				player.direction = Vector2(0,-1)
+				player.update_animation_parameters()
+				charlotte.position=spawn_point2.global_position
