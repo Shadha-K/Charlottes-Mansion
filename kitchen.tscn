@@ -443,5 +443,17 @@ position = Vector2(72, 49)
 [node name="IcetoKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(145, 50)
 
+[node name="Cab1toKAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(201, 55)
+
+[node name="Cab1toKCharSpawn" type="Marker2D" parent="."]
+position = Vector2(256, 66)
+
+[node name="Cab2toKAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(582, 314)
+
+[node name="Cab2toKCharSpawn" type="Marker2D" parent="."]
+position = Vector2(648, 333)
+
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
