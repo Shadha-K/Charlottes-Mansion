@@ -34,17 +34,19 @@ func hit(damage: int):
 
 func disable_enemy():
 	var enemy = get_parent()
-	enemy.set_physics_process(false)
-	enemy.set_process(false)
-	enemy.set_process_input(false)
-	enemy.set_process_unhandled_input(false)
-	enemy.set_process_unhandled_key_input(false)
-	enemy.set_physics_process_internal(false)
-	enemy.set_process_internal(false)
-	# Disable collision shapes
+	# Defer processing and input handling changes
+	enemy.set_deferred("physics_process", false)
+	enemy.set_deferred("process", false)
+	enemy.set_deferred("process_input", false)
+	enemy.set_deferred("process_unhandled_input", false)
+	enemy.set_deferred("process_unhandled_key_input", false)
+	enemy.set_deferred("physics_process_internal", false)
+	enemy.set_deferred("process_internal", false)
+	# Disable collision shapes using deferred calls
 	for child in enemy.get_children():
 		if child is CollisionShape2D:
-			child.disabled = true
+			child.set_deferred("disabled", true)
+
 
 func play_death_sound():
 	# Create a new AudioStreamPlayer node

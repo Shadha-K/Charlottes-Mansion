@@ -1,6 +1,6 @@
 extends Node2D  # Or the appropriate base class for your living room scene
 
-@onready var temp_book_scene = preload("res://recipe_book.tscn")  # Path to the book scene
+@onready var temp_book_scene = preload("res://recipe_book2.tscn")  # Path to the book scene
 
 func _ready():
 	var temp_book_instance = temp_book_scene.instantiate()  # Instantiate the book scene
