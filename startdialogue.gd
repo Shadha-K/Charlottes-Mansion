@@ -52,6 +52,6 @@ func _ready():
 
 
 func _unpause(_resource: ):
-	Main_Theme_Music.play_new_song("res://scenes/temp gameplay.mp3") 
+	Main_Theme_Music.play_new_song("res://assets/gameplay_music.mp3") 
 	get_tree().paused=false
 	return

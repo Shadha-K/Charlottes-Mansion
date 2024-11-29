@@ -5,7 +5,7 @@ script/source = "extends Node
 
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var is_playing = false
-var theme_song = load(\"res://scenes/temp gameplay.mp3\")
+var theme_song = load(\"res://assets/gameplay_music.mp3\")
 func _ready():
 	if not is_playing:
 		music_player.stream = theme_song
