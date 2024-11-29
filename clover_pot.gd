@@ -54,7 +54,7 @@ func _process(_delta):
 func interact_with_pot():
 	$Label.visible = false
 	get_tree().root.get_node("GameState").make_plant_grow()
-func _unpause(response:):
+func _unpause(_response:):
 	Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return
