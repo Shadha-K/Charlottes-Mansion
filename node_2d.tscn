@@ -394,7 +394,6 @@ position = Vector2(690, 194)
 parent = NodePath("../Alex")
 
 [node name="Action" parent="TileMap/Charlotte" instance=ExtResource("31_y33mw")]
-visible = false
 collision_layer = 16
 dialogue_resource = ExtResource("32_ichn5")
 
@@ -492,10 +491,10 @@ position = Vector2(419, -194)
 position = Vector2(486, -161)
 
 [node name="BasementAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(417, 179)
+position = Vector2(419, 166)
 
 [node name="BasementCharSpawn" type="Marker2D" parent="."]
-position = Vector2(479, 193)
+position = Vector2(477, 184)
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
