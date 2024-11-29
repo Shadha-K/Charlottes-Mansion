@@ -1,7 +1,6 @@
 extends Area2D
 
 @export var damage: int = 10
-@export var knockback_force: float = 500
 
 #func _ready() -> void:
 	#monitoring = false
@@ -22,4 +21,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body is TeacupEnemy:
 		var knockback_direction = (body.global_position - global_position).normalized()
-		body.apply_knockback(knockback_direction * knockback_force)
+		body.apply_knockback(knockback_direction * 330) #knockback force
+		
+	if body is TeapotEnemy:
+		var knockback_direction = (body.global_position - global_position).normalized()
+		body.apply_knockback(knockback_direction * 270)
