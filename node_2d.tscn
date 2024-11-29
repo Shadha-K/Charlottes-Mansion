@@ -239,7 +239,7 @@ size = Vector2(20, 36)
 size = Vector2(44, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ressr"]
-radius = 350.0
+radius = 460.977
 
 [node name="living_room" type="Node2D"]
 process_mode = 1
@@ -394,7 +394,6 @@ position = Vector2(690, 194)
 parent = NodePath("../Alex")
 
 [node name="Action" parent="TileMap/Charlotte" instance=ExtResource("31_y33mw")]
-visible = false
 collision_layer = 16
 dialogue_resource = ExtResource("32_ichn5")
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=13 format=3 uid="uid://b4xhvht71etio"]
 
-[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]
-[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_5ukgb"]
-[ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_o8as2"]
-[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="4_d03cv"]
-[ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_7b0r2"]
-[ext_resource type="PackedScene" uid="uid://cvaye1n1cr6fm" path="res://evil_charlotte.tscn" id="6_5kg05"]
-[ext_resource type="PackedScene" uid="uid://d1o7nnrtinel1" path="res://transition.tscn" id="7_iwpym"]
+[ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_b2dwk"]
+[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_255v0"]
+[ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_saftk"]
+[ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="4_dsy73"]
+[ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_yakb7"]
+[ext_resource type="PackedScene" uid="uid://c2gtdmg75yewe" path="res://BossFight/Phase1/charboss.tscn" id="6_mbn48"]
+[ext_resource type="PackedScene" uid="uid://cr76k35oe1yqq" path="res://BossFight/fade_in.tscn" id="7_bxglg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
-texture = ExtResource("1_xsh6j")
+texture = ExtResource("1_b2dwk")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -88,9 +88,9 @@ shape = SubResource("RectangleShape2D_6v6e0")
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(217, -63)
 scale = Vector2(1.32812, 1.11719)
-texture = ExtResource("2_5ukgb")
+texture = ExtResource("2_255v0")
 
-[node name="Alex" parent="." instance=ExtResource("3_o8as2")]
+[node name="Alex" parent="." instance=ExtResource("3_saftk")]
 position = Vector2(227, -12)
 
 [node name="Camera2D" type="Camera2D" parent="Alex"]
@@ -103,13 +103,12 @@ limit_bottom = 529
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Hotbar" parent="UI" instance=ExtResource("4_d03cv")]
+[node name="Hotbar" parent="UI" instance=ExtResource("4_dsy73")]
 
-[node name="HeartContainer" parent="UI" instance=ExtResource("5_7b0r2")]
+[node name="HeartContainer" parent="UI" instance=ExtResource("5_yakb7")]
 
-[node name="EvilCharlotte" parent="." instance=ExtResource("6_5kg05")]
-position = Vector2(109, -43)
+[node name="EvilCharlotte" parent="." instance=ExtResource("6_mbn48")]
+position = Vector2(474, 185)
 
-[node name="Transition" parent="EvilCharlotte" instance=ExtResource("7_iwpym")]
-
-[connection signal="ready" from="EvilCharlotte/Transition" to="Alex" method="_on_transition_ready"]
+[node name="Fade_In" parent="." instance=ExtResource("7_bxglg")]
+visible = false

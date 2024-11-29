@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 150.0
 var target = Vector2(470, 10)
 var growth_rate: float = 1
-var target_scale: Vector2 = Vector2(0.23, 0.23)
+var target_scale: Vector2 = Vector2(0.18, 0.18)
 var growing: bool = true
 var trans = true
 
@@ -29,7 +29,6 @@ func _physics_process(_delta):
 				trans = false  # Set trans to false only after animation completes
 				#$AnimatedSprite2D.stop()
 				$Transition.transition()
-				#await get_tree().create_timer(1).timeout
 		else:
 			await get_tree().create_timer(1).timeout
 			$AnimatedSprite2D.play("idle")

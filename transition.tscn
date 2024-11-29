@@ -1,22 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1o7nnrtinel1"]
+[gd_scene load_steps=7 format=3 uid="uid://d1o7nnrtinel1"]
 
 [ext_resource type="Script" path="res://transition.gd" id="1_wm45h"]
 
-[sub_resource type="GDScript" id="GDScript_tjcr2"]
-script/source = "extends ColorRect
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[sub_resource type="Animation" id="Animation_ptjxf"]
+[sub_resource type="Animation" id="Animation_jg4so"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,7 +17,7 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_t453q"]
+[sub_resource type="Animation" id="Animation_mf2xw"]
 resource_name = "clear"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,13 +26,13 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_8uwc7"]
+[sub_resource type="Animation" id="Animation_3drlg"]
 resource_name = "fadeblack"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -61,8 +47,8 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_hhw4s"]
-resource_name = "fadenorm"
+[sub_resource type="Animation" id="Animation_6gvhv"]
+resource_name = "fandenorm"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -76,12 +62,12 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i65d5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kn80"]
 _data = {
-"RESET": SubResource("Animation_ptjxf"),
-"clear": SubResource("Animation_t453q"),
-"fadeblack": SubResource("Animation_8uwc7"),
-"fadenorm": SubResource("Animation_hhw4s")
+"RESET": SubResource("Animation_jg4so"),
+"clear": SubResource("Animation_mf2xw"),
+"fadeblack": SubResource("Animation_3drlg"),
+"fadenorm": SubResource("Animation_6gvhv")
 }
 
 [node name="Transition" type="CanvasLayer"]
@@ -91,11 +77,10 @@ script = ExtResource("1_wm45h")
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
-script = SubResource("GDScript_tjcr2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_i65d5")
+"": SubResource("AnimationLibrary_8kn80")
 }
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

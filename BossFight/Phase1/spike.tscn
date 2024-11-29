@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbapkvfv658jk"]
+
+[ext_resource type="Script" path="res://BossFight/Phase1/spikemovement.gd" id="1_tkw8p"]
+[ext_resource type="Texture2D" uid="uid://bxfjoh2ek5djc" path="res://assets/teapot_attack/projectile.png" id="2_mwhsm"]
+[ext_resource type="Script" path="res://BossFight/Phase1/spikes.gd" id="3_5oi3f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h38s3"]
+radius = 11.0
+
+[node name="projectile" type="CharacterBody2D"]
+scale = Vector2(7, 7)
+script = ExtResource("1_tkw8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mwhsm")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_5oi3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h38s3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
