@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyIdle.gd" id="8_x1cqq"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyFollow.gd" id="9_gmsbn"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyAttack.gd" id="10_u8mui"]
-[ext_resource type="AudioStream" uid="uid://cnnc4tdetuyde" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="11_u45nb"]
+[ext_resource type="AudioStream" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="11_u45nb"]
 [ext_resource type="Script" path="res://BossFight/Phase1/swipeattack.gd" id="12_5b78p"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spike_attack.gd" id="12_lha3v"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spikeattack.gd" id="19_6ddwj"]
@@ -526,24 +526,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5av2"]
-size = Vector2(584.444, 1207.78)
+size = Vector2(433.333, 1207.78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmd7h"]
-size = Vector2(763.889, 1000)
+size = Vector2(1298.61, 638.889)
 
 [node name="EvilCharlotte" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
 scale = Vector2(0.18, 0.18)
+collision_mask = 2
 script = ExtResource("1_75e33")
 enemy = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hry8c")
-animation = &"spike_attack"
-frame = 14
-frame_progress = 1.0
+animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-16.6667, 150)
+position = Vector2(-5.55556, 150)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r5av2")
 
@@ -559,10 +558,11 @@ script = ExtResource("8_x1cqq")
 enemy = NodePath("../..")
 eyesight = 2000
 
-[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "enemypos")]
 script = ExtResource("9_gmsbn")
 enemy = NodePath("../..")
-attackRadius = 100
+enemypos = NodePath("../../swipeattack/CollisionShape2D")
+attackRadius = 50
 followRadius = 2000
 
 [node name="SwipeAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
@@ -583,7 +583,7 @@ monitoring = false
 script = ExtResource("12_5b78p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swipeattack"]
-position = Vector2(727.778, -11.1111)
+position = Vector2(460.417, 19.4445)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nmd7h")
 

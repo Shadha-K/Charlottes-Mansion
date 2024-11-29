@@ -109,6 +109,6 @@ limit_bottom = 529
 
 [node name="EvilCharlotte" parent="." instance=ExtResource("6_mbn48")]
 position = Vector2(474, 185)
+safe_margin = 0.125
 
 [node name="Fade_In" parent="." instance=ExtResource("7_bxglg")]
-visible = false

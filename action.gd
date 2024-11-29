@@ -5,7 +5,11 @@ extends Area2D
 @onready var label: Label = $Label
 
 func action() -> void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	var dialogue = DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
+	dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
+	get_tree().paused=true
+	DialogueManager.dialogue_ended.connect(_unpaused)
 	GameState.d_trevor_dead = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -16,3 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		label.visible = false
 		return
+
+func _unpaused(_resource:):
+	Main_Theme_Music.resume_music()
+	get_tree().paused=false
+	return

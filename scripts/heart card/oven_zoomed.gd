@@ -52,6 +52,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("click or drag") and not GameState.has_hearts:
 			label2.visible = true
 			GameState.has_hearts = true
+			GameState.d_pie = false
 			GlobalHotbar.item_used("Recipe Book")
 			GlobalHotbar.add_item_to_slot("Heart Card", preload("res://assets/puzzle_objects/AceOfHearts.png"))
 			

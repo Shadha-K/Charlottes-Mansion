@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=14 format=3 uid="uid://13ir43wa3jcc"]
 
+[ext_resource type="Script" path="res://basement.gd" id="1_bcn6a"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_5ukgb"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_o8as2"]
@@ -59,6 +60,7 @@ size = Vector2(962, 20)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-2, 0)
+script = ExtResource("1_bcn6a")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2qvg6")

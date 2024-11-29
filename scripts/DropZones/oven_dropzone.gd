@@ -12,5 +12,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			accepted_items.erase(data["name"])
 			if accepted_items.is_empty():
 				GameState.pie_full = true
+				GameState.d_pie = true
+				GameState.d_recipes_book = false
 		else:
 			print("GlobalHotbar is not initialized")

@@ -2,7 +2,6 @@ extends CanvasLayer
 
 signal transitioned
 
-
 signal wait
 
 func _ready():
