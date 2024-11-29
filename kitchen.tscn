@@ -410,7 +410,7 @@ check pie"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(341, 52)
+position = Vector2(361, 33)
 
 [node name="SinkCharSpawn" type="Marker2D" parent="."]
 position = Vector2(402, 54)

@@ -11,7 +11,7 @@ script = ExtResource("1_sku0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(5, 18.5)
+position = Vector2(6, -16)
 shape = SubResource("RectangleShape2D_juhph")
 
 [node name="KitchenSink" type="Sprite2D" parent="."]

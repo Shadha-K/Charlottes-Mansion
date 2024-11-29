@@ -486,7 +486,7 @@ position = Vector2(931, -176)
 position = Vector2(928, -132)
 
 [node name="FireAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(419, -183)
+position = Vector2(419, -194)
 
 [node name="FireCharSpawn" type="Marker2D" parent="."]
 position = Vector2(486, -161)
