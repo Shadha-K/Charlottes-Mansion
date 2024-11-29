@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b18bc72wuwh4h"]
+[gd_scene load_steps=29 format=3 uid="uid://b18bc72wuwh4h"]
 
 [ext_resource type="Script" path="res://teapotEnemy.gd" id="1_425sl"]
 [ext_resource type="Texture2D" uid="uid://c7qs7dydking8" path="res://assets/teapot_attack/teapot_attack_0000.png" id="1_pkst0"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="21_cb6vw"]
 [ext_resource type="Script" path="res://EnemyAttack.gd" id="22_e5dfx"]
 [ext_resource type="Script" path="res://teapotAttack.gd" id="24_qwwf7"]
+[ext_resource type="AudioStream" uid="uid://d18vobu0jnkcd" path="res://assets/sound_effects/teapot_projectile.mp3" id="25_3oxbe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r7r2x"]
 animations = [{
@@ -133,6 +134,11 @@ followRadius = 600
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("22_e5dfx")
 enemy = NodePath("../..")
+
+[node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/Attack"]
+stream = ExtResource("25_3oxbe")
+volume_db = 2.971
+pitch_scale = 0.32
 
 [node name="attack" type="Node2D" parent="."]
 script = ExtResource("24_qwwf7")

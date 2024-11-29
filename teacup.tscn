@@ -15,8 +15,8 @@
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="13_qg15g"]
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="14_02kfc"]
 [ext_resource type="Script" path="res://EnemyAttack.gd" id="15_j31fv"]
+[ext_resource type="AudioStream" uid="uid://bi6vk3nof6mod" path="res://assets/sound_effects/teacup_hit.mp3" id="16_65a0y"]
 [ext_resource type="Script" path="res://teacupAttack.gd" id="17_2hty5"]
-[ext_resource type="AudioStream" uid="uid://cnnc4tdetuyde" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="17_t1ywx"]
 [ext_resource type="AudioStream" uid="uid://bfcgp5f0xn1je" path="res://assets/sound_effects/cup_breaks.wav" id="18_ot5ba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
@@ -113,7 +113,7 @@ script = ExtResource("15_j31fv")
 enemy = NodePath("../..")
 
 [node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/Attack"]
-stream = ExtResource("17_t1ywx")
+stream = ExtResource("16_65a0y")
 volume_db = 16.077
 attenuation = 0.450626
 
