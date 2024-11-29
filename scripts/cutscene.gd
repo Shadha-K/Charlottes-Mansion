@@ -8,3 +8,4 @@ func _on_video_stream_player_finished():
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		get_tree().change_scene_to_file(next_scene)
+		Main_Theme_Music.stop_music()

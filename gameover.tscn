@@ -1,38 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b70lk0qtkdxsv"]
+[gd_scene load_steps=3 format=3 uid="uid://b70lk0qtkdxsv"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_s3eh2"]
+[ext_resource type="Texture2D" uid="uid://b57aa6k7xhi7h" path="res://assets/cutscenes/death_screen.png" id="2_avi6k"]
 
 [node name="gameover" type="CanvasLayer"]
 script = ExtResource("1_s3eh2")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 524.0
-offset_top = 278.0
-offset_right = -541.0
-offset_bottom = -346.0
-text = "Game Over"
+offset_left = 2.0
+offset_top = 1.0
+offset_bottom = 5.0
+texture = ExtResource("2_avi6k")
+expand_mode = 1
 
 [node name="retry" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 543.0
-offset_top = 323.0
-offset_right = -559.0
-offset_bottom = -294.0
+offset_left = 538.0
+offset_top = 343.0
+offset_right = -564.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Retry"
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 548.0
-offset_top = 372.0
-offset_right = -562.0
-offset_bottom = -245.0
+offset_left = 544.0
+offset_top = 381.0
+offset_right = -566.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Quit
 "
 

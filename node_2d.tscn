@@ -479,22 +479,22 @@ position = Vector2(-19, -195)
 position = Vector2(12, -225)
 
 [node name="AlexKitchenToLR" type="Marker2D" parent="."]
-position = Vector2(931, -176)
+position = Vector2(921, -147)
 
 [node name="CharKitchenToLR" type="Marker2D" parent="."]
-position = Vector2(928, -132)
+position = Vector2(919, -68)
 
 [node name="FireAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(419, -183)
+position = Vector2(419, -194)
 
 [node name="FireCharSpawn" type="Marker2D" parent="."]
 position = Vector2(486, -161)
 
 [node name="BasementAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(417, 179)
+position = Vector2(419, 166)
 
 [node name="BasementCharSpawn" type="Marker2D" parent="."]
-position = Vector2(479, 193)
+position = Vector2(477, 184)
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]

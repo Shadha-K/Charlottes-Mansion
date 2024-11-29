@@ -48,7 +48,7 @@ func _process(_delta):
 		else:
 			get_tree().change_scene_to_file(next_scene)
 
-func _unpaused(resource:):
+func _unpaused(_resource:):
 	Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return

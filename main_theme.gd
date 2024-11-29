@@ -28,3 +28,12 @@ func resume_music():
 		add_child(music_player)
 		music_player.play()
 		is_playing = true
+		
+func play_new_song(song_path: String):
+	
+	if music_player.playing:
+		stop_music()  
+	theme_song = load(song_path)  
+	music_player.stream = theme_song  
+	music_player.play() 
+	is_playing = true

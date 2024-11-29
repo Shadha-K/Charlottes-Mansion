@@ -22,6 +22,7 @@ func Physics_Update(_delta: float):
 		Transitioned.emit(self, "Idle") # player too far for enemy
 		
 	if direction.length() < attackRadius:
+		print(direction.length(), attackRadius)
 		Transitioned.emit(self,"Attack") # enemy attacks
 
 ##SCRIPT FOR ENEMY BEHAVIOR WHEN IT NOTICES PLAYER##

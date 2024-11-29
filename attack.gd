@@ -21,3 +21,10 @@ func _on_body_entered(body: Node2D) -> void:
 		elif child is HealthChar:
 			child.hit(damage)
 	
+	if body is TeacupEnemy:
+		var knockback_direction = (body.global_position - global_position).normalized()
+		body.apply_knockback(knockback_direction * 330) #knockback force
+		
+	if body is TeapotEnemy:
+		var knockback_direction = (body.global_position - global_position).normalized()
+		body.apply_knockback(knockback_direction * 270)

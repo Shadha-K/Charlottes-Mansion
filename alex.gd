@@ -86,6 +86,7 @@ func _on_teacup_picked_up():
 func hit(): #function for when Alex is hit
 	modulate = Color(1, 0, 0, 0.5)  # Set the character's color to red with half transparency
 	timer.start()  # Start the timer
+	
 
 # This function is called when the timer's timeout signal is emitted
 func _on_hit_timer_timeout():
