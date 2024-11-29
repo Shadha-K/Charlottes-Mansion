@@ -416,10 +416,10 @@ position = Vector2(361, 33)
 position = Vector2(402, 54)
 
 [node name="LRtoKAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(77, 148)
+position = Vector2(79, 108)
 
 [node name="LRtoKCharSpawn" type="Marker2D" parent="."]
-position = Vector2(78, 194)
+position = Vector2(83, 186)
 
 [node name="teapot" parent="." instance=ExtResource("26_ffmkw")]
 position = Vector2(1241, 311)

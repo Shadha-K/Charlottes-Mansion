@@ -480,10 +480,10 @@ position = Vector2(-19, -195)
 position = Vector2(12, -225)
 
 [node name="AlexKitchenToLR" type="Marker2D" parent="."]
-position = Vector2(931, -176)
+position = Vector2(921, -147)
 
 [node name="CharKitchenToLR" type="Marker2D" parent="."]
-position = Vector2(928, -132)
+position = Vector2(919, -68)
 
 [node name="FireAlexSpawn" type="Marker2D" parent="."]
 position = Vector2(419, -194)

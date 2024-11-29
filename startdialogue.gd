@@ -37,6 +37,7 @@ func _ready():
 			player.direction=Vector2(0,1)
 			player.update_animation_parameters()
 			charlotte.position=spawn_point2.global_position
+			
 		
 			
 	if GameState.opening:
