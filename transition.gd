@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal transitioned
 
-var next_room = "res://BossFight/bossfight.tscn"
+var next_room = "res://BossFight/Phase1/bossfight.tscn"
 
 signal wait
 
