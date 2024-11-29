@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://EnemyAttack.gd" id="15_j31fv"]
 [ext_resource type="AudioStream" uid="uid://bi6vk3nof6mod" path="res://assets/sound_effects/teacup_hit.mp3" id="16_65a0y"]
 [ext_resource type="Script" path="res://teacupAttack.gd" id="17_2hty5"]
-[ext_resource type="AudioStream" uid="uid://bfcgp5f0xn1je" path="res://assets/sound_effects/cup_breaks.wav" id="18_ot5ba"]
+[ext_resource type="AudioStream" uid="uid://bvy80yvic8eev" path="res://assets/sound_effects/cup_breaks.wav" id="18_ot5ba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
 animations = [{
