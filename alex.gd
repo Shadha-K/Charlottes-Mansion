@@ -12,6 +12,10 @@ var is_swinging: bool = false  # Flag to track if the player is swinging
 @onready var timer: Timer = Timer.new()  # Create a new Timer instance
 @onready var finder: Area2D = $Dir/Finder
 
+# Step 1: Preload the swing sound effect
+var swing_sound = preload("res://assets/sound_effects/sword-swoosh.mp3")
+var swing_sound_player: AudioStreamPlayer
+
 func _ready():
 	animated_sprite_2D_animation.play("idle_front")
 	animation_tree.active = true
@@ -25,7 +29,12 @@ func _ready():
 	timer.one_shot = true
 	timer.timeout.connect(_on_hit_timer_timeout)
 	add_child(timer)  # Add the timer to the scene tree
-	
+
+	# Step 2: Initialize the swing sound player
+	swing_sound_player = AudioStreamPlayer.new()
+	swing_sound_player.stream = swing_sound
+	add_child(swing_sound_player)  # Add the sound player to the player node
+
 func _process(_delta):
 	update_animation_parameters()
 
@@ -68,7 +77,12 @@ func update_animation_parameters():
 	if Input.is_action_just_pressed("swing"):
 		is_swinging = true  # Set swinging state
 		animation_tree["parameters/conditions/swing"] = true
-		await get_tree().create_timer(0.5).timeout  # Wait for the swing animation to complete
+
+		# Step 3: Play the swing sound effect
+		swing_sound_player.play()
+
+		# Wait for the swing animation to complete
+		await get_tree().create_timer(0.5).timeout
 		is_swinging = false  # Reset swinging state
 	else:
 		animation_tree["parameters/conditions/swing"] = false
@@ -83,7 +97,7 @@ func _on_teacup_picked_up():
 	var hotbar = get_node("/root/Hotbar")  # Reference to the hotbar
 	hotbar.add_item_to_slot(0, "Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 	
-func hit(): #function for when Alex is hit
+func hit():  # Function for when the player is hit
 	modulate = Color(1, 0, 0, 0.5)  # Set the character's color to red with half transparency
 	timer.start()  # Start the timer
 	
