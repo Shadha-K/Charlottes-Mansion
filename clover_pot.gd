@@ -42,9 +42,20 @@ func _process(_delta):
 			glowing_plant.visible = false
 			clover.visible = true
 			GlobalHotbar.add_item_to_slot("Club Card", preload("res://assets/puzzle_objects/AceOfClubs.png"))
-			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/card_found.dialogue"), "start")
+			Main_Theme_Music.pause_music()
+			var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/card_found.dialogue"), "start")
+			DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
+			dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
+			get_tree().paused=true
+			DialogueManager.dialogue_ended.connect(_unpause)
+			
 			GameState.d_trevor_dead = true
 			
 func interact_with_pot():
 	$Label.visible = false
 	get_tree().root.get_node("GameState").make_plant_grow()
+func _unpause(_response:):
+	Main_Theme_Music.resume_music()
+	get_tree().paused=false
+	return
+	

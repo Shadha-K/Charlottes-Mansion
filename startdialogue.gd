@@ -12,6 +12,8 @@ func _ready():
 		spawn_point2= get_node(GameState.last_spawn_point_charlotte)
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position = spawn_point.global_position
+			player.direction = Vector2(1,0)
+			player.update_animation_parameters()
 			charlotte.position=spawn_point2.global_position
 	elif GameState.KtoLR_spawn_point_Alex!="" and GameState.KtoLR_spawn_point_charlotte !="" and GameState.last_scene_exited=="Kitchen":
 		spawn_point = get_node(GameState.KtoLR_spawn_point_Alex)
@@ -24,13 +26,18 @@ func _ready():
 		spawn_point2=get_node(GameState.FireToLR_spawn_Char)
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position = spawn_point.global_position
+			player.direction = Vector2(0,-1)
+			player.update_animation_parameters()
 			charlotte.position=spawn_point2.global_position
 	elif GameState.BasementToLR_spawn_Alex!=""and GameState.BasementToLR_spawn_Char!="" and GameState.last_scene_exited=="Basement":
 		spawn_point=get_node(GameState.BasementToLR_spawn_Alex)
 		spawn_point2=get_node(GameState.BasementToLR_spawn_Char)
 		if spawn_point and player and spawn_point2 and charlotte:
 			player.position =spawn_point.global_position
+			player.direction=Vector2(0,1)
+			player.update_animation_parameters()
 			charlotte.position=spawn_point2.global_position
+			
 		
 			
 	if GameState.opening:
@@ -44,7 +51,7 @@ func _ready():
 		return
 
 
-func _unpause(resource: ):
+func _unpause(_resource: ):
 	Main_Theme_Music.play_new_song("res://scenes/temp gameplay.mp3") 
 	get_tree().paused=false
 	return

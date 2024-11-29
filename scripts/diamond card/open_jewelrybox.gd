@@ -33,8 +33,8 @@ func _process(_delta):
 		GameState.JBoxToBR_spawn_Alex= spawn_point_name
 		GameState.JBoxToBR_spawn_Char=spawn_point_name2
 		get_tree().change_scene_to_file(next_scene)
-func _unpause(resource: ):
-	Main_Theme_Music.play_new_song("res://scenes/temp gameplay.mp3") 
+func _unpause(_resource: ):
+	Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return
 

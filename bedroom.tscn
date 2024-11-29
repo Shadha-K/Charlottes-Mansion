@@ -455,13 +455,13 @@ position = Vector2(876, 459)
 position = Vector2(909, 520)
 
 [node name="VanityToBRAlex" type="Marker2D" parent="."]
-position = Vector2(803, 168)
+position = Vector2(827, 158)
 
 [node name="VanityToBRChar" type="Marker2D" parent="."]
 position = Vector2(860, 173)
 
 [node name="JBoxToBRAlex" type="Marker2D" parent="."]
-position = Vector2(78, 346)
+position = Vector2(75, 328)
 
 [node name="JBoxToBRChar" type="Marker2D" parent="."]
 position = Vector2(128, 296)
