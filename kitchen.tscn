@@ -455,5 +455,11 @@ position = Vector2(582, 314)
 [node name="Cab2toKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(648, 333)
 
+[node name="OventoKAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(725, 52)
+
+[node name="OventoKCharSpawn" type="Marker2D" parent="."]
+position = Vector2(805, 82)
+
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
