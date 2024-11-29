@@ -429,14 +429,6 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(1255, 52)
 scale = Vector2(0.2, 0.2)
 
-[node name="Teacup2" parent="." instance=ExtResource("17_3syfy")]
-position = Vector2(951, 139)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup3" parent="." instance=ExtResource("17_3syfy")]
-position = Vector2(1020, 240)
-scale = Vector2(0.5, 0.5)
-
 [node name="IcetoKAlexSpawn" type="Marker2D" parent="."]
 position = Vector2(72, 49)
 

@@ -1,16 +1,16 @@
-[gd_scene load_steps=32 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=23 format=3 uid="uid://ca0rv041w830c"]
 
-[ext_resource type="Texture2D" uid="uid://c02i2ksl7f8j2" path="res://assets/teacup_walk_imgs/teacup_walk_0000.png" id="1_2wj5p"]
 [ext_resource type="Script" path="res://teacupEnemy.gd" id="1_k8nqx"]
-[ext_resource type="Texture2D" uid="uid://cvfhdua7qva8x" path="res://assets/teacup_walk_imgs/teacup_walk_0001.png" id="2_rygus"]
-[ext_resource type="Texture2D" uid="uid://1fui1cb6eh2i" path="res://assets/teacup_walk_imgs/teacup_walk_0002.png" id="3_okqeo"]
-[ext_resource type="Texture2D" uid="uid://defgv2wvqbu58" path="res://assets/teacup_walk_imgs/teacup_walk_0003.png" id="4_xodwf"]
-[ext_resource type="Texture2D" uid="uid://bjfidur1lkh40" path="res://assets/teacup_attack_imgs/teacup_attack_0000.png" id="5_2if8s"]
-[ext_resource type="Texture2D" uid="uid://cix0i67jpyoog" path="res://assets/teacup_attack_imgs/teacup_attack_0002.png" id="6_ipvo1"]
-[ext_resource type="Texture2D" uid="uid://w64n6ho1q05i" path="res://assets/teacup_attack_imgs/teacup_attack_0003.png" id="7_qwmvi"]
-[ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="8_ljx6d"]
-[ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="9_m0tlk"]
+[ext_resource type="Texture2D" uid="uid://bxg5cfogvkdvm" path="res://assets/teacup_attack_imgs/teacup02_attack_0000.png" id="2_3eu8s"]
+[ext_resource type="Texture2D" uid="uid://b20glxf6g6dnd" path="res://assets/teacup_attack_imgs/teacup02_attack_0002.png" id="3_2m1kl"]
+[ext_resource type="Texture2D" uid="uid://7w5mbqo8cjo7" path="res://assets/teacup_attack_imgs/teacup02_attack_0003.png" id="4_oyhvk"]
+[ext_resource type="Texture2D" uid="uid://dp17va1tpb7s4" path="res://assets/teacup_attack_imgs/teacup02_attack_0004.png" id="5_7dhwx"]
+[ext_resource type="Texture2D" uid="uid://c3qmqdkp0krnu" path="res://assets/teacup_attack_imgs/teacup02_attack_0005.png" id="6_fr3n7"]
+[ext_resource type="Texture2D" uid="uid://duesb246wkl87" path="res://assets/teacup_walk_imgs/teacup02_walk_0000.png" id="7_p6prq"]
+[ext_resource type="Texture2D" uid="uid://cdhj1tp45glux" path="res://assets/teacup_walk_imgs/teacup02_walk_0004.png" id="8_17xub"]
+[ext_resource type="Texture2D" uid="uid://bf8ke1icbamtt" path="res://assets/teacup_walk_imgs/teacup02_walk_0008.png" id="9_sncoj"]
 [ext_resource type="Script" path="res://damagable.gd" id="10_bfldy"]
+[ext_resource type="Texture2D" uid="uid://dub13f5jvt8g5" path="res://assets/teacup_walk_imgs/teacup02_walk_0012.png" id="10_skruj"]
 [ext_resource type="Script" path="res://scripts/State_Machine.gd" id="12_rghlp"]
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="13_qg15g"]
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="14_02kfc"]
@@ -19,59 +19,23 @@
 [ext_resource type="AudioStream" uid="uid://cnnc4tdetuyde" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="17_t1ywx"]
 [ext_resource type="AudioStream" uid="uid://bfcgp5f0xn1je" path="res://assets/sound_effects/cup_breaks.wav" id="18_ot5ba"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2wvy"]
-atlas = ExtResource("5_2if8s")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f6bia"]
-atlas = ExtResource("6_ipvo1")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_11vxi"]
-atlas = ExtResource("7_qwmvi")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5ry5"]
-atlas = ExtResource("8_ljx6d")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_46034"]
-atlas = ExtResource("9_m0tlk")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_878he"]
-atlas = ExtResource("1_2wj5p")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u61rh"]
-atlas = ExtResource("2_rygus")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ssuy"]
-atlas = ExtResource("3_okqeo")
-region = Rect2(0, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4al6q"]
-atlas = ExtResource("4_xodwf")
-region = Rect2(0, 0, 160, 160)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m2wvy")
+"texture": ExtResource("2_3eu8s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f6bia")
+"texture": ExtResource("3_2m1kl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_11vxi")
+"texture": ExtResource("4_oyhvk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g5ry5")
+"texture": ExtResource("5_7dhwx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46034")
+"texture": ExtResource("6_fr3n7")
 }],
 "loop": false,
 "name": &"attack",
@@ -79,16 +43,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_878he")
+"texture": ExtResource("7_p6prq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u61rh")
+"texture": ExtResource("8_17xub")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ssuy")
+"texture": ExtResource("9_sncoj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4al6q")
+"texture": ExtResource("10_skruj")
 }],
 "loop": true,
 "name": &"walk",
@@ -117,8 +81,9 @@ enemy = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -12)
+scale = Vector2(0.325, 0.325)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
-animation = &"attack"
+animation = &"walk"
 script = SubResource("GDScript_huiwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -17,11 +17,10 @@ func _physics_process(_delta):
 	if knockback_velocity.length() > 0:
 		velocity = knockback_velocity
 		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 800 * _delta)
-	else:
-		var direction = player.global_position - global_position
-		velocity = direction.normalized() * 100
+	
 	move_and_slide()
 	var direction = player.global_position - enemy.global_position 
+	#print(direction.length())
 	if velocity.length() > 0: #Set of if statements to control position of attack collider and direction of the sprite
 		$AnimatedSprite2D.play("walk")	
 		if velocity.x > 0:
