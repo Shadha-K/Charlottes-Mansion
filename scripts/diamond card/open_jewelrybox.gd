@@ -17,7 +17,7 @@ func _process(_delta):
 		if(not GameState.added_diamond):
 			GlobalHotbar.add_item_to_slot("Diamond Card", preload("res://assets/puzzle_objects/AceOfDiamonds.png"))
 			GameState.added_diamond = true
-			Main_Theme_Music.pause_music()
+			#Main_Theme_Music.pause_music()
 			var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/card_found.dialogue"), "start")
 			DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 			dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
@@ -34,7 +34,7 @@ func _process(_delta):
 		GameState.JBoxToBR_spawn_Char=spawn_point_name2
 		get_tree().change_scene_to_file(next_scene)
 func _unpause(_resource: ):
-	Main_Theme_Music.resume_music()
+	#Main_Theme_Music.resume_music()
 	get_tree().paused=false
 	return
 
