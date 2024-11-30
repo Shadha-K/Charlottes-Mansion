@@ -29,7 +29,7 @@ func _process(_delta):
 
 func pick_up_bottle():
 	if not GameState.has_bottle:
-		GlobalHotbar.add_item_to_slot("Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
+		GlobalHotbar.add_item_to_slot("Bottle", preload("res://assets/puzzle_objects/Purple Bottle 1.png"))
 		GameState.d_vial = true
 		GameState.has_bottle = true
 		$Label.visible=false

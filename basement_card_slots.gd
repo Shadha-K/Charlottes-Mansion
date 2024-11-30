@@ -17,7 +17,7 @@ func _ready():
 	label2.visible = true
 	label3.visible = false
 	if GameState.first_time and not GameState.has_diamond:
-		Main_Theme_Music.pause_music()
+		
 		var dialogue= DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
 		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 		dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
