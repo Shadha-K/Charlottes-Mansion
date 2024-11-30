@@ -9,6 +9,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			GlobalHotbar.item_used("Heart Card")
 			GameState.heart_card = true
 			
-			var heart_card_node = get_node("../AceofHearts")
+			var heart_card_node = get_node("../AceOfHearts")
 			if heart_card_node:
 				heart_card_node.visible = true

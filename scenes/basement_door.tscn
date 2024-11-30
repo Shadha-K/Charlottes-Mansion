@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_clubs.gd" id="8_d5bjo"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_hearts.gd" id="9_sacj7"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_spades.gd" id="10_bh8ee"]
-[ext_resource type="Texture2D" uid="uid://b44oo0wg2dfas" path="res://assets/puzzle_objects/AceofHearts.png" id="11_tjwkr"]
+[ext_resource type="Texture2D" uid="uid://b44oo0wg2dfas" path="res://assets/puzzle_objects/AceOfHearts.png" id="11_tjwkr"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_janti")
@@ -74,7 +74,7 @@ position = Vector2(657.125, 187)
 scale = Vector2(0.396875, 0.359722)
 texture = ExtResource("6_e8i1e")
 
-[node name="AceofHearts" type="Sprite2D" parent="."]
+[node name="AceOfHearts" type="Sprite2D" parent="."]
 position = Vector2(454, 458)
 scale = Vector2(0.394444, 0.361111)
 texture = ExtResource("11_tjwkr")
