@@ -7,6 +7,9 @@ func _ready():
 	how_to_play_page.visible = false
 	other_buttons.visible = true
 	
+	GameState.player_health = 9
+	GameState.current_health = 9
+	
 	GameState.opening = true
 	GameState.enemy_attacking = false
 
@@ -79,7 +82,7 @@ func _ready():
 	GameState.heart_card = false
 	GameState.first_time = true
 	
-	var start_game = true
+	GameState.start_game = true
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/cutscene.tscn")
