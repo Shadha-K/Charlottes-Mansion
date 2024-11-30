@@ -24,7 +24,6 @@ GlobalHotbar="*res://GlobalHotbar.gd"
 GlobalHealthManager="*res://GlobalHealthManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Cursor="*res://scripts/cursor.gd"
-Game_play_music="*res://scenes/gameplaymusic.tscn"
 
 [dialogue_manager]
 

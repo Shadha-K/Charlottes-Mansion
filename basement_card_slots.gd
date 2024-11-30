@@ -17,7 +17,7 @@ func _ready():
 	label2.visible = true
 	label3.visible = false
 	if GameState.first_time and not GameState.has_diamond:
-		Main_Theme_Music.pause_music()
+		
 		var dialogue= DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
 		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 		dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
@@ -34,18 +34,16 @@ func _process(_delta):
 	# Update visibility of club card
 	if GameState.club_card:
 		club_card.visible = true
-		#label.visible = false
-		#label2.visible = false
-		#label3.visible = true
 		
 	if GameState.heart_card:
 		heart_card.visible = true
+		label.visible = false
+		label2.visible = false
+		label3.visible = true
 
 	if Input.is_action_just_pressed("interact"):
-		if GameState.club_card:
-			#get_tree().change_scene_to_file(basement_scene)
-		#else:
-			get_tree().change_scene_to_file(next_scene)
+		if GameState.heart_card:
+			get_tree().change_scene_to_file(basement_scene)
 		else:
 			get_tree().change_scene_to_file(next_scene)
 

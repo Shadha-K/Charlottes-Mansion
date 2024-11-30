@@ -336,6 +336,14 @@ horizontal_alignment = 1
 position = Vector2(1054, 49)
 scale = Vector2(0.5, 0.5)
 
+[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(1013, 296)
+scale = Vector2(0.5, 0.5)
+
+[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
+position = Vector2(964, 175)
+scale = Vector2(0.5, 0.5)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
@@ -410,7 +418,7 @@ check pie"
 horizontal_alignment = 1
 
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(361, 33)
+position = Vector2(363, 18)
 
 [node name="SinkCharSpawn" type="Marker2D" parent="."]
 position = Vector2(402, 54)
@@ -422,11 +430,11 @@ position = Vector2(79, 108)
 position = Vector2(83, 186)
 
 [node name="teapot" parent="." instance=ExtResource("26_ffmkw")]
-position = Vector2(1241, 311)
+position = Vector2(1135, 392)
 scale = Vector2(0.2, 0.2)
 
 [node name="teapot2" parent="." instance=ExtResource("26_ffmkw")]
-position = Vector2(1255, 52)
+position = Vector2(1133, 27)
 scale = Vector2(0.2, 0.2)
 
 [node name="IcetoKAlexSpawn" type="Marker2D" parent="."]

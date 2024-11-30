@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/potion.gd" id="1_fsyui"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_goxvx"]
-[ext_resource type="Texture2D" uid="uid://dgkplr0fto4bh" path="res://assets/puzzle_objects/tempbottle.png" id="3_id1sl"]
+[ext_resource type="Texture2D" uid="uid://dvvda0vvkxdaq" path="res://assets/puzzle_objects/Purple Bottle 1.png" id="3_vwxq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urdiu"]
 size = Vector2(20, 17)
@@ -29,7 +29,7 @@ vertical_alignment = 2
 visible = false
 position = Vector2(-19.2696, -6.22093)
 scale = Vector2(0.0514978, 0.0456719)
-texture = ExtResource("3_id1sl")
+texture = ExtResource("3_vwxq5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

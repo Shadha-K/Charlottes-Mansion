@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=59 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://d30bnl23bs02a" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0035.png" id="37_ks0yw"]
 [ext_resource type="Texture2D" uid="uid://barnfae6i1w48" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0036.png" id="38_rep78"]
 [ext_resource type="Texture2D" uid="uid://csk3bbdpr0mhr" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0037.png" id="39_mllv2"]
+[ext_resource type="Texture2D" uid="uid://bg4h2j1fv7dgb" path="res://assets/cutscenes/controls.png" id="41_niut7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2j2p"]
 animations = [{
@@ -163,6 +164,112 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktjxj"]
+atlas = ExtResource("41_niut7")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axuug"]
+atlas = ExtResource("41_niut7")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt2ni"]
+atlas = ExtResource("41_niut7")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdcyj"]
+atlas = ExtResource("41_niut7")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3prw"]
+atlas = ExtResource("41_niut7")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26qcw"]
+atlas = ExtResource("41_niut7")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55mu7"]
+atlas = ExtResource("41_niut7")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klm4e"]
+atlas = ExtResource("41_niut7")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dpf3"]
+atlas = ExtResource("41_niut7")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64c34"]
+atlas = ExtResource("41_niut7")
+region = Rect2(1920, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4hyi"]
+atlas = ExtResource("41_niut7")
+region = Rect2(3840, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e0q1"]
+atlas = ExtResource("41_niut7")
+region = Rect2(5760, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7msj"]
+atlas = ExtResource("41_niut7")
+region = Rect2(0, 3240, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8csy"]
+atlas = ExtResource("41_niut7")
+region = Rect2(1920, 3240, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75njc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktjxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axuug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdcyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3prw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26qcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55mu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klm4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dpf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64c34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4hyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e0q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7msj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8csy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0nii"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
@@ -186,7 +293,41 @@ script = ExtResource("1_4mwvc")
 position = Vector2(572, 320.5)
 scale = Vector2(0.598958, 0.597222)
 sprite_frames = SubResource("SpriteFrames_t2j2p")
+autoplay = "default"
 frame_progress = 0.700914
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(578, 314)
+scale = Vector2(0.454688, 0.451852)
+sprite_frames = SubResource("SpriteFrames_75njc")
+autoplay = "default"
+frame_progress = 0.948103
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D2"]
+z_index = -1
+offset_left = -1055.67
+offset_top = -584.262
+offset_right = 1031.33
+offset_bottom = 616.738
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
+
+[node name="exit how to play" type="Button" parent="AnimatedSprite2D2"]
+z_index = 1
+z_as_relative = false
+anchors_preset = -1
+anchor_left = -0.031
+offset_left = -985.154
+offset_top = -562.131
+offset_right = -936.674
+offset_bottom = -473.131
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
+text = "X
+"
+flat = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -208,9 +349,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -157.0
-offset_top = -165.0
+offset_top = -203.0
 offset_right = 156.0
-offset_bottom = -5.0
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -225,11 +366,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
 text = "START GAME"
 flat = true
 
-[node name="Control2" type="Control" parent="TextureRect/VBoxContainer"]
+[node name="HOW TO PLAY" type="Button" parent="TextureRect/VBoxContainer"]
+z_index = 1
+z_as_relative = false
 layout_mode = 2
-
-[node name="Control" type="Control" parent="TextureRect/VBoxContainer"]
-layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
+text = "HOW TO PLAY
+"
+flat = true
 
 [node name="EXIT" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
@@ -240,5 +387,13 @@ theme_override_font_sizes/font_size = 40
 text = "QUIT"
 flat = true
 
+[node name="Control2" type="Control" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
