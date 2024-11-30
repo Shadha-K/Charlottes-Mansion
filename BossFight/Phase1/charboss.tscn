@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=88 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
 [ext_resource type="Texture2D" uid="uid://dhgauhbr31o61" path="res://assets/CharlotteSprite/idlesheet.png" id="2_56v6k"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyIdle.gd" id="8_x1cqq"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyFollow.gd" id="9_gmsbn"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyAttack.gd" id="10_u8mui"]
-[ext_resource type="AudioStream" path="res://assets/sound_effects/zapsplat_foley_clothing_body_hit_punch_72693.mp3" id="11_u45nb"]
 [ext_resource type="Script" path="res://BossFight/Phase1/swipeattack.gd" id="12_5b78p"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spike_attack.gd" id="12_lha3v"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spikeattack.gd" id="19_6ddwj"]
@@ -529,7 +528,7 @@ animations = [{
 size = Vector2(433.333, 1207.78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmd7h"]
-size = Vector2(1298.61, 638.889)
+size = Vector2(1298.61, 811.111)
 
 [node name="EvilCharlotte" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
 scale = Vector2(0.18, 0.18)
@@ -539,11 +538,10 @@ enemy = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hry8c")
-animation = &"walk_up"
+animation = &"walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.55556, 150)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r5av2")
 
 [node name="healthmanager" type="Node" parent="."]
@@ -558,11 +556,10 @@ script = ExtResource("8_x1cqq")
 enemy = NodePath("../..")
 eyesight = 2000
 
-[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "enemypos")]
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("9_gmsbn")
 enemy = NodePath("../..")
-enemypos = NodePath("../../swipeattack/CollisionShape2D")
-attackRadius = 50
+attackRadius = 150
 followRadius = 2000
 
 [node name="SwipeAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
@@ -570,7 +567,6 @@ script = ExtResource("10_u8mui")
 enemy = NodePath("../..")
 
 [node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/SwipeAttack"]
-stream = ExtResource("11_u45nb")
 volume_db = 16.077
 attenuation = 0.450626
 
@@ -583,7 +579,7 @@ monitoring = false
 script = ExtResource("12_5b78p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swipeattack"]
-position = Vector2(460.417, 19.4445)
+position = Vector2(460.417, 105.556)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nmd7h")
 
@@ -591,12 +587,13 @@ shape = SubResource("RectangleShape2D_nmd7h")
 script = ExtResource("19_6ddwj")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, 750)
+position = Vector2(-4.76837e-07, 683.333)
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="swipeattack" to="." method="_on_swipeattack_body_entered"]
+[connection signal="body_entered" from="swipeattack" to="StateMachine/Follow" method="_on_swipeattack_body_entered"]
 [connection signal="body_entered" from="swipeattack" to="swipeattack" method="_on_body_entered"]
-[connection signal="body_shape_entered" from="swipeattack" to="swipeattack" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="spikeattack" to="StateMachine/Follow" method="_on_spikeattack_body_entered"]

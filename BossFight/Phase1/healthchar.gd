@@ -3,7 +3,7 @@ extends Node
 class_name HealthChar
 
 @export var health: float = 200
-#var charboss2 = "res://BossFight/Phase2/bossfight2.tscn"
+var phase2 = "res://BossFight/Phase2/bossfight.tscn"
 
 var timer: Timer
 
@@ -23,9 +23,6 @@ func hit(damage: int):
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
 
-	if health <= 100:
-		#get_tree().change_scene_to_file(charboss2)
-		pass
 	if health <= 0:
 		# Hide the enemy immediately
 		get_parent().visible = false
@@ -35,7 +32,6 @@ func hit(damage: int):
 		play_death_sound()
 		# Remove the enemy node
 		call_deferred("remove_enemy")
-
 
 func disable_enemy():
 	var enemy = get_parent()

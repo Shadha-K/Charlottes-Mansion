@@ -5,6 +5,7 @@ var current_health = 9
 var books_picked_up: Dictionary = {}
 
 var opening: bool = true
+var enemy_attacking: bool = false
 
 #dialogue states (just to make sure things don't get confusing)
 var d_first_card: bool = true
