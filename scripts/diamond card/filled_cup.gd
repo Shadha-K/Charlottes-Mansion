@@ -12,7 +12,7 @@ func _ready():
 	label.visible = false 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and get_tree().root.get_node("GameState").has_teacup: 
+	if body.name == "Alex" and get_tree().root.get_node("GameState").has_teacup and not GameState.has_water: 
 		label.visible = true 
 
 func _on_body_exited(body: Node2D) -> void:
