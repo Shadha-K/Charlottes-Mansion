@@ -186,6 +186,7 @@ script = ExtResource("1_4mwvc")
 position = Vector2(572, 320.5)
 scale = Vector2(0.598958, 0.597222)
 sprite_frames = SubResource("SpriteFrames_t2j2p")
+autoplay = "default"
 frame_progress = 0.700914
 
 [node name="TextureRect" type="TextureRect" parent="."]
