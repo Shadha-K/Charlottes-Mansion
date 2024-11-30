@@ -55,7 +55,7 @@ func _process(_delta):
 			GameState.spawn_4_enem = true
 			GameState.d_pie = false
 			GlobalHotbar.item_used("Recipe Book")
-			GlobalHotbar.add_item_to_slot("Heart Card", preload("res://assets/puzzle_objects/AceOfHearts.png"))
+			GlobalHotbar.add_item_to_slot("Heart Card", preload("res://assets/puzzle_objects/AceofHearts.png"))
 			
 		if Input.is_action_just_pressed("interact") and GameState.has_hearts:
 			
