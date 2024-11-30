@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=75 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Script" path="res://startdialogue.gd" id="1_465vp"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
@@ -39,6 +39,7 @@
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
 [ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_ichn5"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="34_w7hth"]
+[ext_resource type="Script" path="res://game_controller.gd" id="40_i10y6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5bb"]
 size = Vector2(91.875, 49.5)
@@ -494,6 +495,9 @@ position = Vector2(419, 166)
 
 [node name="BasementCharSpawn" type="Marker2D" parent="."]
 position = Vector2(477, 184)
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("40_i10y6")
 
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]

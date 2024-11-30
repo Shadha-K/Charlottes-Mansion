@@ -16,6 +16,7 @@ func _process(_delta):
 		if(not GameState.has_apples):
 			GlobalHotbar.add_item_to_slot("Apples", preload("res://assets/puzzle_objects/apples.png"))
 			GameState.has_apples = true
+			GameState.spawn_2_enem = true
 
 	if Input.is_action_just_pressed("interact") and GameState.has_apples:
 		GameState.last_scene_exited="Cab2"

@@ -24,7 +24,7 @@ func _on_animated_sprite_2d_animation_finished(): #called whenever animation for
 	if anim_name == "attack": #checks that the animation is the punch animation
 		
 		monitoring = false #sets monitoring to false
-		await get_tree().create_timer(1).timeout #pauses the teacup for .5 s
+		await get_tree().create_timer(1.5).timeout #pauses the teacup for .5 s
 		$"../StateMachine/Attack".sig() #calls sig function of EnemyAttack.gd to send signal to change states
 		
 ##SCRIPT FOR ATTACK ANIMATION PROCESSING ##

@@ -19,7 +19,7 @@ func _ready():
 func _process(_delta):
 	if GameState.pie_full and not GameState.oven_exited and not GameState.correct_time:
 		label.visible = true	
-		
+		GameState.spawn_2_enem = true
 		if Input.is_action_just_pressed("interact"):
 			GameState.oven_exited = true
 			GameState.last_scene_exited="Oven"
@@ -52,6 +52,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("click or drag") and not GameState.has_hearts:
 			label2.visible = true
 			GameState.has_hearts = true
+			GameState.spawn_4_enem = true
 			GameState.d_pie = false
 			GlobalHotbar.item_used("Recipe Book")
 			GlobalHotbar.add_item_to_slot("Heart Card", preload("res://assets/puzzle_objects/AceOfHearts.png"))

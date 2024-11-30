@@ -15,4 +15,5 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		GameState.d_teacup = false
 		GameState.d_full_cup = true
+		GameState.spawn_2_enem = true
 		get_tree().change_scene_to_file(next_room_scene)

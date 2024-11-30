@@ -28,5 +28,6 @@ func _process(_delta):
 
 func pick_up_bottle():
 	GlobalHotbar.add_item_to_slot("Bottle", preload("res://assets/puzzle_objects/tempbottle.png"))
+	GameState.spawn_2_enem = true
 	get_tree().root.get_node("GameState").has_bottle = true
 	queue_free()  

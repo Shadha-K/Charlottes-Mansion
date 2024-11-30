@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_dcxcs"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="32_4cjsa"]
 [ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_5ol43"]
-[ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="35_viirw"]
+[ext_resource type="Script" path="res://game_controller.gd" id="37_yi4wi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
 texture = ExtResource("1_k4xct")
@@ -428,26 +428,6 @@ horizontal_alignment = 1
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("32_4cjsa")]
 
-[node name="Teacup" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
-position = Vector2(233, 357)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
-position = Vector2(327, 487)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
-position = Vector2(199, 233)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup4" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
-position = Vector2(165, 524)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup5" parent="." groups=["teacups"] instance=ExtResource("35_viirw")]
-position = Vector2(489, 323)
-scale = Vector2(0.5, 0.5)
-
 [node name="LRToBRSpawnAlex" type="Marker2D" parent="."]
 position = Vector2(876, 459)
 
@@ -465,6 +445,9 @@ position = Vector2(75, 328)
 
 [node name="JBoxToBRChar" type="Marker2D" parent="."]
 position = Vector2(128, 296)
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("37_yi4wi")
 
 [connection signal="body_exited" from="TileMap/furniture/vanity_mirror" to="TileMap/furniture/vanity_mirror" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_entered"]

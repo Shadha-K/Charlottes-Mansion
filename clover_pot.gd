@@ -29,6 +29,7 @@ func _process(_delta):
 			label2.visible = true
 			GameState.clover_planted = true
 			GameState.d_clover_pot = true
+			GameState.spawn_2_enem = true
 			GameState.d_clover = false
 			glowing_plant.visible = true
 			glowing_plant.play("glowingclover")
@@ -38,6 +39,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("interact") and label2.visible:
 			label2.visible = false;
 			GameState.has_clubs = true
+			GameState.spawn_4_enem = true
 			GameState.d_clover_pot = false
 			glowing_plant.visible = false
 			clover.visible = true

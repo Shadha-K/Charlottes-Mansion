@@ -17,6 +17,7 @@ func _process(_delta):
 		if(not GameState.added_diamond):
 			GlobalHotbar.add_item_to_slot("Diamond Card", preload("res://assets/puzzle_objects/AceOfDiamonds.png"))
 			GameState.added_diamond = true
+			GameState.spawn_bedroom = true
 			#Main_Theme_Music.pause_music()
 			var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/card_found.dialogue"), "start")
 			DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS

@@ -19,6 +19,7 @@ func _process(_delta):
 		if(not GameState.has_flour and not GameState.has_sugar):
 			GameState.has_flour = true
 			GameState.has_sugar = true
+			GameState.spawn_2_enem = true
 			GlobalHotbar.add_item_to_slot("Flour", preload("res://assets/puzzle_objects/flour.png"))
 			GlobalHotbar.add_item_to_slot("Sugar", preload("res://assets/puzzle_objects/sugar.png"))
 

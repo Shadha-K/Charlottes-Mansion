@@ -28,6 +28,12 @@ var d_vial: bool = false
 var d_note_unread: bool = false
 var d_note_read: bool = false
 
+#enemy spawing states
+var spawn_2_enem: bool = false
+var spawn_4_enem: bool = false
+var spawn_bedroom: bool = false
+var spawn_icebox: bool = false
+
 #ace of diamonds variables
 var has_teacup: bool = false
 var has_water: bool = false

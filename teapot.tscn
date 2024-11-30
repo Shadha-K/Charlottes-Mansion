@@ -102,6 +102,7 @@ radius = 133.0
 height = 388.0
 
 [node name="teapot" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_425sl")
 enemy = NodePath(".")
 

@@ -14,6 +14,7 @@ func _process(_delta):
 		milk_sprite.visible = false
 		if(not GameState.has_milk):
 			GameState.has_milk = true
+			GameState.spawn_icebox = true
 			GlobalHotbar.add_item_to_slot("Milk", preload("res://assets/puzzle_objects/milk.png"))
 
 	if Input.is_action_just_pressed("interact") and GameState.has_milk:

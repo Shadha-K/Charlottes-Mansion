@@ -76,6 +76,7 @@ size = Vector2(76, 100)
 size = Vector2(46.25, 122.5)
 
 [node name="Teacup" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k8nqx")
 enemy = NodePath(".")
 
@@ -100,13 +101,13 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("13_qg15g")
 enemy = NodePath("../..")
-eyesight = 500
+eyesight = 1000
 
 [node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("14_02kfc")
 enemy = NodePath("../..")
 attackRadius = 50
-followRadius = 500
+followRadius = 1000
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("15_j31fv")

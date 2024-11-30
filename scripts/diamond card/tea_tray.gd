@@ -31,4 +31,5 @@ func pick_up_teacup():
 		GlobalHotbar.add_item_to_slot("Teacup", preload("res://assets/puzzle_objects/puzzle_cup.png"))
 		get_tree().root.get_node("GameState").has_teacup = true 
 		GameState.d_teacup = true
+		GameState.spawn_2_enem = true
 		queue_free() 

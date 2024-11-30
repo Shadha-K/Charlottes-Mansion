@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_clubs.gd" id="8_d5bjo"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_hearts.gd" id="9_sacj7"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_spades.gd" id="10_bh8ee"]
-[ext_resource type="Texture2D" uid="uid://b44oo0wg2dfas" path="res://assets/puzzle_objects/AceofHearts.png" id="11_tjwkr"]
+[ext_resource type="Texture2D" uid="uid://b44oo0wg2dfas" path="res://assets/puzzle_objects/AceOfHearts.png" id="11_tjwkr"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_janti")

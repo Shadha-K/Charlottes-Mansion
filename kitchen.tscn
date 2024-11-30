@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=56 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dv5hamglfmi2k" path="res://scenes/kitchen_sink.tscn" id="15_26x86"]
 [ext_resource type="PackedScene" uid="uid://dajtvanrp7n7c" path="res://charlotte.tscn" id="15_t8te0"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="16_lqktc"]
-[ext_resource type="PackedScene" uid="uid://ca0rv041w830c" path="res://teacup.tscn" id="17_3syfy"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="18_g2o85"]
 [ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="18_rxel1"]
 [ext_resource type="Script" path="res://living_room_door.gd" id="19_4b8sk"]
@@ -26,9 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
 [ext_resource type="PackedScene" uid="uid://6t4kc5mw7bkd" path="res://scenes/icebox.tscn" id="26_d83cf"]
-[ext_resource type="PackedScene" uid="uid://b18bc72wuwh4h" path="res://teapot.tscn" id="26_ffmkw"]
 [ext_resource type="PackedScene" uid="uid://b0phhl1ds52e8" path="res://scenes/cabinet_2.tscn" id="27_emfyi"]
 [ext_resource type="PackedScene" uid="uid://csrmvtewykj4w" path="res://scenes/oven.tscn" id="28_6kgmn"]
+[ext_resource type="Script" path="res://game_controller.gd" id="28_88bwo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -332,18 +331,6 @@ text = "Press E to go
 to living room"
 horizontal_alignment = 1
 
-[node name="Teacup" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1054, 49)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup2" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(1013, 296)
-scale = Vector2(0.5, 0.5)
-
-[node name="Teacup3" parent="." groups=["teacups"] instance=ExtResource("17_3syfy")]
-position = Vector2(964, 175)
-scale = Vector2(0.5, 0.5)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_0tvp3")]
@@ -429,16 +416,8 @@ position = Vector2(79, 108)
 [node name="LRtoKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(83, 186)
 
-[node name="teapot" parent="." instance=ExtResource("26_ffmkw")]
-position = Vector2(1135, 392)
-scale = Vector2(0.2, 0.2)
-
-[node name="teapot2" parent="." instance=ExtResource("26_ffmkw")]
-position = Vector2(1133, 27)
-scale = Vector2(0.2, 0.2)
-
 [node name="IcetoKAlexSpawn" type="Marker2D" parent="."]
-position = Vector2(72, 49)
+position = Vector2(71, 33)
 
 [node name="IcetoKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(145, 50)
@@ -460,6 +439,9 @@ position = Vector2(725, 52)
 
 [node name="OventoKCharSpawn" type="Marker2D" parent="."]
 position = Vector2(805, 82)
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("28_88bwo")
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
