@@ -4,7 +4,7 @@ extends Node
 var is_playing = false
 var theme_song = load("res://main menu/charlotte's mansion main theme.mp3")
 func _ready():
-	music_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	#music_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	if not is_playing:
 		music_player.stream = theme_song
 		add_child(music_player)
