@@ -28,7 +28,7 @@ func _process(_delta):
 			GameState.d_middle_cards = true
 			GameState.d_has_code = false
 
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and GameState.added_diamond:
 		get_tree().root.get_node("GameState").has_diamond = true
 		GameState.last_scene_exited="JBox"
 		GameState.JBoxToBR_spawn_Alex= spawn_point_name
