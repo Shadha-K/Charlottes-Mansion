@@ -449,7 +449,6 @@ horizontal_alignment = 1
 [node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
 
 [node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
-visible = false
 
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2
