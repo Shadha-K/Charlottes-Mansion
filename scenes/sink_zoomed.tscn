@@ -118,12 +118,12 @@ autoplay = "sink"
 frame_progress = 0.230386
 
 [node name="Label" type="Label" parent="AnimatedSprite2D"]
-offset_left = -502.342
-offset_top = -329.202
-offset_right = 223.658
-offset_bottom = -223.202
+offset_left = -518.797
+offset_top = -340.554
+offset_right = 207.203
+offset_bottom = -234.554
 theme_override_fonts/font = ExtResource("5_ivss3")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Press E to go back"
 
 [node name="DropZoneEmptyTeacup" type="TextureRect" parent="."]

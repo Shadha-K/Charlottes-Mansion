@@ -9,8 +9,10 @@ func _ready():
 	set_process_unhandled_input(true)
 
 func _process(_delta):
+	if GameState.has_water:
+		label.visible = true
+		
 	if Input.is_action_just_pressed("interact"):
-		get_tree().root.get_node("GameState").has_water = true
 		GameState.d_teacup = false
 		GameState.d_full_cup = true
 		get_tree().change_scene_to_file(next_room_scene)
