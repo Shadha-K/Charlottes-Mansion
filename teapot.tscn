@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b18bc72wuwh4h"]
+[gd_scene load_steps=53 format=3 uid="uid://b18bc72wuwh4h"]
 
 [ext_resource type="Script" path="res://teapotEnemy.gd" id="1_425sl"]
 [ext_resource type="Texture2D" uid="uid://c7qs7dydking8" path="res://assets/teapot_attack/teapot_attack_0000.png" id="1_pkst0"]
@@ -48,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://ddkfinqyjmu7b" path="res://assets/teapot_death/teapot_death_0019.png" id="29_drty1"]
 [ext_resource type="Texture2D" uid="uid://1k81vqamh7ux" path="res://assets/teapot_death/teapot_death_0020.png" id="30_qap1u"]
 [ext_resource type="Texture2D" uid="uid://b83yn3wuwhbpl" path="res://assets/teapot_death/teapot_death_0021.png" id="31_opvxd"]
+[ext_resource type="Script" path="res://EnemyDead.gd" id="48_ggcq1"]
+[ext_resource type="Script" path="res://TeapotDeath.gd" id="50_ud4f3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r7r2x"]
 animations = [{
@@ -202,39 +204,44 @@ enemy = NodePath(".")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r7r2x")
 animation = &"death"
-frame = 21
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -7)
 shape = SubResource("CapsuleShape2D_nsq41")
 
-[node name="healthmanager" type="Node" parent="."]
+[node name="health_manager" type="Node" parent="."]
 script = ExtResource("20_e0543")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("19_ikwga")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("20_vqfst")
 enemy = NodePath("../..")
 eyesight = 500
+damageable = NodePath("../../health_manager")
 
-[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("21_cb6vw")
 enemy = NodePath("../..")
 attackRadius = 300
 followRadius = 600
+damageable = NodePath("../../health_manager")
 
-[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("22_e5dfx")
 enemy = NodePath("../..")
+damageable = NodePath("../../health_manager")
 
 [node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/Attack"]
 stream = ExtResource("25_3oxbe")
 volume_db = 2.971
 pitch_scale = 0.32
+
+[node name="Dead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("48_ggcq1")
+enemy = NodePath("../..")
 
 [node name="attack" type="Node2D" parent="."]
 script = ExtResource("24_qwwf7")
@@ -242,5 +249,11 @@ script = ExtResource("24_qwwf7")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-69, 98)
 
+[node name="deadanim" type="Node2D" parent="." node_paths=PackedStringArray("damageable")]
+script = ExtResource("50_ud4f3")
+damageable = NodePath("../health_manager")
+
 [connection signal="animation_changed" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="deadanim" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="deadanim" method="_on_animated_sprite_2d_animation_finished"]

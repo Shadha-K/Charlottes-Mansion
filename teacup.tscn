@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=50 format=3 uid="uid://ca0rv041w830c"]
 
 [ext_resource type="Script" path="res://teacupEnemy.gd" id="1_k8nqx"]
 [ext_resource type="Texture2D" uid="uid://bxg5cfogvkdvm" path="res://assets/teacup_attack_imgs/teacup02_attack_0000.png" id="2_3eu8s"]
@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://c5h6qrn5gsxhy" path="res://assets/teacup_death/teacup_death_0022.png" id="29_trhei"]
 [ext_resource type="Texture2D" uid="uid://cegyhhtpypvko" path="res://assets/teacup_death/teacup_death_0023.png" id="30_6akmr"]
 [ext_resource type="Texture2D" uid="uid://dbw60y4gur4e" path="res://assets/teacup_death/teacup_death_0024.png" id="31_esx5r"]
+[ext_resource type="Script" path="res://EnemyDead.gd" id="42_cbjx1"]
+[ext_resource type="Script" path="res://TeacupDeath.gd" id="45_qlxnh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
 animations = [{
@@ -205,25 +207,32 @@ script = ExtResource("10_bfldy")
 script = ExtResource("12_rghlp")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("13_qg15g")
 enemy = NodePath("../..")
 eyesight = 1000
+damageable = NodePath("../../health_manager")
 
-[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("14_02kfc")
 enemy = NodePath("../..")
 attackRadius = 50
 followRadius = 1000
+damageable = NodePath("../../health_manager")
 
-[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "damageable")]
 script = ExtResource("15_j31fv")
 enemy = NodePath("../..")
+damageable = NodePath("../../health_manager")
 
 [node name="hit_sfx" type="AudioStreamPlayer2D" parent="StateMachine/Attack"]
 stream = ExtResource("16_65a0y")
 volume_db = 16.077
 attenuation = 0.450626
+
+[node name="Dead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("42_cbjx1")
+enemy = NodePath("../..")
 
 [node name="attack" type="Area2D" parent="."]
 monitoring = false
@@ -236,8 +245,14 @@ shape = SubResource("RectangleShape2D_dw7o2")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_ot5ba")
 
+[node name="deadanim" type="Node2D" parent="." node_paths=PackedStringArray("damageable")]
+script = ExtResource("45_qlxnh")
+damageable = NodePath("../health_manager")
+
 [connection signal="animation_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="deadanim" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="attack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="deadanim" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="Transitioned" from="StateMachine/Attack" to="AnimatedSprite2D" method="_on_attack_transitioned"]
 [connection signal="body_entered" from="attack" to="attack" method="_on_body_entered"]
