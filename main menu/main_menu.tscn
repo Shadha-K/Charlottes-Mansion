@@ -423,8 +423,8 @@ grow_vertical = 2
 script = ExtResource("1_4mwvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(574.5, 323)
-scale = Vector2(0.601562, 0.601852)
+position = Vector2(577, 326)
+scale = Vector2(0.601562, 0.609259)
 sprite_frames = SubResource("SpriteFrames_t2j2p")
 autoplay = "default"
 frame_progress = 0.700914
@@ -603,7 +603,6 @@ theme_override_font_sizes/font_size = 30
 text = "X"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
