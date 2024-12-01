@@ -104,3 +104,7 @@ func swap_items(from:int, to:int) -> void:
 	hotbar[from] = temp
 	hotbar_updated.emit()
 	return
+	
+func reset_hotbar():
+	for i in range(hotbar_size):
+		hotbar[i] = null

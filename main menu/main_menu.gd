@@ -15,6 +15,7 @@ func _ready():
 	
 	GameState.player_health = 9
 	GameState.current_health = 9
+	GlobalHotbar.reset_hotbar()
 	
 	GameState.opening = true
 	GameState.enemy_attacking = false
