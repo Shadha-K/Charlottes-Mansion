@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=68 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -280,6 +280,139 @@ shadow_color = Color(0, 0, 0, 0.988235)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="FontFile" id="FontFile_0r3o3"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_gmwam"]
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_87y04"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_exrmn"]
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_dqe1e"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_2r02g"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_pwat7"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_bx2nj"]
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_y26ak"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -329,13 +462,153 @@ text = "X
 "
 flat = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="credits" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1151.0
+offset_bottom = 650.0
+color = Color(0.129412, 0.129412, 0.129412, 0.67451)
+
+[node name="Label" type="Label" parent="CanvasLayer/credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 448.0
+offset_top = 319.0
+offset_right = -507.0
+offset_bottom = -282.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_0r3o3")
+theme_override_font_sizes/font_size = 30
+text = "Designer
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/credits/Label"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 48.0
+offset_right = 170.0
+offset_bottom = 83.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_gmwam")
+theme_override_font_sizes/font_size = 25
+text = "Canly Kong"
+
+[node name="Label2" type="Label" parent="CanvasLayer/credits"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 220.0
+offset_right = 734.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_87y04")
+theme_override_font_sizes/font_size = 30
+text = "Producer & Sound Designer 
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/credits/Label2"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 40.0
+offset_right = 255.0
+offset_bottom = 74.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_exrmn")
+theme_override_font_sizes/font_size = 25
+text = "Andrea Poklar"
+
+[node name="Label3" type="Label" parent="CanvasLayer/credits"]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 207.0
+offset_right = 1037.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_dqe1e")
+theme_override_font_sizes/font_size = 30
+text = "			Programmers
+				"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/credits/Label3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 43.0
+offset_right = 214.0
+offset_bottom = 188.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_2r02g")
+theme_override_font_sizes/font_size = 25
+text = "Amar Mehjazi
+Mohamad Hilal
+Aditi Sinha
+Everyone!"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/credits"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 191.0
+offset_right = 261.0
+offset_bottom = 246.0
+theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_pwat7")
+theme_override_font_sizes/font_size = 30
+text = "Artists
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/credits/Label4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 47.0
+offset_right = 217.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_bx2nj")
+theme_override_font_sizes/font_size = 25
+text = "Shadha Khan
+Liam Trushenski
+Ethan Pradhan
+Brady Nguyen"
+horizontal_alignment = 1
+
+[node name="exit_credits" type="Button" parent="CanvasLayer/credits"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 44.0
+offset_right = 82.0
+offset_bottom = 75.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_y26ak")
+theme_override_font_sizes/font_size = 30
+text = "X"
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.003
-offset_left = -2.0
-offset_right = 2.0
+offset_right = 4.0
 offset_bottom = 1.05597
 grow_horizontal = 2
 grow_vertical = 2
@@ -378,6 +651,11 @@ text = "HOW TO PLAY
 "
 flat = true
 
+[node name="CREDITS" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+text = "CREDITS"
+
 [node name="EXIT" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.968627, 0, 0, 1)
@@ -394,6 +672,8 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/credits/exit_credits" to="." method="_on_exit_credits_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/CREDITS" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]

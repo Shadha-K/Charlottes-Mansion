@@ -2,9 +2,12 @@ extends Control
 
 @onready var how_to_play_page: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var other_buttons: TextureRect = $TextureRect
+@onready var credits: ColorRect = $CanvasLayer/credits
+@onready var exit_credits_button: Button = $CanvasLayer/credits/exit_credits
 
 func _ready():
 	how_to_play_page.visible = false
+	credits.visible = false
 	other_buttons.visible = true
 	
 	GameState.player_health = 9
@@ -98,4 +101,12 @@ func _on_how_to_play_pressed() -> void:
 
 func _on_exit_how_to_play_pressed() -> void:
 	how_to_play_page.visible = false
+	other_buttons.visible = true
+
+func _on_credits_pressed() -> void:
+	credits.visible = true
+	other_buttons.visible = false 
+	
+func _on_exit_credits_pressed() -> void:
+	credits.visible = false
 	other_buttons.visible = true
