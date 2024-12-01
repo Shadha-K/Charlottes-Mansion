@@ -15,8 +15,14 @@ var is_swinging: bool = false  # Flag to track if the player is swinging
 # Step 1: Preload the swing sound effect
 var swing_sound = preload("res://assets/sound_effects/sword-swoosh.mp3")
 var swing_sound_player: AudioStreamPlayer
+var is_knocked_back: bool = false  # Flag to track if the player is in knockback
+var knockback_timer: Timer  # Timer for knockback duration
 
 func _ready():
+	knockback_timer = Timer.new()
+	knockback_timer.one_shot = true
+	knockback_timer.timeout.connect(_on_knockback_timer_timeout)
+	add_child(knockback_timer)
 	animated_sprite_2D_animation.play("idle_front")
 	animation_tree.active = true
 	add_to_group("Player")
@@ -39,6 +45,13 @@ func _process(_delta):
 	update_animation_parameters()
 
 func _physics_process(_delta: float) -> void:
+	if is_knocked_back:
+		# While in knockback, only apply gravity
+		if not is_on_floor():
+			velocity.y += GRAVITY * _delta
+		move_and_slide()
+		return
+
 	if Input.is_action_just_pressed("help"):
 		var actions = finder.get_overlapping_areas()
 		if actions.size() > 0:
@@ -105,3 +118,13 @@ func hit():  # Function for when the player is hit
 # This function is called when the timer's timeout signal is emitted
 func _on_hit_timer_timeout():
 	modulate = Color(1, 1, 1, 1)  # Restore the character's color to normal with full opacity
+	
+func apply_knockback(force: Vector2) -> void:
+	# Apply the knockback force and set the knockback state
+	is_knocked_back = true
+	velocity += force
+	knockback_timer.start(0.2)  # Knockback lasts for 0.2 seconds
+
+func _on_knockback_timer_timeout() -> void:
+	# End the knockback state
+	is_knocked_back = false

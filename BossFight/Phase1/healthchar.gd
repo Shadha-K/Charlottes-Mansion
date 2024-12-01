@@ -2,7 +2,7 @@ extends Node
 
 class_name HealthChar
 
-@export var health: float = 200
+@export var health: int = 200
 var phase2 = "res://BossFight/Phase2/bossfight.tscn"
 
 var timer: Timer
@@ -22,7 +22,6 @@ func hit(damage: int):
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
-
 	if health <= 0:
 		# Hide the enemy immediately
 		get_parent().visible = false

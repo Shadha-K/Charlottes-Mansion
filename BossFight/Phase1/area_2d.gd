@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var knockback_force: float = 500  # The strength of the knockback
+@export var knockback_force: float = 600  # The strength of the knockback
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

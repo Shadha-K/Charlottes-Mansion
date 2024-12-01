@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=91 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
 [ext_resource type="Texture2D" uid="uid://kf1kiij6gp5e" path="res://assets/CharlotteSprite/charlotte_walk_front_spritesheet.png" id="2_b6hq1"]
@@ -20,6 +20,10 @@
 [ext_resource type="Script" path="res://BossFight/Phase1/head_attack.gd" id="17_dap37"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spikeattack.gd" id="19_6ddwj"]
 [ext_resource type="Script" path="res://BossFight/Phase1/headattack.gd" id="20_l8cyb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdgwp"]
+atlas = ExtResource("2_uyqdx")
+region = Rect2(0, 0, 1002, 2051)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d7j2"]
 atlas = ExtResource("2_uyqdx")
@@ -289,6 +293,9 @@ region = Rect2(2000, 6000, 1000, 2000)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wdgwp")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0d7j2")
 }, {
 "duration": 1.0,
@@ -538,7 +545,6 @@ shape = SubResource("RectangleShape2D_r5av2")
 
 [node name="healthmanager" type="Node" parent="."]
 script = ExtResource("6_m4ps4")
-health = 300
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_qn26e")
@@ -567,9 +573,8 @@ attenuation = 0.450626
 script = ExtResource("12_lha3v")
 enemy = NodePath("../..")
 
-[node name="HeadAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="HeadAttack" type="Node" parent="StateMachine"]
 script = ExtResource("17_dap37")
-enemy = NodePath("../..")
 
 [node name="swipeattack" type="Area2D" parent="."]
 monitoring = false
@@ -586,13 +591,11 @@ script = ExtResource("19_6ddwj")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-4.76837e-07, 683.333)
 
-[node name="headattack" type="Node2D" parent="." node_paths=PackedStringArray("enemy")]
-script = ExtResource("20_l8cyb")
-enemy = NodePath("..")
-
-[node name="HeadMarker" type="Marker2D" parent="headattack"]
+[node name="HeadMarker" type="Marker2D" parent="."]
 position = Vector2(33.3333, -761.111)
-scale = Vector2(1, 1)
+
+[node name="headattack" type="Node2D" parent="."]
+script = ExtResource("20_l8cyb")
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_changed"]
