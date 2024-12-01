@@ -1,25 +1,50 @@
-[gd_scene load_steps=90 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=115 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
+[ext_resource type="Texture2D" uid="uid://mu8b2fw18u02" path="res://assets/CharlotteSprite/death/charlotte_death_0000.png" id="2_3jiop"]
 [ext_resource type="Texture2D" uid="uid://kf1kiij6gp5e" path="res://assets/CharlotteSprite/charlotte_walk_front_spritesheet.png" id="2_b6hq1"]
 [ext_resource type="Texture2D" uid="uid://bismdb4j715ds" path="res://assets/CharlotteSprite/floatingbody.png" id="2_uyqdx"]
 [ext_resource type="Texture2D" uid="uid://doci2of1rqxii" path="res://assets/CharlotteSprite/charlotte_walk_back_spritesheet.png" id="3_e0hy8"]
 [ext_resource type="Texture2D" uid="uid://bjfidur1lkh40" path="res://assets/teacup_attack_imgs/teacup_attack_0000.png" id="3_eiieg"]
+[ext_resource type="Texture2D" uid="uid://bi0vjky7b8ah5" path="res://assets/CharlotteSprite/death/charlotte_death_0001.png" id="3_wwgv4"]
 [ext_resource type="Texture2D" uid="uid://cix0i67jpyoog" path="res://assets/teacup_attack_imgs/teacup_attack_0002.png" id="4_eqotw"]
 [ext_resource type="Texture2D" uid="uid://bfnylrokql6qq" path="res://assets/CharlotteSprite/charlotte_walk_side_spritesheet.png" id="4_g2elx"]
+[ext_resource type="Texture2D" uid="uid://0weclsdvyq01" path="res://assets/CharlotteSprite/death/charlotte_death_0002.png" id="4_m6vos"]
 [ext_resource type="Texture2D" uid="uid://w64n6ho1q05i" path="res://assets/teacup_attack_imgs/teacup_attack_0003.png" id="5_77a74"]
+[ext_resource type="Texture2D" uid="uid://egxcva32xjr3" path="res://assets/CharlotteSprite/death/charlotte_death_0003.png" id="5_6206d"]
 [ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="6_fgaf8"]
+[ext_resource type="Texture2D" uid="uid://b1rrvyn2s4hcd" path="res://assets/CharlotteSprite/death/charlotte_death_0004.png" id="6_khaky"]
 [ext_resource type="Script" path="res://BossFight/Phase1/healthchar.gd" id="6_m4ps4"]
 [ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="7_khchf"]
+[ext_resource type="Texture2D" uid="uid://7risg06vgd4b" path="res://assets/CharlotteSprite/death/charlotte_death_0005.png" id="7_o4saw"]
 [ext_resource type="Script" path="res://BossFight/Phase1/State_Machine.gd" id="7_qn26e"]
+[ext_resource type="Texture2D" uid="uid://cqvmtitb6ou0r" path="res://assets/CharlotteSprite/death/charlotte_death_0006.png" id="8_d3jql"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyIdle.gd" id="8_x1cqq"]
+[ext_resource type="Texture2D" uid="uid://loso77hfxfy2" path="res://assets/CharlotteSprite/death/charlotte_death_0007.png" id="9_ftplv"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyFollow.gd" id="9_gmsbn"]
+[ext_resource type="Texture2D" uid="uid://cof3fy6d64ded" path="res://assets/CharlotteSprite/death/charlotte_death_0008.png" id="10_1wchq"]
 [ext_resource type="Script" path="res://BossFight/Phase1/EnemyAttack.gd" id="10_u8mui"]
+[ext_resource type="Texture2D" uid="uid://ckuyn37f1keuw" path="res://assets/CharlotteSprite/death/charlotte_death_0009.png" id="11_7qeg8"]
 [ext_resource type="Script" path="res://BossFight/Phase1/swipeattack.gd" id="12_5b78p"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spike_attack.gd" id="12_lha3v"]
+[ext_resource type="Texture2D" uid="uid://byqca2msnt7hn" path="res://assets/CharlotteSprite/death/charlotte_death_0010.png" id="12_sq4li"]
+[ext_resource type="Texture2D" uid="uid://jq0wr6w50ksm" path="res://assets/CharlotteSprite/death/charlotte_death_0011.png" id="13_q5lj8"]
+[ext_resource type="Texture2D" uid="uid://bw7luyjeedrqm" path="res://assets/CharlotteSprite/death/charlotte_death_0012.png" id="14_2vfnk"]
+[ext_resource type="Texture2D" uid="uid://clv8u80svhf3f" path="res://assets/CharlotteSprite/death/charlotte_death_0013.png" id="15_d1wn8"]
+[ext_resource type="Texture2D" uid="uid://deyodt6ygt1uf" path="res://assets/CharlotteSprite/death/charlotte_death_0014.png" id="16_o2v4w"]
+[ext_resource type="Texture2D" uid="uid://x3oed6tkbble" path="res://assets/CharlotteSprite/death/charlotte_death_0015.png" id="17_b6h55"]
 [ext_resource type="Script" path="res://BossFight/Phase1/head_attack.gd" id="17_dap37"]
+[ext_resource type="Texture2D" uid="uid://b2ni07vqrmajm" path="res://assets/CharlotteSprite/death/charlotte_death_0016.png" id="18_ky3fo"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spikeattack.gd" id="19_6ddwj"]
+[ext_resource type="Texture2D" uid="uid://b812qmksiqddu" path="res://assets/CharlotteSprite/death/charlotte_death_0017.png" id="19_grwy1"]
+[ext_resource type="Texture2D" uid="uid://dvxcc1s67agrr" path="res://assets/CharlotteSprite/death/charlotte_death_0018.png" id="20_hunov"]
 [ext_resource type="Script" path="res://BossFight/Phase1/headattack.gd" id="20_l8cyb"]
+[ext_resource type="Texture2D" uid="uid://cy0qq8d40qpqj" path="res://assets/CharlotteSprite/death/charlotte_death_0019.png" id="21_fg74g"]
+[ext_resource type="Texture2D" uid="uid://c0d563xqcyfqo" path="res://assets/CharlotteSprite/death/charlotte_death_0020.png" id="22_k8041"]
+[ext_resource type="Texture2D" uid="uid://btqhgjm7l55if" path="res://assets/CharlotteSprite/death/charlotte_death_0021.png" id="23_yofom"]
+[ext_resource type="Texture2D" uid="uid://djhmd8uu8rmci" path="res://assets/CharlotteSprite/death/charlotte_death_0022.png" id="24_8ynna"]
+[ext_resource type="Texture2D" uid="uid://cifytqrwtcolf" path="res://assets/CharlotteSprite/death/charlotte_death_0023.png" id="25_xrwvj"]
+[ext_resource type="Texture2D" uid="uid://oinua8vc3jrj" path="res://assets/CharlotteSprite/death/charlotte_death_0024.png" id="26_3aat0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d7j2"]
 atlas = ExtResource("2_uyqdx")
@@ -289,6 +314,86 @@ region = Rect2(2000, 6000, 1000, 2000)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_3jiop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wwgv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m6vos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6206d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_khaky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o4saw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d3jql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ftplv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1wchq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7qeg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sq4li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q5lj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2vfnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d1wn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o2v4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b6h55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ky3fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_grwy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hunov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fg74g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k8041")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yofom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8ynna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xrwvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3aat0")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0d7j2")
 }, {
 "duration": 1.0,
@@ -530,7 +635,7 @@ enemy = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hry8c")
-animation = &"floating_idle"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.55556, 150)
