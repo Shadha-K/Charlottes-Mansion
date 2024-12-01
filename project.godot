@@ -31,6 +31,9 @@ general/states=["GameState"]
 
 [display]
 
+window/size/mode=2
+window/size/initial_position_type=0
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://assets/cursor.png"
 
