@@ -26,7 +26,7 @@ func hit(damage: int):
 		# Hide the enemy immediately
 		#get_parent().visible = false
 		# Disable collision and processing
-		#disable_enemy()
+		disable_enemy()
 		# Play death sound independently
 		play_death_sound()
 		# Remove the enemy node
