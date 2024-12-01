@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=61 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://barnfae6i1w48" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0036.png" id="38_rep78"]
 [ext_resource type="Texture2D" uid="uid://csk3bbdpr0mhr" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0037.png" id="39_mllv2"]
 [ext_resource type="Texture2D" uid="uid://bg4h2j1fv7dgb" path="res://assets/cutscenes/controls.png" id="41_niut7"]
+[ext_resource type="Script" path="res://main menu/options.gd" id="42_ftdmn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2j2p"]
 animations = [{
@@ -484,7 +485,6 @@ theme_override_font_sizes/font_size = 30
 text = "X"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -505,7 +505,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -157.0
-offset_top = -203.0
+offset_top = -279.0
 offset_right = 156.0
 offset_bottom = -34.0
 grow_horizontal = 2
@@ -532,6 +532,17 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
 text = "HOW TO PLAY
 "
+flat = true
+
+[node name="OPTIONS" type="Button" parent="TextureRect/VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
+text = "OPTIONS"
 flat = true
 
 [node name="CREDITS" type="Button" parent="TextureRect/VBoxContainer"]
@@ -561,9 +572,90 @@ layout_mode = 2
 [node name="Control" type="Control" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 
+[node name="Options" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1279.0
+offset_bottom = 718.0
+script = ExtResource("42_ftdmn")
+
+[node name="ColorRect" type="ColorRect" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.211884
+anchor_top = 0.211699
+anchor_right = 0.732604
+anchor_bottom = 0.732591
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
+
+[node name="MarginContainer" type="MarginContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.5
+offset_top = -108.0
+offset_right = 300.5
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Vol_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Mute_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="CheckBox" type="CheckBox" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Res_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resolutions"
+
+[node name="Resolutions" type="OptionButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 1
+item_count = 4
+popup/item_0/text = "2560x1440"
+popup/item_1/text = "1920*1080"
+popup/item_1/id = 1
+popup/item_2/text = "1600x900"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
+
+[node name="exit_options" type="Button" parent="Options"]
+offset_left = 280.0
+offset_top = 164.0
+offset_right = 334.0
+offset_bottom = 213.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_y26ak")
+theme_override_font_sizes/font_size = 30
+text = "X"
+
 [connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/credits/exit_credits" to="." method="_on_exit_credits_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/CREDITS" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
+[connection signal="item_selected" from="Options/MarginContainer/VBoxContainer/Resolutions" to="Options" method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="Options/exit_options" to="." method="_on_exit_options_pressed"]
