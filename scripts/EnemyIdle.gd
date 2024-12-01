@@ -4,6 +4,7 @@ class_name EnemyIdle
 @export var enemy: CharacterBody2D
 @export var move_speed := 100.0
 @export var eyesight : int
+@export var damageable : Damageable
 
 var player : CharacterBody2D
 
@@ -17,6 +18,7 @@ func randomize_wander():
 func Enter():
 	player = get_tree().get_first_node_in_group("Player")
 	randomize_wander()
+	damageable = get_node_or_null("../../health_manager")
 
 func Update(delta: float):
 	if wander_time > 0:
@@ -30,7 +32,9 @@ func Physics_Update(_delta: float):
 
 	var direction = player.global_position - enemy.global_position
 	#print(direction.length())
-	if direction.length() < eyesight:
+	if damageable.health <= 0:
+		Transitioned.emit(self, "Dead")
+	elif direction.length() < eyesight:
 		Transitioned.emit(self, "Follow")
 
 ##SCRIPT FOR ENEMY IDLE BEHAVIOR##

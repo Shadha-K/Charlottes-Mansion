@@ -24,13 +24,13 @@ func hit(damage: int):
 
 	if health <= 0:
 		# Hide the enemy immediately
-		get_parent().visible = false
+		#get_parent().visible = false
 		# Disable collision and processing
-		disable_enemy()
+		#disable_enemy()
 		# Play death sound independently
 		play_death_sound()
 		# Remove the enemy node
-		call_deferred("remove_enemy")
+		#call_deferred("remove_enemy")
 
 func disable_enemy():
 	var enemy = get_parent()
