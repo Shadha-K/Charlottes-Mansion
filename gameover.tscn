@@ -26,7 +26,7 @@ offset_right = -564.0
 offset_bottom = -274.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Retry"
+text = "Return to Checkpoint"
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 15
@@ -38,7 +38,7 @@ offset_right = -566.0
 offset_bottom = -236.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit
+text = "Main Menu
 "
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

@@ -344,8 +344,10 @@ flat = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="credits" type="ColorRect" parent="CanvasLayer"]
-offset_right = 1151.0
-offset_bottom = 650.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 648.0
 color = Color(0.129412, 0.129412, 0.129412, 0.67451)
 
 [node name="Label" type="Label" parent="CanvasLayer/credits"]
@@ -353,10 +355,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 448.0
-offset_top = 319.0
-offset_right = -507.0
-offset_bottom = -282.0
+offset_left = 437.0
+offset_top = 285.0
+offset_right = -518.0
+offset_bottom = -316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
@@ -382,10 +384,10 @@ text = "Canly Kong"
 
 [node name="Label2" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 0
-offset_left = 363.0
-offset_top = 220.0
-offset_right = 734.0
-offset_bottom = 264.0
+offset_left = 369.0
+offset_top = 195.0
+offset_right = 740.0
+offset_bottom = 239.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -409,10 +411,10 @@ text = "Andrea Poklar"
 
 [node name="Label3" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 0
-offset_left = 819.0
-offset_top = 207.0
-offset_right = 1037.0
-offset_bottom = 259.0
+offset_left = 816.0
+offset_top = 194.0
+offset_right = 1034.0
+offset_bottom = 261.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -424,10 +426,10 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/credits/Label3"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 43.0
-offset_right = 214.0
-offset_bottom = 188.0
+offset_left = 5.0
+offset_top = 49.0
+offset_right = 211.0
+offset_bottom = 194.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2lk53")
@@ -440,10 +442,10 @@ horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 191.0
-offset_right = 261.0
-offset_bottom = 246.0
+offset_left = 64.0
+offset_top = 199.0
+offset_right = 273.0
+offset_bottom = 254.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -482,12 +484,15 @@ theme_override_font_sizes/font_size = 30
 text = "X"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.003
-offset_right = 4.0
-offset_bottom = 1.05597
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 4.05597
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
