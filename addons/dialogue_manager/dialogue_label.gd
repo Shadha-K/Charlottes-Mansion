@@ -65,12 +65,19 @@ var _is_awaiting_mutation: bool = false
 
 # Load the dialogue sound effect
 var dialogue_sound_effect: AudioStream
+var sound_play_counter: int = 0
+
+var time_since_last_sound: float = 0.0
+var min_time_between_sounds: float = 0.1  # Adjust this value to set the minimum time between sounds
+
 
 func _ready():
 	dialogue_sound_effect = load("res://assets/sound_effects/dialogue-sound-effect.mp3")
 
 func _process(delta: float) -> void:
 	if self.is_typing:
+		# Update the time since the last sound
+		time_since_last_sound += delta
 		# Type out text
 		if visible_ratio < 1:
 			# See if we are waiting
@@ -83,6 +90,7 @@ func _process(delta: float) -> void:
 			# Make sure any mutations at the end of the line get run
 			_mutate_inline_mutations(get_total_character_count())
 			self.is_typing = false
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if self.is_typing and visible_ratio < 1 and InputMap.has_action(skip_action) and event.is_action_pressed(skip_action):
@@ -99,6 +107,7 @@ func type_out() -> void:
 	_last_mutation_index = -1
 	_already_mutated_indices.clear()
 
+	time_since_last_sound = min_time_between_sounds  # So that sound plays immediately
 	self.is_typing = true
 
 	# Allow typing listeners a chance to connect
@@ -110,6 +119,7 @@ func type_out() -> void:
 		_mutate_remaining_mutations()
 		visible_characters = get_total_character_count()
 		self.is_typing = false
+
 
 ## Stop typing out the text and jump right to the end
 func skip_typing() -> void:
@@ -149,20 +159,23 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 			var letter_index = visible_characters - 1
 			var letter = get_parsed_text()[letter_index]
 			spoke.emit(letter, letter_index, _get_speed(visible_characters))
-			# Play the sound effect for each character with adjusted pitch
-			var new_audio_player = AudioStreamPlayer.new()
-			new_audio_player.stream = dialogue_sound_effect
-			# Adjust pitch randomly between 0.9 and 1.1
-			new_audio_player.pitch_scale += randf_range(-0.1, 0.1)
-			# If the letter is a vowel, increase pitch
-			if letter.to_lower() in ["a", "e", "i", "o", "u"]:
-				new_audio_player.pitch_scale += 0.2
-			add_child(new_audio_player)
-			new_audio_player.play()
-			# Connect to 'finished' signal to free the player
-			new_audio_player.finished.connect(func():
-				new_audio_player.queue_free()
-			)
+
+			# Play the sound effect if enough time has passed
+			if time_since_last_sound >= min_time_between_sounds:
+				time_since_last_sound = 0.0  # Reset timer
+				var new_audio_player = AudioStreamPlayer.new()
+				new_audio_player.stream = dialogue_sound_effect
+				# Adjust pitch as before
+				new_audio_player.pitch_scale = 0.9 + randf_range(-0.05, 0.05)
+				# Optional: Adjust pitch for vowels
+				if letter.to_lower() in ["a", "e", "i", "o", "u"]:
+					new_audio_player.pitch_scale += 0.05
+				add_child(new_audio_player)
+				new_audio_player.play()
+				# Connect to 'finished' signal to free the player
+				new_audio_player.finished.connect(func():
+					new_audio_player.queue_free()
+				)
 		# See if there's time to type out some more in this frame
 		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
 		if seconds_needed > delta:
