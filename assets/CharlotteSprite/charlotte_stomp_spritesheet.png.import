@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b44oo0wg2dfas"
-path="res://.godot/imported/AceofHearts.png-c63f4e7724aa1c463effeb819199f9f6.ctex"
+uid="uid://dggmgpq86ojmg"
+path="res://.godot/imported/charlotte_stomp_spritesheet.png-132f7dd5f6620736ec361db37c478838.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/puzzle_objects/AceofHearts.png"
-dest_files=["res://.godot/imported/AceofHearts.png-c63f4e7724aa1c463effeb819199f9f6.ctex"]
+source_file="res://assets/CharlotteSprite/charlotte_stomp_spritesheet.png"
+dest_files=["res://.godot/imported/charlotte_stomp_spritesheet.png-132f7dd5f6620736ec361db37c478838.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b44oo0wg2dfas"
-path="res://.godot/imported/AceofHearts.png-c63f4e7724aa1c463effeb819199f9f6.ctex"
+uid="uid://c1kkpec7wcutw"
+path="res://.godot/imported/spike_spritesheet.png-381a5314c63b98294dab4d351f2b5a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/puzzle_objects/AceofHearts.png"
-dest_files=["res://.godot/imported/AceofHearts.png-c63f4e7724aa1c463effeb819199f9f6.ctex"]
+source_file="res://assets/CharlotteSprite/spike_spritesheet.png"
+dest_files=["res://.godot/imported/spike_spritesheet.png-381a5314c63b98294dab4d351f2b5a57.ctex"]
 
 [params]
 
