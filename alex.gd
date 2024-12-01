@@ -87,7 +87,7 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/is_moving"] = true
 	
-	if Input.is_action_just_pressed("swing"):
+	if Input.is_action_just_pressed("swing") and not is_swinging:
 		is_swinging = true  # Set swinging state
 		animation_tree["parameters/conditions/swing"] = true
 
