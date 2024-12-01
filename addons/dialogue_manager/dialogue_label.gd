@@ -5,7 +5,6 @@
 ## A RichTextLabel specifically for use with [b]Dialogue Manager[/b] dialogue.
 class_name DialogueLabel extends RichTextLabel
 
-
 ## Emitted for each letter typed out.
 signal spoke(letter: String, letter_index: int, speed: float)
 
@@ -18,9 +17,8 @@ signal skipped_typing()
 ## Emitted when typing finishes.
 signal finished_typing()
 
-
 # The action to press to skip typing.
-@export var skip_action: StringName = &"ui_cancel"
+@export var skip_action: StringName = "ui_cancel"
 
 ## The speed with which the text types out.
 @export var seconds_per_step: float = 0.02
@@ -31,16 +29,15 @@ signal finished_typing()
 ## Don't auto pause if the character after the pause is one of these.
 @export var skip_pause_at_character_if_followed_by: String = ")\""
 
-## Don't auto pause after these abbreviations (only if "." is in `pause_at_characters`).[br]
-## Abbreviations are limitted to 5 characters in length [br]
-## Does not support multi-period abbreviations (ex. "p.m.")
+## Don't auto pause after these abbreviations (only if "." is in `pause_at_characters`).
+## Abbreviations are limited to 5 characters in length.
+## Does not support multi-period abbreviations (e.g., "p.m.")
 @export var skip_pause_at_abbreviations: PackedStringArray = ["Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex"]
 
 ## The amount of time to pause when exposing a character present in `pause_at_characters`.
 @export var seconds_per_pause_step: float = 0.3
 
 var _already_mutated_indices: PackedInt32Array = []
-
 
 ## The current line of dialogue.
 var dialogue_line:
@@ -66,6 +63,11 @@ var _last_mutation_index: int = -1
 var _waiting_seconds: float = 0
 var _is_awaiting_mutation: bool = false
 
+# Load the dialogue sound effect
+var dialogue_sound_effect: AudioStream
+
+func _ready():
+	dialogue_sound_effect = load("res://assets/sound_effects/dialogue-sound-effect.mp3")
 
 func _process(delta: float) -> void:
 	if self.is_typing:
@@ -73,7 +75,7 @@ func _process(delta: float) -> void:
 		if visible_ratio < 1:
 			# See if we are waiting
 			if _waiting_seconds > 0:
-				_waiting_seconds = _waiting_seconds - delta
+				_waiting_seconds -= delta
 			# If we are no longer waiting then keep typing
 			if _waiting_seconds <= 0:
 				_type_next(delta, _waiting_seconds)
@@ -82,15 +84,10 @@ func _process(delta: float) -> void:
 			_mutate_inline_mutations(get_total_character_count())
 			self.is_typing = false
 
-
 func _unhandled_input(event: InputEvent) -> void:
-	# Note: this will no longer be reached if using Dialogue Manager > 2.32.2. To make skip handling
-	# simpler (so all of mouse/keyboard/joypad are together) it is now the responsibility of the
-	# dialogue balloon.
 	if self.is_typing and visible_ratio < 1 and InputMap.has_action(skip_action) and event.is_action_pressed(skip_action):
 		get_viewport().set_input_as_handled()
 		skip_typing()
-
 
 ## Start typing out the text
 func type_out() -> void:
@@ -114,7 +111,6 @@ func type_out() -> void:
 		visible_characters = get_total_character_count()
 		self.is_typing = false
 
-
 ## Stop typing out the text and jump right to the end
 func skip_typing() -> void:
 	_mutate_remaining_mutations()
@@ -122,10 +118,10 @@ func skip_typing() -> void:
 	self.is_typing = false
 	skipped_typing.emit()
 
-
 # Type out the next character(s)
 func _type_next(delta: float, seconds_needed: float) -> void:
-	if _is_awaiting_mutation: return
+	if _is_awaiting_mutation:
+		return
 
 	if visible_characters == get_total_character_count():
 		return
@@ -133,7 +129,8 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 	if _last_mutation_index != visible_characters:
 		_last_mutation_index = visible_characters
 		_mutate_inline_mutations(visible_characters)
-		if _is_awaiting_mutation: return
+		if _is_awaiting_mutation:
+			return
 
 	var additional_waiting_seconds: float = _get_pause(visible_characters)
 
@@ -149,14 +146,29 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 	else:
 		visible_characters += 1
 		if visible_characters <= get_total_character_count():
-			spoke.emit(get_parsed_text()[visible_characters - 1], visible_characters - 1, _get_speed(visible_characters))
+			var letter_index = visible_characters - 1
+			var letter = get_parsed_text()[letter_index]
+			spoke.emit(letter, letter_index, _get_speed(visible_characters))
+			# Play the sound effect for each character with adjusted pitch
+			var new_audio_player = AudioStreamPlayer.new()
+			new_audio_player.stream = dialogue_sound_effect
+			# Adjust pitch randomly between 0.9 and 1.1
+			new_audio_player.pitch_scale += randf_range(-0.1, 0.1)
+			# If the letter is a vowel, increase pitch
+			if letter.to_lower() in ["a", "e", "i", "o", "u"]:
+				new_audio_player.pitch_scale += 0.2
+			add_child(new_audio_player)
+			new_audio_player.play()
+			# Connect to 'finished' signal to free the player
+			new_audio_player.finished.connect(func():
+				new_audio_player.queue_free()
+			)
 		# See if there's time to type out some more in this frame
 		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
 		if seconds_needed > delta:
 			_waiting_seconds += seconds_needed
 		else:
 			_type_next(delta, seconds_needed)
-
 
 # Get the pause for the current typing position if there is one
 func _get_pause(at_index: int) -> float:
