@@ -577,7 +577,6 @@ script = ExtResource("12_5b78p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swipeattack"]
 position = Vector2(460.417, 186.111)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nmd7h")
 
 [node name="spikeattack" type="Area2D" parent="."]
@@ -592,7 +591,6 @@ enemy = NodePath("..")
 
 [node name="HeadMarker" type="Marker2D" parent="headattack"]
 position = Vector2(33.3333, -761.111)
-scale = Vector2(1, 1)
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_changed"]

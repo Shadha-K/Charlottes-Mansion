@@ -29,7 +29,6 @@ func spawn_enemy_2():
 	var spawn_offsets = [
 		Vector2(100, 0),  
 		Vector2(-100, 0), 
-		Vector2(0, 100),  
 	]
 
 	for offset in spawn_offsets:
@@ -48,11 +47,9 @@ func spawn_enemy_4():
 	var teacup_spawn_offsets = [
 		Vector2(100, 0),  
 		Vector2(-100, 0), 
-		Vector2(0, 100),  
 	]
 	var teapot_spawn_offsets = [
 		Vector2(50, 150),
-		Vector2(-50, 150),
 	]
 
 	for offset in teacup_spawn_offsets:
@@ -77,11 +74,9 @@ func spawn_bedroom():
 	var teacup_spawn_offsets = [
 		Vector2(150, 0),  
 		Vector2(100, 0), 
-		Vector2(0, 100),  
 	]
 	var teapot_spawn_offsets = [
 		Vector2(100, 150),
-		Vector2(50, 150),
 	]
 
 	for offset in teacup_spawn_offsets:
@@ -104,7 +99,6 @@ func spawn_icebox():
 	
 	var player_position = player.position
 	var spawn_offsets = [
-		Vector2(100, 0),  
 		Vector2(0, 150), 
 		Vector2(0, 100),  
 	]
