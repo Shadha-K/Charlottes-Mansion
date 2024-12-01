@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ca0rv041w830c"]
+[gd_scene load_steps=48 format=3 uid="uid://ca0rv041w830c"]
 
 [ext_resource type="Script" path="res://teacupEnemy.gd" id="1_k8nqx"]
 [ext_resource type="Texture2D" uid="uid://bxg5cfogvkdvm" path="res://assets/teacup_attack_imgs/teacup02_attack_0000.png" id="2_3eu8s"]
@@ -6,18 +6,43 @@
 [ext_resource type="Texture2D" uid="uid://7w5mbqo8cjo7" path="res://assets/teacup_attack_imgs/teacup02_attack_0003.png" id="4_oyhvk"]
 [ext_resource type="Texture2D" uid="uid://dp17va1tpb7s4" path="res://assets/teacup_attack_imgs/teacup02_attack_0004.png" id="5_7dhwx"]
 [ext_resource type="Texture2D" uid="uid://c3qmqdkp0krnu" path="res://assets/teacup_attack_imgs/teacup02_attack_0005.png" id="6_fr3n7"]
+[ext_resource type="Texture2D" uid="uid://dde1uqjq81nxb" path="res://assets/teacup_death/teacup_death_0000.png" id="7_6tj2b"]
 [ext_resource type="Texture2D" uid="uid://duesb246wkl87" path="res://assets/teacup_walk_imgs/teacup02_walk_0000.png" id="7_p6prq"]
 [ext_resource type="Texture2D" uid="uid://cdhj1tp45glux" path="res://assets/teacup_walk_imgs/teacup02_walk_0004.png" id="8_17xub"]
+[ext_resource type="Texture2D" uid="uid://hbb4kj1vbguu" path="res://assets/teacup_death/teacup_death_0001.png" id="8_nrvu0"]
+[ext_resource type="Texture2D" uid="uid://bla6jy0m65w88" path="res://assets/teacup_death/teacup_death_0002.png" id="9_h7oqd"]
 [ext_resource type="Texture2D" uid="uid://bf8ke1icbamtt" path="res://assets/teacup_walk_imgs/teacup02_walk_0008.png" id="9_sncoj"]
 [ext_resource type="Script" path="res://damagable.gd" id="10_bfldy"]
+[ext_resource type="Texture2D" uid="uid://dkggey4ije5is" path="res://assets/teacup_death/teacup_death_0003.png" id="10_h534g"]
 [ext_resource type="Texture2D" uid="uid://dub13f5jvt8g5" path="res://assets/teacup_walk_imgs/teacup02_walk_0012.png" id="10_skruj"]
+[ext_resource type="Texture2D" uid="uid://dje8yaw86h70d" path="res://assets/teacup_death/teacup_death_0004.png" id="11_c1b38"]
+[ext_resource type="Texture2D" uid="uid://ph0k28lwkcxd" path="res://assets/teacup_death/teacup_death_0005.png" id="12_0d5n0"]
 [ext_resource type="Script" path="res://scripts/State_Machine.gd" id="12_rghlp"]
+[ext_resource type="Texture2D" uid="uid://88p6sowrgig" path="res://assets/teacup_death/teacup_death_0006.png" id="13_a3dy4"]
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="13_qg15g"]
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="14_02kfc"]
+[ext_resource type="Texture2D" uid="uid://cmixeac3vvaht" path="res://assets/teacup_death/teacup_death_0007.png" id="14_56b4g"]
+[ext_resource type="Texture2D" uid="uid://b67v06vjyrbob" path="res://assets/teacup_death/teacup_death_0008.png" id="15_anf12"]
 [ext_resource type="Script" path="res://EnemyAttack.gd" id="15_j31fv"]
+[ext_resource type="Texture2D" uid="uid://bkpoy6x6wh7ke" path="res://assets/teacup_death/teacup_death_0009.png" id="16_8cepv"]
 [ext_resource type="AudioStream" uid="uid://bi6vk3nof6mod" path="res://assets/sound_effects/teacup_hit.mp3" id="16_65a0y"]
 [ext_resource type="Script" path="res://teacupAttack.gd" id="17_2hty5"]
+[ext_resource type="Texture2D" uid="uid://c2g6x1uy7erp7" path="res://assets/teacup_death/teacup_death_0010.png" id="17_of605"]
+[ext_resource type="Texture2D" uid="uid://hp0auh58u0jp" path="res://assets/teacup_death/teacup_death_0011.png" id="18_ncvhh"]
 [ext_resource type="AudioStream" uid="uid://bfcgp5f0xn1je" path="res://assets/sound_effects/cup_breaks.wav" id="18_ot5ba"]
+[ext_resource type="Texture2D" uid="uid://bmak25bhtxclp" path="res://assets/teacup_death/teacup_death_0012.png" id="19_2p7e7"]
+[ext_resource type="Texture2D" uid="uid://drabb4jxv86l8" path="res://assets/teacup_death/teacup_death_0013.png" id="20_sqdlm"]
+[ext_resource type="Texture2D" uid="uid://dwb0cpq222hw5" path="res://assets/teacup_death/teacup_death_0014.png" id="21_6nncr"]
+[ext_resource type="Texture2D" uid="uid://bqgi7ebv0v1v8" path="res://assets/teacup_death/teacup_death_0015.png" id="22_vm65c"]
+[ext_resource type="Texture2D" uid="uid://dffhrh3rc0ma0" path="res://assets/teacup_death/teacup_death_0016.png" id="23_1r4yw"]
+[ext_resource type="Texture2D" uid="uid://bslwuq7rmlxc8" path="res://assets/teacup_death/teacup_death_0017.png" id="24_e10vc"]
+[ext_resource type="Texture2D" uid="uid://buhah2uvxv2ri" path="res://assets/teacup_death/teacup_death_0018.png" id="25_x8ptx"]
+[ext_resource type="Texture2D" uid="uid://cbfo6tcwvlwdu" path="res://assets/teacup_death/teacup_death_0019.png" id="26_k0bpb"]
+[ext_resource type="Texture2D" uid="uid://c2jr8xcfcx1m7" path="res://assets/teacup_death/teacup_death_0020.png" id="27_dwldc"]
+[ext_resource type="Texture2D" uid="uid://cel8vi71rslia" path="res://assets/teacup_death/teacup_death_0021.png" id="28_ryef2"]
+[ext_resource type="Texture2D" uid="uid://c5h6qrn5gsxhy" path="res://assets/teacup_death/teacup_death_0022.png" id="29_trhei"]
+[ext_resource type="Texture2D" uid="uid://cegyhhtpypvko" path="res://assets/teacup_death/teacup_death_0023.png" id="30_6akmr"]
+[ext_resource type="Texture2D" uid="uid://dbw60y4gur4e" path="res://assets/teacup_death/teacup_death_0024.png" id="31_esx5r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0y1p"]
 animations = [{
@@ -40,6 +65,86 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6tj2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nrvu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h7oqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h534g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c1b38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0d5n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a3dy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_56b4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_anf12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8cepv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_of605")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ncvhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2p7e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sqdlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6nncr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vm65c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1r4yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_e10vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x8ptx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_k0bpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dwldc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ryef2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_trhei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6akmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_esx5r")
+}],
+"loop": false,
+"name": &"death",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,7 +189,9 @@ enemy = NodePath(".")
 position = Vector2(-9, -12)
 scale = Vector2(0.325, 0.325)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
-animation = &"walk"
+animation = &"death"
+frame = 24
+frame_progress = 1.0
 script = SubResource("GDScript_huiwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
