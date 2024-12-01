@@ -638,6 +638,7 @@ popup/item_3/text = "1280x720"
 popup/item_3/id = 3
 
 [node name="exit_options" type="Button" parent="Options"]
+layout_mode = 0
 offset_left = 280.0
 offset_top = 164.0
 offset_right = 334.0
