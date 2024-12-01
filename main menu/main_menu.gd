@@ -4,11 +4,14 @@ extends Control
 @onready var other_buttons: TextureRect = $TextureRect
 @onready var credits: ColorRect = $CanvasLayer/credits
 @onready var exit_credits_button: Button = $CanvasLayer/credits/exit_credits
+@onready var options: Control = $Options
+@onready var exit_options: Button = $Options/exit_options
 
 func _ready():
 	how_to_play_page.visible = false
 	credits.visible = false
 	other_buttons.visible = true
+	options.visible = false
 	
 	GameState.player_health = 9
 	GameState.current_health = 9
@@ -109,4 +112,12 @@ func _on_credits_pressed() -> void:
 	
 func _on_exit_credits_pressed() -> void:
 	credits.visible = false
+	other_buttons.visible = true
+
+func _on_options_pressed() -> void:
+	options.visible = true
+	other_buttons.visible = false
+
+func _on_exit_options_pressed() -> void:
+	options.visible = false
 	other_buttons.visible = true
