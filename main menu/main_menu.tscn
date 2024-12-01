@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=60 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -280,127 +280,6 @@ shadow_color = Color(0, 0, 0, 0.988235)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="FontFile" id="FontFile_0r3o3"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/2/0/ascent = 0.0
-cache/0/2/0/descent = 0.0
-cache/0/2/0/underline_position = 0.0
-cache/0/2/0/underline_thickness = 0.0
-cache/0/2/0/scale = 1.0
-cache/0/3/0/ascent = 0.0
-cache/0/3/0/descent = 0.0
-cache/0/3/0/underline_position = 0.0
-cache/0/3/0/underline_thickness = 0.0
-cache/0/3/0/scale = 1.0
-cache/0/4/0/ascent = 0.0
-cache/0/4/0/descent = 0.0
-cache/0/4/0/underline_position = 0.0
-cache/0/4/0/underline_thickness = 0.0
-cache/0/4/0/scale = 1.0
-cache/0/5/0/ascent = 0.0
-cache/0/5/0/descent = 0.0
-cache/0/5/0/underline_position = 0.0
-cache/0/5/0/underline_thickness = 0.0
-cache/0/5/0/scale = 1.0
-cache/0/6/0/ascent = 0.0
-cache/0/6/0/descent = 0.0
-cache/0/6/0/underline_position = 0.0
-cache/0/6/0/underline_thickness = 0.0
-cache/0/6/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_gmwam"]
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_87y04"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_exrmn"]
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_dqe1e"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_2r02g"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_pwat7"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_bx2nj"]
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [sub_resource type="FontFile" id="FontFile_y26ak"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
@@ -483,7 +362,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_0r3o3")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 30
 text = "Designer
 "
@@ -497,7 +376,7 @@ offset_right = 170.0
 offset_bottom = 83.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_gmwam")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 25
 text = "Canly Kong"
 
@@ -510,7 +389,7 @@ offset_bottom = 264.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_87y04")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 30
 text = "Producer & Sound Designer 
 "
@@ -524,7 +403,7 @@ offset_right = 255.0
 offset_bottom = 74.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_exrmn")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 25
 text = "Andrea Poklar"
 
@@ -537,7 +416,7 @@ offset_bottom = 259.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_dqe1e")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 30
 text = "			Programmers
 				"
@@ -551,7 +430,7 @@ offset_right = 214.0
 offset_bottom = 188.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_2r02g")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 25
 text = "Amar Mehjazi
 Mohamad Hilal
@@ -568,7 +447,7 @@ offset_bottom = 246.0
 theme_override_colors/font_color = Color(0.905882, 0.839216, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_pwat7")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 30
 text = "Artists
 "
@@ -583,7 +462,7 @@ offset_bottom = 182.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_bx2nj")
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 25
 text = "Shadha Khan
 Liam Trushenski
@@ -651,9 +530,16 @@ text = "HOW TO PLAY
 flat = true
 
 [node name="CREDITS" type="Button" parent="TextureRect/VBoxContainer"]
+z_index = 1
+z_as_relative = false
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-text = "CREDITS"
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
+text = "CREDITS
+"
+flat = true
 
 [node name="EXIT" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
