@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://csjtnwr3l2rru"]
+
+[ext_resource type="Script" path="res://BossFight/Phase1/floatinghead.gd" id="1_oau5o"]
+[ext_resource type="Texture2D" uid="uid://dnrx1r70nu6m8" path="res://assets/CharlotteSprite/floatinghead.png" id="2_hbrph"]
+[ext_resource type="Script" path="res://BossFight/Phase1/area_2d.gd" id="2_lci0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpnkc"]
+atlas = ExtResource("2_hbrph")
+region = Rect2(0, 0, 565, 429)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w11yv"]
+atlas = ExtResource("2_hbrph")
+region = Rect2(565, 0, 565, 429)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qula"]
+atlas = ExtResource("2_hbrph")
+region = Rect2(0, 429, 565, 429)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4j6g"]
+atlas = ExtResource("2_hbrph")
+region = Rect2(565, 0, 565, 429)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6h2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpnkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w11yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qula")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4j6g")
+}],
+"loop": true,
+"name": &"floating",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h38s3"]
+radius = 169.027
+
+[node name="floatinghead" type="CharacterBody2D"]
+script = ExtResource("1_oau5o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -0.0925025
+sprite_frames = SubResource("SpriteFrames_a6h2h")
+animation = &"floating"
+frame_progress = 0.822687
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_lci0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-13, 27)
+shape = SubResource("CircleShape2D_h38s3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
