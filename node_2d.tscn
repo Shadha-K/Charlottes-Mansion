@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://c3dj85r47ntwp"]
+[gd_scene load_steps=76 format=4 uid="uid://c3dj85r47ntwp"]
 
 [ext_resource type="Script" path="res://startdialogue.gd" id="1_465vp"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_isee1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwtuemdygpl2" path="res://assets/living_room/armchair2.png" id="3_vjgi7"]
 [ext_resource type="Texture2D" uid="uid://b1r0b4ro8jy4v" path="res://assets/living_room/coffee_table2.png" id="4_4ln4q"]
 [ext_resource type="Texture2D" uid="uid://bixejd6bjojx7" path="res://assets/living_room/card_rug.png" id="4_57yr0"]
+[ext_resource type="AudioStream" uid="uid://b2xe6eawbk6lb" path="res://assets/sound_effects/door-opening-sound-effect.mp3" id="4_tu13t"]
 [ext_resource type="Texture2D" uid="uid://bg4b3jkknk8bf" path="res://assets/living_room/coffee_table.png" id="5_87k2y"]
 [ext_resource type="Texture2D" uid="uid://cv7hchkit0ov1" path="res://assets/living_room/zebra_rug.png" id="5_ppwrk"]
 [ext_resource type="Texture2D" uid="uid://bx47i6ucdot4h" path="res://assets/living_room/larger_zebra_rug.png" id="6_py32d"]
@@ -268,6 +269,9 @@ text = "Press E to
 go to kitchen"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="door_right"]
+stream = ExtResource("4_tu13t")
+
 [node name="TileMap" type="Node" parent="."]
 
 [node name="room" type="TileMapLayer" parent="TileMap"]
@@ -445,6 +449,9 @@ text = "Press E to
 go to bedroom"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="door_left"]
+stream = ExtResource("4_tu13t")
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="UI" instance=ExtResource("28_awmlh")]
@@ -471,6 +478,9 @@ theme_override_font_sizes/font_size = 20
 text = "Press E 
 to enter"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="basement_door"]
+stream = ExtResource("4_tu13t")
 
 [node name="LivingRoomSpawn" type="Marker2D" parent="."]
 position = Vector2(-19, -195)

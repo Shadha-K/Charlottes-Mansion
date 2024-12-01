@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=78 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_1c2nh"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_dcxcs"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="32_4cjsa"]
 [ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_5ol43"]
+[ext_resource type="AudioStream" uid="uid://b2xe6eawbk6lb" path="res://assets/sound_effects/door-opening-sound-effect.mp3" id="35_j3flu"]
 [ext_resource type="Script" path="res://game_controller.gd" id="37_yi4wi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
@@ -421,6 +422,9 @@ theme_override_font_sizes/font_size = 20
 text = "Press E to go 
 to living room"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="living_room_door"]
+stream = ExtResource("35_j3flu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

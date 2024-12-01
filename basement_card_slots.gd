@@ -2,6 +2,7 @@ extends Node2D
 
 var next_scene = "res://node_2d.tscn"
 var basement_scene = "res://basement.tscn"
+
 @onready var diamond_card: Sprite2D = $AceOfDiamonds
 @onready var club_card: Sprite2D = $AceOfClubs
 @onready var heart_card: Sprite2D = $AceofHearts
@@ -16,16 +17,16 @@ func _ready():
 	label.visible = true
 	label2.visible = true
 	label3.visible = false
+
 	if GameState.first_time and not GameState.has_diamond:
-		
-		var dialogue= DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
-		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
-		dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
-		get_tree().paused=true
+		var dialogue = DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basementdoor.dialogue"), "start")
+		DialogueManager.process_mode = Node.PROCESS_MODE_ALWAYS
+		dialogue.process_mode = Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
 		DialogueManager.dialogue_ended.connect(_unpaused)
 		GameState.first_time = false
 	return
-	
+
 func _process(_delta):
 	# Update visibility of diamond card
 	if GameState.diamond_card:
@@ -43,11 +44,19 @@ func _process(_delta):
 
 	if Input.is_action_just_pressed("interact"):
 		if GameState.heart_card:
+			# Play the door opening sound effect
+			var sound_player = AudioStreamPlayer.new()
+			sound_player.stream = load("res://assets/sound_effects/door-opening-sound-effect.mp3")
+			get_tree().get_root().add_child(sound_player)
+			sound_player.play()
+			# Clean up the sound player after it finishes playing
+			sound_player.finished.connect(sound_player.queue_free)
+			# Proceed to change the scene
 			get_tree().change_scene_to_file(basement_scene)
 		else:
 			get_tree().change_scene_to_file(next_scene)
 
-func _unpaused(_resource:):
+func _unpaused(_resource):
 	Main_Theme_Music.resume_music()
-	get_tree().paused=false
+	get_tree().paused = false
 	return
