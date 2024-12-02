@@ -42,8 +42,9 @@ func apply_knockback():
 	if damageable.health > 0:
 		var direction = (enemy.global_position - player.global_position).normalized()
 		knockback_velocity = direction * 330
-		knockback_timer.start(0.3)  #knockback lasts for 0.3 seconds
+		knockback_timer.start(0.3)  # knockback lasts for 0.3 seconds
 	else:
-		return
+		knockback_velocity = Vector2.ZERO  # No movement after death
+
 
 ## GENERAL SCRIPT FOR TEACUP ORIENTATION ##

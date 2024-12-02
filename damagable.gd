@@ -11,42 +11,42 @@ func _ready():
 	timer = Timer.new()
 	timer.wait_time = 0.2
 	timer.one_shot = true
-	timer.timeout.connect(_on_hit_timer_timeout)
+	timer.timeout.connect(Callable(self, "_on_hit_timer_timeout"))  # Correct usage
 	add_child(timer)
+
+	# Connect the animation_finished signal
+	var animated_sprite = get_parent().get_node("AnimatedSprite2D")
+	animated_sprite.connect("animation_finished", Callable(self, "_on_death_animation_finished"))  # Correct usage
+
 
 func hit(damage: int):
 	print("Ouch")
 	health -= damage
+	print("Health:", health)
 
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
 
 	if health <= 0:
-		# Hide the enemy immediately
-		#get_parent().visible = false
-		# Disable collision and processing
-		disable_enemy()
-		# Play death sound independently
-		play_death_sound()
-		# Remove the enemy node
-		#call_deferred("remove_enemy")
+		print("Health is zero. Triggering death...")
+		disable_enemy()  # Disable movement and interactions
+		play_death_sound()  # Play the death sound
+		get_parent().get_node("AnimatedSprite2D").play("death")  # Trigger the death animation
 
 func disable_enemy():
 	var enemy = get_parent()
-	# Defer processing and input handling changes
-	enemy.set_deferred("physics_process", false)
-	enemy.set_deferred("process", false)
-	enemy.set_deferred("process_input", false)
-	enemy.set_deferred("process_unhandled_input", false)
-	enemy.set_deferred("process_unhandled_key_input", false)
-	enemy.set_deferred("physics_process_internal", false)
-	enemy.set_deferred("process_internal", false)
-	# Disable collision shapes using deferred calls
+	# Disable processing
+	enemy.set_physics_process(false)
+	enemy.set_process(false)
+
+	# Disable collisions
 	for child in enemy.get_children():
 		if child is CollisionShape2D:
-			child.set_deferred("disabled", true)
+			child.disabled = true
 
+	# Do not hide the enemy yet; let the animation play
+	# enemy.visible = false
 
 func play_death_sound():
 	# Create a new AudioStreamPlayer node
@@ -59,6 +59,13 @@ func play_death_sound():
 	death_sound_player.finished.connect(func():
 		death_sound_player.queue_free()
 	)
+
+func _on_death_animation_finished():
+	var animated_sprite = get_parent().get_node("AnimatedSprite2D")
+	var anim_name = animated_sprite.get_animation()
+	print("Animation finished:", anim_name)
+	if anim_name == "death":
+		call_deferred("remove_enemy")  # Remove the enemy after the animation
 
 func remove_enemy():
 	# Remove the enemy node

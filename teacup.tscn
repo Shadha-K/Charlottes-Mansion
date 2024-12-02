@@ -193,8 +193,6 @@ position = Vector2(-9, -12)
 scale = Vector2(0.325, 0.325)
 sprite_frames = SubResource("SpriteFrames_b0y1p")
 animation = &"death"
-frame = 24
-frame_progress = 1.0
 script = SubResource("GDScript_huiwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
