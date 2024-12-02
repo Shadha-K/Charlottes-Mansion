@@ -45,6 +45,7 @@ func _ready() -> void:
 		GameState.pie_in_progress = false
 		GameState.pie_clicked = false
 		GameState.pie_cooked = false
+		GameState.timer_done = false
 		GameState.oven_exited = false
 		GameState.has_hearts = false
 		
