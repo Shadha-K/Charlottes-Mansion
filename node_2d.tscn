@@ -513,6 +513,12 @@ position = Vector2(477, 184)
 [node name="GameController" type="Node" parent="."]
 script = ExtResource("40_i10y6")
 
+[node name="RecBookAlexSpawn" type="Marker2D" parent="."]
+position = Vector2(265, -177)
+
+[node name="RecBookCharSpawn" type="Marker2D" parent="."]
+position = Vector2(325, -159)
+
 [connection signal="body_entered" from="door_right" to="door_right" method="_on_body_entered"]
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]

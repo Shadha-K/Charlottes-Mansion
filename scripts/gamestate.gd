@@ -119,7 +119,9 @@ var Cab2toK_spawn_Char=""
 #Oven spawn to kitchen
 var OventoK_spawn_Alex=""
 var OventoK_spawn_Char=""
-
+#Recipe spawn to Living room
+var RecBookToLR_spawn_Alex=""
+var RecBookToLR_spawn_Char=""
 
 # Function to decrease health
 func decrease_health(amount):
