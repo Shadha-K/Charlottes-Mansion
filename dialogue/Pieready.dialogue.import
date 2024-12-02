@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dexxp80fcmyr4"
+path="res://.godot/imported/Pieready.dialogue-8bc9df7ef807d6815e1edeedfe8e12e6.tres"
+
+[deps]
+
+source_file="res://dialogue/Pieready.dialogue"
+dest_files=["res://.godot/imported/Pieready.dialogue-8bc9df7ef807d6815e1edeedfe8e12e6.tres"]
+
+[params]
+
+defaults=true
