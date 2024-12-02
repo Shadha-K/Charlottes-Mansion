@@ -1,0 +1,380 @@
+[gd_scene load_steps=26 format=3 uid="uid://dlc2jl3ejluaq"]
+
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="1_8jlqu"]
+[ext_resource type="Shader" path="res://scenes/pause_menu.gdshader" id="1_axy4k"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_eksme"]
+[ext_resource type="Texture2D" uid="uid://bg4h2j1fv7dgb" path="res://assets/cutscenes/controls.png" id="3_2hgr5"]
+[ext_resource type="Script" path="res://main menu/options.gd" id="4_7q7hf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4pt2"]
+shader = ExtResource("1_axy4k")
+shader_parameter/amount = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyy1y"]
+shader = ExtResource("1_axy4k")
+shader_parameter/amount = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j60m5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.988235)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="FontFile" id="FontFile_qa5xf"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktjxj"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axuug"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt2ni"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdcyj"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3prw"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26qcw"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55mu7"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klm4e"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dpf3"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64c34"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(1920, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4hyi"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(3840, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e0q1"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(5760, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7msj"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(0, 3240, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8csy"]
+atlas = ExtResource("3_2hgr5")
+region = Rect2(1920, 3240, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1w03h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktjxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axuug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdcyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3prw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26qcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55mu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klm4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dpf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64c34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4hyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e0q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7msj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8csy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npugd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.988235)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="PauseMenu" type="Control"]
+material = SubResource("ShaderMaterial_p4pt2")
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_eksme")
+
+[node name="Blur" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xyy1y")
+layout_mode = 2
+offset_left = -1004.0
+offset_top = -905.0
+offset_right = 2354.0
+offset_bottom = 1058.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -96.0
+offset_right = 136.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RESUME" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j60m5")
+text = "RESUME"
+flat = true
+
+[node name="HOW TO PLAY" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j60m5")
+text = "HOW TO PLAY
+"
+flat = true
+
+[node name="OPTIONS" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j60m5")
+text = "OPTIONS"
+flat = true
+
+[node name="EXIT" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.968627, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+flat = true
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_7q7hf")
+
+[node name="ColorRect" type="ColorRect" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.152
+anchor_right = 0.757
+anchor_bottom = 0.673
+offset_left = 0.252014
+offset_top = 0.135956
+offset_right = -0.0680542
+offset_bottom = 0.0784912
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
+
+[node name="MarginContainer" type="MarginContainer" parent="Options"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.223
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.636002
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer"]
+z_index = 7
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Vol_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -72.0
+max_value = 0.0
+
+[node name="Mute_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options/MarginContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 3
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Fullscreen" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="exit_options" type="Button" parent="Options"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -183.0
+offset_right = -247.5
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_qa5xf")
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(4.00001, 7)
+scale = Vector2(0.32704, 0.325)
+sprite_frames = SubResource("SpriteFrames_1w03h")
+autoplay = "default"
+frame_progress = 0.148114
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D2"]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2003.5
+offset_top = -1140.5
+offset_right = 83.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
+
+[node name="exit how to play" type="Button" parent="AnimatedSprite2D2"]
+z_index = 1
+z_as_relative = false
+anchors_preset = -1
+anchor_left = -0.031
+offset_left = -958.704
+offset_top = -556.923
+offset_right = -910.224
+offset_bottom = -467.923
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_npugd")
+text = "X
+"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Options/exit_options" to="." method="_on_exit_options_pressed"]
+[connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]

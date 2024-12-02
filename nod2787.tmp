@@ -460,6 +460,12 @@ stream = ExtResource("4_tu13t")
 [node name="HeartContainer" parent="UI" instance=ExtResource("34_w7hth")]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("42_ueaiw")]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2
