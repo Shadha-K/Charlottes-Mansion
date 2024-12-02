@@ -310,7 +310,6 @@ autoplay = "default"
 frame_progress = 0.700914
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = 1
 position = Vector2(578, 314)
 scale = Vector2(0.454688, 0.451852)
@@ -344,7 +343,6 @@ text = "X
 flat = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="credits" type="ColorRect" parent="CanvasLayer"]
 offset_left = 2.0
@@ -487,7 +485,6 @@ theme_override_font_sizes/font_size = 30
 text = "X"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
