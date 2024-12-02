@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=58 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b0phhl1ds52e8" path="res://scenes/cabinet_2.tscn" id="27_emfyi"]
 [ext_resource type="PackedScene" uid="uid://csrmvtewykj4w" path="res://scenes/oven.tscn" id="28_6kgmn"]
 [ext_resource type="Script" path="res://game_controller.gd" id="28_88bwo"]
+[ext_resource type="AudioStream" uid="uid://cfl6biu4eh2dj" path="res://assets/sound_effects/timer.mp3" id="29_7l7b7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giuoq"]
 texture = ExtResource("1_yfhj1")
@@ -408,6 +409,11 @@ text = "Press E to
 check pie"
 horizontal_alignment = 1
 
+[node name="Timer" type="Timer" parent="oven"]
+
+[node name="Timer_sound" type="AudioStreamPlayer2D" parent="oven"]
+stream = ExtResource("29_7l7b7")
+
 [node name="SinkAlexSpawn" type="Marker2D" parent="."]
 position = Vector2(363, 18)
 
@@ -449,3 +455,4 @@ script = ExtResource("28_88bwo")
 
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
+[connection signal="timeout" from="oven/Timer" to="oven" method="_on_pie_done_timeout"]
