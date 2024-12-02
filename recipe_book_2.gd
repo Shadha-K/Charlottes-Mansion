@@ -26,7 +26,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):  
 		if label.visible: 
-			#get_tree().change_scene_to_file(next_room_scene) 
+			get_tree().change_scene_to_file(next_room_scene) 
 			pick_up_book()
 
 func pick_up_book():
