@@ -12,7 +12,7 @@ func _process(_delta):
 	if GameState.has_water:
 		label.visible = true
 		
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and GameState.has_water:
 		GameState.d_teacup = false
 		GameState.d_full_cup = true
 		GameState.spawn_2_enem = true
