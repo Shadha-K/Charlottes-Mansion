@@ -1,24 +1,116 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbapkvfv658jk"]
+[gd_scene load_steps=17 format=3 uid="uid://cbapkvfv658jk"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/spikemovement.gd" id="1_tkw8p"]
-[ext_resource type="Texture2D" uid="uid://bxfjoh2ek5djc" path="res://assets/teapot_attack/projectile.png" id="2_mwhsm"]
+[ext_resource type="Texture2D" uid="uid://c1kkpec7wcutw" path="res://assets/CharlotteSprite/spike_spritesheet.png" id="3_0b00o"]
 [ext_resource type="Script" path="res://BossFight/Phase1/spikes.gd" id="3_5oi3f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h38s3"]
-radius = 11.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sctyk"]
+size = Vector2(21.7143, 55.7143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itfx5"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yjp7"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vju4j"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d4ea"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b8pr"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(0, 700, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7l1p"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(700, 700, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y77x"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(1400, 700, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci27m"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(2100, 700, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js2gn"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(0, 1400, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r1n0"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(700, 1400, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kher"]
+atlas = ExtResource("3_0b00o")
+region = Rect2(1400, 1400, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubdr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itfx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yjp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vju4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d4ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b8pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7l1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y77x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci27m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js2gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r1n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kher")
+}],
+"loop": true,
+"name": &"spike",
+"speed": 20.0
+}]
 
 [node name="projectile" type="CharacterBody2D"]
 scale = Vector2(7, 7)
 script = ExtResource("1_tkw8p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_mwhsm")
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_5oi3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_h38s3")
+position = Vector2(0.857142, -17.8571)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sctyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.17, 0.17, 1)
+position = Vector2(1, -17.4286)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ubdr6")
+animation = &"spike"
+frame_progress = 0.576849
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

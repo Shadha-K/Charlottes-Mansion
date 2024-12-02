@@ -23,6 +23,8 @@ func hit(damage: int):
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
 	if health <= 0:
+		$"../AnimatedSprite2D".play("death")
+		await $"../AnimatedSprite2D".animation_finished
 		# Hide the enemy immediately
 		get_parent().visible = false
 		# Disable collision and processing

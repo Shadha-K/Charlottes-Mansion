@@ -4,7 +4,7 @@ class_name spikeattack
 @export var projectile_scene = preload("res://BossFight/Phase1/spike.tscn")
 @export var spread_angle := 360  # Total spread in degrees (360 for a full circle)
 @export var projectile_speed := 500  # Speed of the projectiles
-@export var num_projectiles := 5  # Number of projectiles
+@export var num_projectiles := 10 # Number of projectiles
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	var anim_name = $"../AnimatedSprite2D".get_animation()
