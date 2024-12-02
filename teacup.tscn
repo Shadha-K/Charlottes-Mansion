@@ -182,10 +182,11 @@ size = Vector2(76, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw7o2"]
 size = Vector2(46.25, 122.5)
 
-[node name="Teacup" type="CharacterBody2D" node_paths=PackedStringArray("enemy")]
+[node name="Teacup" type="CharacterBody2D" node_paths=PackedStringArray("enemy", "damageable")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k8nqx")
 enemy = NodePath(".")
+damageable = NodePath("health_manager")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -12)
