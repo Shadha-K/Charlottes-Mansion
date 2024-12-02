@@ -655,7 +655,6 @@ text = "X"
 [connection signal="pressed" from="TextureRect/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/CREDITS" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
-[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
