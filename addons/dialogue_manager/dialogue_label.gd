@@ -68,7 +68,7 @@ var dialogue_sound_effect: AudioStream
 var sound_play_counter: int = 0
 
 var time_since_last_sound: float = 0.0
-var min_time_between_sounds: float = 0.1  # Adjust this value to set the minimum time between sounds
+var min_time_between_sounds: float = 0.17  # Adjust this value to set the minimum time between sounds
 
 
 func _ready():
