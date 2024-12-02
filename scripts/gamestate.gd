@@ -65,6 +65,7 @@ var correct_time: bool = false
 var pie_in_progress: bool = false
 var pie_clicked: bool = false
 var pie_cooked: bool = false
+var timer_done: bool = false
 var oven_exited: bool = false
 var has_hearts: bool = false
 
