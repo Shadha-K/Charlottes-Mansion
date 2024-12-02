@@ -636,6 +636,10 @@ z_index = 3
 layout_mode = 2
 size_flags_horizontal = 4
 
+[node name="Fullscreen" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+
 [node name="exit_options" type="Button" parent="Options"]
 layout_mode = 0
 offset_left = 270.0
@@ -657,4 +661,5 @@ text = "X"
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Options/exit_options" to="." method="_on_exit_options_pressed"]
