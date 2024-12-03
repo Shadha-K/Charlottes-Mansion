@@ -66,6 +66,7 @@ func play_broken_bottle_animation():
 	broken_bottle.visible = false
 	note.visible = true
 	GameState.has_note = true
+	GameState.spawn_icebox = true
 	GlobalHotbar.add_item_to_slot("AceOfSpades", preload("res://assets/puzzle_objects/AceOfSpades.png"))
 
 func _on_interact_with_note():

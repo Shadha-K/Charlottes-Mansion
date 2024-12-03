@@ -21,6 +21,7 @@ func _on_body_entered(body):
 		elif body.name == "Alex" and GameState.correct_time and not GameState.oven_exited and not GameState.has_hearts:
 			if pie_done.is_stopped() and not GameState.timer_done:
 				pie_done.start(7)
+				GameState.spawn_4_enem
 			elif GameState.timer_done:
 				label2.visible = true
 		

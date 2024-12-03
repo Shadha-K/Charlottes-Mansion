@@ -12,7 +12,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Alex" and GameState.has_recipe_book and not GameState.has_milk: 
 		label.visible = true
-	
+		
 	if body.name == "Alex" and GameState.has_bottle and not GameState.has_note:
 		label.visible = true
 		
@@ -26,4 +26,6 @@ func _process(_delta):
 		GameState.last_scene_exited="icebox"
 		GameState.IcetoK_spawn_Alex= spawn_point_name
 		GameState.IcetoK_spawn_Char=spawn_point_name2
+		
+		
 		get_tree().change_scene_to_file(next_room)
