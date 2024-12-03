@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bubacm76gnajw"]
+[gd_scene load_steps=13 format=3 uid="uid://bubacm76gnajw"]
 
 [ext_resource type="Texture2D" uid="uid://0lribqmy02pp" path="res://scripts/heart card/blur_kitchen4.png" id="1_2wvec"]
 [ext_resource type="Script" path="res://scripts/heart card/open_icebox.gd" id="1_554ci"]
@@ -6,6 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://c0ogb56jalj0f" path="res://assets/puzzle_objects/milk.png" id="3_ityvw"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="4_ftssc"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="5_6gvio"]
+[ext_resource type="Texture2D" uid="uid://dvvda0vvkxdaq" path="res://assets/puzzle_objects/Purple Bottle 1.png" id="5_m2d7v"]
+[ext_resource type="PackedScene" uid="uid://tok0xmk4gwgb" path="res://scenes/broken_bottle.tscn" id="6_2xu85"]
+[ext_resource type="Texture2D" uid="uid://jump8rifsylt" path="res://assets/puzzle_objects/Note.png" id="6_h73vn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_amnd5"]
+blend_mode = 3
+
+[sub_resource type="QuadMesh" id="QuadMesh_m2gw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa4uv"]
+size = Vector2(476.5, 460)
 
 [node name="open_icebox" type="Area2D"]
 script = ExtResource("1_554ci")
@@ -16,7 +27,7 @@ scale = Vector2(0.380952, 0.379391)
 texture = ExtResource("1_2wvec")
 
 [node name="IceBoxZoomedIn" type="Sprite2D" parent="."]
-position = Vector2(576, 330)
+position = Vector2(583, 335)
 scale = Vector2(0.715833, 0.842143)
 texture = ExtResource("2_y1nlj")
 
@@ -24,6 +35,44 @@ texture = ExtResource("2_y1nlj")
 position = Vector2(692, 200)
 scale = Vector2(0.2675, 0.230833)
 texture = ExtResource("3_ityvw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("CanvasItemMaterial_amnd5")
+position = Vector2(578, 332)
+scale = Vector2(440, 423.312)
+mesh = SubResource("QuadMesh_m2gw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(570, 340)
+shape = SubResource("RectangleShape2D_wa4uv")
+
+[node name="Bottle" type="Sprite2D" parent="."]
+position = Vector2(427, 375)
+scale = Vector2(0.258333, 0.273611)
+texture = ExtResource("5_m2d7v")
+
+[node name="note" type="Sprite2D" parent="."]
+position = Vector2(567, 342)
+scale = Vector2(0.719444, 0.661111)
+texture = ExtResource("6_h73vn")
+
+[node name="Label" type="Label" parent="note"]
+offset_left = -250.193
+offset_top = -39.3277
+offset_right = 261.807
+offset_bottom = 145.672
+theme_override_font_sizes/font_size = 40
+text = "MUST KILL 
+EVERYTHING!!!!!"
+horizontal_alignment = 1
+
+[node name="broken_bottle" parent="." instance=ExtResource("6_2xu85")]
+visible = false
+position = Vector2(471, 350)
+scale = Vector2(0.257639, 0.282639)
+frame = 3
+frame_progress = 1.0
+speed_scale = 0.35
 
 [node name="Label" type="Label" parent="."]
 offset_left = 24.0

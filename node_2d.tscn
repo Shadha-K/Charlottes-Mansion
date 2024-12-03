@@ -33,8 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://dkrji4rxfism" path="res://scenes/grandfather_clock.tscn" id="24_8c6mr"]
 [ext_resource type="PackedScene" uid="uid://bcntxkwgikkk4" path="res://fire.tscn" id="26_7fhp7"]
 [ext_resource type="Script" path="res://fire.gd" id="27_bwpxa"]
-[ext_resource type="PackedScene" uid="uid://d4gi3sgdwtml5" path="res://purple_bottle.tscn" id="27_ryt8w"]
-[ext_resource type="Script" path="res://purple_bottle.gd" id="28_54vxy"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="28_awmlh"]
 [ext_resource type="PackedScene" uid="uid://b3db5nvrs4k0d" path="res://action.tscn" id="31_y33mw"]
 [ext_resource type="Script" path="res://basement_door.gd" id="32_e3568"]
@@ -387,11 +385,6 @@ position = Vector2(479, -21)
 gravity = -980.0
 script = ExtResource("27_bwpxa")
 
-[node name="bottle" parent="TileMap/furniture" instance=ExtResource("27_ryt8w")]
-visible = false
-position = Vector2(452, 371)
-script = ExtResource("28_54vxy")
-
 [node name="Potion" parent="TileMap/furniture" instance=ExtResource("22_cabp7")]
 position = Vector2(469, 374)
 
@@ -554,8 +547,6 @@ position = Vector2(325, -159)
 [connection signal="body_exited" from="door_right" to="door_right" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/furniture/fire" to="TileMap/furniture/fire" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/furniture/bottle" to="TileMap/furniture/bottle" method="_on_body_exited"]
 [connection signal="body_entered" from="door_left" to="door_left" method="_on_body_entered"]
 [connection signal="body_exited" from="door_left" to="door_left" method="_on_body_exited"]
 [connection signal="body_entered" from="basement_door" to="basement_door" method="_on_body_entered"]

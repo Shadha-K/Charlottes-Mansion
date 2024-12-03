@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b70lk0qtkdxsv"]
+[gd_scene load_steps=6 format=3 uid="uid://b70lk0qtkdxsv"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_s3eh2"]
 [ext_resource type="Texture2D" uid="uid://b57aa6k7xhi7h" path="res://assets/cutscenes/death_screen.png" id="2_avi6k"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_htp0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urlan"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6cj1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="gameover" type="CanvasLayer"]
 script = ExtResource("1_s3eh2")
@@ -10,9 +17,12 @@ script = ExtResource("1_s3eh2")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 1.0
-offset_bottom = 5.0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_avi6k")
 expand_mode = 1
 
@@ -20,26 +30,29 @@ expand_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 538.0
+offset_left = 498.0
 offset_top = 343.0
-offset_right = -564.0
-offset_bottom = -274.0
+offset_right = -517.0
+offset_bottom = -280.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_htp0v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_urlan")
 text = "Return to Checkpoint"
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 544.0
-offset_top = 381.0
-offset_right = -566.0
-offset_bottom = -236.0
+offset_left = 529.0
+offset_top = 379.0
+offset_right = -554.0
+offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Main Menu
-"
+theme_override_fonts/font = ExtResource("3_htp0v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a6cj1")
+text = "Start Over"
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

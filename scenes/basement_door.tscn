@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ba7hhjwj2byug"]
+[gd_scene load_steps=13 format=3 uid="uid://ba7hhjwj2byug"]
 
 [ext_resource type="Script" path="res://basement_card_slots.gd" id="1_janti"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="2_phc2i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c657bls2ieokm" path="res://assets/puzzle_objects/AceOfDiamonds.png" id="5_lpx0t"]
 [ext_resource type="Texture2D" uid="uid://d4evfomanu4s3" path="res://assets/puzzle_objects/AceOfClubs.png" id="6_e8i1e"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_diamonds.gd" id="7_jbmij"]
+[ext_resource type="Texture2D" uid="uid://blc36geetdkk7" path="res://assets/puzzle_objects/AceOfSpades.png" id="7_wnnw2"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_clubs.gd" id="8_d5bjo"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_hearts.gd" id="9_sacj7"]
 [ext_resource type="Script" path="res://scripts/DropZones/drop_zone_spades.gd" id="10_bh8ee"]
@@ -79,6 +80,11 @@ position = Vector2(454, 458)
 scale = Vector2(0.394444, 0.361111)
 texture = ExtResource("11_tjwkr")
 
+[node name="AceofSpades" type="Sprite2D" parent="."]
+position = Vector2(658.094, 461.281)
+scale = Vector2(0.408073, 0.373003)
+texture = ExtResource("7_wnnw2")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("4_cn4y4")]
@@ -105,8 +111,8 @@ offset_bottom = 579.0
 script = ExtResource("9_sacj7")
 
 [node name="DropZoneSpades" type="TextureRect" parent="."]
-offset_left = 572.0
+offset_left = 571.0
 offset_top = 335.0
-offset_right = 750.0
-offset_bottom = 572.0
+offset_right = 756.0
+offset_bottom = 579.0
 script = ExtResource("10_bh8ee")

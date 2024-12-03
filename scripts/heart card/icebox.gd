@@ -12,6 +12,9 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Alex" and GameState.has_recipe_book and not GameState.has_milk: 
 		label.visible = true
+	
+	if body.name == "Alex" and GameState.has_bottle and not GameState.has_note:
+		label.visible = true
 		
 func _on_body_exited(body):
 	if body.name == "Alex":
