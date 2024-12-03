@@ -11,10 +11,22 @@ extends Control
 
 @onready var living_room: Node2D = $"../.."
 
+@onready var hover_sound: AudioStreamPlayer = $HoverSound
+
 func _ready():
 	how_to_play_page.visible = false
 	other_buttons.visible = true
 	options.visible = false
+	
+	connect_hover_signals()
+
+func connect_hover_signals():
+	# Add connections for each button you want the hover sound to play on
+	for button in [exit_how_to_play, exit_options]:
+		button.connect("mouse_entered", Callable(self, "_on_button_hovered"))
+
+func _on_button_hovered():
+	hover_sound.play()
 
 
 func _on_resume_pressed() -> void:
@@ -43,3 +55,19 @@ func _on_exit_options_pressed() -> void:
 	$Options/ColorRect.visible = true
 	volume.visible = true
 	fullscreen.visible = true
+
+
+
+
+	
+func _on_how_to_play_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_options_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_exit_mouse_entered() -> void:
+	hover_sound.play()
+
+func _on_resume_mouse_entered() -> void:
+	hover_sound.play()

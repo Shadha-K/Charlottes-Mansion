@@ -7,6 +7,9 @@ extends Control
 @onready var options: Control = $Options
 @onready var exit_options: Button = $Options/exit_options
 
+@onready var hover_sound: AudioStreamPlayer = $HoverSound
+
+
 func _ready():
 	how_to_play_page.visible = false
 	credits.visible = false
@@ -16,6 +19,9 @@ func _ready():
 	GameState.player_health = 9
 	GameState.current_health = 9
 	GlobalHotbar.reset_hotbar()
+	
+	# Connect the button hover signals
+	connect_hover_signals()
 	
 	GameState.opening = true
 	GameState.enemy_attacking = false
@@ -93,6 +99,14 @@ func _ready():
 	
 	GameState.start_game = true
 
+func connect_hover_signals():
+	# Add connections for each button you want the hover sound to play on
+	for button in [exit_credits_button, exit_options]:
+		button.connect("mouse_entered", Callable(self, "_on_button_hovered"))
+
+func _on_button_hovered():
+	hover_sound.play()
+
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/cutscene.tscn")
 	Main_Theme_Music.stop_music()
@@ -124,3 +138,20 @@ func _on_options_pressed() -> void:
 func _on_exit_options_pressed() -> void:
 	options.visible = false
 	other_buttons.visible = true
+
+
+
+func _on_play_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_how_to_play_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_options_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_credits_mouse_entered() -> void:
+	hover_sound.play()
+	
+func _on_exit_mouse_entered() -> void:
+	hover_sound.play()

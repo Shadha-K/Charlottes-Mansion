@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlc2jl3ejluaq"]
+[gd_scene load_steps=27 format=3 uid="uid://dlc2jl3ejluaq"]
 
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="1_8jlqu"]
 [ext_resource type="Shader" path="res://scenes/pause_menu.gdshader" id="1_axy4k"]
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_eksme"]
 [ext_resource type="Texture2D" uid="uid://bg4h2j1fv7dgb" path="res://assets/cutscenes/controls.png" id="3_2hgr5"]
 [ext_resource type="Script" path="res://main menu/options.gd" id="4_7q7hf"]
+[ext_resource type="AudioStream" uid="uid://b44xagidxqijq" path="res://assets/sound_effects/button-hover.wav" id="6_1px1h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p4pt2"]
 shader = ExtResource("1_axy4k")
@@ -371,9 +372,17 @@ theme_override_fonts/font = SubResource("FontFile_qa5xf")
 theme_override_font_sizes/font_size = 30
 text = "X"
 
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1px1h")
+volume_db = 24.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/RESUME" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/EXIT" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
