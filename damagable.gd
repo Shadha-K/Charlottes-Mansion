@@ -43,10 +43,8 @@ func disable_enemy():
 	# Disable collisions
 	for child in enemy.get_children():
 		if child is CollisionShape2D:
-			child.disabled = true
+			child.call_deferred("set_disabled", true)
 
-	# Do not hide the enemy yet; let the animation play
-	# enemy.visible = false
 
 func play_death_sound():
 	# Create a new AudioStreamPlayer node
