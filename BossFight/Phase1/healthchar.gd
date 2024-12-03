@@ -2,6 +2,8 @@ extends Node
 
 class_name HealthChar
 
+@onready var health_bar: ProgressBar = $"../CanvasLayer/HealthBar"
+
 @export var health: int = 200
 var phase2 = "res://BossFight/Phase2/bossfight.tscn"
 
@@ -14,11 +16,13 @@ func _ready():
 	timer.one_shot = true
 	timer.timeout.connect(_on_hit_timer_timeout)
 	add_child(timer)
+	call_deferred("_init_health_bar")
 
 func hit(damage: int):
 	print("Ouch")
 	health -= damage
-
+	health_bar.health = health
+	
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
@@ -33,6 +37,7 @@ func hit(damage: int):
 		play_death_sound()
 		# Remove the enemy node
 		call_deferred("remove_enemy")
+	
 
 func disable_enemy():
 	var enemy = get_parent()
@@ -67,3 +72,9 @@ func remove_enemy():
 func _on_hit_timer_timeout():
 	if is_instance_valid(get_parent()):
 		get_parent().modulate = Color(1, 1, 1, 1)
+		
+func _init_health_bar():
+	if is_instance_valid(health_bar):
+		health_bar.init_health(health)
+	else:
+		print("Health bar not found!")
