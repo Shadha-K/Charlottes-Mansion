@@ -17,6 +17,8 @@ func _process(delta):
 		GameState.spawn_bedroom = false
 	if GameState.spawn_icebox:
 		spawn_icebox()
+		if GameState.heart_card:
+			spawn_enemy_must_kill_everything()
 		GameState.spawn_icebox = false
 
 func spawn_enemy_2():
@@ -61,6 +63,30 @@ func spawn_enemy_4():
 	for offset in teapot_spawn_offsets:
 		var spawn_position = player_position + offset
 		var enemy = teapot.instantiate()
+		enemy.position = spawn_position
+		add_child(enemy)
+
+func spawn_enemy_must_kill_everything():
+	player = get_tree().get_first_node_in_group("Player")
+	if not player:
+		print("Player not found!")
+		return
+	
+	var player_position = player.position
+	var teacup_spawn_offsets = [
+		Vector2(115, 0),  
+		Vector2(-115, 0), 
+		Vector2(300, 0),  
+		Vector2(200, -30),
+	]
+	var teapot_spawn_offsets = [
+		Vector2(65, 150),
+		Vector2(75, 150),
+	]
+
+	for offset in teacup_spawn_offsets:
+		var spawn_position = player_position + offset
+		var enemy = teacup.instantiate()
 		enemy.position = spawn_position
 		add_child(enemy)
 
