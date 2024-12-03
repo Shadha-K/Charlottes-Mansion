@@ -52,6 +52,7 @@ scale = Vector2(0.258333, 0.273611)
 texture = ExtResource("5_m2d7v")
 
 [node name="note" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(567, 342)
 scale = Vector2(0.719444, 0.661111)
 texture = ExtResource("6_h73vn")

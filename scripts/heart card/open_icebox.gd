@@ -14,7 +14,10 @@ var is_dragging_bottle = false
 
 func _ready():
 	label.visible = false
-	milk_sprite.visible = true
+	if GameState.has_milk == true:
+		milk_sprite.visible = false
+	else:
+		milk_sprite.visible = true
 	bottle.visible = false
 	broken_bottle.visible = false
 	note.visible = false 
@@ -23,9 +26,9 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("click or drag"):
 		label.visible = true
-		milk_sprite.visible = false
 		if not GameState.has_milk:
 			GameState.has_milk = true
+			milk_sprite.visible = false
 			GameState.spawn_icebox = true
 			GlobalHotbar.add_item_to_slot("Milk", preload("res://assets/puzzle_objects/milk.png"))
 	
@@ -35,10 +38,9 @@ func _process(_delta):
 	# dragging bottle from hotbar to icebox
 	if Input.is_action_just_pressed("click or drag")  and GameState.has_bottle and not is_dragging_bottle:
 		if is_bottle_in_hotbar:  
-			milk_sprite.visible = false
 			is_dragging_bottle = true
 			bottle.position = get_global_mouse_position()
-			bottle.visible = true
+			#bottle.visible = true
 			GlobalHotbar.item_used("bottle")
 	
 	if is_dragging_bottle:
@@ -53,7 +55,6 @@ func _on_icebox_body_entered(body):
 			GlobalHotbar.item_used("Bottle")
 			bottle.visible = false  
 			GameState.has_bottle = false  
-			milk_sprite.visible = false
 			
 			play_broken_bottle_animation()
 
