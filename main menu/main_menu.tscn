@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=62 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://bg4h2j1fv7dgb" path="res://assets/cutscenes/controls.png" id="41_niut7"]
 [ext_resource type="Script" path="res://main menu/options.gd" id="42_ftdmn"]
 [ext_resource type="AudioStream" uid="uid://b44xagidxqijq" path="res://assets/sound_effects/button-hover.wav" id="43_e1twm"]
+[ext_resource type="AudioStream" uid="uid://cmo7s0yfsh0t" path="res://main menu/charlotte's mansion main theme.mp3" id="44_n1o08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2j2p"]
 animations = [{
@@ -655,6 +656,9 @@ flat = true
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("43_e1twm")
 volume_db = 24.0
+
+[node name="main_theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("44_n1o08")
 
 [connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/credits/exit_credits" to="." method="_on_play_mouse_entered"]
