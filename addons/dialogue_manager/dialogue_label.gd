@@ -68,11 +68,25 @@ var dialogue_sound_effect: AudioStream
 var sound_play_counter: int = 0
 
 var time_since_last_sound: float = 0.0
-var min_time_between_sounds: float = 2 # Adjust this value to set the minimum time between sounds
+var min_time_between_sounds: float = 2.5 # Adjust this value to set the minimum time between sounds
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_stream_player_1: AudioStreamPlayer = $AudioStreamPlayer1
+@onready var audio_stream_player_2: AudioStreamPlayer = $AudioStreamPlayer2
+
+# Load the dialogue sound effects
+var dialogue_sound_effects: Array = []
 
 func _ready():
-	dialogue_sound_effect = load("res://assets/sound_effects/dialogue-sound-effect.mp3")
+	# Populate the array with the sound effects
+	dialogue_sound_effects.append(load("res://assets/sound_effects/dialogue-sound-effect.mp3"))
+	dialogue_sound_effects.append(load("res://assets/sound_effects/dialogue-sound-effect 1.mp3"))
+	dialogue_sound_effects.append(load("res://assets/sound_effects/dialogue-sound-effect 2.mp3"))
+
+	if dialogue_sound_effects.size() == 0:
+		push_error("No dialogue sound effects loaded! Ensure the paths are correct.")
+	else:
+		time_since_last_sound = min_time_between_sounds  # Ensure sound plays immediately
 
 func _process(delta: float) -> void:
 	if self.is_typing:
@@ -161,22 +175,21 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 			spoke.emit(letter, letter_index, _get_speed(visible_characters))
 
 			# Play the sound effect if enough time has passed
-			if time_since_last_sound >= min_time_between_sounds:
+			if time_since_last_sound >= min_time_between_sounds and dialogue_sound_effects.size() > 0:
 				time_since_last_sound = 0.0  # Reset timer
+				var random_sound = dialogue_sound_effects[randi() % dialogue_sound_effects.size()]
 				var new_audio_player = AudioStreamPlayer.new()
-				new_audio_player.stream = dialogue_sound_effect
+				new_audio_player.stream = random_sound
 				# Adjust pitch as before
-				new_audio_player.pitch_scale += randf_range(-0.2, 0.2)
-				# Optional: Adjust pitch for vowels
+				new_audio_player.pitch_scale += randf_range(-0.1, 0.1)
 				if letter.to_lower() in ["a", "e", "i", "o", "u"]:
-					new_audio_player.pitch_scale += 0.3
+					new_audio_player.pitch_scale += 0.2
 				add_child(new_audio_player)
 				new_audio_player.play()
-				# Connect to 'finished' signal to free the player
 				new_audio_player.finished.connect(func():
 					new_audio_player.queue_free()
 				)
-		# See if there's time to type out some more in this frame
+
 		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
 		if seconds_needed > delta:
 			_waiting_seconds += seconds_needed

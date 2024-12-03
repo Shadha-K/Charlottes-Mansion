@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckvgyvclnwggo"]
+[gd_scene load_steps=5 format=3 uid="uid://ckvgyvclnwggo"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_cital"]
 [ext_resource type="AudioStream" uid="uid://c6wvk64kntvki" path="res://assets/sound_effects/dialogue-sound-effect.mp3" id="2_ueica"]
+[ext_resource type="AudioStream" uid="uid://dmt72m2d307so" path="res://assets/sound_effects/dialogue-sound-effect 1.mp3" id="3_oed48"]
+[ext_resource type="AudioStream" uid="uid://enaj16r7dnsx" path="res://assets/sound_effects/dialogue-sound-effect 2.mp3" id="4_3ij6m"]
 
 [node name="DialogueLabel" type="RichTextLabel"]
 anchors_preset = 10
@@ -21,3 +23,10 @@ skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", 
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ueica")
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oed48")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3ij6m")
+volume_db = -15.8
