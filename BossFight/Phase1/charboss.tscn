@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=119 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
 [ext_resource type="Texture2D" uid="uid://mu8b2fw18u02" path="res://assets/CharlotteSprite/death/charlotte_death_0000.png" id="2_3jiop"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://oinua8vc3jrj" path="res://assets/CharlotteSprite/death/charlotte_death_0024.png" id="26_3aat0"]
 [ext_resource type="Texture2D" uid="uid://dudtjl66y41m8" path="res://assets/CharlotteSprite/charlotte_stomp_spritesheet.png" id="28_napcp"]
 [ext_resource type="Texture2D" uid="uid://cfajeocwr5cyi" path="res://assets/CharlotteSprite/charlotte_swipe_sprite.png" id="29_76uwd"]
+[ext_resource type="PackedScene" uid="uid://m52gr4or4afu" path="res://scenes/health_bar.tscn" id="43_efmsb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d7j2"]
 atlas = ExtResource("2_uyqdx")
@@ -737,6 +738,32 @@ enemy = NodePath("..")
 
 [node name="HeadMarker" type="Marker2D" parent="headattack"]
 position = Vector2(33.3333, -761.111)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("43_efmsb")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.068
+anchor_right = 0.5
+anchor_bottom = 0.068
+offset_left = -232.5
+offset_top = -9.064
+offset_right = 232.5
+offset_bottom = 8.936
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.329
+anchor_top = 0.101
+anchor_right = 0.329
+anchor_bottom = 0.101
+offset_left = -36.008
+offset_top = -11.448
+offset_right = 36.992
+offset_bottom = 11.552
+text = "Charlotte"
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_changed"]
