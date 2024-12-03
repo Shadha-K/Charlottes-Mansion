@@ -38,7 +38,6 @@ func throw_book():
 		gamestate.book_used_in_fireplace = true
 		GameState.d_fire_book = false
 		GameState.d_clover = true
-		GameState.spawn_2_enem = true
 		print("You threw the book into the fireplace. It starts to burn.")
 		$Label.visible = false 
 		#get_tree().change_scene_to_file("res://smoke_puff.tscn")

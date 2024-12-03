@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.player_health = 9
@@ -56,7 +55,11 @@ func _ready() -> void:
 	elif(not GameState.spades_card):
 		GameState.has_bottle = false
 		GameState.has_note = false
-		GameState.has_spades = false 	
+		GameState.has_spades = false
+		
+		GameState.d_vial = false
+		GameState.d_note_unread = false
+		GameState.d_note_read = false 	
 
 func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file("res://node_2d.tscn")
