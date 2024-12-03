@@ -7,8 +7,10 @@ class_name FloatingAttack
 @export var enemy: CharacterBody2D
 var floating_instance: Node2D  # Reference to the floating object
 var despawn_timer: Timer  # Timer for despawning
+var health_manager: Node = null
 
 func _ready() -> void:
+	health_manager = enemy.get_node_or_null("healthmanager")
 	# Initialize the despawn timer
 	despawn_timer = Timer.new()
 	despawn_timer.wait_time = despawn_time
@@ -37,7 +39,12 @@ func _on_despawn_timer_timeout() -> void:
 	$"../StateMachine/HeadAttack".sig()  # Transition to another state if needed
 
 func despawn_floating_object() -> void:
+	var health = health_manager.health
 	if floating_instance:
+		if health <= 200:
+			GameState.has_played_head1 = true
+		if health <= 100:
+			GameState.has_played_head2 = true
 		floating_instance.visible = false
 		# Disable all processes and collisions
 		disable_enemy()

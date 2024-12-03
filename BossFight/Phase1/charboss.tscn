@@ -518,7 +518,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"swipe_attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

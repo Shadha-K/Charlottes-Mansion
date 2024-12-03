@@ -7,6 +7,8 @@ var books_picked_up: Dictionary = {}
 var opening: bool = true
 var enemy_attacking: bool = false
 var damagable: bool = true
+var has_played_head1: bool = false
+var has_played_head2: bool = false
 
 #dialogue states (just to make sure things don't get confusing)
 var d_first_card: bool = true
