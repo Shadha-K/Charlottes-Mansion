@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bubacm76gnajw"]
+[gd_scene load_steps=14 format=3 uid="uid://bubacm76gnajw"]
 
 [ext_resource type="Texture2D" uid="uid://0lribqmy02pp" path="res://scripts/heart card/blur_kitchen4.png" id="1_2wvec"]
 [ext_resource type="Script" path="res://scripts/heart card/open_icebox.gd" id="1_554ci"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvda0vvkxdaq" path="res://assets/puzzle_objects/Purple Bottle 1.png" id="5_m2d7v"]
 [ext_resource type="PackedScene" uid="uid://tok0xmk4gwgb" path="res://scenes/broken_bottle.tscn" id="6_2xu85"]
 [ext_resource type="Texture2D" uid="uid://jump8rifsylt" path="res://assets/puzzle_objects/Note.png" id="6_h73vn"]
+[ext_resource type="FontFile" uid="uid://csdbld8uxvk8l" path="res://assets/fonts/help-me.regular.ttf" id="7_eiv8a"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_amnd5"]
 blend_mode = 3
@@ -62,7 +63,8 @@ offset_left = -250.193
 offset_top = -39.3277
 offset_right = 261.807
 offset_bottom = 145.672
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("7_eiv8a")
+theme_override_font_sizes/font_size = 60
 text = "MUST KILL 
 EVERYTHING!!!!!"
 horizontal_alignment = 1

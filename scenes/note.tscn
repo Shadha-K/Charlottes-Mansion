@@ -1,21 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn3foh8dlj4rv"]
 
 [ext_resource type="Texture2D" uid="uid://jump8rifsylt" path="res://assets/puzzle_objects/Note.png" id="1_uoj21"]
-
-[sub_resource type="FontFile" id="FontFile_y6f3q"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[ext_resource type="FontFile" uid="uid://csdbld8uxvk8l" path="res://assets/fonts/help-me.regular.ttf" id="2_vy4hi"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,12 +13,12 @@ texture = ExtResource("1_uoj21")
 anchors_preset = -1
 anchor_right = 1.606
 anchor_bottom = 0.967
-offset_left = -302.0
-offset_top = -66.0
-offset_right = -887.32
-offset_bottom = -509.24
-theme_override_fonts/font = SubResource("FontFile_y6f3q")
-theme_override_font_sizes/font_size = 50
+offset_left = -286.0
+offset_top = -68.0
+offset_right = -871.32
+offset_bottom = -511.24
+theme_override_fonts/font = ExtResource("2_vy4hi")
+theme_override_font_sizes/font_size = 60
 text = "MUST KILL 
 EVERYTHING!!!!!"
 horizontal_alignment = 1
