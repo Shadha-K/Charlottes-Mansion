@@ -24,21 +24,6 @@ shadow_color = Color(0, 0, 0, 0.988235)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="FontFile" id="FontFile_qa5xf"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktjxj"]
 atlas = ExtResource("3_2hgr5")
 region = Rect2(0, 0, 1920, 1080)
@@ -141,7 +126,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_s8csy")
 }],
 "loop": true,
-"name": &"default",
+"name": &"how_to_play",
 "speed": 5.0
 }]
 
@@ -154,6 +139,21 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.988235)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="FontFile" id="FontFile_qa5xf"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
 
 [node name="PauseMenu" type="Control"]
 material = SubResource("ShaderMaterial_p4pt2")
@@ -169,7 +169,6 @@ size_flags_vertical = 4
 script = ExtResource("1_eksme")
 
 [node name="Blur" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_xyy1y")
 layout_mode = 2
 offset_left = -1004.0
@@ -239,6 +238,47 @@ theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
 theme_override_fonts/font = ExtResource("1_8jlqu")
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
+flat = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+position = Vector2(4, 7)
+scale = Vector2(0.32704, 0.325)
+sprite_frames = SubResource("SpriteFrames_1w03h")
+animation = &"how_to_play"
+autoplay = "how_to_play"
+frame_progress = 0.977442
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D2"]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2003.5
+offset_top = -1140.5
+offset_right = 83.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
+
+[node name="exit how to play" type="Button" parent="AnimatedSprite2D2"]
+z_index = 1
+z_as_relative = false
+anchors_preset = -1
+anchor_left = -0.031
+offset_left = -958.704
+offset_top = -556.923
+offset_right = -910.224
+offset_bottom = -467.923
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("1_8jlqu")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_npugd")
+text = "X
+"
 flat = true
 
 [node name="Options" type="Control" parent="."]
@@ -329,52 +369,12 @@ theme_override_fonts/font = SubResource("FontFile_qa5xf")
 theme_override_font_sizes/font_size = 30
 text = "X"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(4.00001, 7)
-scale = Vector2(0.32704, 0.325)
-sprite_frames = SubResource("SpriteFrames_1w03h")
-autoplay = "default"
-frame_progress = 0.148114
-
-[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D2"]
-z_index = -1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2003.5
-offset_top = -1140.5
-offset_right = 83.5
-offset_bottom = 60.5
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0745098, 0.0745098, 0.0745098, 0.941176)
-
-[node name="exit how to play" type="Button" parent="AnimatedSprite2D2"]
-z_index = 1
-z_as_relative = false
-anchors_preset = -1
-anchor_left = -0.031
-offset_left = -958.704
-offset_top = -556.923
-offset_right = -910.224
-offset_bottom = -467.923
-theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
-theme_override_fonts/font = ExtResource("1_8jlqu")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_npugd")
-text = "X
-"
-flat = true
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RESUME" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HOW TO PLAY" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Options/exit_options" to="." method="_on_exit_options_pressed"]
-[connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]

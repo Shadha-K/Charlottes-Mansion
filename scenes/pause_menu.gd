@@ -1,13 +1,13 @@
 extends Control
 
 @onready var exit_how_to_play: Button = $"AnimatedSprite2D2/exit how to play"
-@onready var how_to_play_page: AnimatedSprite2D = $AnimatedSprite2D2
-@onready var other_buttons: MarginContainer = $Options/MarginContainer
 @onready var options: Control = $Options
 @onready var exit_options: Button = $Options/exit_options
 @onready var fullscreen: CheckButton = $Options/MarginContainer/VBoxContainer/Fullscreen
 @onready var check_box: CheckBox = $Options/MarginContainer/VBoxContainer/CheckBox
 @onready var volume: HSlider = $Options/MarginContainer/VBoxContainer/Volume
+@onready var other_buttons: VBoxContainer = $MarginContainer/VBoxContainer
+@onready var how_to_play_page: AnimatedSprite2D = $AnimatedSprite2D2
 
 @onready var living_room: Node2D = $"../.."
 
@@ -24,10 +24,11 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_how_to_play_pressed() -> void:
+	# Show the "How to Play" page and unpause animations
 	how_to_play_page.visible = true
-	how_to_play_page.play("default")
-	how_to_play_page.z_index = 10  
 	other_buttons.visible = false
+	Engine.time_scale = 1  # Unfreeze animations
+	how_to_play_page.play("how_to_play")  # Play the animation
 
 
 func _on_exit_how_to_play_pressed() -> void:
@@ -37,11 +38,6 @@ func _on_exit_how_to_play_pressed() -> void:
 func _on_options_pressed() -> void:
 	options.visible = true
 	other_buttons.visible = false
-	other_buttons.z_index = 10  
-	print("ColorRect visibility: ", $Options/ColorRect.visible)
-	print("Volume visibility: ", volume.visible)
-	print("Fullscreen visibility: ", fullscreen.visible)
-
 
 func _on_exit_options_pressed() -> void:
 	options.visible = false
