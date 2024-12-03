@@ -4,6 +4,7 @@ extends CanvasLayer
 func _ready() -> void:
 	GameState.player_health = 9
 	GameState.current_health = 9
+	GameState.game_over = true
 	GlobalHotbar.reset_hotbar()
 	
 	if(not GameState.diamond_card):
