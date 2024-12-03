@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b57aa6k7xhi7h" path="res://assets/cutscenes/death_screen.png" id="2_avi6k"]
 [ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_htp0v"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urlan"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur3b7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6cj1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -30,25 +29,25 @@ expand_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 498.0
-offset_top = 343.0
-offset_right = -517.0
-offset_bottom = -280.0
+offset_left = 450.0
+offset_top = 331.0
+offset_right = -469.0
+offset_bottom = -282.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_htp0v")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_urlan")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ur3b7")
 text = "Return to Checkpoint"
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 529.0
-offset_top = 379.0
-offset_right = -554.0
-offset_bottom = -244.0
+offset_left = 502.0
+offset_top = 373.0
+offset_right = -532.0
+offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_htp0v")
