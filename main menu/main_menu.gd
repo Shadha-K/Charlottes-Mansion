@@ -17,7 +17,7 @@ func _ready():
 	other_buttons.visible = true
 	options.visible = false
 	
-	if GameState.game_over:
+	if GameState.game_over or GameState.game_done:
 		main_theme.play()
 		Main_Theme_Music.stop_music()
 	
@@ -117,6 +117,7 @@ func _on_button_hovered():
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/cutscene.tscn")
 	GameState.game_over = false
+	GameState.game_done = false
 	Main_Theme_Music.stop_music()
 
 

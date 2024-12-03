@@ -6,6 +6,7 @@ var next_room = "res://endscene.tscn"
 @export var label: Label
 
 func _ready():
+	GameState.game_done = true
 	add_to_group('END')
 	self.hide()
 	monitoring = false
