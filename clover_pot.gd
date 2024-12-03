@@ -29,7 +29,6 @@ func _process(_delta):
 			label2.visible = true
 			GameState.clover_planted = true
 			GameState.d_clover_pot = true
-			GameState.spawn_2_enem = true
 			GameState.d_clover = false
 			glowing_plant.visible = true
 			glowing_plant.play("glowingclover")

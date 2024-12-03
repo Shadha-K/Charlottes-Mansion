@@ -20,7 +20,6 @@ func _process(_delta):
 		get_tree().root.get_node("GameState").got_code = true
 		GameState.d_full_cup = false
 		GameState.d_has_code = true
-		GameState.spawn_2_enem = true
 		GameState.last_scene_exited = "Vanity"
 		GameState.VanityToBR_spawn_Alex = spawn_point_name
 		GameState.VanityToBR_spawn_Char = spawn_point_name2

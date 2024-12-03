@@ -32,7 +32,6 @@ func pick_up_bottle():
 		GlobalHotbar.add_item_to_slot("Bottle", preload("res://assets/puzzle_objects/Purple Bottle 1.png"))
 		GameState.d_vial = true
 		GameState.has_bottle = true
-		GameState.spawn_2_enem = true
 		$Label.visible=false
 		queue_free() 
 	if GameState.has_bottle:
