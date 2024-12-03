@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bqb1uelvoch2w"]
+[gd_scene load_steps=61 format=3 uid="uid://bqb1uelvoch2w"]
 
 [ext_resource type="Script" path="res://main menu/main_menu.gd" id="1_4mwvc"]
 [ext_resource type="Texture2D" uid="uid://0m3mr7av5ry1" path="res://assets/opening_scene/main_menu/charlotteMainMenu_0000.png" id="2_b3liy"]
@@ -282,18 +282,6 @@ shadow_color = Color(0, 0, 0, 0.988235)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="FontFile" id="FontFile_y26ak"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -351,6 +339,20 @@ offset_top = -2.0
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0.129412, 0.129412, 0.129412, 0.67451)
+
+[node name="exit_credits" type="Button" parent="CanvasLayer/credits"]
+z_index = 1
+z_as_relative = false
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 60.0
+offset_bottom = 75.0
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
+text = "X"
+flat = true
 
 [node name="Label" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 1
@@ -474,17 +476,6 @@ Ethan Pradhan
 Brady Nguyen"
 horizontal_alignment = 1
 
-[node name="exit_credits" type="Button" parent="CanvasLayer/credits"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 44.0
-offset_right = 82.0
-offset_bottom = 75.0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_y26ak")
-theme_override_font_sizes/font_size = 30
-text = "X"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -574,6 +565,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Options" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -615,6 +607,7 @@ size_flags_horizontal = 4
 [node name="Vol_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 30
 text = "Volume"
 horizontal_alignment = 1
 
@@ -626,6 +619,7 @@ max_value = 0.0
 [node name="Mute_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 30
 text = "Mute"
 horizontal_alignment = 1
 
@@ -639,24 +633,29 @@ size_flags_horizontal = 4
 [node name="Fullscreen" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2lk53")
+theme_override_font_sizes/font_size = 30
 text = "Fullscreen"
 
 [node name="exit_options" type="Button" parent="Options"]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 83.0
+z_index = 1
+z_as_relative = false
+offset_left = 293.0
+offset_top = 94.0
 offset_right = 324.0
-offset_bottom = 132.0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_y26ak")
+offset_bottom = 145.0
+theme_override_colors/font_hover_color = Color(0.905269, 2.31028e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_2lk53")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0nii")
 text = "X"
+flat = true
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("43_e1twm")
 volume_db = 24.0
 
 [connection signal="pressed" from="AnimatedSprite2D2/exit how to play" to="." method="_on_exit_how_to_play_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/credits/exit_credits" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/credits/exit_credits" to="." method="_on_exit_credits_pressed"]
 [connection signal="mouse_entered" from="TextureRect/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
@@ -671,4 +670,5 @@ volume_db = 24.0
 [connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/Volume" to="Options" method="_on_volume_value_changed"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CheckBox" to="Options" method="_on_check_box_toggled"]
 [connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
+[connection signal="mouse_entered" from="Options/exit_options" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Options/exit_options" to="." method="_on_exit_options_pressed"]

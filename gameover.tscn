@@ -37,6 +37,7 @@ offset_bottom = -280.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_htp0v")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_urlan")
 text = "Return to Checkpoint"
 
@@ -51,6 +52,7 @@ offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_htp0v")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_a6cj1")
 text = "Start Over"
 

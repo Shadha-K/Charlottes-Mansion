@@ -376,6 +376,18 @@ offset_top = -195.0
 offset_right = 307.0
 offset_bottom = 134.0
 
+[node name="Vol_Label" parent="CanvasLayer/PauseMenu/Options/MarginContainer/VBoxContainer" index="0"]
+theme_override_font_sizes/font_size = 30
+
+[node name="Mute_Label" parent="CanvasLayer/PauseMenu/Options/MarginContainer/VBoxContainer" index="2"]
+theme_override_font_sizes/font_size = 30
+
+[node name="Fullscreen" parent="CanvasLayer/PauseMenu/Options/MarginContainer/VBoxContainer" index="4"]
+theme_override_font_sizes/font_size = 30
+
+[node name="exit_options" parent="CanvasLayer/PauseMenu/Options" index="2"]
+theme_override_fonts/font = ExtResource("18_g2o85")
+
 [node name="Cabinet1" parent="." instance=ExtResource("23_hqoa2")]
 position = Vector2(-604, -634)
 

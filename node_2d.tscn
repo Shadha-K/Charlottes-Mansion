@@ -485,6 +485,18 @@ offset_top = -195.0
 offset_right = 307.0
 offset_bottom = 134.0
 
+[node name="Vol_Label" parent="UI/PauseMenu/Options/MarginContainer/VBoxContainer" index="0"]
+theme_override_font_sizes/font_size = 30
+
+[node name="Mute_Label" parent="UI/PauseMenu/Options/MarginContainer/VBoxContainer" index="2"]
+theme_override_font_sizes/font_size = 30
+
+[node name="Fullscreen" parent="UI/PauseMenu/Options/MarginContainer/VBoxContainer" index="4"]
+theme_override_font_sizes/font_size = 30
+
+[node name="exit_options" parent="UI/PauseMenu/Options" index="2"]
+theme_override_fonts/font = ExtResource("2_p05t5")
+
 [node name="basement_door" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(421, 202)
