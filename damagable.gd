@@ -6,6 +6,8 @@ class_name Damageable
 
 var timer: Timer
 
+const CUP_HIT = preload("res://assets/sound_effects/cup-hit.mp3")
+
 func _ready():
 	# Initialize the timer
 	timer = Timer.new()
@@ -24,6 +26,9 @@ func hit(damage: int):
 	health -= damage
 	print("Health:", health)
 
+	# Play the hit sound effect
+	play_hit_sound()
+
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
 	timer.start()
@@ -33,6 +38,20 @@ func hit(damage: int):
 		disable_enemy()  # Disable movement and interactions
 		play_death_sound()  # Play the death sound
 		get_parent().get_node("AnimatedSprite2D").play("death")  # Trigger the death animation
+		
+func play_hit_sound():
+	# Create a new AudioStreamPlayer node
+	var hit_sound_player = AudioStreamPlayer.new()
+	hit_sound_player.stream = CUP_HIT
+	# Add the player to the enemy node so it's local to the enemy
+	add_child(hit_sound_player)
+	hit_sound_player.play()
+
+	# Remove the AudioStreamPlayer after playback
+	hit_sound_player.finished.connect(func():
+		hit_sound_player.queue_free()
+	)
+
 
 func disable_enemy():
 	var enemy = get_parent()
