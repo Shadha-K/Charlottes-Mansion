@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://tok0xmk4gwgb"]
+
+[ext_resource type="Texture2D" uid="uid://cayfk0wssakcg" path="res://assets/puzzle_objects/BottleBreak1.png" id="1_u3u7p"]
+[ext_resource type="Texture2D" uid="uid://d3j2snqnheq31" path="res://assets/puzzle_objects/BottleBreak2.png" id="2_nn410"]
+[ext_resource type="Texture2D" uid="uid://ujuwogdtuqxl" path="res://assets/puzzle_objects/BottleBreak3.png" id="3_8uh83"]
+[ext_resource type="Texture2D" uid="uid://bbbk2kn8477nj" path="res://assets/puzzle_objects/BottleBreak4.png" id="4_7vm87"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfu8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u3u7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nn410")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8uh83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7vm87")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="broken_bottle" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vfu8y")
+autoplay = "default"
