@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=120 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
 [ext_resource type="Texture2D" uid="uid://mu8b2fw18u02" path="res://assets/CharlotteSprite/death/charlotte_death_0000.png" id="2_3jiop"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dudtjl66y41m8" path="res://assets/CharlotteSprite/charlotte_stomp_spritesheet.png" id="28_napcp"]
 [ext_resource type="Texture2D" uid="uid://cfajeocwr5cyi" path="res://assets/CharlotteSprite/charlotte_swipe_sprite.png" id="29_76uwd"]
 [ext_resource type="PackedScene" uid="uid://m52gr4or4afu" path="res://scenes/health_bar.tscn" id="43_efmsb"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="44_jlcj8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d7j2"]
 atlas = ExtResource("2_uyqdx")
@@ -755,15 +756,16 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.329
+anchor_left = 0.324
 anchor_top = 0.101
-anchor_right = 0.329
-anchor_bottom = 0.101
-offset_left = -36.008
-offset_top = -11.448
-offset_right = 36.992
-offset_bottom = 11.552
-text = "Charlotte"
+anchor_right = 0.324
+anchor_bottom = 0.106
+offset_left = -29.248
+offset_top = -8.44801
+offset_right = 29.752
+offset_bottom = 11.312
+theme_override_fonts/font = ExtResource("44_jlcj8")
+text = "Charlotte - The Mad Cat"
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="swipeattack" method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="spikeattack" method="_on_animated_sprite_2d_animation_changed"]
