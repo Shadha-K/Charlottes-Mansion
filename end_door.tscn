@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6c1lb2ofuhb3"]
+[gd_scene load_steps=6 format=3 uid="uid://tc0gjbimbs4x"]
 
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="1_0qqig"]
 [ext_resource type="Script" path="res://end_door.gd" id="1_puep6"]
@@ -38,6 +38,7 @@ theme_override_fonts/font = ExtResource("3_s4uow")
 theme_override_font_sizes/font_size = 20
 text = "Press E to 
 escape"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -85,6 +85,7 @@ var spades_card: bool = false
 var first_time: bool = true
 
 var game_over: bool = false
+var game_done: bool = false
 
 #spawn points 
 var last_spawn_point_Alex = ""
