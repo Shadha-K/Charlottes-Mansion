@@ -7,6 +7,7 @@ class_name HealthChar
 @export var health: int = 200
 var phase2 = "res://BossFight/Phase2/bossfight.tscn"
 var timer: Timer
+var done: bool = false
 
 func _ready():
 	# Initialize the timer
@@ -20,7 +21,8 @@ func _ready():
 func hit(damage: int):
 	print("Ouch")
 	health -= damage
-	health_bar.health = health
+	if health >= 0:
+		health_bar.health = health
 	
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
@@ -35,7 +37,7 @@ func hit(damage: int):
 		# Play death sound independently
 		play_death_sound()
 		# Remove the enemy node
-		call_deferred("remove_enemy")
+		get_parent().queue_free()
 		get_tree().call_group("END", "unhide")
 
 func disable_enemy():
@@ -67,6 +69,7 @@ func play_death_sound():
 func remove_enemy():
 	# Remove the enemy node
 	get_parent().queue_free()
+	done = true
 
 func _on_hit_timer_timeout():
 	if is_instance_valid(get_parent()):
