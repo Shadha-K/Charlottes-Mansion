@@ -2,6 +2,8 @@ extends Node2D
 
 var paused = false
 @onready var pause_menu: Control = $UI/PauseMenu
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $UI/PauseMenu/AnimatedSprite2D2
+@onready var v_box_container: VBoxContainer = $UI/PauseMenu/MarginContainer/VBoxContainer
 
 func _ready():
 	# Hide the pause menu when the game starts
