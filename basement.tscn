@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_7b0r2"]
 [ext_resource type="PackedScene" uid="uid://cvaye1n1cr6fm" path="res://evil_charlotte.tscn" id="6_5kg05"]
 [ext_resource type="PackedScene" uid="uid://d1o7nnrtinel1" path="res://transition.tscn" id="7_iwpym"]
+[ext_resource type="AudioStream" uid="uid://0atlvgc7n16t" path="res://assets/Shadows of Despair.mp3" id="9_y0cp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
 texture = ExtResource("1_xsh6j")
@@ -118,5 +119,10 @@ limit_bottom = 529
 position = Vector2(109, -43)
 
 [node name="Transition" parent="EvilCharlotte" instance=ExtResource("7_iwpym")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_y0cp3")
+volume_db = -15.841
+parameters/looping = false
 
 [connection signal="ready" from="EvilCharlotte/Transition" to="Alex" method="_on_transition_ready"]

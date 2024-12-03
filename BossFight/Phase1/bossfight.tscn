@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_yakb7"]
 [ext_resource type="PackedScene" uid="uid://c2gtdmg75yewe" path="res://BossFight/Phase1/charboss.tscn" id="6_mbn48"]
 [ext_resource type="PackedScene" uid="uid://cr76k35oe1yqq" path="res://BossFight/fade_in.tscn" id="7_bxglg"]
-[ext_resource type="PackedScene" uid="uid://b6c1lb2ofuhb3" path="res://end_door.tscn" id="8_n06e1"]
+[ext_resource type="PackedScene" uid="uid://tc0gjbimbs4x" path="res://end_door.tscn" id="8_n06e1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
 texture = ExtResource("1_b2dwk")

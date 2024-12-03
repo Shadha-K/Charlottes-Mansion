@@ -3,6 +3,7 @@ extends Node
 class_name HealthChar
 
 @onready var health_bar: ProgressBar = $"../CanvasLayer/HealthBar"
+@export var hit_sound: AudioStream = preload("res://assets/sound_effects/cat-hit.mp3")
 
 @export var health: int = 200
 var phase2 = "res://BossFight/Phase2/bossfight.tscn"
@@ -23,6 +24,9 @@ func hit(damage: int):
 	health -= damage
 	if health >= 0:
 		health_bar.health = health
+	
+	# Play the hit sound
+	play_hit_sound()
 	
 	# Flash red and become semi-transparent
 	get_parent().modulate = Color(1, 0, 0, 0.5)
@@ -80,3 +84,13 @@ func _init_health_bar():
 		health_bar.init_health(health)
 	else:
 		print("Health bar not found!")
+		
+func play_hit_sound():
+	var hit_sound_player = AudioStreamPlayer.new()
+	hit_sound_player.stream = hit_sound
+	# Add to the boss node so it's localized to the boss
+	add_child(hit_sound_player)
+	hit_sound_player.play()
+	# Remove the player after the sound finishes
+	hit_sound_player.finished.connect(func():
+		hit_sound_player.queue_free())
