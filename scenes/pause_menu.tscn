@@ -325,6 +325,7 @@ size_flags_vertical = 4
 
 [node name="Vol_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8jlqu")
 text = "Volume"
 horizontal_alignment = 1
 
@@ -335,6 +336,7 @@ max_value = 0.0
 
 [node name="Mute_Label" type="Label" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8jlqu")
 text = "Mute"
 horizontal_alignment = 1
 
@@ -347,6 +349,7 @@ size_flags_horizontal = 4
 
 [node name="Fullscreen" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8jlqu")
 text = "Fullscreen"
 
 [node name="exit_options" type="Button" parent="Options"]
