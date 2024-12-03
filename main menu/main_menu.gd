@@ -89,6 +89,7 @@ func _ready():
 
 	#ace of spades variables
 	GameState.has_bottle = false
+	GameState.has_note = false
 	GameState.has_spades = false
 
 	#basement door variables

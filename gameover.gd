@@ -52,6 +52,11 @@ func _ready() -> void:
 		
 		GameState.d_recipes_book = false
 		GameState.d_pie = false
+	
+	elif(not GameState.spades_card):
+		GameState.has_bottle = false
+		GameState.has_note = false
+		GameState.has_spades = false 	
 
 func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file("res://node_2d.tscn")

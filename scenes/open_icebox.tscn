@@ -53,7 +53,6 @@ scale = Vector2(0.258333, 0.273611)
 texture = ExtResource("5_m2d7v")
 
 [node name="note" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(567, 342)
 scale = Vector2(0.719444, 0.661111)
 texture = ExtResource("6_h73vn")
@@ -70,7 +69,6 @@ EVERYTHING!!!!!"
 horizontal_alignment = 1
 
 [node name="broken_bottle" parent="." instance=ExtResource("6_2xu85")]
-visible = false
 position = Vector2(471, 350)
 scale = Vector2(0.257639, 0.282639)
 speed_scale = 0.35
