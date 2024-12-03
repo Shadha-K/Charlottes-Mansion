@@ -1,12 +1,13 @@
 extends Node2D
 
-
+@onready var scary_atmosphere: AudioStreamPlayer2D = $scary_atmosphere
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basement.dialogue"), "start")
 	GameState.opening = false
 	Main_Theme_Music.stop_music()
+	scary_atmosphere.play()
 	DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 	dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
 	get_tree().paused=true

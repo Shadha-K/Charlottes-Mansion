@@ -8,6 +8,7 @@ var next_scene = "res://kitchen.tscn"
 @onready var broken_bottle: AnimatedSprite2D = $broken_bottle
 @onready var hotbar: HBoxContainer = $CanvasLayer/Hotbar
 @onready var note: Sprite2D = $note
+@onready var bottle_breaking_sound: AudioStreamPlayer2D = $bottle_breaking_sound
 
 var is_bottle_in_hotbar = GameState.has_bottle 
 var is_dragging_bottle = false
@@ -61,7 +62,8 @@ func _on_icebox_body_entered(body):
 func play_broken_bottle_animation():
 	broken_bottle.position = bottle.position  
 	broken_bottle.visible = true
-	broken_bottle.play("default")  
+	broken_bottle.play("default")
+	$bottle_breaking_sound.play()  
 	await broken_bottle.animation_finished  # waiting for animation to finish
 	broken_bottle.visible = false
 	note.visible = true

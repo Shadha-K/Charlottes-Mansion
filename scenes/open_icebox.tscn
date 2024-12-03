@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bubacm76gnajw"]
+[gd_scene load_steps=15 format=3 uid="uid://bubacm76gnajw"]
 
 [ext_resource type="Texture2D" uid="uid://0lribqmy02pp" path="res://scripts/heart card/blur_kitchen4.png" id="1_2wvec"]
 [ext_resource type="Script" path="res://scripts/heart card/open_icebox.gd" id="1_554ci"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://tok0xmk4gwgb" path="res://scenes/broken_bottle.tscn" id="6_2xu85"]
 [ext_resource type="Texture2D" uid="uid://jump8rifsylt" path="res://assets/puzzle_objects/Note.png" id="6_h73vn"]
 [ext_resource type="FontFile" uid="uid://csdbld8uxvk8l" path="res://assets/fonts/help-me.regular.ttf" id="7_eiv8a"]
+[ext_resource type="AudioStream" uid="uid://bo7dljvho3sht" path="res://assets/sound_effects/bottle_breaking.mp3" id="9_a0ang"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_amnd5"]
 blend_mode = 3
@@ -72,6 +73,10 @@ horizontal_alignment = 1
 position = Vector2(471, 350)
 scale = Vector2(0.257639, 0.282639)
 speed_scale = 0.35
+
+[node name="bottle_breaking_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_a0ang")
+volume_db = 4.953
 
 [node name="Label" type="Label" parent="."]
 offset_left = 24.0

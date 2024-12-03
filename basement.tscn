@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=15 format=3 uid="uid://13ir43wa3jcc"]
 
 [ext_resource type="Script" path="res://basement.gd" id="1_bcn6a"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_5ukgb"]
+[ext_resource type="AudioStream" uid="uid://dnfisbr1nikyu" path="res://assets/sound_effects/charlotte_transformation.mp3" id="3_lred5"]
 [ext_resource type="PackedScene" uid="uid://c24ylvijada3u" path="res://alex.tscn" id="3_o8as2"]
 [ext_resource type="PackedScene" uid="uid://blg16a622rc7d" path="res://scenes/hotbar.tscn" id="4_d03cv"]
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_7b0r2"]
@@ -86,6 +87,10 @@ shape = SubResource("RectangleShape2D_e7kat")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2(482, 519)
 shape = SubResource("RectangleShape2D_6v6e0")
+
+[node name="scary_atmosphere" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lred5")
+volume_db = 9.904
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(217, -63)
