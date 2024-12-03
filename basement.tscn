@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://13ir43wa3jcc"]
+[gd_scene load_steps=16 format=3 uid="uid://13ir43wa3jcc"]
 
 [ext_resource type="Script" path="res://basement.gd" id="1_bcn6a"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_xsh6j"]

@@ -5,10 +5,18 @@ var player: CharacterBody2D
 @export var enemy: CharacterBody2D
 var is_attacking: bool = false
 
+@export var boss_music_stream: AudioStream = preload("res://assets/Shadows of Despair.mp3")
+@onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player") #gets player position
+	player = get_tree().get_first_node_in_group("Player") # Gets player position
 	add_to_group("Enemy")
+
+	# Set and play boss music
+	audio_stream_player.stream = boss_music_stream
+	audio_stream_player.volume_db = -10  # Reduce volume by 10 dB
+	audio_stream_player.play()
 
 func _physics_process(_delta):
 	move_and_slide()
@@ -40,3 +48,8 @@ func _physics_process(_delta):
 				$AnimatedSprite2D.play("walk_down")
 			else: # Idle facing up
 				$AnimatedSprite2D.play("walk_up")
+
+func on_defeat():
+	if music_player.is_playing():
+		music_player.stop()
+	music_player.queue_free() # Clean up the player
