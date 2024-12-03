@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://c24ylvijada3u"]
+[gd_scene load_steps=107 format=3 uid="uid://c24ylvijada3u"]
 
 [ext_resource type="Script" path="res://alex.gd" id="1_a8wcy"]
 [ext_resource type="Texture2D" uid="uid://vhs2jn6yiwkg" path="res://assets/AlexSprite/AlexSpriteSheetBeta.png" id="2_6yriy"]
@@ -34,13 +34,17 @@
 [ext_resource type="Texture2D" uid="uid://e7b5xt6mvoua" path="res://assets/AlexSprite/Alex Movement/AlexLeft3.png" id="30_gvyre"]
 [ext_resource type="Texture2D" uid="uid://gf1lmtu2m2ej" path="res://assets/AlexSprite/Alex Movement/AlexLeft.png" id="31_1myjx"]
 [ext_resource type="Texture2D" uid="uid://bboxnkchj425t" path="res://assets/AlexSprite/Alex Movement/AlexRight2.png" id="32_uf5un"]
+[ext_resource type="Texture2D" uid="uid://hqle6ohjtgs1" path="res://assets/AlexSprite/Alex Movement/AlexLeft4.png" id="33_0gf0x"]
 [ext_resource type="Texture2D" uid="uid://cljahg1pt20" path="res://assets/AlexSprite/Alex Movement/AlexRight3.png" id="33_vpsce"]
+[ext_resource type="Texture2D" uid="uid://bgfcu2u22e1px" path="res://assets/AlexSprite/Alex Movement/AlexLeft5.png" id="34_sst23"]
 [ext_resource type="Texture2D" uid="uid://cu0ap6ieocnil" path="res://assets/AlexSprite/Alex Movement/AlexRight.png" id="34_u2e81"]
 [ext_resource type="Texture2D" uid="uid://mxu3i3tueopn" path="res://assets/AlexSprite/Alex Movement/AlexBackSkip1.5.png" id="35_6gc4g"]
 [ext_resource type="Texture2D" uid="uid://cdsrxgp6bst4e" path="res://assets/AlexSprite/Alex Movement/AlexBackSkip1.png" id="36_o4dd3"]
 [ext_resource type="Texture2D" uid="uid://uxge64yc8ixd" path="res://assets/AlexSprite/Alex Movement/AlexBackSkip2.png" id="37_md2f1"]
+[ext_resource type="Texture2D" uid="uid://q2khms8ol4kv" path="res://assets/AlexSprite/Alex Movement/AlexRight4.png" id="38_w6eoj"]
 [ext_resource type="Texture2D" uid="uid://b1hwk1voe8s1n" path="res://assets/AlexSprite/Alex Movement/AlexBackSkip2.5.png" id="38_xi2bu"]
 [ext_resource type="Texture2D" uid="uid://dgxjtx1lpoba8" path="res://assets/AlexSprite/Alex Movement/AlexBackSkip3.png" id="39_dtc6s"]
+[ext_resource type="Texture2D" uid="uid://cppcemc18l1py" path="res://assets/AlexSprite/Alex Movement/AlexRight5.png" id="39_fskf2"]
 [ext_resource type="Texture2D" uid="uid://bingvt2w2tfkh" path="res://assets/AlexSprite/Alex Movement/AlexFrontSkip1.5.png" id="40_8v2h5"]
 [ext_resource type="Texture2D" uid="uid://bkhvugjo4ckxd" path="res://assets/AlexSprite/Alex Movement/AlexFrontSkip1.png" id="41_foioq"]
 [ext_resource type="Texture2D" uid="uid://byipbotcli4i" path="res://assets/AlexSprite/Alex Movement/AlexFrontSkip2.png" id="42_bs85y"]
@@ -208,15 +212,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_lokdw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_gvyre")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_lokdw")
-}, {
-"duration": 1.0,
 "texture": ExtResource("31_1myjx")
 }, {
 "duration": 1.0,
@@ -230,6 +225,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_1myjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0gf0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sst23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0gf0x")
 }],
 "loop": true,
 "name": &"idle_left",
@@ -237,15 +241,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_uf5un")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_vpsce")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_uf5un")
-}, {
-"duration": 1.0,
 "texture": ExtResource("34_u2e81")
 }, {
 "duration": 1.0,
@@ -259,6 +254,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("34_u2e81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_w6eoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fskf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_w6eoj")
 }],
 "loop": true,
 "name": &"idle_right",
@@ -1228,7 +1232,7 @@ material = SubResource("ShaderMaterial_vgnhy")
 position = Vector2(0, 1)
 scale = Vector2(0.207639, 0.197222)
 sprite_frames = SubResource("SpriteFrames_4g7o3")
-animation = &"idle_front"
+animation = &"idle_left"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
