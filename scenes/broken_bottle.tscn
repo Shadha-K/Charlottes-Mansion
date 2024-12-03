@@ -28,3 +28,5 @@ animations = [{
 [node name="broken_bottle" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_vfu8y")
 autoplay = "default"
+frame = 3
+frame_progress = 1.0

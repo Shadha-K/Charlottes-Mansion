@@ -39,12 +39,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click or drag")  and GameState.has_bottle and not is_dragging_bottle:
 		if is_bottle_in_hotbar:  
 			is_dragging_bottle = true
-			bottle.position = get_global_mouse_position()
+			bottle.position = Vector2(500, 200)
 			#bottle.visible = true
 			GlobalHotbar.item_used("bottle")
 	
 	if is_dragging_bottle:
-		bottle.position = get_global_mouse_position()
+		bottle.position = Vector2(500, 200)
 	
 	if is_dragging_bottle and Input.is_action_just_released("click or drag"):
 		is_dragging_bottle = false
