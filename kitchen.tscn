@@ -445,6 +445,8 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="oven"]
 
+[node name="Timer2" type="Timer" parent="oven"]
+
 [node name="Timer_sound" type="AudioStreamPlayer2D" parent="oven"]
 stream = ExtResource("29_7l7b7")
 
@@ -490,5 +492,6 @@ script = ExtResource("28_88bwo")
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
 [connection signal="timeout" from="oven/Timer" to="oven" method="_on_pie_done_timeout"]
+[connection signal="timeout" from="oven/Timer2" to="oven" method="_on_timer_2_timeout"]
 
 [editable path="CanvasLayer/PauseMenu"]

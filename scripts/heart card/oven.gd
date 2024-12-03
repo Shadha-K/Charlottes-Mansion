@@ -6,6 +6,7 @@ var next_room = "res://scenes/oven_zoomed.tscn"
 @onready var label: Label = $Label
 @onready var label2: Label = $Label2
 @onready var pie_done = $Timer
+@onready var start_dialogue = $Timer2
 @onready var timer_sound = $Timer_sound
 
 func _ready():
@@ -40,13 +41,18 @@ func _process(_delta):
 func _on_pie_done_timeout():
 	$Timer_sound.play()
 	GameState.timer_done = true
-	if GameState.timer_done:
+	start_dialogue.start(1)
+
+func _unpause(_resource: ):
+	get_tree().paused=false
+	return
+
+
+func _on_timer_2_timeout():
+	if not GameState.pie_is_done:
 		var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Pieready.dialogue"),"start")
 		DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 		dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
 		get_tree().paused=true
 		DialogueManager.dialogue_ended.connect(_unpause)
-			
-func _unpause(_resource: ):
-	get_tree().paused=false
-	return
+		GameState.pie_is_done = true
