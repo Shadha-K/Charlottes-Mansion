@@ -24,12 +24,9 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_how_to_play_pressed() -> void:
-	# Show the "How to Play" page and unpause animations
 	how_to_play_page.visible = true
 	other_buttons.visible = false
-	Engine.time_scale = 1  # Unfreeze animations
-	how_to_play_page.play("how_to_play")  # Play the animation
-
+	how_to_play_page.play("how_to_play")
 
 func _on_exit_how_to_play_pressed() -> void:
 	how_to_play_page.visible = false

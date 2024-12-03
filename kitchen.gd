@@ -1,10 +1,14 @@
 extends Node2D
 
+var paused = false
+@onready var pause_menu: Control = $CanvasLayer/PauseMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var player =get_node("Alex")
 	var charlotte= get_node("Charlotte")
+	if pause_menu:
+		pause_menu.hide()  # Ensure the pause menu is hidden on scene start
 	if GameState.LRtoK_spawn_Alex!= "" and GameState.LRtoK_spawn_charlotte!="":
 		var spawn_point=get_node(GameState.LRtoK_spawn_Alex)
 		var spawn_point2=get_node(GameState.LRtoK_spawn_charlotte)
@@ -59,3 +63,22 @@ func _ready() -> void:
 				player.update_animation_parameters()
 				charlotte.position=spawn_point2.global_position
 	
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+
+func pauseMenu():
+	if not pause_menu:
+		print("Pause menu node is missing!")
+		return
+
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+
+	paused = !paused

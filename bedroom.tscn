@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://b5xovfv7i827a"]
+[gd_scene load_steps=79 format=4 uid="uid://b5xovfv7i827a"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_1c2nh"]
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_1csho"]
@@ -38,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://fxlwjpapywod" path="res://dialogue/mainbranch.dialogue" id="32_5ol43"]
 [ext_resource type="AudioStream" uid="uid://b2xe6eawbk6lb" path="res://assets/sound_effects/door-opening-sound-effect.mp3" id="35_j3flu"]
 [ext_resource type="Script" path="res://game_controller.gd" id="37_yi4wi"]
+[ext_resource type="PackedScene" uid="uid://dlc2jl3ejluaq" path="res://scenes/pause_menu.tscn" id="38_1y8iy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae0fh"]
 texture = ExtResource("1_k4xct")
@@ -432,6 +433,39 @@ stream = ExtResource("35_j3flu")
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("32_4cjsa")]
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("38_1y8iy")]
+
+[node name="Blur" parent="CanvasLayer/PauseMenu" index="0"]
+offset_left = -1001.0
+offset_top = -938.0
+offset_right = 2357.0
+offset_bottom = 1025.0
+
+[node name="AnimatedSprite2D2" parent="CanvasLayer/PauseMenu" index="2"]
+frame_progress = 0.846672
+
+[node name="ColorRect" parent="CanvasLayer/PauseMenu/Options" index="0"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -312.0
+offset_top = -196.0
+offset_right = 302.0
+offset_bottom = 136.0
+grow_vertical = 0
+
+[node name="MarginContainer" parent="CanvasLayer/PauseMenu/Options" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -195.0
+offset_right = 307.0
+offset_bottom = 134.0
+
 [node name="LRToBRSpawnAlex" type="Marker2D" parent="."]
 position = Vector2(876, 459)
 
@@ -458,3 +492,5 @@ script = ExtResource("37_yi4wi")
 [connection signal="body_exited" from="TileMap/furniture/clover pot" to="TileMap/furniture/clover pot" method="_on_body_exited"]
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
+
+[editable path="CanvasLayer/PauseMenu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://7n0mlafd5uu0"]
+[gd_scene load_steps=59 format=4 uid="uid://7n0mlafd5uu0"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_cdw3g"]
 [ext_resource type="Script" path="res://kitchen.gd" id="1_d06ck"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="22_kve5r"]
 [ext_resource type="AudioStream" uid="uid://b2xe6eawbk6lb" path="res://assets/sound_effects/door-opening-sound-effect.mp3" id="22_tmcow"]
 [ext_resource type="PackedScene" uid="uid://c5l4q6dx5y4i7" path="res://scenes/cabinet1.tscn" id="23_hqoa2"]
+[ext_resource type="PackedScene" uid="uid://dlc2jl3ejluaq" path="res://scenes/pause_menu.tscn" id="25_3074y"]
 [ext_resource type="PackedScene" uid="uid://6t4kc5mw7bkd" path="res://scenes/icebox.tscn" id="26_d83cf"]
 [ext_resource type="PackedScene" uid="uid://b0phhl1ds52e8" path="res://scenes/cabinet_2.tscn" id="27_emfyi"]
 [ext_resource type="PackedScene" uid="uid://csrmvtewykj4w" path="res://scenes/oven.tscn" id="28_6kgmn"]
@@ -342,6 +343,39 @@ stream = ExtResource("22_tmcow")
 
 [node name="HeartContainer" parent="CanvasLayer" instance=ExtResource("22_kve5r")]
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("25_3074y")]
+
+[node name="Blur" parent="CanvasLayer/PauseMenu" index="0"]
+offset_left = -1001.0
+offset_top = -938.0
+offset_right = 2357.0
+offset_bottom = 1025.0
+
+[node name="AnimatedSprite2D2" parent="CanvasLayer/PauseMenu" index="2"]
+frame_progress = 0.846672
+
+[node name="ColorRect" parent="CanvasLayer/PauseMenu/Options" index="0"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -312.0
+offset_top = -196.0
+offset_right = 302.0
+offset_bottom = 136.0
+grow_vertical = 0
+
+[node name="MarginContainer" parent="CanvasLayer/PauseMenu/Options" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -195.0
+offset_right = 307.0
+offset_bottom = 134.0
+
 [node name="Cabinet1" parent="." instance=ExtResource("23_hqoa2")]
 position = Vector2(-604, -634)
 
@@ -456,3 +490,5 @@ script = ExtResource("28_88bwo")
 [connection signal="body_entered" from="living_room_door" to="living_room_door" method="_on_body_entered"]
 [connection signal="body_exited" from="living_room_door" to="living_room_door" method="_on_body_exited"]
 [connection signal="timeout" from="oven/Timer" to="oven" method="_on_pie_done_timeout"]
+
+[editable path="CanvasLayer/PauseMenu"]

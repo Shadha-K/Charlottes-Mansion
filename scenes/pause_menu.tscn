@@ -247,7 +247,6 @@ scale = Vector2(0.32704, 0.325)
 sprite_frames = SubResource("SpriteFrames_1w03h")
 animation = &"how_to_play"
 autoplay = "how_to_play"
-frame_progress = 0.977442
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D2"]
 z_index = -1
