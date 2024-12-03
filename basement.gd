@@ -6,6 +6,7 @@ func _ready() -> void:
 	
 	var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basement.dialogue"), "start")
 	GameState.opening = false
+	Main_Theme_Music.stop_music()
 	DialogueManager.process_mode=Node.PROCESS_MODE_ALWAYS
 	dialogue.process_mode=Node.PROCESS_MODE_ALWAYS
 	get_tree().paused=true

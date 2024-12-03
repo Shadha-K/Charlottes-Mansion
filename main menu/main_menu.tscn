@@ -343,6 +343,7 @@ color = Color(0.129412, 0.129412, 0.129412, 0.67451)
 [node name="exit_credits" type="Button" parent="CanvasLayer/credits"]
 z_index = 1
 z_as_relative = false
+layout_mode = 0
 offset_left = 29.0
 offset_top = 24.0
 offset_right = 60.0
@@ -639,6 +640,7 @@ text = "Fullscreen"
 [node name="exit_options" type="Button" parent="Options"]
 z_index = 1
 z_as_relative = false
+layout_mode = 0
 offset_left = 293.0
 offset_top = 94.0
 offset_right = 324.0

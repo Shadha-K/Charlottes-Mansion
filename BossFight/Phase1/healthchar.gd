@@ -6,7 +6,6 @@ class_name HealthChar
 
 @export var health: int = 200
 var phase2 = "res://BossFight/Phase2/bossfight.tscn"
-
 var timer: Timer
 
 func _ready():
@@ -37,7 +36,7 @@ func hit(damage: int):
 		play_death_sound()
 		# Remove the enemy node
 		call_deferred("remove_enemy")
-	
+		get_tree().call_group("END", "unhide")
 
 func disable_enemy():
 	var enemy = get_parent()

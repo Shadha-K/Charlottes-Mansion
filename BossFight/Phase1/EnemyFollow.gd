@@ -27,11 +27,14 @@ func Physics_Update(_delta: float):
 	var direction = player.global_position - enemy.global_position  # Calculate distance and direction
 
 	# Health-based attack transition
-	if health <= 200 and GameState.has_played_head1 == false:
+	if health <= 200 and health > 100 and GameState.has_played_head1 == false:
 		Transitioned.emit(self, "HeadAttack")
-	elif health <= 100 and GameState.has_played_head2 == false:
+		print(health)
+	elif health <= 100 and health > 0 and GameState.has_played_head2 == false:
 		Transitioned.emit(self, "HeadAttack")
+		print(health)
 	elif health <= 0:
+		print(health)
 		return
 	else:
 		# Follow or idle behavior

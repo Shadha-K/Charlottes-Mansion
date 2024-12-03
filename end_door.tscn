@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6c1lb2ofuhb3"]
+
+[ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="1_0qqig"]
+[ext_resource type="Script" path="res://end_door.gd" id="1_puep6"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_s4uow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lwrv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0qqig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgu7v"]
+size = Vector2(60, 119)
+
+[node name="endDoor" type="Area2D" node_paths=PackedStringArray("label")]
+script = ExtResource("1_puep6")
+label = NodePath("Label2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6lwrv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_cgu7v")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -111.0
+offset_right = 100.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("3_s4uow")
+theme_override_font_sizes/font_size = 20
+text = "Press E to 
+escape"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

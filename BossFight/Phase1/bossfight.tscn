@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4xhvht71etio"]
+[gd_scene load_steps=14 format=3 uid="uid://b4xhvht71etio"]
 
 [ext_resource type="Texture2D" uid="uid://n206d2htvk2n" path="res://assets/tiles/tilemap.png" id="1_b2dwk"]
 [ext_resource type="Texture2D" uid="uid://dwbixav1nuasm" path="res://assets/living_room/door.png" id="2_255v0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tic5ssy3cxnq" path="res://scenes/heart_container.tscn" id="5_yakb7"]
 [ext_resource type="PackedScene" uid="uid://c2gtdmg75yewe" path="res://BossFight/Phase1/charboss.tscn" id="6_mbn48"]
 [ext_resource type="PackedScene" uid="uid://cr76k35oe1yqq" path="res://BossFight/fade_in.tscn" id="7_bxglg"]
+[ext_resource type="PackedScene" uid="uid://b6c1lb2ofuhb3" path="res://end_door.tscn" id="8_n06e1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el3w4"]
 texture = ExtResource("1_b2dwk")
@@ -89,6 +90,9 @@ shape = SubResource("RectangleShape2D_6v6e0")
 position = Vector2(217, -63)
 scale = Vector2(1.32812, 1.11719)
 texture = ExtResource("2_255v0")
+
+[node name="endDoor" parent="." instance=ExtResource("8_n06e1")]
+position = Vector2(516, 244)
 
 [node name="Alex" parent="." instance=ExtResource("3_saftk")]
 position = Vector2(227, -12)

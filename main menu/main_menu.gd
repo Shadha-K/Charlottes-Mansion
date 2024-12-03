@@ -98,6 +98,7 @@ func _ready():
 	GameState.first_time = true
 	
 	GameState.start_game = true
+	Main_Theme_Music.resume_music()
 
 func connect_hover_signals():
 	# Add connections for each button you want the hover sound to play on

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbkt5vybadvqt"]
+
+[ext_resource type="Script" path="res://endscene.gd" id="1_vfuqk"]
+[ext_resource type="VideoStream" path="res://assets/cutscenes/charlotte's_mansion_end_cutscene.ogv" id="2_m0xuu"]
+[ext_resource type="FontFile" uid="uid://cx5w18n6x20sw" path="res://assets/fonts/Magical World.ttf" id="3_6vdub"]
+[ext_resource type="AudioStream" uid="uid://lv5i2hefc0ll" path="res://assets/cutscenes/music-box-69223.mp3" id="4_2kwfk"]
+
+[node name="endscene" type="Node2D"]
+script = ExtResource("1_vfuqk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_top = -3.0
+offset_right = 1920.0
+offset_bottom = 1085.0
+scale = Vector2(0.600204, 0.602812)
+stream = ExtResource("2_m0xuu")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 903.0
+offset_top = 590.0
+offset_right = 1201.0
+offset_bottom = 643.0
+theme_override_fonts/font = ExtResource("3_6vdub")
+theme_override_font_sizes/font_size = 40
+text = "Press E to skip"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2kwfk")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
