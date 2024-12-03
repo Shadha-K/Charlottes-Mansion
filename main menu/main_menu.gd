@@ -8,6 +8,7 @@ extends Control
 @onready var exit_options: Button = $Options/exit_options
 
 @onready var hover_sound: AudioStreamPlayer = $HoverSound
+@onready var main_theme: AudioStreamPlayer2D = $main_theme
 
 
 func _ready():
@@ -15,6 +16,8 @@ func _ready():
 	credits.visible = false
 	other_buttons.visible = true
 	options.visible = false
+	main_theme.play()
+	Main_Theme_Music.stop_music()
 	
 	GameState.player_health = 9
 	GameState.current_health = 9
@@ -99,7 +102,7 @@ func _ready():
 	GameState.first_time = true
 	
 	GameState.start_game = true
-	Main_Theme_Music.resume_music()
+	#Main_Theme_Music.resume_music()
 
 func connect_hover_signals():
 	# Add connections for each button you want the hover sound to play on
