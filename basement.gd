@@ -6,6 +6,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameState.player_health = 9
+	GameState.current_health = 9
 	
 	var dialogue=DialogueManager.show_example_dialogue_balloon(load("res://dialogue/basement.dialogue"), "start")
 	GameState.opening = false

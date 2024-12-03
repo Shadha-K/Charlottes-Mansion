@@ -15,7 +15,7 @@ func _ready():
 	
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Alex" and GameState.has_hearts: #add here condition to be met once 3rd puzzle is done
+	if body.name == "Alex": # and GameState.has_hearts: #add here condition to be met once 3rd puzzle is done
 		label.visible = true  
 
 func _on_body_exited(body: Node2D) -> void:
