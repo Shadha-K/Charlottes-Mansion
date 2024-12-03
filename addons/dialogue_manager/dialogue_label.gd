@@ -68,7 +68,7 @@ var dialogue_sound_effect: AudioStream
 var sound_play_counter: int = 0
 
 var time_since_last_sound: float = 0.0
-var min_time_between_sounds: float = 0.16 # Adjust this value to set the minimum time between sounds
+var min_time_between_sounds: float = 2 # Adjust this value to set the minimum time between sounds
 
 
 func _ready():
@@ -166,10 +166,10 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 				var new_audio_player = AudioStreamPlayer.new()
 				new_audio_player.stream = dialogue_sound_effect
 				# Adjust pitch as before
-				new_audio_player.pitch_scale += randf_range(-0.1, 0.1)
+				new_audio_player.pitch_scale += randf_range(-0.2, 0.2)
 				# Optional: Adjust pitch for vowels
 				if letter.to_lower() in ["a", "e", "i", "o", "u"]:
-					new_audio_player.pitch_scale += 0.2
+					new_audio_player.pitch_scale += 0.3
 				add_child(new_audio_player)
 				new_audio_player.play()
 				# Connect to 'finished' signal to free the player
