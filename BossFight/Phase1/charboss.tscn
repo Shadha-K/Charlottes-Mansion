@@ -1,21 +1,16 @@
-[gd_scene load_steps=115 format=3 uid="uid://c2gtdmg75yewe"]
+[gd_scene load_steps=118 format=3 uid="uid://c2gtdmg75yewe"]
 
 [ext_resource type="Script" path="res://BossFight/Phase1/charboss.gd" id="1_75e33"]
 [ext_resource type="Texture2D" uid="uid://mu8b2fw18u02" path="res://assets/CharlotteSprite/death/charlotte_death_0000.png" id="2_3jiop"]
 [ext_resource type="Texture2D" uid="uid://kf1kiij6gp5e" path="res://assets/CharlotteSprite/charlotte_walk_front_spritesheet.png" id="2_b6hq1"]
 [ext_resource type="Texture2D" uid="uid://bismdb4j715ds" path="res://assets/CharlotteSprite/floatingbody.png" id="2_uyqdx"]
 [ext_resource type="Texture2D" uid="uid://doci2of1rqxii" path="res://assets/CharlotteSprite/charlotte_walk_back_spritesheet.png" id="3_e0hy8"]
-[ext_resource type="Texture2D" uid="uid://bjfidur1lkh40" path="res://assets/teacup_attack_imgs/teacup_attack_0000.png" id="3_eiieg"]
 [ext_resource type="Texture2D" uid="uid://bi0vjky7b8ah5" path="res://assets/CharlotteSprite/death/charlotte_death_0001.png" id="3_wwgv4"]
-[ext_resource type="Texture2D" uid="uid://cix0i67jpyoog" path="res://assets/teacup_attack_imgs/teacup_attack_0002.png" id="4_eqotw"]
 [ext_resource type="Texture2D" uid="uid://bfnylrokql6qq" path="res://assets/CharlotteSprite/charlotte_walk_side_spritesheet.png" id="4_g2elx"]
 [ext_resource type="Texture2D" uid="uid://0weclsdvyq01" path="res://assets/CharlotteSprite/death/charlotte_death_0002.png" id="4_m6vos"]
-[ext_resource type="Texture2D" uid="uid://w64n6ho1q05i" path="res://assets/teacup_attack_imgs/teacup_attack_0003.png" id="5_77a74"]
 [ext_resource type="Texture2D" uid="uid://egxcva32xjr3" path="res://assets/CharlotteSprite/death/charlotte_death_0003.png" id="5_6206d"]
-[ext_resource type="Texture2D" uid="uid://bwukjmtnjlcrk" path="res://assets/teacup_attack_imgs/teacup_attack_0004.png" id="6_fgaf8"]
 [ext_resource type="Texture2D" uid="uid://b1rrvyn2s4hcd" path="res://assets/CharlotteSprite/death/charlotte_death_0004.png" id="6_khaky"]
 [ext_resource type="Script" path="res://BossFight/Phase1/healthchar.gd" id="6_m4ps4"]
-[ext_resource type="Texture2D" uid="uid://gemanqv11ar0" path="res://assets/teacup_attack_imgs/teacup_attack_0005.png" id="7_khchf"]
 [ext_resource type="Texture2D" uid="uid://7risg06vgd4b" path="res://assets/CharlotteSprite/death/charlotte_death_0005.png" id="7_o4saw"]
 [ext_resource type="Script" path="res://BossFight/Phase1/State_Machine.gd" id="7_qn26e"]
 [ext_resource type="Texture2D" uid="uid://cqvmtitb6ou0r" path="res://assets/CharlotteSprite/death/charlotte_death_0006.png" id="8_d3jql"]
@@ -46,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cifytqrwtcolf" path="res://assets/CharlotteSprite/death/charlotte_death_0023.png" id="25_xrwvj"]
 [ext_resource type="Texture2D" uid="uid://oinua8vc3jrj" path="res://assets/CharlotteSprite/death/charlotte_death_0024.png" id="26_3aat0"]
 [ext_resource type="Texture2D" uid="uid://dudtjl66y41m8" path="res://assets/CharlotteSprite/charlotte_stomp_spritesheet.png" id="28_napcp"]
+[ext_resource type="Texture2D" uid="uid://cfajeocwr5cyi" path="res://assets/CharlotteSprite/charlotte_swipe_sprite.png" id="29_76uwd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d7j2"]
 atlas = ExtResource("2_uyqdx")
@@ -119,25 +115,53 @@ region = Rect2(0, 6000, 1200, 2000)
 atlas = ExtResource("28_napcp")
 region = Rect2(1200, 6000, 1200, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_io6q7"]
-atlas = ExtResource("3_eiieg")
-region = Rect2(0, 0, 160, 160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vifv4"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(0, 0, 2000, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_awyen"]
-atlas = ExtResource("4_eqotw")
-region = Rect2(0, 0, 160, 160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx0iq"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(2000, 0, 2000, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0mnx"]
-atlas = ExtResource("5_77a74")
-region = Rect2(0, 0, 160, 160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_66bxo"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(4000, 0, 2000, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sdf61"]
-atlas = ExtResource("6_fgaf8")
-region = Rect2(0, 0, 160, 160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2v61"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(6000, 0, 2000, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yu4jf"]
-atlas = ExtResource("7_khchf")
-region = Rect2(0, 0, 160, 160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_12162"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(0, 2000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75sge"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(2000, 2000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3q5g"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(4000, 2000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2inre"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(6000, 2000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwrjs"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(0, 4000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r7f3"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(2000, 4000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwc36"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(4000, 4000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvwpl"]
+atlas = ExtResource("29_76uwd")
+region = Rect2(6000, 4000, 2000, 2000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aolem"]
 atlas = ExtResource("2_b6hq1")
@@ -455,19 +479,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_io6q7")
+"texture": SubResource("AtlasTexture_vifv4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_awyen")
+"texture": SubResource("AtlasTexture_jx0iq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j0mnx")
+"texture": SubResource("AtlasTexture_66bxo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sdf61")
+"texture": SubResource("AtlasTexture_y2v61")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yu4jf")
+"texture": SubResource("AtlasTexture_12162")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75sge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3q5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2inre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwrjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r7f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwc36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvwpl")
 }],
 "loop": false,
 "name": &"swipe_attack",
@@ -630,6 +675,8 @@ enemy = NodePath(".")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hry8c")
 animation = &"swipe_attack"
+frame = 11
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.55556, 150)
